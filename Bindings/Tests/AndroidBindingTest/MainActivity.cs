@@ -12,6 +12,7 @@ using IO.Radar.Sdk;
 using static IO.Radar.Sdk.Radar;
 using Android.Locations;
 using IO.Radar.Sdk.Model;
+using System.Linq;
 
 namespace AndroidBindingTest
 {
@@ -19,6 +20,8 @@ namespace AndroidBindingTest
     public class MainActivity : AppCompatActivity
     {
         private const string RADAR_KEY = "prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec "; // "ENTER KEY HERE";
+
+        private AppCompatTextView ResultView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +34,8 @@ namespace AndroidBindingTest
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
+
+            ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
             {
@@ -64,11 +69,10 @@ namespace AndroidBindingTest
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
             View view = (View) sender;
-            var text = FindViewById<AppCompatTextView>(Resource.Id.text);
-            text.Text = "Loading...";
+            ResultView.Text = "Loading...";
             Radar.TrackOnce(new RadarTrackCallback((status, location, events, user) =>
             {
-                text.Text = $"Status: {status}\nLocation: {location}\nEvents: {events}\nUser: {user}";
+                RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location}\nEvents: {string.Join('\n', events.Select(e => e.ToJson()))}\nUser: {user}");
             }));
         }
 
