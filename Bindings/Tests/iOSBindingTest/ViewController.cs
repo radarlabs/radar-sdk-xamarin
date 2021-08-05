@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using RadarIO.Xamarin.iOS.Binding;
 using System;
 using UIKit;
 
@@ -13,9 +14,9 @@ namespace iOSBindingTest
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            btnAddNotification.TouchUpInside += (sender, e) =>
+            TrackOnce.TouchUpInside += (sender, e) =>
             {
-                RadarSDK.Radar.TrackOnceWithCompletionHandler((a, b, c, d) =>
+                Radar.TrackOnceWithCompletionHandler((a, b, c, d) =>
                 {
                     // create the notification
                     var notification = new UILocalNotification();
