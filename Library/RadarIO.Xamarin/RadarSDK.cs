@@ -52,36 +52,37 @@ namespace RadarIO.Xamarin
 
     public enum RadarTripStatus
     {
-        Canceled,
-        Completed,
-        Expired,
-        Arrived,
-        Approaching,
+        Unknown,
         Started,
-        Unknown
+        Approaching,
+        Arrived,
+        Expired,
+        Completed,
+        Canceled
     }
 
     public enum RadarRouteMode
     {
-        Motorbike,
-        Truck,
-        Car,
+        Foot,
         Bike,
-        Foot
+        Car,
+        Truck,
+        Motorbike
     }
 
     public enum RadarLocationSource
     {
-        Unknown,
-        BeaconExit,
-        BeaconEnter,
-        MockLocation,
-        GeofenceExit,
-        GeofenceDwell,
-        GeofenceEnter,
-        ManualLocation,
-        BackgroundLocation,
-        ForegroundLocation
+		ForegroundLocation,
+		BackgroundLocation,
+		ManualLocation,
+		VisitArrival,
+		VisitDeparture,
+		GeofenceEnter,
+		GeofenceExit,
+		MockLocation,
+		BeaconEnter,
+		BeaconExit,
+		Unknown
     }
 
     public class RadarSegment
@@ -207,7 +208,70 @@ namespace RadarIO.Xamarin
 
     public class RadarEvent
     {
+        public string Id;
+        public DateTime? CreatedAt;
+        public DateTime? ActualCreatedAt;
+        public bool Live;
+        public RadarEventType Type;
+        public RadarGeofence Geofence;
+        public RadarPlace Place;
+        public RadarRegion Region;
+        public RadarBeacon Beacon;
+        public RadarTrip Trip;
+        public IEnumerable<RadarPlace> AlternatePlaces;
+        public RadarPlace VerifiedPlace;
+        public RadarEventVerification Verification;
+        public RadarEventConfidence Confidence;
+        public float Duration;
+        public RadarLocation Location;
+    }
 
+    public enum RadarEventConfidence
+    {
+        None,
+        Low,
+        Medium,
+        High
+    }
+
+    public enum RadarEventVerification
+    {
+        Accept = 1,
+        Unverify = 0,
+        Reject = -1
+    }
+
+    public enum RadarEventType
+    {
+        Unknown,
+		UserEnteredGeofence,
+		UserExitedGeofence,
+		UserEnteredHome,
+		UserExitedHome,
+		UserEnteredOffice,
+		UserExitedOffice,
+		UserStartedTraveling,
+		UserStoppedTraveling,
+		UserEnteredPlace,
+		UserExitedPlace,
+		UserNearbyPlaceChain,
+		UserEnteredRegionCountry,
+		UserExitedRegionCountry,
+		UserEnteredRegionState,
+		UserExitedRegionState,
+		UserEnteredRegionDMA,
+		UserExitedRegionDMA,
+		UserStartedCommuting,
+		UserStoppedCommuting,
+		UserStartedTrip,
+		UserUpdatedTrip,
+		UserApproachingTripDestination,
+		UserArrivedAtTripDestination,
+		UserStoppedTrip,
+		UserEnteredBeacon,
+		UserExitedBeacon,
+		UserEnteredRegionPostalCode,
+		UserExitedRegionPostalCode
     }
 
     public class RadarLocation
@@ -223,22 +287,22 @@ namespace RadarIO.Xamarin
 
     public enum RadarStatus
     {
-        ErrorUnknown,
-        ErrorServer,
-        ErrorRateLimit,
-        ErrorNotFound,
-        ErrorForbidden,
-        ErrorPaymentRequired,
-        ErrorUnauthorized,
-        ErrorBadRequest,
-        ErrorNetwork,
-        ErrorBluetooth,
-        ErrorLocation,
-        ErrorPermissions,
+        Success,
         ErrorPublishableKey,
-        Success
+        ErrorPermissions,
+        ErrorLocation,
+        ErrorBluetooth,
+        ErrorNetwork,
+        ErrorBadRequest,
+        ErrorUnauthorized,
+        ErrorPaymentRequired,
+        ErrorForbidden,
+        ErrorNotFound,
+        ErrorRateLimit,
+        ErrorServer,
+        ErrorUnknown
     }
 
-    public class JSONObject : Dictionary<string, object> { }
+    public class JSONObject : Dictionary<string, string> { }
 
 }

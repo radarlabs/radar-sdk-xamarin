@@ -15,7 +15,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -103,7 +103,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -149,7 +149,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -181,7 +181,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -233,7 +233,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -263,7 +263,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -297,7 +297,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -349,7 +349,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -373,7 +373,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -423,7 +423,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -471,7 +471,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -497,7 +497,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -519,7 +519,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -605,7 +605,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 
 		// @property (readonly, assign, nonatomic) RadarLocationSource source;
@@ -703,7 +703,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -721,7 +721,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -739,7 +739,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -753,7 +753,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -775,7 +775,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -790,7 +790,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSArray<NSArray<NSDictionary *> *> * _Nonnull)arrayValue;
 		[Export("arrayValue")]
-		
+
 		NSArray<NSDictionary>[] ArrayValue { get; }
 	}
 
@@ -824,7 +824,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -960,7 +960,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
@@ -1014,7 +1014,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 		// +(NSString * _Nullable)getUserId;
 		[Static]
 		[NullAllowed, Export("getUserId")]
-		
+
 		string UserId { get; }
 
 		// +(void)setDescription:(NSString * _Nullable)description;
@@ -1025,7 +1025,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 		// +(NSString * _Nullable)getDescription;
 		[Static]
 		[NullAllowed, Export("getDescription")]
-		
+
 		string Description { get; }
 
 		// +(void)setMetadata:(NSDictionary * _Nullable)metadata;
@@ -1036,7 +1036,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 		// +(NSDictionary * _Nullable)getMetadata;
 		[Static]
 		[NullAllowed, Export("getMetadata")]
-		
+
 		NSDictionary Metadata { get; }
 
 		// +(void)setAdIdEnabled:(BOOL)enabled;
@@ -1087,13 +1087,13 @@ namespace RadarIO.Xamarin.iOS.Binding
 		// +(BOOL)isTracking;
 		[Static]
 		[Export("isTracking")]
-		
+
 		bool IsTracking { get; }
 
 		// +(RadarTrackingOptions * _Nonnull)getTrackingOptions;
 		[Static]
 		[Export("getTrackingOptions")]
-		
+
 		RadarTrackingOptions TrackingOptions { get; }
 
 		// +(void)setDelegate:(id<RadarDelegate> _Nullable)delegate;
@@ -1114,7 +1114,7 @@ namespace RadarIO.Xamarin.iOS.Binding
 		// +(RadarTripOptions * _Nullable)getTripOptions;
 		[Static]
 		[NullAllowed, Export("getTripOptions")]
-		
+
 		RadarTripOptions TripOptions { get; }
 
 		// +(void)startTripWithOptions:(RadarTripOptions * _Nonnull)options __attribute__((swift_name("startTrip(options:)")));
@@ -1182,10 +1182,15 @@ namespace RadarIO.Xamarin.iOS.Binding
 		[Export("searchGeofencesNear:radius:tags:metadata:limit:completionHandler:")]
 		void SearchGeofencesNear(CLLocation near, int radius, [NullAllowed] string[] tags, [NullAllowed] NSDictionary metadata, int limit, RadarSearchGeofencesCompletionHandler completionHandler);
 
-		// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nonnull)near limit:(int)limit completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:limit:completionHandler:)")));
+		// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:completionHandler:)")));
+		[Static]
+		[Export("autocompleteQuery:near:layers:limit:country:completionHandler:")]
+		void AutocompleteQuery(string query, [NullAllowed] CLLocation near, [NullAllowed] string[] layers, int limit, [NullAllowed] string country, RadarGeocodeCompletionHandler completionHandler);
+
+		// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near limit:(int)limit completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:limit:completionHandler:)")));
 		[Static]
 		[Export("autocompleteQuery:near:limit:completionHandler:")]
-		void AutocompleteQuery(string query, CLLocation near, int limit, RadarGeocodeCompletionHandler completionHandler);
+		void AutocompleteQuery(string query, [NullAllowed] CLLocation near, int limit, RadarGeocodeCompletionHandler completionHandler);
 
 		// +(void)geocodeAddress:(NSString * _Nonnull)query completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("geocode(address:completionHandler:)")));
 		[Static]
@@ -1253,6 +1258,67 @@ namespace RadarIO.Xamarin.iOS.Binding
 		NSDictionary DictionaryForLocation(CLLocation location);
 	}
 
+	// @interface RadarCircleGeometry : RadarGeofenceGeometry
+	[BaseType(typeof(RadarGeofenceGeometry))]
+	interface RadarCircleGeometry
+	{
+		// @property (readonly, nonatomic, strong) RadarCoordinate * _Nonnull center;
+		[Export("center", ArgumentSemantic.Strong)]
+		RadarCoordinate Center { get; }
+
+		// @property (readonly, assign, nonatomic) double radius;
+		[Export("radius")]
+		double Radius { get; }
+	}
+
+	// @protocol RadarDelegate <NSObject>
+	[Protocol, Model(AutoGeneratedName = true)]
+	[BaseType(typeof(NSObject))]
+	interface RadarDelegate
+	{
+		// @required -(void)didReceiveEvents:(NSArray<RadarEvent *> * _Nonnull)events user:(RadarUser * _Nonnull)user __attribute__((swift_name("didReceiveEvents(_:user:)")));
+		[Abstract]
+		[Export("didReceiveEvents:user:")]
+		void DidReceiveEvents(RadarEvent[] events, RadarUser user);
+
+		// @required -(void)didUpdateLocation:(CLLocation * _Nonnull)location user:(RadarUser * _Nonnull)user __attribute__((swift_name("didUpdateLocation(_:user:)")));
+		[Abstract]
+		[Export("didUpdateLocation:user:")]
+		void DidUpdateLocation(CLLocation location, RadarUser user);
+
+		// @required -(void)didUpdateClientLocation:(CLLocation * _Nonnull)location stopped:(BOOL)stopped source:(RadarLocationSource)source __attribute__((swift_name("didUpdateClientLocation(_:stopped:source:)")));
+		[Abstract]
+		[Export("didUpdateClientLocation:stopped:source:")]
+		void DidUpdateClientLocation(CLLocation location, bool stopped, RadarLocationSource source);
+
+		// @required -(void)didFailWithStatus:(RadarStatus)status __attribute__((swift_name("didFail(status:)")));
+		[Abstract]
+		[Export("didFailWithStatus:")]
+		void DidFailWithStatus(RadarStatus status);
+
+		// @required -(void)didLogMessage:(NSString * _Nonnull)message __attribute__((swift_name("didLog(message:)")));
+		[Abstract]
+		[Export("didLogMessage:")]
+		void DidLogMessage(string message);
+	}
+
+	// @interface RadarPolygonGeometry : RadarGeofenceGeometry
+	[BaseType(typeof(RadarGeofenceGeometry))]
+	interface RadarPolygonGeometry
+	{
+		// @property (readonly, copy, nonatomic) NSArray<RadarCoordinate *> * _Nullable coordinates;
+		[NullAllowed, Export("coordinates", ArgumentSemantic.Copy)]
+		RadarCoordinate[] Coordinates { get; }
+
+		// @property (readonly, nonatomic, strong) RadarCoordinate * _Nonnull center;
+		[Export("center", ArgumentSemantic.Strong)]
+		RadarCoordinate Center { get; }
+
+		// @property (readonly, assign, nonatomic) double radius;
+		[Export("radius")]
+		double Radius { get; }
+	}
+
 	// @interface RadarTripOptions : NSObject
 	[BaseType(typeof(NSObject))]
 	interface RadarTripOptions
@@ -1288,38 +1354,8 @@ namespace RadarIO.Xamarin.iOS.Binding
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
-		
+
 		NSDictionary DictionaryValue { get; }
 	}
 
-	// @protocol RadarDelegate <NSObject>
-	[Protocol, Model(AutoGeneratedName = true)]
-	[BaseType(typeof(NSObject))]
-	interface RadarDelegate
-	{
-		// @required -(void)didReceiveEvents:(NSArray<RadarEvent *> * _Nonnull)events user:(RadarUser * _Nonnull)user __attribute__((swift_name("didReceiveEvents(_:user:)")));
-		[Abstract]
-		[Export("didReceiveEvents:user:")]
-		void DidReceiveEvents(RadarEvent[] events, RadarUser user);
-
-		// @required -(void)didUpdateLocation:(CLLocation * _Nonnull)location user:(RadarUser * _Nonnull)user __attribute__((swift_name("didUpdateLocation(_:user:)")));
-		[Abstract]
-		[Export("didUpdateLocation:user:")]
-		void DidUpdateLocation(CLLocation location, RadarUser user);
-
-		// @required -(void)didUpdateClientLocation:(CLLocation * _Nonnull)location stopped:(BOOL)stopped source:(RadarLocationSource)source __attribute__((swift_name("didUpdateClientLocation(_:stopped:source:)")));
-		[Abstract]
-		[Export("didUpdateClientLocation:stopped:source:")]
-		void DidUpdateClientLocation(CLLocation location, bool stopped, RadarLocationSource source);
-
-		// @required -(void)didFailWithStatus:(RadarStatus)status __attribute__((swift_name("didFail(status:)")));
-		[Abstract]
-		[Export("didFailWithStatus:")]
-		void DidFailWithStatus(RadarStatus status);
-
-		// @required -(void)didLogMessage:(NSString * _Nonnull)message __attribute__((swift_name("didLog(message:)")));
-		[Abstract]
-		[Export("didLogMessage:")]
-		void DidLogMessage(string message);
-	}
 }
