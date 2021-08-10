@@ -9,10 +9,11 @@ using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 using Android;
 using IO.Radar.Sdk;
-using static IO.Radar.Sdk.Radar;
+using RadarIO.Xamarin.AndroidBinding;
 using Android.Locations;
 using IO.Radar.Sdk.Model;
 using System.Linq;
+using static RadarIO.Xamarin.AndroidBinding.Radar;
 
 namespace AndroidBindingTest
 {

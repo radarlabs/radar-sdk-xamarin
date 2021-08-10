@@ -115,9 +115,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.Android.Binding.csproj">
-      <Project>{9e0ed523-3fa7-482d-abfd-ea805d3314e6}</Project>
-      <Name>RadarIO.Xamarin.Android.Binding</Name>
+    <ProjectReference Include="..\..\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.AndroidBinding.csproj">
+      <Project>{9E0ED523-3FA7-482D-ABFD-EA805D3314E6}</Project>
+      <Name>RadarIO.Xamarin.AndroidBinding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
