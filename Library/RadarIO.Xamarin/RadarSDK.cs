@@ -61,28 +61,29 @@ namespace RadarIO.Xamarin
         Canceled
     }
 
+    [Flags]
     public enum RadarRouteMode
     {
-        Foot,
-        Bike,
-        Car,
-        Truck,
-        Motorbike
+        Foot = 1,
+        Bike = 2,
+        Car = 4,
+        Truck = 8,
+        Motorbike = 16
     }
 
     public enum RadarLocationSource
     {
-		ForegroundLocation,
-		BackgroundLocation,
-		ManualLocation,
-		VisitArrival,
-		VisitDeparture,
-		GeofenceEnter,
-		GeofenceExit,
-		MockLocation,
-		BeaconEnter,
-		BeaconExit,
-		Unknown
+        ForegroundLocation,
+        BackgroundLocation,
+        ManualLocation,
+        VisitArrival,
+        VisitDeparture,
+        GeofenceEnter,
+        GeofenceExit,
+        MockLocation,
+        BeaconEnter,
+        BeaconExit,
+        Unknown
     }
 
     public class RadarSegment
@@ -119,7 +120,7 @@ namespace RadarIO.Xamarin
         public string Major;
         public string Minor;
         public JSONObject Metadata;
-        public RadarLocation Location;
+        public RadarCoordinate Location;
     }
 
     public class RadarUserInsights
@@ -151,17 +152,17 @@ namespace RadarIO.Xamarin
 
     public enum RadarUserInsightsLocationConfidence
     {
-        High,
-        Medium,
+        None,
         Low,
-        None
+        Medium,
+        High
     }
 
     public enum RadarUserInsightsLocationType
     {
-        Office,
+        Unknown,
         Home,
-        Unknown
+        Office
     }
 
     public class RadarPlace
@@ -170,7 +171,7 @@ namespace RadarIO.Xamarin
         public string Name;
         public IEnumerable<string> Categories;
         public RadarChain Chain;
-        public RadarLocation Location;
+        public RadarCoordinate Location;
         public string Group;
         public JSONObject Metadata;
     }
