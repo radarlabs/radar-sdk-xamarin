@@ -43,15 +43,18 @@
     <Compile Include="RadarSDKImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conversion.cs" />
+    <Compile Include="..\RadarIO.Xamarin\RadarSingleton.cs">
+      <Link>RadarSingleton.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
-      <Project>{4F609A57-4CA2-4243-858F-2132C55A560C}</Project>
-      <Name>RadarIO.Xamarin</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOS.Binding.csproj">
       <Project>{5FB78078-54B6-4051-9657-542C56C8FE74}</Project>
       <Name>RadarIO.Xamarin.iOS.Binding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin.Abstractions\RadarIO.Xamarin.Abstractions.csproj">
+      <Project>{E2BF484C-8797-4D2E-9A36-E2F256A602A1}</Project>
+      <Name>RadarIO.Xamarin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

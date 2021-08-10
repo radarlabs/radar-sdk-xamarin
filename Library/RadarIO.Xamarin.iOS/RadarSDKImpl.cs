@@ -8,6 +8,11 @@ namespace RadarIO.Xamarin
 {
     public class RadarSDKImpl : RadarSDK
     {
+        public override void Initialize(string publishableKey)
+        {
+            iOS.Binding.Radar.InitializeWithPublishableKey(publishableKey);
+        }
+
         public override Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
             var task = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();

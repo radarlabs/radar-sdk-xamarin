@@ -4,7 +4,7 @@ namespace RadarIO.Xamarin
 {
     public static class RadarSingleton
     {
-        private static Lazy<RadarSDK> instance
+        private static readonly Lazy<RadarSDK> instance
             = new Lazy<RadarSDK>(() => CreateInstance(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         private static RadarSDK CreateInstance()
@@ -16,7 +16,7 @@ namespace RadarIO.Xamarin
 #endif
         }
 
-        public static RadarSDK Instance => instance.Value
+        public static RadarSDK Radar => instance.Value
             ?? throw new NotImplementedException(); // todo: message
     }
 }

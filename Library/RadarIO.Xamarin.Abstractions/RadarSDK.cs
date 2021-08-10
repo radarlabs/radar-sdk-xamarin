@@ -7,6 +7,7 @@ namespace RadarIO.Xamarin
 {
     public abstract class RadarSDK
     {
+        public abstract void Initialize(string publishableKey);
         public abstract Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
     }
 
