@@ -1,5 +1,5 @@
 ﻿using Foundation;
-using RadarIO.Xamarin.iOS.Binding;
+using RadarIO.Xamarin.iOSBinding;
 using System;
 using UIKit;
 

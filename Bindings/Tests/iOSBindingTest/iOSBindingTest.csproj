@@ -135,9 +135,9 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOS.Binding.csproj">
+      <ProjectReference Include="..\..\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
         <Project>{5FB78078-54B6-4051-9657-542C56C8FE74}</Project>
-        <Name>RadarIO.Xamarin.iOS.Binding</Name>
+        <Name>RadarIO.Xamarin.iOSBinding</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

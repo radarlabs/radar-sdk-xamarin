@@ -1,6 +1,6 @@
 ﻿using CoreLocation;
 using Foundation;
-using RadarIO.Xamarin.iOS.Binding;
+using RadarIO.Xamarin.iOSBinding;
 using UIKit;
 
 namespace iOSBindingTest

@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{85978DCB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidBindingTest", "Bindings\Tests\AndroidBindingTest\AndroidBindingTest.csproj", "{24F46F22-0F9D-433C-804C-26414C49E637}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOS.Binding", "Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOS.Binding.csproj", "{5FB78078-54B6-4051-9657-542C56C8FE74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOSBinding", "Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj", "{5FB78078-54B6-4051-9657-542C56C8FE74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSBindingTest", "Bindings\Tests\iOSBindingTest\iOSBindingTest.csproj", "{FB300B1C-CE9B-4441-8D28-928BB8912FE7}"
 EndProject
