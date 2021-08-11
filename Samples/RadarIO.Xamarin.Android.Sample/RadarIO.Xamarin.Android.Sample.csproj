@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{24F46F22-0F9D-433C-804C-26414C49E637}</ProjectGuid>
+    <ProjectGuid>{42D59E00-A003-4E84-A449-5DE707425C74}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{84dd83c5-0fe3-4294-9419-09e7c8ba324f}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndroidBindingTest</RootNamespace>
-    <AssemblyName>AndroidBindingTest</AssemblyName>
+    <RootNamespace>RadarIO.Xamarin.Android.Sample</RootNamespace>
+    <AssemblyName>RadarIO.Xamarin.Android.Sample</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <AndroidApplication>True</AndroidApplication>
@@ -109,9 +109,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.AndroidBinding.csproj">
-      <Project>{9E0ED523-3FA7-482D-ABFD-EA805D3314E6}</Project>
-      <Name>RadarIO.Xamarin.AndroidBinding</Name>
+    <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Android\RadarIO.Xamarin.Android.csproj">
+      <Project>{A58253CF-FE16-41D7-BDAF-E90662E3EB36}</Project>
+      <Name>RadarIO.Xamarin.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Abstractions\RadarIO.Xamarin.Abstractions.csproj">
+      <Project>{E2BF484C-8797-4D2E-9A36-E2F256A602A1}</Project>
+      <Name>RadarIO.Xamarin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -14,7 +14,7 @@ using OpenGLES;
 using Security;
 using UIKit;
 
-namespace RadarIO.Xamarin.iOS.Binding
+namespace RadarIO.Xamarin.iOSBinding
 {
 	[Native]
 	public enum RadarAddressConfidence : long

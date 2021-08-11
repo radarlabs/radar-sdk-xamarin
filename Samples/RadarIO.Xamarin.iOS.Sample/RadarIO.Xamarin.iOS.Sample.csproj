@@ -3,12 +3,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-        <ProjectGuid>{FB300B1C-CE9B-4441-8D28-928BB8912FE7}</ProjectGuid>
+        <ProjectGuid>{B98CAEED-EB8F-48D8-B6BC-E394E9A3762B}</ProjectGuid>
         <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
         <OutputType>Exe</OutputType>
-        <RootNamespace>iOSBindingTest</RootNamespace>
-        <AssemblyName>iOSBindingTest</AssemblyName>
+        <RootNamespace>RadarIO.Xamarin.iOS.Sample</RootNamespace>
+        <AssemblyName>RadarIO.Xamarin.iOS.Sample</AssemblyName>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
         <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
         <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
@@ -135,9 +135,13 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
-        <Project>{5FB78078-54B6-4051-9657-542C56C8FE74}</Project>
-        <Name>RadarIO.Xamarin.iOSBinding</Name>
+      <ProjectReference Include="..\..\Library\RadarIO.Xamarin.iOS\RadarIO.Xamarin.iOS.csproj">
+        <Project>{96A9AE3E-4F49-4201-99B4-132D54C4BCD7}</Project>
+        <Name>RadarIO.Xamarin.iOS</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Abstractions\RadarIO.Xamarin.Abstractions.csproj">
+        <Project>{E2BF484C-8797-4D2E-9A36-E2F256A602A1}</Project>
+        <Name>RadarIO.Xamarin.Abstractions</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

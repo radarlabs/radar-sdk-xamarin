@@ -1,9 +1,11 @@
 ﻿using CoreLocation;
 using Foundation;
-using RadarIO.Xamarin.iOSBinding;
 using UIKit;
+using RadarIO.Xamarin;
 
-namespace iOSBindingTest
+using static RadarIO.Xamarin.RadarSingleton;
+
+namespace RadarIO.Xamarin.iOS.Sample
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
@@ -14,7 +16,7 @@ namespace iOSBindingTest
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            Radar.InitializeWithPublishableKey("prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec");
+            Radar.Initialize("prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec");
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {

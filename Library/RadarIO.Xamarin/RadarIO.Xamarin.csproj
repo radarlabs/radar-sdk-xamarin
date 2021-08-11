@@ -8,4 +8,7 @@
       <DefineConstants>LIBRARY</DefineConstants>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RadarIO.Xamarin.Abstractions\RadarIO.Xamarin.Abstractions.csproj" />
+  </ItemGroup>
 </Project>

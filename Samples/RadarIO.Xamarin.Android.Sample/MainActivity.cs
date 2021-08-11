@@ -3,26 +3,23 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Content.PM;
 using AndroidX.AppCompat.Widget;
 using AndroidX.AppCompat.App;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
-using Android;
-using IO.Radar.Sdk;
-using RadarIO.Xamarin.AndroidBinding;
-using Android.Locations;
-using IO.Radar.Sdk.Model;
-using System.Linq;
-using static RadarIO.Xamarin.AndroidBinding.Radar;
 
-namespace AndroidBindingTest
+using static RadarIO.Xamarin.RadarSingleton;
+
+namespace RadarIO.Xamarin.Android.Sample
 {
+    using Xamarin = global::Xamarin;
+    using global::Android;
+
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         private const string RADAR_KEY = "prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec "; // "ENTER KEY HERE";
-
-        private AppCompatTextView ResultView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,8 +33,6 @@ namespace AndroidBindingTest
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-            ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
-
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
             {
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation, Manifest.Permission.AccessBackgroundLocation }, 0);
@@ -47,7 +42,7 @@ namespace AndroidBindingTest
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
 
-            Radar.Initialize(this, RADAR_KEY);
+            Radar.Initialize(RADAR_KEY);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -69,39 +64,16 @@ namespace AndroidBindingTest
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
-            ResultView.Text = "Loading...";
-            Radar.TrackOnce(new RadarTrackCallback((status, location, events, user) =>
-            {
-                RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location}\nEvents: {string.Join('\n', events.Select(e => e.ToJson()))}\nUser: {user}");
-            }));
+            View view = (View)sender;
+            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+                .SetAction("Action", (View.IOnClickListener)null).Show();
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-	}
-
-    public class RadarTrackCallback : Java.Lang.Object, IRadarTrackCallback
-    {
-        private Action<RadarStatus, Location, RadarEvent[], RadarUser> handler;
-
-        public RadarTrackCallback(Action<RadarStatus, Location, RadarEvent[], RadarUser> handler)
-        {
-            this.handler = handler;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-
-            handler = null;
-        }
-
-        public void OnComplete(RadarStatus status, Location location, RadarEvent[] events, RadarUser user)
-            => handler(status, location, events, user);
     }
 }

@@ -3,7 +3,7 @@ using CoreLocation;
 using Foundation;
 using ObjCRuntime;
 
-namespace RadarIO.Xamarin.iOS.Binding
+namespace RadarIO.Xamarin.iOSBinding
 {
 	// @interface RadarCoordinate : NSObject
 	[BaseType(typeof(NSObject))]
