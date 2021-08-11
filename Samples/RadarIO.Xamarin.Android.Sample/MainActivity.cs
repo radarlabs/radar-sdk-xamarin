@@ -15,6 +15,8 @@ namespace RadarIO.Xamarin.Android.Sample
 {
     using Xamarin = global::Xamarin;
     using global::Android;
+    using System.Threading.Tasks;
+    using System.Linq;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -64,9 +66,13 @@ namespace RadarIO.Xamarin.Android.Sample
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View)sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (View.IOnClickListener)null).Show();
+            var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
+            ResultView.Text = "Loading...";
+            Task.Run(async () =>
+            {
+                var (status, location, events, user) = await Radar.TrackOnce();
+                RunOnUiThread(() => ResultView.Text = $"Status: {status}\n"); //Location: {location}\nEvents: {string.Join('\n', events.Select(e => e.Id))}\nUser: {user}");
+            });
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
