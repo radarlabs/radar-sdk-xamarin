@@ -1,5 +1,18 @@
-﻿using System;
+using System;
+using System.Runtime.InteropServices;
+using CoreFoundation;
+using CoreGraphics;
+using CoreLocation;
+using CoreText;
+using CoreVideo;
+using Foundation;
+using IOSurface;
+using ImageIO;
+using Metal;
 using ObjCRuntime;
+using OpenGLES;
+using Security;
+using UIKit;
 
 namespace RadarIO.Xamarin.iOS.Binding
 {
