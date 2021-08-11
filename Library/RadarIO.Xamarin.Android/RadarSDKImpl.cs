@@ -13,7 +13,9 @@ namespace RadarIO.Xamarin
 
         public override Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
-            throw new NotImplementedException();
+            var handler = new TrackCallbackHandler();
+            AndroidBinding.Radar.TrackOnce(handler);
+            return handler.Result;
         }
     }
 }
