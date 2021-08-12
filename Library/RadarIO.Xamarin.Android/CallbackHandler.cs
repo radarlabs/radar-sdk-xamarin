@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Android.Locations;
-using RadarIO.Xamarin.AndroidBinding;
 
 namespace RadarIO.Xamarin
 {
@@ -16,10 +16,9 @@ namespace RadarIO.Xamarin
         : CallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
-        public void OnComplete(Radar.RadarStatus status, Location location, IO.Radar.Sdk.Model.RadarEvent[] events, IO.Radar.Sdk.Model.RadarUser user)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
-            // todo
-            taskSource.SetResult((status.ToSDK(), null, null, null));
+            taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
         }
     }
 }

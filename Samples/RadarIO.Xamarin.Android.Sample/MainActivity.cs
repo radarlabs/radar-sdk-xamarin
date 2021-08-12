@@ -71,7 +71,7 @@ namespace RadarIO.Xamarin.Android.Sample
             Task.Run(async () =>
             {
                 var (status, location, events, user) = await Radar.TrackOnce();
-                RunOnUiThread(() => ResultView.Text = $"Status: {status}\n"); //Location: {location}\nEvents: {string.Join('\n', events.Select(e => e.Id))}\nUser: {user}");
+                RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location.Latitude} {location.Longitude}\nEvents: {string.Join('\n', events.Select(e => e.Id))}\nUser: {user.UserId}");
             });
         }
 

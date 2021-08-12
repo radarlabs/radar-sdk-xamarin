@@ -35,8 +35,8 @@ namespace RadarIO.Xamarin
                 Trip = ev.Trip?.ToSDK(),
                 AlternatePlaces = ev.AlternatePlaces?.Select(ToSDK),
                 VerifiedPlace  = ev.VerifiedPlace?.ToSDK(),
-                Verification = ev.Verification.ToSDK(),
-                Confidence = ev.Confidence.ToSDK(),
+                Verification = (RadarEventVerification)ev.Verification,
+                Confidence = (RadarEventConfidence)ev.Confidence,
                 Duration = ev.Duration,
                 Location = ev.Location?.ToSDK()
             };
@@ -63,13 +63,10 @@ namespace RadarIO.Xamarin
                 NearbyPlaceChains = user.NearbyPlaceChains?.Select(ToSDK),
                 Segments = user.Segments?.Select(ToSDK),
                 TopChains = user.TopChains?.Select(ToSDK),
-                Source = user.Source.ToSDK(),
+                Source = (RadarLocationSource)user.Source,
                 Proxy = user.Proxy,
                 Trip = user.Trip?.ToSDK()
             };
-
-        public static RadarLocationSource ToSDK(this iOSBinding.RadarLocationSource source)
-            => (RadarLocationSource)source;
 
         public static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
             => new RadarSegment
@@ -98,24 +95,15 @@ namespace RadarIO.Xamarin
         public static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
             => new RadarUserInsightsLocation
             {
-                Type = location.Type.ToSDK(),
+                Type = (RadarUserInsightsLocationType)location.Type,
                 Location = location.Location?.ToSDK(),
-                Confidence = location.Confidence.ToSDK(),
+                Confidence = (RadarUserInsightsLocationConfidence)location.Confidence,
                 UpdatedAt = (DateTime?)location.UpdatedAt,
                 Country = location.Country?.ToSDK(),
                 State = location.State?.ToSDK(),
                 DMA = location.Dma?.ToSDK(),
                 PostalCode = location.PostalCode?.ToSDK(),
             };
-
-        public static RadarUserInsightsLocationType ToSDK(this iOSBinding.RadarUserInsightsLocationType type)
-            => (RadarUserInsightsLocationType)type;
-
-        public static RadarUserInsightsLocationConfidence ToSDK(this iOSBinding.RadarUserInsightsLocationConfidence confidence)
-            => (RadarUserInsightsLocationConfidence)confidence;
-
-        public static RadarEventConfidence ToSDK(this iOSBinding.RadarEventConfidence confidence)
-            => (RadarEventConfidence)confidence;
 
         public static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
             => new RadarTrip
@@ -126,17 +114,11 @@ namespace RadarIO.Xamarin
                 DestinationGeofenceTag = trip.DestinationGeofenceTag,
                 DestinationGeofenceExternalId = trip.DestinationGeofenceExternalId,
                 DestinationLocation = trip.DestinationLocation?.ToSDK(),
-                Mode = trip.Mode.ToSDK(),
+                Mode = (RadarRouteMode)trip.Mode,
                 EtaDistance = trip.EtaDistance,
                 EtaDuration = trip.EtaDuration,
-                Status = trip.Status.ToSDK()
+                Status = (RadarTripStatus)trip.Status
             };
-
-        public static RadarRouteMode ToSDK(this iOSBinding.RadarRouteMode mode)
-            => (RadarRouteMode)mode;
-
-        public static RadarTripStatus ToSDK(this iOSBinding.RadarTripStatus status)
-            => (RadarTripStatus)status;
 
         public static RadarRegion ToSDK(this iOSBinding.RadarRegion region)
             => new RadarRegion
@@ -226,9 +208,6 @@ namespace RadarIO.Xamarin
                 ExternalId = chain.ExternalId,
                 Metadata = chain.Metadata?.ToSDK()
             };
-
-        public static RadarEventVerification ToSDK(this iOSBinding.RadarEventVerification verification)
-            => (RadarEventVerification)verification;
 
         public static JSONObject ToSDK(this Foundation.NSDictionary metadata)
             => (JSONObject)metadata.ToDictionary(
