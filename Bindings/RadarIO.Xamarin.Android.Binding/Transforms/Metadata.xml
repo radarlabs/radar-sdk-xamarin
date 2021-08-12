@@ -7,4 +7,5 @@
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
   -->
     <attr path="/api/package[@name='io.radar.sdk']" name="managedName">RadarIO.Xamarin.AndroidBinding</attr>
+    <attr path="/api/package[@name='io.radar.sdk.model']" name="managedName">RadarIO.Xamarin.AndroidBinding</attr>
 </metadata>
