@@ -24,7 +24,7 @@ namespace RadarIO.Xamarin.iOS.Sample
                 {
                     FireDate = NSDate.Now,
                     AlertAction = "View Alert",
-                    AlertBody = $"Status: {status}\nLocation: {location.Latitude} {location.Longitude}\nEvents: {string.Join('\n', events.Select(ev => ev.Id))}\nUser: {user.UserId}",
+                    AlertBody = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
                     ApplicationIconBadgeNumber = 1,
                     SoundName = UILocalNotification.DefaultSoundName
                 };
