@@ -253,13 +253,13 @@ namespace RadarIO.Xamarin
                  options.DesiredMovingUpdateInterval,
                  options.FastestMovingUpdateInterval,
                  options.DesiredSyncInterval,
-                 options.DesiredAccuracy.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy>(),
+                 AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy.Values()[(int)options.DesiredAccuracy],
                  options.StopDuration,
                  options.StopDistance,
                  options.StartTrackingAfter?.ToBinding(),
                  options.StopTrackingAfter?.ToBinding(),
-                 options.Replay.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsReplay>(),
-                 options.Sync.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsSync>(),
+                 AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsReplay.Values()[(int)options.Replay],
+                 AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsSync.Values()[(int)options.Sync],
                  options.UseStoppedGeofence,
                  options.StoppedGeofenceRadius,
                  options.UseMovingGeofence,
@@ -293,7 +293,7 @@ namespace RadarIO.Xamarin
         private static Java.Util.Date ToBinding(this DateTime date)
             => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());
 
-        private static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
-            => (T)Java.Lang.Enum.ValueOf(Java.Lang.Class.FromType(typeof(T)), e.ToString().ToUpper());
+        //private static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
+        //    => (T)Java.Lang.Enum.ValueOf(Java.Lang.Class.FromType(typeof(T)), e.ToString().ToUpper());
     }
 }
