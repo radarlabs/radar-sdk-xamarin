@@ -212,27 +212,27 @@ namespace RadarIO.Xamarin
         public static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
             => new RadarTrackingOptions
             {
-                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
-                 FastestStoppedUpdateInterval = options.FastestStoppedUpdateInterval,
-                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
-                 FastestMovingUpdateInterval = options.FastestMovingUpdateInterval,
-                 DesiredSyncInterval = options.DesiredSyncInterval,
-                 DesiredAccuracy = (RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy.Ordinal(),
-                 StopDuration = options.StopDuration,
-                 StopDistance = options.StopDistance,
-                 StartTrackingAfter = options.StartTrackingAfter?.ToSDK(),
-                 StopTrackingAfter = options.StopTrackingAfter?.ToSDK(),
-                 Replay = (RadarTrackingOptionsReplay)options.Replay.Ordinal(),
-                 Sync = (RadarTrackingOptionsSync)options.Sync.Ordinal(),
-                 UseStoppedGeofence = options.UseStoppedGeofence,
-                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,
-                 UseMovingGeofence = options.UseMovingGeofence,
-                 MovingGeofenceRadius = options.MovingGeofenceRadius,
-                 SyncGeofences = options.SyncGeofences,
-                 SyncGeofencesLimit = options.SyncGeofencesLimit,
-                 ForegroundService = options.ForegroundService?.ToSDK(),
+                DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
+                FastestStoppedUpdateInterval = options.FastestStoppedUpdateInterval,
+                DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
+                FastestMovingUpdateInterval = options.FastestMovingUpdateInterval,
+                DesiredSyncInterval = options.DesiredSyncInterval,
+                DesiredAccuracy = (RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy.Ordinal(),
+                StopDuration = options.StopDuration,
+                StopDistance = options.StopDistance,
+                StartTrackingAfter = options.StartTrackingAfter?.ToSDK(),
+                StopTrackingAfter = options.StopTrackingAfter?.ToSDK(),
+                Replay = (RadarTrackingOptionsReplay)options.Replay.Ordinal(),
+                Sync = (RadarTrackingOptionsSync)options.Sync.Ordinal(),
+                UseStoppedGeofence = options.UseStoppedGeofence,
+                StoppedGeofenceRadius = options.StoppedGeofenceRadius,
+                UseMovingGeofence = options.UseMovingGeofence,
+                MovingGeofenceRadius = options.MovingGeofenceRadius,
+                SyncGeofences = options.SyncGeofences,
+                SyncGeofencesLimit = options.SyncGeofencesLimit,
+                ForegroundService = options.ForegroundService?.ToSDK(),
                 Beacons = options.Beacons
-                };
+            };
 
         private static RadarTrackingOptionsForegroundService ToSDK(this AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService service)
             => new RadarTrackingOptionsForegroundService

@@ -45,7 +45,7 @@ namespace RadarIO.Xamarin.Android.Sample
             }
 
             Radar.Initialize(RADAR_KEY);
-            Radar.StartTracking(RadarTrackingOptions.Responsive);
+            Radar.StopTracking();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -74,6 +74,8 @@ namespace RadarIO.Xamarin.Android.Sample
                 var (status, location, events, user) = await Radar.TrackOnce();
                 RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");
             });
+
+            Radar.StartTracking(RadarTrackingOptions.Continuous);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

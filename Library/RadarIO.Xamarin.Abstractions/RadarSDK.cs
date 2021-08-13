@@ -35,9 +35,9 @@ namespace RadarIO.Xamarin
 
     public enum RadarTrackingOptionsSync
     {
-        All,
+        None,
         StopsAndExits,
-        None
+        All
     }
 
     public enum RadarTrackingOptionsReplay
@@ -50,7 +50,8 @@ namespace RadarIO.Xamarin
     {
         High,
         Medium,
-        Low
+        Low,
+        None
     }
 
     public class RadarUser
