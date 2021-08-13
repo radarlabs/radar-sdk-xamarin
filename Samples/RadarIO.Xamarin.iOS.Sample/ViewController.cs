@@ -16,6 +16,7 @@ namespace RadarIO.Xamarin.iOS.Sample
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            Radar.StartTracking(RadarTrackingOptions.Continuous);
             TrackOnce.TouchUpInside += async (sender, e) =>
             {
                 var (status, location, events, user) = await Radar.TrackOnce();
@@ -32,13 +33,6 @@ namespace RadarIO.Xamarin.iOS.Sample
                 // schedule it
                 UIApplication.SharedApplication.ScheduleLocalNotification(notification);
             };
-            // Perform any additional setup after loading the view, typically from a nib.
-        }
-
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
         }
     }
 }

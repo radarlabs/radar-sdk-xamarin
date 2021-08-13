@@ -9,6 +9,48 @@ namespace RadarIO.Xamarin
     {
         public abstract void Initialize(string publishableKey);
         public abstract Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
+        public abstract void StartTracking(RadarTrackingOptions options);
+        public abstract void StopTracking();
+    }
+
+    public partial class RadarTrackingOptions
+    {
+        public int DesiredStoppedUpdateInterval;
+        public int DesiredMovingUpdateInterval;
+        public int DesiredSyncInterval;
+        public RadarTrackingOptionsDesiredAccuracy DesiredAccuracy;
+        public int StopDuration;
+        public int StopDistance;
+        public DateTime? StartTrackingAfter;
+        public DateTime? StopTrackingAfter;
+        public RadarTrackingOptionsReplay Replay;
+        public RadarTrackingOptionsSync Sync;
+        public bool UseStoppedGeofence;
+        public int StoppedGeofenceRadius;
+        public bool UseMovingGeofence;
+        public int MovingGeofenceRadius;
+        public bool SyncGeofences;
+        public bool Beacons;
+    }
+
+    public enum RadarTrackingOptionsSync
+    {
+        All,
+        StopsAndExits,
+        None
+    }
+
+    public enum RadarTrackingOptionsReplay
+    {
+        Stops,
+        None
+    }
+
+    public enum RadarTrackingOptionsDesiredAccuracy
+    {
+        High,
+        Medium,
+        Low
     }
 
     public class RadarUser
@@ -246,34 +288,34 @@ namespace RadarIO.Xamarin
     public enum RadarEventType
     {
         Unknown,
-		UserEnteredGeofence,
-		UserExitedGeofence,
-		UserEnteredHome,
-		UserExitedHome,
-		UserEnteredOffice,
-		UserExitedOffice,
-		UserStartedTraveling,
-		UserStoppedTraveling,
-		UserEnteredPlace,
-		UserExitedPlace,
-		UserNearbyPlaceChain,
-		UserEnteredRegionCountry,
-		UserExitedRegionCountry,
-		UserEnteredRegionState,
-		UserExitedRegionState,
-		UserEnteredRegionDMA,
-		UserExitedRegionDMA,
-		UserStartedCommuting,
-		UserStoppedCommuting,
-		UserStartedTrip,
-		UserUpdatedTrip,
-		UserApproachingTripDestination,
-		UserArrivedAtTripDestination,
-		UserStoppedTrip,
-		UserEnteredBeacon,
-		UserExitedBeacon,
-		UserEnteredRegionPostalCode,
-		UserExitedRegionPostalCode
+        UserEnteredGeofence,
+        UserExitedGeofence,
+        UserEnteredHome,
+        UserExitedHome,
+        UserEnteredOffice,
+        UserExitedOffice,
+        UserStartedTraveling,
+        UserStoppedTraveling,
+        UserEnteredPlace,
+        UserExitedPlace,
+        UserNearbyPlaceChain,
+        UserEnteredRegionCountry,
+        UserExitedRegionCountry,
+        UserEnteredRegionState,
+        UserExitedRegionState,
+        UserEnteredRegionDMA,
+        UserExitedRegionDMA,
+        UserStartedCommuting,
+        UserStoppedCommuting,
+        UserStartedTrip,
+        UserUpdatedTrip,
+        UserApproachingTripDestination,
+        UserArrivedAtTripDestination,
+        UserStoppedTrip,
+        UserEnteredBeacon,
+        UserExitedBeacon,
+        UserEnteredRegionPostalCode,
+        UserExitedRegionPostalCode
     }
 
     public class RadarLocation

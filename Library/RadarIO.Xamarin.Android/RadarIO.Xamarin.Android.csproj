@@ -54,6 +54,9 @@
     <Compile Include="..\RadarIO.Xamarin\RadarSingleton.cs">
       <Link>RadarSingleton.cs</Link>
     </Compile>
+    <Compile Include="..\RadarIO.Xamarin.Abstractions\RadarSDK.cs">
+      <Link>RadarSDK.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -68,10 +71,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RadarIO.Xamarin.Abstractions\RadarIO.Xamarin.Abstractions.csproj">
-      <Project>{E2BF484C-8797-4D2E-9A36-E2F256A602A1}</Project>
-      <Name>RadarIO.Xamarin.Abstractions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.AndroidBinding.csproj">
       <Project>{9E0ED523-3FA7-482D-ABFD-EA805D3314E6}</Project>
       <Name>RadarIO.Xamarin.AndroidBinding</Name>

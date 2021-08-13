@@ -45,6 +45,7 @@ namespace RadarIO.Xamarin.Android.Sample
             }
 
             Radar.Initialize(RADAR_KEY);
+            Radar.StartTracking(RadarTrackingOptions.Responsive);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

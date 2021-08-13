@@ -209,6 +209,67 @@ namespace RadarIO.Xamarin
                 Metadata = chain.ToJson()?.ToSDK()
             };
 
+        public static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
+            => new RadarTrackingOptions
+            {
+                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
+                 FastestStoppedUpdateInterval = options.FastestStoppedUpdateInterval,
+                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
+                 FastestMovingUpdateInterval = options.FastestMovingUpdateInterval,
+                 DesiredSyncInterval = options.DesiredSyncInterval,
+                 DesiredAccuracy = (RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy.Ordinal(),
+                 StopDuration = options.StopDuration,
+                 StopDistance = options.StopDistance,
+                 StartTrackingAfter = options.StartTrackingAfter?.ToSDK(),
+                 StopTrackingAfter = options.StopTrackingAfter?.ToSDK(),
+                 Replay = (RadarTrackingOptionsReplay)options.Replay.Ordinal(),
+                 Sync = (RadarTrackingOptionsSync)options.Sync.Ordinal(),
+                 UseStoppedGeofence = options.UseStoppedGeofence,
+                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,
+                 UseMovingGeofence = options.UseMovingGeofence,
+                 MovingGeofenceRadius = options.MovingGeofenceRadius,
+                 SyncGeofences = options.SyncGeofences,
+                 SyncGeofencesLimit = options.SyncGeofencesLimit,
+                 ForegroundService = options.ForegroundService?.ToSDK(),
+                Beacons = options.Beacons
+                };
+
+        private static RadarTrackingOptionsForegroundService ToSDK(this AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService service)
+            => new RadarTrackingOptionsForegroundService
+            {
+                Text = service.Text,
+                Title = service.Title,
+                Icon = (int)service.Icon,
+                UpdatesOnly = service.UpdatesOnly,
+                Activity = service.Activity,
+                Importance = (int)service.Importance,
+                Id = (int)service.Id
+            };
+
+        public static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
+            => new AndroidBinding.RadarTrackingOptions(
+                 options.DesiredStoppedUpdateInterval,
+                 options.FastestStoppedUpdateInterval,
+                 options.DesiredMovingUpdateInterval,
+                 options.FastestMovingUpdateInterval,
+                 options.DesiredSyncInterval,
+                 options.DesiredAccuracy.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy>(),
+                 options.StopDuration,
+                 options.StopDistance,
+                 options.StartTrackingAfter?.ToBinding(),
+                 options.StopTrackingAfter?.ToBinding(),
+                 options.Replay.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsReplay>(),
+                 options.Sync.ToBinding<AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsSync>(),
+                 options.UseStoppedGeofence,
+                 options.StoppedGeofenceRadius,
+                 options.UseMovingGeofence,
+                 options.MovingGeofenceRadius,
+                 options.SyncGeofences,
+                 options.SyncGeofencesLimit,
+                 options.ForegroundService?.ToBinding(),
+                 options.Beacons
+                );
+
         private static DateTime ToSDK(this Java.Util.Date date)
             => date.Time.ToDateTime();
 
@@ -217,5 +278,22 @@ namespace RadarIO.Xamarin
 
         private static JSONObject ToSDK(this Org.Json.JSONObject obj)
             => null; // todo
+
+        private static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService ToBinding(this RadarTrackingOptionsForegroundService service)
+            => new AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService(
+                    service.Text,
+                    service.Title,
+                    new Java.Lang.Integer(service.Icon),
+                    service.UpdatesOnly,
+                    service.Activity,
+                    new Java.Lang.Integer(service.Importance),
+                    new Java.Lang.Integer(service.Id)
+                );
+
+        private static Java.Util.Date ToBinding(this DateTime date)
+            => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());
+
+        private static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
+            => (T)Java.Lang.Enum.ValueOf(Java.Lang.Class.FromType(typeof(T)), e.ToString().ToUpper());
     }
 }

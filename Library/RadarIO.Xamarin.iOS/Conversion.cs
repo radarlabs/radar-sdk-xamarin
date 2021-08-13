@@ -34,7 +34,7 @@ namespace RadarIO.Xamarin
                 Beacon = ev.Beacon?.ToSDK(),
                 Trip = ev.Trip?.ToSDK(),
                 AlternatePlaces = ev.AlternatePlaces?.Select(ToSDK),
-                VerifiedPlace  = ev.VerifiedPlace?.ToSDK(),
+                VerifiedPlace = ev.VerifiedPlace?.ToSDK(),
                 Verification = (RadarEventVerification)ev.Verification,
                 Confidence = (RadarEventConfidence)ev.Confidence,
                 Duration = ev.Duration,
@@ -212,5 +212,41 @@ namespace RadarIO.Xamarin
         public static JSONObject ToSDK(this Foundation.NSDictionary metadata)
             => (JSONObject)metadata.ToDictionary(
                 m => m.Key.ToString(), m => m.Value.ToString());
+
+        public static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
+            => new RadarTrackingOptions
+            {
+                DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
+                DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
+                DesiredSyncInterval = options.DesiredSyncInterval,
+                StopDuration = options.StopDuration,
+                StopDistance = options.StopDistance,
+                UseStoppedGeofence = options.UseStoppedGeofence,
+                StoppedGeofenceRadius = options.StoppedGeofenceRadius,
+                UseMovingGeofence = options.UseMovingGeofence,
+                MovingGeofenceRadius = options.MovingGeofenceRadius,
+                SyncGeofences = options.SyncGeofences,
+                ShowBlueBar = options.ShowBlueBar,
+                UseVisits = options.UseVisits,
+                UseSignificantLocationChanges = options.UseSignificantLocationChanges
+            };
+
+        public static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
+            => new iOSBinding.RadarTrackingOptions
+            {
+                DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
+                DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
+                DesiredSyncInterval = options.DesiredSyncInterval,
+                StopDuration = options.StopDuration,
+                StopDistance = options.StopDistance,
+                UseStoppedGeofence = options.UseStoppedGeofence,
+                StoppedGeofenceRadius = options.StoppedGeofenceRadius,
+                UseMovingGeofence = options.UseMovingGeofence,
+                MovingGeofenceRadius = options.MovingGeofenceRadius,
+                SyncGeofences = options.SyncGeofences,
+                ShowBlueBar = options.ShowBlueBar,
+                UseVisits = options.UseVisits,
+                UseSignificantLocationChanges = options.UseSignificantLocationChanges
+            };
     }
 }

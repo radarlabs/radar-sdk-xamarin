@@ -22,5 +22,26 @@ namespace RadarIO.Xamarin
             });
             return task.Task;
         }
+
+        public override void StartTracking(RadarTrackingOptions options)
+        {
+            iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
+        }
+
+        public override void StopTracking()
+        {
+            iOSBinding.Radar.StopTracking();
+        }
+    }
+
+    public partial class RadarTrackingOptions
+    {
+        public bool ShowBlueBar;
+        public bool UseVisits;
+        public bool UseSignificantLocationChanges;
+        public static RadarTrackingOptions Continuous
+            => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
+        public static RadarTrackingOptions Responsive
+            => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
     }
 }
