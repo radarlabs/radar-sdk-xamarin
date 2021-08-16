@@ -21,4 +21,14 @@ namespace RadarIO.Xamarin
             taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
         }
     }
+
+    public class TripCallbackHandler
+        : CallbackHandler<RadarStatus>
+        , AndroidBinding.Radar.IRadarTripCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status)
+        {
+            taskSource.SetResult(status.ToSDK());
+        }
+    }
 }

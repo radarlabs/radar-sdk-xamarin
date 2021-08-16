@@ -15,12 +15,12 @@ namespace RadarIO.Xamarin
 
         public override Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
-            var task = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();
             iOSBinding.Radar.TrackOnceWithCompletionHandler((status, location, ev, user) =>
             {
-                task.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+                src.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
             });
-            return task.Task;
+            return src.Task;
         }
 
         public override void StartTracking(RadarTrackingOptions options)
@@ -31,6 +31,36 @@ namespace RadarIO.Xamarin
         public override void StopTracking()
         {
             iOSBinding.Radar.StopTracking();
+        }
+
+        public override Task<RadarStatus> StartTrip(RadarTripOptions options)
+        {
+            var src = new TaskCompletionSource<RadarStatus>();
+            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), status =>
+            {
+                src.SetResult(status.ToSDK());
+            });
+            return src.Task;
+        }
+
+        public override Task<RadarStatus> CancelTrip()
+        {
+            var src = new TaskCompletionSource<RadarStatus>();
+            iOSBinding.Radar.CancelTripWithCompletionHandler(status =>
+            {
+                src.SetResult(status.ToSDK());
+            });
+            return src.Task;
+        }
+
+        public override Task<RadarStatus> CompleteTrip()
+        {
+            var src = new TaskCompletionSource<RadarStatus>();
+            iOSBinding.Radar.CompleteTripWithCompletionHandler(status =>
+            {
+                src.SetResult(status.ToSDK());
+            });
+            return src.Task;
         }
     }
 
@@ -43,5 +73,7 @@ namespace RadarIO.Xamarin
             => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
         public static RadarTrackingOptions Responsive
             => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
+        public static RadarTrackingOptions Efficient
+            => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
     }
 }

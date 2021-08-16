@@ -231,22 +231,43 @@ namespace RadarIO.Xamarin
                 UseSignificantLocationChanges = options.UseSignificantLocationChanges
             };
 
+        public static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
+            => new iOSBinding.RadarTripOptions
+            {
+                ExternalId = options.ExternalId,
+                DestinationGeofenceTag = options.DestinationGeofenceTag,
+                DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
+                Mode = (iOSBinding.RadarRouteMode)options.Mode,
+                Metadata = options.Metadata?.ToBinding()
+            };
+
         public static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new iOSBinding.RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
                 DesiredSyncInterval = options.DesiredSyncInterval,
+                DesiredAccuracy = (iOSBinding.RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy,
                 StopDuration = options.StopDuration,
                 StopDistance = options.StopDistance,
+                StartTrackingAfter = (Foundation.NSDate)options.StartTrackingAfter,
+                StopTrackingAfter = (Foundation.NSDate)options.StopTrackingAfter,
+                Replay = (iOSBinding.RadarTrackingOptionsReplay)options.Replay,
+                Sync = (iOSBinding.RadarTrackingOptionsSync)options.Sync,
+                ShowBlueBar = options.ShowBlueBar,
                 UseStoppedGeofence = options.UseStoppedGeofence,
                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,
                 UseMovingGeofence = options.UseMovingGeofence,
                 MovingGeofenceRadius = options.MovingGeofenceRadius,
                 SyncGeofences = options.SyncGeofences,
-                ShowBlueBar = options.ShowBlueBar,
                 UseVisits = options.UseVisits,
-                UseSignificantLocationChanges = options.UseSignificantLocationChanges
+                UseSignificantLocationChanges = options.UseSignificantLocationChanges,
+                Beacons = options.Beacons
             };
+
+        internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
+            => Foundation.NSDictionary.FromObjectsAndKeys(
+                metadata.Keys.Select(Foundation.NSObject.FromObject).ToArray(),
+                metadata.Values.Select(Foundation.NSObject.FromObject).ToArray());
     }
 }

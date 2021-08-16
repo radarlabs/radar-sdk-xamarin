@@ -65,17 +65,37 @@ namespace RadarIO.Xamarin.Android.Sample
             return base.OnOptionsItemSelected(item);
         }
 
+        private bool toggle = false;
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
             var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
-            ResultView.Text = "Loading...";
-            Task.Run(async () =>
-            {
-                var (status, location, events, user) = await Radar.TrackOnce();
-                RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");
-            });
+            //ResultView.Text = "Loading...";
+            //Task.Run(async () =>
+            //{
+            //    var (status, location, events, user) = await Radar.TrackOnce();
+            //    RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");
+            //});
 
-            Radar.StartTracking(RadarTrackingOptions.Continuous);
+            toggle = !toggle;
+            if (toggle)
+            {
+                RunOnUiThread(() => ResultView.Text = "Started trip");
+                Radar.StartTrip(new RadarTripOptions
+                {
+                    ExternalId = "999",
+                    DestinationGeofenceTag = "tag",
+                    DestinationGeofenceExternalId = "777",
+                    Mode = RadarRouteMode.Car
+                });
+                Radar.StartTracking(RadarTrackingOptions.Continuous);
+            }
+            else
+            {
+                RunOnUiThread(() => ResultView.Text = "Completed trip");
+                Radar.CompleteTrip();
+                Radar.StopTracking();
+            }
+
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

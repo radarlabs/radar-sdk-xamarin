@@ -11,6 +11,18 @@ namespace RadarIO.Xamarin
         public abstract Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
         public abstract void StartTracking(RadarTrackingOptions options);
         public abstract void StopTracking();
+        public abstract Task<RadarStatus> StartTrip(RadarTripOptions options);
+        public abstract Task<RadarStatus> CancelTrip();
+        public abstract Task<RadarStatus> CompleteTrip();
+    }
+
+    public class RadarTripOptions
+    {
+        public string ExternalId;
+        public string DestinationGeofenceTag;
+        public string DestinationGeofenceExternalId;
+        public RadarRouteMode Mode;
+        public JSONObject Metadata;
     }
 
     public partial class RadarTrackingOptions

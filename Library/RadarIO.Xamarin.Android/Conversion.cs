@@ -246,6 +246,15 @@ namespace RadarIO.Xamarin
                 Id = (int)service.Id
             };
 
+        public static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
+            => new AndroidBinding.RadarTripOptions(
+                options.ExternalId,
+                options.Metadata?.ToBinding(),
+                options.DestinationGeofenceTag,
+                options.DestinationGeofenceExternalId,
+                AndroidBinding.Radar.RadarRouteMode.Values()[(int)options.Mode]
+            );
+
         public static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new AndroidBinding.RadarTrackingOptions(
                  options.DesiredStoppedUpdateInterval,
@@ -277,6 +286,9 @@ namespace RadarIO.Xamarin
             => new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(time);
 
         private static JSONObject ToSDK(this Org.Json.JSONObject obj)
+            => null; // todo
+
+        private static Org.Json.JSONObject ToBinding(this JSONObject obj)
             => null; // todo
 
         private static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService ToBinding(this RadarTrackingOptionsForegroundService service)

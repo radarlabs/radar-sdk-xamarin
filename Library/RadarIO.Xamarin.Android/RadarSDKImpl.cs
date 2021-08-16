@@ -27,6 +27,27 @@ namespace RadarIO.Xamarin
         {
             AndroidBinding.Radar.StopTracking();
         }
+
+        public override Task<RadarStatus> StartTrip(RadarTripOptions options)
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.StartTrip(options.ToBinding(), handler);
+            return handler.Result;
+        }
+
+        public override Task<RadarStatus> CancelTrip()
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.CancelTrip(handler);
+            return handler.Result;
+        }
+
+        public override Task<RadarStatus> CompleteTrip()
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.CompleteTrip(handler);
+            return handler.Result;
+        }
     }
 
     public partial class RadarTrackingOptions
@@ -39,6 +60,8 @@ namespace RadarIO.Xamarin
             => AndroidBinding.RadarTrackingOptions.Responsive.ToSDK();
         public static RadarTrackingOptions Continuous
             => AndroidBinding.RadarTrackingOptions.Continuous.ToSDK();
+        public static RadarTrackingOptions Efficient
+            => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
     }
 
     public class RadarTrackingOptionsForegroundService
