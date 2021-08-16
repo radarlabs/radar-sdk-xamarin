@@ -120,11 +120,11 @@ namespace RadarIO.Xamarin
     [Flags]
     public enum RadarRouteMode
     {
-        Foot = 1,
-        Bike = 2,
-        Car = 4,
-        Truck = 8,
-        Motorbike = 16
+        Foot,
+        Bike,
+        Car,
+        Truck,
+        Motorbike
     }
 
     public enum RadarLocationSource
