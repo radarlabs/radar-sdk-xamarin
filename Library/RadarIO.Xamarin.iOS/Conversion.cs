@@ -211,7 +211,18 @@ namespace RadarIO.Xamarin
 
         public static JSONObject ToSDK(this Foundation.NSDictionary metadata)
             => (JSONObject)metadata.ToDictionary(
-                m => m.Key.ToString(), m => m.Value.ToString());
+                m => m.Key.ToString(), m => m.Value?.ToSDK());
+
+        private static object ToSDK(this Foundation.NSObject obj)
+        {
+            bool boolRes;
+            if (bool.TryParse(obj.ToString(), out boolRes))
+                return boolRes;
+            int intRes;
+            if (int.TryParse(obj.ToString(), out intRes))
+                return intRes;
+            return obj.ToString();
+        }
 
         public static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
             => new RadarTrackingOptions
@@ -237,7 +248,7 @@ namespace RadarIO.Xamarin
                 ExternalId = options.ExternalId,
                 DestinationGeofenceTag = options.DestinationGeofenceTag,
                 DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
-                Mode = (iOSBinding.RadarRouteMode)options.Mode,
+                Mode = (iOSBinding.RadarRouteMode)(Math.Pow(2, (double)options.Mode)),
                 Metadata = options.Metadata?.ToBinding()
             };
 
@@ -266,8 +277,9 @@ namespace RadarIO.Xamarin
             };
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
-            => Foundation.NSDictionary.FromObjectsAndKeys(
-                metadata.Keys.Select(Foundation.NSObject.FromObject).ToArray(),
-                metadata.Values.Select(Foundation.NSObject.FromObject).ToArray());
+            => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
+                metadata.Values.ToArray(),
+                metadata.Keys.ToArray(),
+                metadata.Count);
     }
 }

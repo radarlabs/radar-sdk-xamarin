@@ -33,7 +33,7 @@ namespace RadarIO.Xamarin.Android.Sample
             SetSupportActionBar(toolbar);
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            fab.Click += (_, __) => FabOnClick();
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
             {
@@ -66,7 +66,7 @@ namespace RadarIO.Xamarin.Android.Sample
         }
 
         private bool toggle = false;
-        private void FabOnClick(object sender, EventArgs eventArgs)
+        private async Task FabOnClick()
         {
             var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
             //ResultView.Text = "Loading...";
@@ -79,21 +79,28 @@ namespace RadarIO.Xamarin.Android.Sample
             toggle = !toggle;
             if (toggle)
             {
-                RunOnUiThread(() => ResultView.Text = "Started trip");
-                Radar.StartTrip(new RadarTripOptions
+                var res = await Radar.StartTrip(new RadarTripOptions
                 {
                     ExternalId = "999",
                     DestinationGeofenceTag = "tag",
-                    DestinationGeofenceExternalId = "777",
-                    Mode = RadarRouteMode.Car
+                    DestinationGeofenceExternalId = "id",
+                    Mode = RadarRouteMode.Truck,
+                    Metadata = new JSONObject
+                    {
+                        { "bing", "bong" },
+                        { "ding", "dong" },
+                        { "int", 5 },
+                        { "bool", true }
+                    }
                 });
                 Radar.StartTracking(RadarTrackingOptions.Continuous);
+                RunOnUiThread(() => ResultView.Text = $"Started trip: {res}");
             }
             else
             {
-                RunOnUiThread(() => ResultView.Text = "Completed trip");
-                Radar.CompleteTrip();
+                var res = await Radar.CompleteTrip();
                 Radar.StopTracking();
+                RunOnUiThread(() => ResultView.Text = $"Completed trip: {res}");
             }
 
         }

@@ -360,6 +360,6 @@ namespace RadarIO.Xamarin
         ErrorUnknown
     }
 
-    public class JSONObject : Dictionary<string, string> { }
+    public class JSONObject : Dictionary<string, object> { }
 
 }

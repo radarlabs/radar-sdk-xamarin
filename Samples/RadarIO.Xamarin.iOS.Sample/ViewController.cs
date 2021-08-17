@@ -13,25 +13,60 @@ namespace RadarIO.Xamarin.iOS.Sample
         {
         }
 
+        bool toggle = false;
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            Radar.StartTracking(RadarTrackingOptions.Continuous);
             TrackOnce.TouchUpInside += async (sender, e) =>
             {
-                var (status, location, events, user) = await Radar.TrackOnce();
+                toggle = !toggle;
 
-                var notification = new UILocalNotification
+                //var (status, location, events, user) = await Radar.TrackOnce();
+                if (toggle)
                 {
-                    FireDate = NSDate.Now,
-                    AlertAction = "View Alert",
-                    AlertBody = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
-                    ApplicationIconBadgeNumber = 1,
-                    SoundName = UILocalNotification.DefaultSoundName
-                };
+                    var status = await Radar.StartTrip(new RadarTripOptions
+                    {
+                        ExternalId = "999",
+                        DestinationGeofenceTag = "tag",
+                        DestinationGeofenceExternalId = "id",
+                        Mode = RadarRouteMode.Car,
+                        Metadata = new JSONObject
+                        {
+                            { "bing", "bong" },
+                            { "ding", "dong" },
+                            { "int", 10 },
+                            { "bool", true }
+                        }
+                    });
+                    Radar.StartTracking(RadarTrackingOptions.Continuous);
 
-                // schedule it
-                UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+                    TrackOnce.SetTitle("Complete Trip", UIControlState.Normal);
+                    UIApplication.SharedApplication.ScheduleLocalNotification(
+                        new UILocalNotification
+                        {
+                            FireDate = NSDate.Now,
+                            AlertAction = "View Alert",
+                            AlertBody = $"Started trip: {status}", //\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
+                            ApplicationIconBadgeNumber = 1,
+                            SoundName = UILocalNotification.DefaultSoundName
+                        });
+                }
+                else
+                {
+                    var status = await Radar.CompleteTrip();
+                    Radar.StopTracking();
+
+                    TrackOnce.SetTitle("Start Trip", UIControlState.Normal);
+                    UIApplication.SharedApplication.ScheduleLocalNotification(
+                        new UILocalNotification
+                        {
+                            FireDate = NSDate.Now,
+                            AlertAction = "View Alert",
+                            AlertBody = $"Stopped trip: {status}", //\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
+                            ApplicationIconBadgeNumber = 1,
+                            SoundName = UILocalNotification.DefaultSoundName
+                        });
+                }
             };
         }
     }
