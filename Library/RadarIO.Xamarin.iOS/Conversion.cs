@@ -210,17 +210,22 @@ namespace RadarIO.Xamarin
             };
 
         public static JSONObject ToSDK(this Foundation.NSDictionary metadata)
-            => (JSONObject)metadata.ToDictionary(
-                m => m.Key.ToString(), m => m.Value?.ToSDK());
+        {
+            var res = new JSONObject();
+            foreach (var pair in metadata)
+                res.Add(pair.Key.ToString(), pair.Value?.ToSDK());
+            return res;
+        }
 
         private static object ToSDK(this Foundation.NSObject obj)
         {
-            bool boolRes;
-            if (bool.TryParse(obj.ToString(), out boolRes))
-                return boolRes;
-            int intRes;
-            if (int.TryParse(obj.ToString(), out intRes))
-                return intRes;
+            if (obj is Foundation.NSNumber num)
+            {
+                if (num.ObjCType == "c")
+                    return num.BoolValue;
+                else return num.Int32Value;
+            }
+
             return obj.ToString();
         }
 
