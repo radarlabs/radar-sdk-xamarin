@@ -10,8 +10,8 @@
     <TemplateGuid>{77efb91c-a7e9-4b0e-a7c5-31eeec3c6d46}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RadarIO.Xamarin.Android.Binding</RootNamespace>
-    <AssemblyName>RadarIO.Xamarin.Android.Binding</AssemblyName>
+    <RootNamespace>RadarIO.Xamarin.AndroidBinding</RootNamespace>
+    <AssemblyName>RadarIO.Xamarin.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>

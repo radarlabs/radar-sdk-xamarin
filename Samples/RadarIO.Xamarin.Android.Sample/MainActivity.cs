@@ -33,7 +33,7 @@ namespace RadarIO.Xamarin.Android.Sample
             SetSupportActionBar(toolbar);
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += (_, __) => FabOnClick();
+            fab.Click += async (_, __) => await FabOnClick();
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
             {
