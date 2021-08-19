@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Android.Locations;
-using Java.Interop;
-using Newtonsoft.Json;
 
 namespace RadarIO.Xamarin
 {
@@ -288,10 +286,30 @@ namespace RadarIO.Xamarin
             => new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(time);
 
         private static JSONObject ToSDK(this Org.Json.JSONObject obj)
-            => JsonConvert.DeserializeObject<JSONObject>(obj.ToString());
+        {
+            var res = new JSONObject();
+            var keysItr = obj.Keys();
+            while (keysItr.HasNext)
+            {
+                var key = keysItr.Next().ToString();
+                var value = obj.Get(key);
+                object val;
+                if (value is Java.Lang.Integer)
+                    val = (int)value;
+                else if (value is Java.Lang.Boolean)
+                    val = (bool)value;
+                else
+                    val = (string)value;
+                res.Add(key, val);
+            }
+            return res;
+        }
 
         private static Org.Json.JSONObject ToBinding(this JSONObject obj)
-            => new Org.Json.JSONObject(JsonConvert.SerializeObject(obj));
+        {
+            var res = new Org.Json.JSONObject(obj);
+            return new Org.Json.JSONObject(obj);
+        }
 
         private static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService ToBinding(this RadarTrackingOptionsForegroundService service)
             => new AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService(
