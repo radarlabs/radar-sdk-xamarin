@@ -4,12 +4,6 @@ on:
   push:
 
 jobs:
-  Build: 
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: Build artifacts
-      run: ./build.sh
       
   Android:
     runs-on: macos-latest
@@ -20,9 +14,9 @@ jobs:
         nuget restore
         cd Samples/RadarIO.Xamarin.Android.Sample
         msbuild
-        
+       
   iOS:
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
     - uses: actions/checkout@v1
     - name: iOS
