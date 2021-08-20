@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOSBinding", "Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj", "{5FB78078-54B6-4051-9657-542C56C8FE74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{DB730659-604C-434D-93B4-9B10160BF05F}"
+	ProjectSection(SolutionItems) = preProject
+		Library\RadarIO.nuspec = Library\RadarIO.nuspec
+		Library\radar-nuget-icon.png = Library\radar-nuget-icon.png
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOS", "Library\RadarIO.Xamarin.iOS\RadarIO.Xamarin.iOS.csproj", "{96A9AE3E-4F49-4201-99B4-132D54C4BCD7}"
 EndProject
@@ -22,6 +26,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.Android.Sample", "Samples\RadarIO.Xamarin.Android.Sample\RadarIO.Xamarin.Android.Sample.csproj", "{42D59E00-A003-4E84-A449-5DE707425C74}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RadarIO.Xamarin.Shared", "Library\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.shproj", "{10B2EBAE-6715-4F81-9209-3640AB10ACFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEF021D8-7047-42DB-B9EC-D7C9D6D5D2FF}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
