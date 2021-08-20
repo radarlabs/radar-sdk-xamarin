@@ -30,6 +30,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEF021D8-7047-42DB-B9EC-D7C9D6D5D2FF}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
+		build.sh = build.sh
+		.github\workflows\CI-build.yml = .github\workflows\CI-build.yml
 	EndProjectSection
 EndProject
 Global
