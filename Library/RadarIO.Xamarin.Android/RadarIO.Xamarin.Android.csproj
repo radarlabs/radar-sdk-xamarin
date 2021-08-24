@@ -69,6 +69,10 @@
       <Project>{9E0ED523-3FA7-482D-ABFD-EA805D3314E6}</Project>
       <Name>RadarIO.Xamarin.AndroidBinding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
+      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
+      <Name>RadarIO.Xamarin.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.projitems" Label="Shared" Condition="Exists('..\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

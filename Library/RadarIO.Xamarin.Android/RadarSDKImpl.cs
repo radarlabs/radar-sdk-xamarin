@@ -13,6 +13,13 @@ namespace RadarIO.Xamarin
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
     public class RadarSDKImpl : AndroidBinding.RadarReceiver, RadarSDK
     {
+        public RadarTrackingOptions ContinuousTrackingOptions
+            => AndroidBinding.RadarTrackingOptions.Continuous.ToSDK();
+        public RadarTrackingOptions ResponsiveTrackingOptions
+            => AndroidBinding.RadarTrackingOptions.Responsive.ToSDK();
+        public RadarTrackingOptions EfficientTrackingOptions
+            => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
+
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
         public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
         public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
@@ -120,30 +127,5 @@ namespace RadarIO.Xamarin
         }
 
         #endregion
-    }
-
-    public partial class RadarTrackingOptions
-    {
-        public int FastestStoppedUpdateInterval;
-        public int FastestMovingUpdateInterval;
-        public int SyncGeofencesLimit;
-        public RadarTrackingOptionsForegroundService ForegroundService;
-        public static RadarTrackingOptions Responsive
-            => AndroidBinding.RadarTrackingOptions.Responsive.ToSDK();
-        public static RadarTrackingOptions Continuous
-            => AndroidBinding.RadarTrackingOptions.Continuous.ToSDK();
-        public static RadarTrackingOptions Efficient
-            => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
-    }
-
-    public class RadarTrackingOptionsForegroundService
-    {
-        public string Text;
-        public string Title;
-        public int Icon;
-        public bool UpdatesOnly;
-        public string Activity;
-        public int Importance;
-        public int Id;
     }
 }

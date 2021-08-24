@@ -9,6 +9,13 @@ namespace RadarIO.Xamarin
 {
     public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     {
+        public RadarTrackingOptions ContinuousTrackingOptions
+            => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
+        public RadarTrackingOptions ResponsiveTrackingOptions
+            => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
+        public RadarTrackingOptions EfficientTrackingOptions
+            => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
+
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
         public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
         public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
@@ -112,18 +119,5 @@ namespace RadarIO.Xamarin
         }
 
         #endregion
-    }
-
-    public partial class RadarTrackingOptions
-    {
-        public bool ShowBlueBar;
-        public bool UseVisits;
-        public bool UseSignificantLocationChanges;
-        public static RadarTrackingOptions Continuous
-            => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
-        public static RadarTrackingOptions Responsive
-            => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
-        public static RadarTrackingOptions Efficient
-            => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
     }
 }

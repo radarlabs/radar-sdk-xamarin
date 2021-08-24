@@ -17,12 +17,11 @@ namespace RadarIO.Xamarin.Android.Sample
     using global::Android;
     using System.Threading.Tasks;
     using System.Linq;
+    using RadarIO.Xamarin.Shared.Sample;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private const string RADAR_KEY = "prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec "; // "ENTER KEY HERE";
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -44,8 +43,46 @@ namespace RadarIO.Xamarin.Android.Sample
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
 
-            Radar.Initialize(RADAR_KEY);
-            Radar.StopTracking();
+            Demo.Initialize(Radar);
+
+            //Radar.Log += args =>
+            //{
+            //    //var (loc, user) = args;
+            //};
+
+            //Radar.Initialize(RADAR_KEY);
+
+            //Radar.StartTrip(new RadarTripOptions
+            //{
+            //    ExternalId = "999",
+            //    DestinationGeofenceTag = "tag",
+            //    DestinationGeofenceExternalId = "id",
+            //    Mode = RadarRouteMode.Truck,
+            //    Metadata = new JSONObject
+            //        {
+            //            { "bing", "bong" },
+            //            { "ding", "dong" },
+            //            { "int", 5 },
+            //            { "bool", true }
+            //        },
+            //});
+            //Radar.StopTracking();
+            //var trackingOptions = RadarTrackingOptions.Responsive;
+            //trackingOptions.ForegroundService = new RadarTrackingOptionsForegroundService
+            //{
+            //    Id = 123,
+            //    Title = "title",
+            //    Text = "text",
+            //    Activity = "RadarIO.Xamarin.Android.Sample.MainActivity", 
+            //};
+            //Radar.StartTracking(trackingOptions);
+            //Radar.MockTracking(
+            //    new RadarLocation { Latitude = 40.78382, Longitude = -73.97536 },
+            //    new RadarLocation { Latitude = 40.70390, Longitude = -73.98670 },
+            //    RadarRouteMode.Car,
+            //    10,
+            //    3,
+            //    _ => { });
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -69,39 +106,37 @@ namespace RadarIO.Xamarin.Android.Sample
         private async Task FabOnClick()
         {
             var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
-            //ResultView.Text = "Loading...";
-            //Task.Run(async () =>
-            //{
-            //    var (status, location, events, user) = await Radar.TrackOnce();
-            //    RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");
-            //});
+            ResultView.Text = "Loading...";
+            
+            var (status, location, events, user) = await Demo.TrackOnce(Radar);
+            RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");    
 
-            toggle = !toggle;
-            if (toggle)
-            {
-                var res = await Radar.StartTrip(new RadarTripOptions
-                {
-                    ExternalId = "999",
-                    DestinationGeofenceTag = "tag",
-                    DestinationGeofenceExternalId = "id",
-                    Mode = RadarRouteMode.Truck,
-                    Metadata = new JSONObject
-                    {
-                        { "bing", "bong" },
-                        { "ding", "dong" },
-                        { "int", 5 },
-                        { "bool", true }
-                    }
-                });
-                Radar.StartTracking(RadarTrackingOptions.Continuous);
-                RunOnUiThread(() => ResultView.Text = $"Started trip: {res}");
-            }
-            else
-            {
-                var res = await Radar.CompleteTrip();
-                Radar.StopTracking();
-                RunOnUiThread(() => ResultView.Text = $"Completed trip: {res}");
-            }
+            //toggle = !toggle;
+            //if (toggle)
+            //{
+            //    var res = await Radar.StartTrip(new RadarTripOptions
+            //    {
+            //        ExternalId = "999",
+            //        DestinationGeofenceTag = "tag",
+            //        DestinationGeofenceExternalId = "id",
+            //        Mode = RadarRouteMode.Truck,
+            //        Metadata = new JSONObject
+            //        {
+            //            { "bing", "bong" },
+            //            { "ding", "dong" },
+            //            { "int", 5 },
+            //            { "bool", true }
+            //        }
+            //    });
+            //    Radar.StartTracking(RadarTrackingOptions.Continuous);
+            //    RunOnUiThread(() => ResultView.Text = $"Started trip: {res}");
+            //}
+            //else
+            //{
+            //    var res = await Radar.CompleteTrip();
+            //    Radar.StopTracking();
+            //    RunOnUiThread(() => ResultView.Text = $"Completed trip: {res}");
+            //}
 
         }
 

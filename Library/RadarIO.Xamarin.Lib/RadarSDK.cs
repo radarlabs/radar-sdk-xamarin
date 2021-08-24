@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +7,10 @@ namespace RadarIO.Xamarin
 {
     public interface RadarSDK
     {
+        RadarTrackingOptions ResponsiveTrackingOptions { get; }
+        RadarTrackingOptions ContinuousTrackingOptions { get; }
+        RadarTrackingOptions EfficientTrackingOptions { get; }
+
         event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
         event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
         event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
@@ -34,7 +38,7 @@ namespace RadarIO.Xamarin
         public JSONObject Metadata;
     }
 
-    public partial class RadarTrackingOptions
+    public class RadarTrackingOptions
     {
         public int DesiredStoppedUpdateInterval;
         public int DesiredMovingUpdateInterval;
@@ -52,7 +56,31 @@ namespace RadarIO.Xamarin
         public int MovingGeofenceRadius;
         public bool SyncGeofences;
         public bool Beacons;
+#if MONOANDROID
+        public int FastestStoppedUpdateInterval;
+        public int FastestMovingUpdateInterval;
+        public int SyncGeofencesLimit;
+        public RadarTrackingOptionsForegroundService ForegroundService;
+#endif
+#if XAMARINIOS
+        public bool ShowBlueBar;
+        public bool UseVisits;
+        public bool UseSignificantLocationChanges;
+#endif
     }
+
+#if MONOANDROID
+    public class RadarTrackingOptionsForegroundService
+    {
+        public string Text;
+        public string Title;
+        public int Icon;
+        public bool UpdatesOnly;
+        public string Activity;
+        public int Importance;
+        public int Id;
+    }
+#endif
 
     public enum RadarTrackingOptionsSync
     {

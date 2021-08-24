@@ -50,6 +50,10 @@
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
       <Name>RadarIO.Xamarin.iOSBinding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
+      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
+      <Name>RadarIO.Xamarin.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.projitems" Label="Shared" Condition="Exists('..\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

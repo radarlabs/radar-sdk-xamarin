@@ -8,5 +8,7 @@ namespace RadarIO.Xamarin
             = new Lazy<RadarSDK>(() => new RadarSDKImpl(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         public static RadarSDK Radar => instance.Value;
+
+        internal static bool IsInitialized => instance.IsValueCreated;
     }
 }

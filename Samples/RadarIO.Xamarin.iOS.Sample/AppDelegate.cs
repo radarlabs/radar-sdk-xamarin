@@ -4,6 +4,7 @@ using UIKit;
 using RadarIO.Xamarin;
 
 using static RadarIO.Xamarin.RadarSingleton;
+using RadarIO.Xamarin.Shared.Sample;
 
 namespace RadarIO.Xamarin.iOS.Sample
 {
@@ -16,7 +17,7 @@ namespace RadarIO.Xamarin.iOS.Sample
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            Radar.Initialize("prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec");
+            Demo.Initialize(Radar);
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {

@@ -113,6 +113,14 @@
       <Project>{A58253CF-FE16-41D7-BDAF-E90662E3EB36}</Project>
       <Name>RadarIO.Xamarin.Android</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin.Sample.Shared\RadarIO.Xamarin.Sample.Shared.csproj">
+      <Project>{971F6D4F-60AE-4DE1-B4D4-4B4232BBDA31}</Project>
+      <Name>RadarIO.Xamarin.Sample.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
+      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
+      <Name>RadarIO.Xamarin.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

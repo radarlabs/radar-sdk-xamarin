@@ -10,6 +10,5 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)RadarSingleton.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)RadarSDK.cs" />
   </ItemGroup>
 </Project>
