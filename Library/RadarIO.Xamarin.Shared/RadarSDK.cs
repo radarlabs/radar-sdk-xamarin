@@ -17,7 +17,7 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
         void StartTracking(RadarTrackingOptions options);
         void StopTracking();
-        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval); // todo: callback
+        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback);
         Task<RadarStatus> StartTrip(RadarTripOptions options);
         Task<RadarStatus> CancelTrip();
         Task<RadarStatus> CompleteTrip();

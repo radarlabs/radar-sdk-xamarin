@@ -41,7 +41,7 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.StopTracking();
         }
 
-        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, iOSBinding.RadarTrackCompletionHandler callback)
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
         {
             iOSBinding.Radar.MockTrackingWithOrigin(
                 origin?.ToBinding(),
@@ -49,7 +49,7 @@ namespace RadarIO.Xamarin
                 (iOSBinding.RadarRouteMode)mode,
                 steps,
                 interval,
-                callback);
+                (status, location, events, user) => callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK())));
         }
 
         public Task<RadarStatus> StartTrip(RadarTripOptions options)
