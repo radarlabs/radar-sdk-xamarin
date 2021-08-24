@@ -17,6 +17,7 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
         void StartTracking(RadarTrackingOptions options);
         void StopTracking();
+        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval); // todo: callback
         Task<RadarStatus> StartTrip(RadarTripOptions options);
         Task<RadarStatus> CancelTrip();
         Task<RadarStatus> CompleteTrip();
@@ -343,7 +344,7 @@ namespace RadarIO.Xamarin
     {
         public double Longitude;
         public double Latitude;
-        // todo: accuracy
+        public double Accuracy;
         public float Bearing;
         public double Altitude;
         public float Speed;

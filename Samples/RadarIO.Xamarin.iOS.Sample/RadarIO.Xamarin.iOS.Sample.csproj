@@ -136,7 +136,6 @@
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\Library\RadarIO.Xamarin.iOS\RadarIO.Xamarin.iOS.csproj">
-        <Project>{96A9AE3E-4F49-4201-99B4-132D54C4BCD7}</Project>
         <Name>RadarIO.Xamarin.iOS</Name>
       </ProjectReference>
     </ItemGroup>

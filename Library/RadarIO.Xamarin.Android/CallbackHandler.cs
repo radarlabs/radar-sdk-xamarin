@@ -5,15 +5,25 @@ using Android.Locations;
 
 namespace RadarIO.Xamarin
 {
-    public abstract class CallbackHandler<T> : Java.Lang.Object
+    public abstract class TaskCallbackHandler<T> : Java.Lang.Object
     {
         protected TaskCompletionSource<T> taskSource = new TaskCompletionSource<T>();
 
         public Task<T> Result => taskSource.Task;
     }
 
+    public abstract class RepeatingCallbackHandler<T> : Java.Lang.Object
+    {
+        protected Action<T> callback;
+
+        public RepeatingCallbackHandler(Action<T> callback)
+        {
+            this.callback = callback;
+        }
+    }
+
     public class TrackCallbackHandler
-        : CallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
+        : TaskCallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
@@ -23,12 +33,25 @@ namespace RadarIO.Xamarin
     }
 
     public class TripCallbackHandler
-        : CallbackHandler<RadarStatus>
+        : TaskCallbackHandler<RadarStatus>
         , AndroidBinding.Radar.IRadarTripCallback
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status)
         {
             taskSource.SetResult(status.ToSDK());
+        }
+    }
+
+    public class RepeatingTrackCallbackHandler
+        : RepeatingCallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
+        , AndroidBinding.Radar.IRadarTrackCallback
+    {
+        public RepeatingTrackCallbackHandler(Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
+            : base(callback) { }
+
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
+        {
+            callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
         }
     }
 }

@@ -14,6 +14,7 @@ namespace RadarIO.Xamarin
             {
                 Latitude = location.Coordinate.Latitude,
                 Longitude = location.Coordinate.Longitude,
+                Accuracy = Math.Min(location.HorizontalAccuracy, location.VerticalAccuracy),
                 Bearing = (float)location.Course,
                 Altitude = location.Altitude,
                 Speed = (float)location.Speed,
@@ -280,6 +281,20 @@ namespace RadarIO.Xamarin
                 UseSignificantLocationChanges = options.UseSignificantLocationChanges,
                 Beacons = options.Beacons
             };
+
+        internal static CLLocation ToBinding(this RadarLocation location)
+            => new CLLocation(
+                new CLLocationCoordinate2D
+                {
+                    Latitude = location.Latitude,
+                    Longitude = location.Longitude
+                },
+                location.Altitude,
+                location.Accuracy,
+                location.Accuracy,
+                location.Bearing,
+                location.Speed,
+                (Foundation.NSDate)location.Timestamp);
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
             => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(

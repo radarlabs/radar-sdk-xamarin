@@ -42,6 +42,18 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.StopTracking();
         }
 
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
+        {
+            var handler = new RepeatingTrackCallbackHandler(callback);
+            AndroidBinding.Radar.MockTracking(
+                origin?.ToBinding(),
+                destination?.ToBinding(),
+                AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode],
+                steps,
+                interval,
+                handler);
+        }
+
         public Task<RadarStatus> StartTrip(RadarTripOptions options)
         {
             var handler = new TripCallbackHandler();

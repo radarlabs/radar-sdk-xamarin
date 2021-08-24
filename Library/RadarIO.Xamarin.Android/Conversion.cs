@@ -14,6 +14,7 @@ namespace RadarIO.Xamarin
             {
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
+                Accuracy = location.Accuracy,
                 Bearing = location.Bearing,
                 Altitude = location.Altitude,
                 Speed = location.Speed,
@@ -115,8 +116,8 @@ namespace RadarIO.Xamarin
                 DestinationGeofenceExternalId = trip.DestinationGeofenceExternalId,
                 DestinationLocation = trip.DestinationLocation?.ToSDK(),
                 Mode = (RadarRouteMode)trip.Mode.Ordinal(),
-                EtaDistance = (double)trip.EtaDistance,
-                EtaDuration = (double)trip.EtaDuration,
+                EtaDistance = trip.EtaDistance?.DoubleValue() ?? 0,
+                EtaDuration = trip.EtaDuration?.DoubleValue() ?? 0,
                 Status = (RadarTripStatus)trip.Status.Ordinal()
             };
 
@@ -321,6 +322,17 @@ namespace RadarIO.Xamarin
                     new Java.Lang.Integer(service.Importance),
                     new Java.Lang.Integer(service.Id)
                 );
+
+        internal static Location ToBinding(this RadarLocation location)
+            => new Location("mock")
+            {
+                Latitude = location.Latitude,
+                Longitude = location.Longitude,
+                Bearing = location.Bearing,
+                Altitude = location.Altitude,
+                Speed = location.Speed,
+                Time = (long)(location.Timestamp?.ToBinding())
+            };
 
         private static Java.Util.Date ToBinding(this DateTime date)
             => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());
