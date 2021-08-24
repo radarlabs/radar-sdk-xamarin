@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoreLocation;
 
 namespace RadarIO.Xamarin
 {
-    public class RadarSDKImpl : RadarSDK
+    public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     {
-        public override void Initialize(string publishableKey)
+        public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
+        public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
+        public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
+        public event RadarEventHandler<RadarStatus> Error;
+        public event RadarEventHandler<string> Log;
+
+        public void Initialize(string publishableKey)
         {
             iOSBinding.Radar.InitializeWithPublishableKey(publishableKey);
+            iOSBinding.Radar.SetDelegate(this);
         }
 
-        public override Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
+        public Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();
             iOSBinding.Radar.TrackOnceWithCompletionHandler((status, location, ev, user) =>
@@ -23,17 +31,17 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public override void StartTracking(RadarTrackingOptions options)
+        public void StartTracking(RadarTrackingOptions options)
         {
             iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
         }
 
-        public override void StopTracking()
+        public void StopTracking()
         {
             iOSBinding.Radar.StopTracking();
         }
 
-        public override Task<RadarStatus> StartTrip(RadarTripOptions options)
+        public Task<RadarStatus> StartTrip(RadarTripOptions options)
         {
             var src = new TaskCompletionSource<RadarStatus>();
             iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), status =>
@@ -43,7 +51,7 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public override Task<RadarStatus> CancelTrip()
+        public Task<RadarStatus> CancelTrip()
         {
             var src = new TaskCompletionSource<RadarStatus>();
             iOSBinding.Radar.CancelTripWithCompletionHandler(status =>
@@ -53,7 +61,7 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public override Task<RadarStatus> CompleteTrip()
+        public Task<RadarStatus> CompleteTrip()
         {
             var src = new TaskCompletionSource<RadarStatus>();
             iOSBinding.Radar.CompleteTripWithCompletionHandler(status =>
@@ -62,6 +70,37 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        #region RadarDelegate
+
+        RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
+
+        public override void DidFailWithStatus(iOSBinding.RadarStatus status)
+        {
+            Radar.Error?.Invoke((RadarStatus)status);
+        }
+
+        public override void DidLogMessage(string message)
+        {
+            Radar.Log?.Invoke(message);
+        }
+
+        public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
+        {
+            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
+        }
+
+        public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
+        {
+            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
+        }
+
+        public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
+        {
+            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+        }
+
+        #endregion
     }
 
     public partial class RadarTrackingOptions

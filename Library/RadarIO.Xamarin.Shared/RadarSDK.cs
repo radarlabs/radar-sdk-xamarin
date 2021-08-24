@@ -5,16 +5,24 @@ using System.Threading.Tasks;
 
 namespace RadarIO.Xamarin
 {
-    public abstract class RadarSDK
+    public interface RadarSDK
     {
-        public abstract void Initialize(string publishableKey);
-        public abstract Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
-        public abstract void StartTracking(RadarTrackingOptions options);
-        public abstract void StopTracking();
-        public abstract Task<RadarStatus> StartTrip(RadarTripOptions options);
-        public abstract Task<RadarStatus> CancelTrip();
-        public abstract Task<RadarStatus> CompleteTrip();
+        event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
+        event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
+        event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
+        event RadarEventHandler<RadarStatus> Error;
+        event RadarEventHandler<string> Log;
+
+        void Initialize(string publishableKey);
+        Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
+        void StartTracking(RadarTrackingOptions options);
+        void StopTracking();
+        Task<RadarStatus> StartTrip(RadarTripOptions options);
+        Task<RadarStatus> CancelTrip();
+        Task<RadarStatus> CompleteTrip();
     }
+
+    public delegate void RadarEventHandler<T>(T args);
 
     public class RadarTripOptions
     {
@@ -335,6 +343,7 @@ namespace RadarIO.Xamarin
     {
         public double Longitude;
         public double Latitude;
+        // todo: accuracy
         public float Bearing;
         public double Altitude;
         public float Speed;
