@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>RadarIO.Xamarin</id>
-		<version>0.1.4</version>
+		<version>0.1.5</version>
 		<title>Radar Xamarin SDK</title>
 		<authors>Radar Labs, Inc.</authors>
 		<owners>Radar Labs, Inc.</owners>
@@ -27,7 +27,7 @@
 	</metadata>
 	<files>
 		<!--NET Standard-->
-		<file src="RadarIO.Xamarin.Lib/bin/Release/netstandard2.0/RadarIO.*" target="lib/netstandard2.0" />
+		<file src="RadarIO.Xamarin/bin/Release/netstandard2.0/RadarIO.*" target="lib/netstandard2.0" />
 		<!--Xamarin.Android-->
 		<file src="RadarIO.Xamarin.Android/bin/Release/RadarIO.*" target="lib/MonoAndroid4.4" />
 		<!--Xamarin.iOS-->

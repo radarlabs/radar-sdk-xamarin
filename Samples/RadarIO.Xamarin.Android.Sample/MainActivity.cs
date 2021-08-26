@@ -43,7 +43,7 @@ namespace RadarIO.Xamarin.Android.Sample
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
 
-            Demo.Initialize(Radar);
+            Demo.Initialize();
 
             //Radar.Log += args =>
             //{
@@ -108,7 +108,7 @@ namespace RadarIO.Xamarin.Android.Sample
             var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
             ResultView.Text = "Loading...";
             
-            var (status, location, events, user) = await Demo.TrackOnce(Radar);
+            var (status, location, events, user) = await Demo.TrackOnce();
             RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");    
 
             //toggle = !toggle;

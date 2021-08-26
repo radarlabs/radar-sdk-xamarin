@@ -5,7 +5,13 @@ namespace RadarIO.Xamarin
     public static class RadarSingleton
     {
         private static readonly Lazy<RadarSDK> instance
-            = new Lazy<RadarSDK>(() => new RadarSDKImpl(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+            = new Lazy<RadarSDK>(() =>
+#if NETSTANDARD
+            null,
+#else
+            new RadarSDKImpl(),
+#endif
+            System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         public static RadarSDK Radar => instance.Value;
 

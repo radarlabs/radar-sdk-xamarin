@@ -17,7 +17,7 @@ namespace RadarIO.Xamarin.iOS.Sample
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            Demo.Initialize(Radar);
+            Demo.Initialize();
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(8, 0))
             {

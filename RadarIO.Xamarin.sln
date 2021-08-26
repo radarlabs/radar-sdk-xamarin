@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.Android.Sample", "Samples\RadarIO.Xamarin.Android.Sample\RadarIO.Xamarin.Android.Sample.csproj", "{42D59E00-A003-4E84-A449-5DE707425C74}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RadarIO.Xamarin.Shared", "Library\RadarIO.Xamarin.Shared\RadarIO.Xamarin.Shared.shproj", "{10B2EBAE-6715-4F81-9209-3640AB10ACFB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EEF021D8-7047-42DB-B9EC-D7C9D6D5D2FF}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
@@ -37,6 +35,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.Sample.Shared", "Samples\RadarIO.Xamarin.Sample.Shared\RadarIO.Xamarin.Sample.Shared.csproj", "{971F6D4F-60AE-4DE1-B4D4-4B4232BBDA31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.Lib", "Library\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj", "{1184D2A1-CFB1-4898-9D30-55B52BC66703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin", "Library\RadarIO.Xamarin\RadarIO.Xamarin.csproj", "{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +145,18 @@ Global
 		{1184D2A1-CFB1-4898-9D30-55B52BC66703}.Release|iPhone.Build.0 = Release|Any CPU
 		{1184D2A1-CFB1-4898-9D30-55B52BC66703}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{1184D2A1-CFB1-4898-9D30-55B52BC66703}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|iPhone.Build.0 = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,9 +168,9 @@ Global
 		{B98CAEED-EB8F-48D8-B6BC-E394E9A3762B} = {6F49DFD5-3F59-4A85-8EFC-5B672B7A99BE}
 		{A58253CF-FE16-41D7-BDAF-E90662E3EB36} = {DB730659-604C-434D-93B4-9B10160BF05F}
 		{42D59E00-A003-4E84-A449-5DE707425C74} = {6F49DFD5-3F59-4A85-8EFC-5B672B7A99BE}
-		{10B2EBAE-6715-4F81-9209-3640AB10ACFB} = {DB730659-604C-434D-93B4-9B10160BF05F}
 		{971F6D4F-60AE-4DE1-B4D4-4B4232BBDA31} = {6F49DFD5-3F59-4A85-8EFC-5B672B7A99BE}
 		{1184D2A1-CFB1-4898-9D30-55B52BC66703} = {DB730659-604C-434D-93B4-9B10160BF05F}
+		{4A3FA97A-7D49-4D33-AA67-1148555EEAC9} = {DB730659-604C-434D-93B4-9B10160BF05F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2DB13CA-DFF2-4565-91BF-E73C6989750C}

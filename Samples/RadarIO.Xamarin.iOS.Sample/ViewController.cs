@@ -43,7 +43,7 @@ namespace RadarIO.Xamarin.iOS.Sample
             {
                 toggle = !toggle;
 
-                var (status, location, events, user) = await Demo.TrackOnce(Radar);
+                var (status, location, events, user) = await Demo.TrackOnce();
                 //var fences = user.Geofences.ToList();
                 //if (toggle)
                 //{
@@ -80,15 +80,15 @@ namespace RadarIO.Xamarin.iOS.Sample
                 //    Radar.StopTracking();
 
                 //    TrackOnce.SetTitle("Start Trip", UIControlState.Normal);
-                //    UIApplication.SharedApplication.ScheduleLocalNotification(
-                //        new UILocalNotification
-                //        {
-                //            FireDate = NSDate.Now,
-                //            AlertAction = "View Alert",
-                //            AlertBody = $"Stopped trip: {status}", //\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
-                //            ApplicationIconBadgeNumber = 1,
-                //            SoundName = UILocalNotification.DefaultSoundName
-                //        });
+                UIApplication.SharedApplication.ScheduleLocalNotification(
+                    new UILocalNotification
+                    {
+                        FireDate = NSDate.Now,
+                        AlertAction = "View Alert",
+                        AlertBody = $"Result: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}",
+                            ApplicationIconBadgeNumber = 1,
+                        SoundName = UILocalNotification.DefaultSoundName
+                    });
                 //}
             };
         }
