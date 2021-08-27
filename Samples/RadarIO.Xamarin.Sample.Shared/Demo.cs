@@ -27,12 +27,15 @@ namespace RadarIO.Xamarin.Shared.Sample
         public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> Test()
         {
             var ret = await Radar.TrackOnce();
-            var (status, loc, events, user) = ret;
-            var (code, addresses) = await Radar.Autocomplete("Kung Fu", loc, 5);
-            (code, addresses) = await Radar.Geocode("Kung Fu Tea Pinellas Park");
-            (code, addresses) = await Radar.ReverseGeocode(loc);
-            var (searchCode, searchLoc, searchRes) = await Radar.SearchGeofences(10, new[] { "tag" }, null, 5);
-            (searchCode, searchLoc, searchRes) = await Radar.SearchGeofences(loc, 10, new[] { "tag" }, null, 5);
+            var (_, loc, _, _) = ret;
+            var (_, addresses) = await Radar.Autocomplete("Kung Fu", loc, 5);
+            (_, addresses) = await Radar.Geocode("Kung Fu Tea Pinellas Park");
+            (_, addresses) = await Radar.ReverseGeocode(loc);
+            var (_, _, geofences) = await Radar.SearchGeofences(10, new[] { "tag" });
+            (_, _, geofences) = await Radar.SearchGeofences(loc, 10, new[] { "tag" });
+            var (_, _, places) = await Radar.SearchPlaces(1000, categories: new[] { "food-beverage" });
+            (_, _, places) = await Radar.SearchPlaces(loc, 1000, categories: new[] { "food-beverage" });
+
 
             return ret;
         }

@@ -63,6 +63,16 @@ namespace RadarIO.Xamarin
         }
     }
 
+    public class SearchPlacesCallbackHandler
+        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)>
+        , AndroidBinding.Radar.IRadarSearchPlacesCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarPlace[] places)
+        {
+            taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), places?.Select(Conversion.ToSDK)));
+        }
+    }
+
     public class RepeatingTrackCallbackHandler
         : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
