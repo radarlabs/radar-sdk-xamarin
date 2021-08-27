@@ -159,5 +159,13 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.Geocode(query, handler);
             return handler.Task;
         }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location)
+        {
+            var handler = new GeocodeCallbackHandler();
+            AndroidBinding.Radar.ReverseGeocode(location?.ToBinding(), handler);
+            return handler.Task;
+        }
+    }
     }
 }

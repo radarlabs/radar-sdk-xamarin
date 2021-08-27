@@ -157,5 +157,15 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
+            iOSBinding.Radar.ReverseGeocodeLocation(location?.ToBinding(), (status, addresses) =>
+            {
+                src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+            });
+            return src.Task;
+        }
     }
 }

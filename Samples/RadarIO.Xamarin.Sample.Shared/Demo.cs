@@ -28,8 +28,9 @@ namespace RadarIO.Xamarin.Shared.Sample
         {
             var ret = await Radar.TrackOnce();
             var (status, loc, events, user) = ret;
-            var (code, addresses) = await Radar.Autocomplete("restaurants", loc, 5);
+            var (code, addresses) = await Radar.Autocomplete("Kung Fu", loc, 5);
             (code, addresses) = await Radar.Geocode("Kung Fu Tea Pinellas Park");
+            (code, addresses) = await Radar.ReverseGeocode(loc);
 
             return ret;
         }

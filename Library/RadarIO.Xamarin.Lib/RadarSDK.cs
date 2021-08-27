@@ -33,6 +33,7 @@ namespace RadarIO.Xamarin
 
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location);
     }
 
     public delegate void RadarEventHandler<T>(T args);
