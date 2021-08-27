@@ -167,7 +167,7 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit = 0)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
         {
             var handler = new SearchGeofencesCallbackHandler();
             AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
@@ -192,6 +192,20 @@ namespace RadarIO.Xamarin
         {
             var handler = new SearchPlacesCallbackHandler();
             AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            return handler.Task;
+        }
+
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        {
+            var handler = new RouteCallbackHandler();
+            AndroidBinding.Radar.GetDistance(destination?.ToBinding(), modes?.ToBinding(), AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
+            return handler.Task;
+        }
+
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        {
+            var handler = new RouteCallbackHandler();
+            AndroidBinding.Radar.GetDistance(source?.ToBinding(), destination?.ToBinding(), modes?.ToBinding(), AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
             return handler.Task;
         }
     }

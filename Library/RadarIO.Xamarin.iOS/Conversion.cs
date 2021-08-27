@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CoreLocation;
 
@@ -8,6 +9,45 @@ namespace RadarIO.Xamarin
     {
         internal static RadarStatus ToSDK(this iOSBinding.RadarStatus status)
             => (RadarStatus)status;
+
+        internal static RadarRoutes ToSDK(this iOSBinding.RadarRoutes routes)
+            => new RadarRoutes
+            {
+                Geodesic = routes.Geodesic?.ToSDK(),
+                Foot = routes.Foot?.ToSDK(),
+                Bike = routes.Bike?.ToSDK(),
+                Car = routes.Car?.ToSDK(),
+                Truck = routes.Truck?.ToSDK(),
+                Motorbike = routes.Motorbike?.ToSDK(),
+            };
+
+        internal static RadarRoute ToSDK(this iOSBinding.RadarRoute route)
+            => new RadarRoute
+            {
+                Distance = route.Distance?.ToSDK(),
+                Duration = route.Duration?.ToSDK(),
+                Geometry = route.Geometry?.ToSDK()
+            };
+
+        internal static RadarRouteDistance ToSDK(this iOSBinding.RadarRouteDistance distance)
+            => new RadarRouteDistance
+            {
+                Value = distance.Value,
+                Text = distance.Text
+            };
+
+        internal static RadarRouteDuration ToSDK(this iOSBinding.RadarRouteDuration duration)
+            => new RadarRouteDuration
+            {
+                Value = duration.Value,
+                Text = duration.Text
+            };
+
+        internal static RadarRouteGeometry ToSDK(this iOSBinding.RadarRouteGeometry geometry)
+            => new RadarRouteGeometry
+            {
+                Coordinates = geometry.Coordinates?.Select(ToSDK)
+            };
 
         internal static RadarAddress ToSDK(this iOSBinding.RadarAddress address)
             => new RadarAddress
@@ -284,7 +324,7 @@ namespace RadarIO.Xamarin
                 ExternalId = options.ExternalId,
                 DestinationGeofenceTag = options.DestinationGeofenceTag,
                 DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
-                Mode = (iOSBinding.RadarRouteMode)(Math.Pow(2, (double)options.Mode)),
+                Mode = (iOSBinding.RadarRouteMode)Math.Pow(2, (double)options.Mode),
                 Metadata = options.Metadata?.ToBinding()
             };
 
@@ -325,6 +365,9 @@ namespace RadarIO.Xamarin
                 location.Bearing,
                 location.Speed,
                 (Foundation.NSDate)location.Timestamp);
+
+        internal static iOSBinding.RadarRouteMode ToBinding(this IEnumerable<RadarRouteMode> modes)
+            => (iOSBinding.RadarRouteMode)modes?.Sum(m => Math.Pow(2, (double)m));
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
             => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(

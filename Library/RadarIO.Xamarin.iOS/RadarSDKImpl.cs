@@ -207,5 +207,25 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarRoutes)>();
+            iOSBinding.Radar.GetDistanceToDestination(destination?.ToBinding(), modes?.ToBinding() ?? 0, (iOSBinding.RadarRouteUnits)units, (status, routes) =>
+            {
+                src.SetResult((status.ToSDK(), routes?.ToSDK()));
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarRoutes)>();
+            iOSBinding.Radar.GetDistanceFromOrigin(source?.ToBinding(), destination?.ToBinding(), modes?.ToBinding() ?? 0, (iOSBinding.RadarRouteUnits)units, (status, routes) =>
+            {
+                src.SetResult((status.ToSDK(), routes?.ToSDK()));
+            });
+            return src.Task;
+        }
     }
 }

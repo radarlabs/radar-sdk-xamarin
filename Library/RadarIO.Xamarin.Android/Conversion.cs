@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Android.Locations;
 
@@ -8,6 +9,45 @@ namespace RadarIO.Xamarin
     {
         internal static RadarStatus ToSDK(this AndroidBinding.Radar.RadarStatus status)
             => (RadarStatus)status.Ordinal();
+
+        internal static RadarRoutes ToSDK(this AndroidBinding.RadarRoutes routes)
+            => new RadarRoutes
+            {
+                Geodesic = routes.Geodesic?.ToSDK(),
+                Foot = routes.Foot?.ToSDK(),
+                Bike = routes.Bike?.ToSDK(),
+                Car = routes.Car?.ToSDK(),
+                Truck = routes.Truck?.ToSDK(),
+                Motorbike = routes.Motorbike?.ToSDK(),
+            };
+
+        internal static RadarRoute ToSDK(this AndroidBinding.RadarRoute route)
+            => new RadarRoute
+            {
+                Distance = route.Distance?.ToSDK(),
+                Duration = route.Duration?.ToSDK(),
+                Geometry = route.Geometry?.ToSDK()
+            };
+
+        internal static RadarRouteDistance ToSDK(this AndroidBinding.RadarRouteDistance distance)
+            => new RadarRouteDistance
+            {
+                Value = distance.Value,
+                Text = distance.Text
+            };
+
+        internal static RadarRouteDuration ToSDK(this AndroidBinding.RadarRouteDuration duration)
+            => new RadarRouteDuration
+            {
+                Value = duration.Value,
+                Text = duration.Text
+            };
+
+        internal static RadarRouteGeometry ToSDK(this AndroidBinding.RadarRouteGeometry geometry)
+            => new RadarRouteGeometry
+            {
+                Coordinates = geometry.GetCoordinates()?.Select(ToSDK)
+            };
 
         internal static RadarAddress ToSDK(this AndroidBinding.RadarAddress address)
             => new RadarAddress
@@ -352,8 +392,19 @@ namespace RadarIO.Xamarin
                 Bearing = location.Bearing,
                 Altitude = location.Altitude,
                 Speed = location.Speed,
-                Time = (long)(location.Timestamp?.ToBinding())
+                Time = (long)(location.Timestamp?.Ticks / 10000)
             };
+
+        internal static Java.Util.EnumSet ToBinding(this IEnumerable<RadarRouteMode> modes)
+        {
+            var boundModes = modes.Select(m => AndroidBinding.Radar.RadarRouteMode.Values()[(int)m]);
+            //return Java.Util.EnumSet.CopyOf(boundModes.)
+            if (boundModes.Count() == 0)
+                return null;
+            if (boundModes.Count() == 1)
+                return Java.Util.EnumSet.Of(boundModes.Single());
+            return Java.Util.EnumSet.Of(boundModes.First(), boundModes.Skip(1).ToArray());
+        }
 
         internal static Java.Util.Date ToBinding(this DateTime date)
             => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());

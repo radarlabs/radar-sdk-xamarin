@@ -35,14 +35,61 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location);
 
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 0);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 0);
+        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
 
         Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
         Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+
+        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
     }
 
     public delegate void RadarEventHandler<T>(T args);
+
+    public enum RadarRouteUnits
+    {
+        Imperial,
+        Metric
+    }
+
+    public class RadarRoutes
+    {
+#if MONOANDROID
+        public RadarRoute Geodesic;
+#elif XAMARINIOS
+        public RadarRouteDistance Geodesic;
+#endif
+        public RadarRoute Foot;
+        public RadarRoute Bike;
+        public RadarRoute Car;
+        public RadarRoute Truck;
+        public RadarRoute Motorbike;
+    }
+
+    public class RadarRoute
+    {
+        public RadarRouteDistance Distance;
+        public RadarRouteDuration Duration;
+        public RadarRouteGeometry Geometry;
+    }
+
+    public class RadarRouteGeometry
+    {
+        public IEnumerable<RadarCoordinate> Coordinates;
+    }
+
+    public class RadarRouteDuration
+    {
+        public double Value;
+        public string Text;
+    }
+
+    public class RadarRouteDistance
+    {
+        public double Value;
+        public string Text;
+    }
 
     public class RadarAddress
     {
@@ -109,8 +156,7 @@ namespace RadarIO.Xamarin
         public int FastestMovingUpdateInterval;
         public int SyncGeofencesLimit;
         public RadarTrackingOptionsForegroundService ForegroundService;
-#endif
-#if XAMARINIOS
+#elif XAMARINIOS
         public bool ShowBlueBar;
         public bool UseVisits;
         public bool UseSignificantLocationChanges;
@@ -424,7 +470,7 @@ namespace RadarIO.Xamarin
         public float Bearing;
         public double Altitude;
         public float Speed;
-        public DateTime? Timestamp;
+        public DateTime? Timestamp = DateTime.Now;
         // todo
     }
 
