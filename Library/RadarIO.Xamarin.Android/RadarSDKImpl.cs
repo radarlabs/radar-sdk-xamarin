@@ -166,6 +166,19 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.ReverseGeocode(location?.ToBinding(), handler);
             return handler.Task;
         }
-    }
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit = 0)
+        {
+            var handler = new SearchGeofencesCallbackHandler();
+            AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            return handler.Task;
+        }
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        {
+            var handler = new SearchGeofencesCallbackHandler();
+            AndroidBinding.Radar.SearchGeofences(radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            return handler.Task;
+        }
     }
 }

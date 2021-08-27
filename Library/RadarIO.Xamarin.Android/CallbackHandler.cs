@@ -53,6 +53,16 @@ namespace RadarIO.Xamarin
         }
     }
 
+    public class SearchGeofencesCallbackHandler
+        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>
+        , AndroidBinding.Radar.IRadarSearchGeofencesCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarGeofence[] geofences)
+        {
+            taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
+        }
+    }
+
     public class RepeatingTrackCallbackHandler
         : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback

@@ -31,6 +31,8 @@ namespace RadarIO.Xamarin.Shared.Sample
             var (code, addresses) = await Radar.Autocomplete("Kung Fu", loc, 5);
             (code, addresses) = await Radar.Geocode("Kung Fu Tea Pinellas Park");
             (code, addresses) = await Radar.ReverseGeocode(loc);
+            var (searchCode, searchLoc, searchRes) = await Radar.SearchGeofences(10, new[] { "tag" }, null, 5);
+            (searchCode, searchLoc, searchRes) = await Radar.SearchGeofences(loc, 10, new[] { "tag" }, null, 5);
 
             return ret;
         }

@@ -167,5 +167,25 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>();
+            iOSBinding.Radar.SearchGeofencesNear(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit, (status, location, geofences) =>
+            {
+                src.SetResult((status.ToSDK(), location?.ToSDK(), geofences?.Select(Conversion.ToSDK)));
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>();
+            iOSBinding.Radar.SearchGeofencesWithRadius(radius, tags?.ToArray(), metadata?.ToBinding(), limit, (status, location, geofences) =>
+            {
+                src.SetResult((status.ToSDK(), location?.ToSDK(), geofences?.Select(Conversion.ToSDK)));
+            });
+            return src.Task;
+        }
     }
 }

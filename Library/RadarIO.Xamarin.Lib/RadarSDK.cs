@@ -34,6 +34,9 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location);
+
+        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit = 0);
+        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit = 0);
     }
 
     public delegate void RadarEventHandler<T>(T args);
