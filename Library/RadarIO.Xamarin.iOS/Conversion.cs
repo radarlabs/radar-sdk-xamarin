@@ -4,12 +4,12 @@ using CoreLocation;
 
 namespace RadarIO.Xamarin
 {
-    public static class Conversion
+    internal static class Conversion
     {
-        public static RadarStatus ToSDK(this iOSBinding.RadarStatus status)
+        internal static RadarStatus ToSDK(this iOSBinding.RadarStatus status)
             => (RadarStatus)status;
 
-        public static RadarLocation ToSDK(this CLLocation location)
+        internal static RadarLocation ToSDK(this CLLocation location)
             => new RadarLocation
             {
                 Latitude = location.Coordinate.Latitude,
@@ -21,7 +21,7 @@ namespace RadarIO.Xamarin
                 Timestamp = (DateTime?)location.Timestamp
             };
 
-        public static RadarEvent ToSDK(this iOSBinding.RadarEvent ev)
+        internal static RadarEvent ToSDK(this iOSBinding.RadarEvent ev)
             => new RadarEvent
             {
                 Id = ev._id,
@@ -42,7 +42,7 @@ namespace RadarIO.Xamarin
                 Location = ev.Location?.ToSDK()
             };
 
-        public static RadarUser ToSDK(this iOSBinding.RadarUser user)
+        internal static RadarUser ToSDK(this iOSBinding.RadarUser user)
             => new RadarUser
             {
                 Id = user._id,
@@ -69,14 +69,14 @@ namespace RadarIO.Xamarin
                 Trip = user.Trip?.ToSDK()
             };
 
-        public static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
+        internal static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
             => new RadarSegment
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
             };
 
-        public static RadarUserInsights ToSDK(this iOSBinding.RadarUserInsights insights)
+        internal static RadarUserInsights ToSDK(this iOSBinding.RadarUserInsights insights)
             => new RadarUserInsights
             {
                 HomeLocation = insights.HomeLocation?.ToSDK(),
@@ -84,7 +84,7 @@ namespace RadarIO.Xamarin
                 State = insights.State?.ToSDK(),
             };
 
-        public static RadarUserInsightsState ToSDK(this iOSBinding.RadarUserInsightsState state)
+        internal static RadarUserInsightsState ToSDK(this iOSBinding.RadarUserInsightsState state)
             => new RadarUserInsightsState
             {
                 Home = state.Home,
@@ -93,7 +93,7 @@ namespace RadarIO.Xamarin
                 Commuting = state.Commuting
             };
 
-        public static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
+        internal static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
             => new RadarUserInsightsLocation
             {
                 Type = (RadarUserInsightsLocationType)location.Type,
@@ -106,7 +106,7 @@ namespace RadarIO.Xamarin
                 PostalCode = location.PostalCode?.ToSDK(),
             };
 
-        public static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
+        internal static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
             => new RadarTrip
             {
                 Id = trip._id,
@@ -121,7 +121,7 @@ namespace RadarIO.Xamarin
                 Status = (RadarTripStatus)trip.Status
             };
 
-        public static RadarRegion ToSDK(this iOSBinding.RadarRegion region)
+        internal static RadarRegion ToSDK(this iOSBinding.RadarRegion region)
             => new RadarRegion
             {
                 Id = region._id,
@@ -131,7 +131,7 @@ namespace RadarIO.Xamarin
                 Flag = region.Flag
             };
 
-        public static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
+        internal static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
             => new RadarBeacon
             {
                 Id = beacon._id,
@@ -145,7 +145,7 @@ namespace RadarIO.Xamarin
                 Location = beacon.Geometry?.ToSDK(),
             };
 
-        public static RadarGeofence ToSDK(this iOSBinding.RadarGeofence geofence)
+        internal static RadarGeofence ToSDK(this iOSBinding.RadarGeofence geofence)
             => new RadarGeofence
             {
                 Id = geofence._id,
@@ -156,7 +156,7 @@ namespace RadarIO.Xamarin
                 Geometry = geofence.Geometry?.ToSDK()
             };
 
-        public static RadarGeofenceGeometry ToSDK(this iOSBinding.RadarGeofenceGeometry geometry)
+        internal static RadarGeofenceGeometry ToSDK(this iOSBinding.RadarGeofenceGeometry geometry)
         {
             if (geometry is iOSBinding.RadarCircleGeometry)
             {
@@ -182,14 +182,14 @@ namespace RadarIO.Xamarin
             return null;
         }
 
-        public static RadarCoordinate ToSDK(this iOSBinding.RadarCoordinate coordinate)
+        internal static RadarCoordinate ToSDK(this iOSBinding.RadarCoordinate coordinate)
             => new RadarCoordinate
             {
                 Latitude = coordinate.Coordinate.Latitude,
                 Longitude = coordinate.Coordinate.Longitude
             };
 
-        public static RadarPlace ToSDK(this iOSBinding.RadarPlace place)
+        internal static RadarPlace ToSDK(this iOSBinding.RadarPlace place)
             => new RadarPlace
             {
                 Id = place._id,
@@ -201,7 +201,7 @@ namespace RadarIO.Xamarin
                 Metadata = place.Metadata?.ToSDK(),
             };
 
-        public static RadarChain ToSDK(this iOSBinding.RadarChain chain)
+        internal static RadarChain ToSDK(this iOSBinding.RadarChain chain)
             => new RadarChain
             {
                 Slug = chain.Slug,
@@ -210,7 +210,7 @@ namespace RadarIO.Xamarin
                 Metadata = chain.Metadata?.ToSDK()
             };
 
-        public static JSONObject ToSDK(this Foundation.NSDictionary metadata)
+        internal static JSONObject ToSDK(this Foundation.NSDictionary metadata)
         {
             var res = new JSONObject();
             foreach (var pair in metadata)
@@ -218,7 +218,7 @@ namespace RadarIO.Xamarin
             return res;
         }
 
-        private static object ToSDK(this Foundation.NSObject obj)
+        internal static object ToSDK(this Foundation.NSObject obj)
         {
             if (obj is Foundation.NSNumber num)
             {
@@ -230,7 +230,7 @@ namespace RadarIO.Xamarin
             return obj.ToString();
         }
 
-        public static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
+        internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
             => new RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
@@ -248,7 +248,7 @@ namespace RadarIO.Xamarin
                 UseSignificantLocationChanges = options.UseSignificantLocationChanges
             };
 
-        public static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
+        internal static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
             => new iOSBinding.RadarTripOptions
             {
                 ExternalId = options.ExternalId,
@@ -258,7 +258,7 @@ namespace RadarIO.Xamarin
                 Metadata = options.Metadata?.ToBinding()
             };
 
-        public static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
+        internal static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new iOSBinding.RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,

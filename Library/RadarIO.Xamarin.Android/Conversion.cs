@@ -4,12 +4,12 @@ using Android.Locations;
 
 namespace RadarIO.Xamarin
 {
-    public static class Conversion
+    internal static class Conversion
     {
-        public static RadarStatus ToSDK(this AndroidBinding.Radar.RadarStatus status)
+        internal static RadarStatus ToSDK(this AndroidBinding.Radar.RadarStatus status)
             => (RadarStatus)status.Ordinal();
 
-        public static RadarLocation ToSDK(this Location location)
+        internal static RadarLocation ToSDK(this Location location)
             => new RadarLocation
             {
                 Latitude = location.Latitude,
@@ -21,7 +21,7 @@ namespace RadarIO.Xamarin
                 Timestamp = location.Time.ToDateTime()
             };
 
-        public static RadarEvent ToSDK(this AndroidBinding.RadarEvent ev)
+        internal static RadarEvent ToSDK(this AndroidBinding.RadarEvent ev)
             => new RadarEvent
             {
                 Id = ev.Get_id(),
@@ -42,7 +42,7 @@ namespace RadarIO.Xamarin
                 Location = ev.Location?.ToSDK()
             };
 
-        public static RadarUser ToSDK(this AndroidBinding.RadarUser user)
+        internal static RadarUser ToSDK(this AndroidBinding.RadarUser user)
             => new RadarUser
             {
                 Id = user.Get_id(),
@@ -69,14 +69,14 @@ namespace RadarIO.Xamarin
                 Trip = user.Trip?.ToSDK()
             };
 
-        public static RadarSegment ToSDK(this AndroidBinding.RadarSegment segment)
+        internal static RadarSegment ToSDK(this AndroidBinding.RadarSegment segment)
             => new RadarSegment
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
             };
 
-        public static RadarUserInsights ToSDK(this AndroidBinding.RadarUserInsights insights)
+        internal static RadarUserInsights ToSDK(this AndroidBinding.RadarUserInsights insights)
             => new RadarUserInsights
             {
                 HomeLocation = insights.HomeLocation?.ToSDK(),
@@ -84,7 +84,7 @@ namespace RadarIO.Xamarin
                 State = insights.State?.ToSDK(),
             };
 
-        public static RadarUserInsightsState ToSDK(this AndroidBinding.RadarUserInsightsState state)
+        internal static RadarUserInsightsState ToSDK(this AndroidBinding.RadarUserInsightsState state)
             => new RadarUserInsightsState
             {
                 Home = state.Home,
@@ -93,7 +93,7 @@ namespace RadarIO.Xamarin
                 Commuting = state.Commuting
             };
 
-        public static RadarUserInsightsLocation ToSDK(this AndroidBinding.RadarUserInsightsLocation location)
+        internal static RadarUserInsightsLocation ToSDK(this AndroidBinding.RadarUserInsightsLocation location)
             => new RadarUserInsightsLocation
             {
                 Type = (RadarUserInsightsLocationType)location.Type.Ordinal(),
@@ -106,7 +106,7 @@ namespace RadarIO.Xamarin
                 PostalCode = location.PostalCode?.ToSDK(),
             };
 
-        public static RadarTrip ToSDK(this AndroidBinding.RadarTrip trip)
+        internal static RadarTrip ToSDK(this AndroidBinding.RadarTrip trip)
             => new RadarTrip
             {
                 Id = trip.Get_id(),
@@ -121,7 +121,7 @@ namespace RadarIO.Xamarin
                 Status = (RadarTripStatus)trip.Status.Ordinal()
             };
 
-        public static RadarRegion ToSDK(this AndroidBinding.RadarRegion region)
+        internal static RadarRegion ToSDK(this AndroidBinding.RadarRegion region)
             => new RadarRegion
             {
                 Id = region.Get_id(),
@@ -131,7 +131,7 @@ namespace RadarIO.Xamarin
                 Flag = region.Flag
             };
 
-        public static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
+        internal static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
             => new RadarBeacon
             {
                 Id = beacon.Get_id(),
@@ -145,7 +145,7 @@ namespace RadarIO.Xamarin
                 Location = beacon.Location?.ToSDK(),
             };
 
-        public static RadarGeofence ToSDK(this AndroidBinding.RadarGeofence geofence)
+        internal static RadarGeofence ToSDK(this AndroidBinding.RadarGeofence geofence)
             => new RadarGeofence
             {
                 Id = geofence.Get_id(),
@@ -156,7 +156,7 @@ namespace RadarIO.Xamarin
                 Geometry = geofence.Geometry?.ToSDK()
             };
 
-        public static RadarGeofenceGeometry ToSDK(this AndroidBinding.RadarGeofenceGeometry geometry)
+        internal static RadarGeofenceGeometry ToSDK(this AndroidBinding.RadarGeofenceGeometry geometry)
         {
             if (geometry is AndroidBinding.RadarCircleGeometry)
             {
@@ -182,14 +182,14 @@ namespace RadarIO.Xamarin
             return null;
         }
 
-        public static RadarCoordinate ToSDK(this AndroidBinding.RadarCoordinate coordinate)
+        internal static RadarCoordinate ToSDK(this AndroidBinding.RadarCoordinate coordinate)
             => new RadarCoordinate
             {
                 Latitude = coordinate.Latitude,
                 Longitude = coordinate.Longitude
             };
 
-        public static RadarPlace ToSDK(this AndroidBinding.RadarPlace place)
+        internal static RadarPlace ToSDK(this AndroidBinding.RadarPlace place)
             => new RadarPlace
             {
                 Id = place.Get_id(),
@@ -201,7 +201,7 @@ namespace RadarIO.Xamarin
                 Metadata = place.Metadata?.ToSDK(),
             };
 
-        public static RadarChain ToSDK(this AndroidBinding.RadarChain chain)
+        internal static RadarChain ToSDK(this AndroidBinding.RadarChain chain)
             => new RadarChain
             {
                 Slug = chain.Slug,
@@ -210,7 +210,7 @@ namespace RadarIO.Xamarin
                 Metadata = chain.ToJson()?.ToSDK()
             };
 
-        public static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
+        internal static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
             => new RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
@@ -235,7 +235,7 @@ namespace RadarIO.Xamarin
                 Beacons = options.Beacons
             };
 
-        private static RadarTrackingOptionsForegroundService ToSDK(this AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService service)
+        internal static RadarTrackingOptionsForegroundService ToSDK(this AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService service)
             => new RadarTrackingOptionsForegroundService
             {
                 Text = service.Text,
@@ -247,7 +247,7 @@ namespace RadarIO.Xamarin
                 Id = (int)service.Id
             };
 
-        public static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
+        internal static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
             => new AndroidBinding.RadarTripOptions(
                 options.ExternalId,
                 options.Metadata?.ToBinding(),
@@ -256,7 +256,7 @@ namespace RadarIO.Xamarin
                 AndroidBinding.Radar.RadarRouteMode.Values()[(int)options.Mode]
             );
 
-        public static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
+        internal static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new AndroidBinding.RadarTrackingOptions(
                  options.DesiredStoppedUpdateInterval,
                  options.FastestStoppedUpdateInterval,
@@ -280,13 +280,13 @@ namespace RadarIO.Xamarin
                  options.Beacons
                 );
 
-        private static DateTime ToSDK(this Java.Util.Date date)
+        internal static DateTime ToSDK(this Java.Util.Date date)
             => date.Time.ToDateTime();
 
-        private static DateTime ToDateTime(this long time)
+        internal static DateTime ToDateTime(this long time)
             => new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddMilliseconds(time);
 
-        private static JSONObject ToSDK(this Org.Json.JSONObject obj)
+        internal static JSONObject ToSDK(this Org.Json.JSONObject obj)
         {
             var res = new JSONObject();
             var keysItr = obj.Keys();
@@ -306,13 +306,10 @@ namespace RadarIO.Xamarin
             return res;
         }
 
-        private static Org.Json.JSONObject ToBinding(this JSONObject obj)
-        {
-            var res = new Org.Json.JSONObject(obj);
-            return new Org.Json.JSONObject(obj);
-        }
+        internal static Org.Json.JSONObject ToBinding(this JSONObject obj)
+            => new Org.Json.JSONObject(obj);
 
-        private static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService ToBinding(this RadarTrackingOptionsForegroundService service)
+        internal static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService ToBinding(this RadarTrackingOptionsForegroundService service)
             => new AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService(
                     service.Text,
                     service.Title,
@@ -334,10 +331,10 @@ namespace RadarIO.Xamarin
                 Time = (long)(location.Timestamp?.ToBinding())
             };
 
-        private static Java.Util.Date ToBinding(this DateTime date)
+        internal static Java.Util.Date ToBinding(this DateTime date)
             => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());
 
-        //private static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
+        //internal static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
         //    => (T)Java.Lang.Enum.ValueOf(Java.Lang.Class.FromType(typeof(T)), e.ToString().ToUpper());
     }
 }

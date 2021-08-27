@@ -12,6 +12,15 @@ namespace RadarIO.Xamarin.Shared.Sample
         public static void Initialize()
         {
             Radar.Initialize(RADAR_KEY);
+            Radar.UserId = "test user";
+            Radar.Description = "test desc";
+            Radar.Metadata = new JSONObject
+            {
+                { "bing", "bong" },
+                { "ding", "dong" },
+                { "int", 10 },
+                { "bool", true }
+            };
         }
 
         public static async Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()

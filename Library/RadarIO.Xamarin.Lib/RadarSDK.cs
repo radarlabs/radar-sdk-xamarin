@@ -18,6 +18,9 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<string> Log;
 
         void Initialize(string publishableKey);
+        string UserId { get; set; }
+        string Description { get; set; }
+        JSONObject Metadata { get; set; }
         Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
         void StartTracking(RadarTrackingOptions options);
         void StopTracking();

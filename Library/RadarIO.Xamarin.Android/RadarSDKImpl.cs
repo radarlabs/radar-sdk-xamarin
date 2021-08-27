@@ -32,6 +32,24 @@ namespace RadarIO.Xamarin
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
+        public string UserId
+        {
+            get => AndroidBinding.Radar.UserId;
+            set => AndroidBinding.Radar.UserId = value;
+        }
+
+        public string Description
+        {
+            get => AndroidBinding.Radar.Description;
+            set => AndroidBinding.Radar.Description = value;
+        }
+
+        public JSONObject Metadata
+        {
+            get => AndroidBinding.Radar.Metadata?.ToSDK();
+            set => AndroidBinding.Radar.Metadata = value?.ToBinding();
+        }
+
         public Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
             var handler = new TrackCallbackHandler();

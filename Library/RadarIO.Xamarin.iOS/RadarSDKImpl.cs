@@ -28,6 +28,24 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.SetDelegate(this);
         }
 
+        public string UserId
+        {
+            get => iOSBinding.Radar.UserId;
+            set => iOSBinding.Radar.SetUserId(value);
+        }
+
+        public string Description
+        {
+            get => iOSBinding.Radar.Description;
+            set => iOSBinding.Radar.SetDescription(value);
+        }
+
+        public JSONObject Metadata
+        {
+            get => iOSBinding.Radar.Metadata?.ToSDK();
+            set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
+        }
+
         public Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();
