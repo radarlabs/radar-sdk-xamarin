@@ -32,6 +32,7 @@ namespace RadarIO.Xamarin
         Task<RadarStatus> CompleteTrip();
 
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
     }
 
     public delegate void RadarEventHandler<T>(T args);

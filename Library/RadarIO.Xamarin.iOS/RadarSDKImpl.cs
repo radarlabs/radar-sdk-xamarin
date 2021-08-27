@@ -147,5 +147,15 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
+            iOSBinding.Radar.GeocodeAddress(query, (status, addresses) =>
+            {
+                src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+            });
+            return src.Task;
+        }
     }
 }

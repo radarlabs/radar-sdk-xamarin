@@ -152,5 +152,12 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), limit, handler);
             return handler.Task;
         }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query)
+        {
+            var handler = new GeocodeCallbackHandler();
+            AndroidBinding.Radar.Geocode(query, handler);
+            return handler.Task;
+        }
     }
 }
