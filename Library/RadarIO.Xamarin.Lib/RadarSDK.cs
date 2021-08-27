@@ -21,16 +21,53 @@ namespace RadarIO.Xamarin
         string UserId { get; set; }
         string Description { get; set; }
         JSONObject Metadata { get; set; }
-        Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce();
+
+        Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
         void StartTracking(RadarTrackingOptions options);
         void StopTracking();
-        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback);
+        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback);
+
         Task<RadarStatus> StartTrip(RadarTripOptions options);
         Task<RadarStatus> CancelTrip();
         Task<RadarStatus> CompleteTrip();
+
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit);
     }
 
     public delegate void RadarEventHandler<T>(T args);
+
+    public class RadarAddress
+    {
+        public RadarCoordinate Coordinate;
+        public string FormattedAddress;
+        public string Country;
+        public string CountryCode;
+        public string CountryFlag;
+        public string Dma;
+        public string DmaCode;
+        public string State;
+        public string StateCode;
+        public string PostalCode;
+        public string City;
+        public string Borough;
+        public string County;
+        public string Neighborhood;
+#if MONOANDROID
+        public string Street;
+#endif
+        public string Number;
+        public string AddressLabel;
+        public string PlaceLabel;
+        public RadarAddressConfidence Confidence;
+    }
+
+    public enum RadarAddressConfidence
+    {
+        None,
+        Exact,
+        Interpolated,
+        Fallback
+    }
 
     public class RadarTripOptions
     {

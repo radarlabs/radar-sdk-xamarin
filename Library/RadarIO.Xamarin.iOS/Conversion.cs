@@ -9,6 +9,36 @@ namespace RadarIO.Xamarin
         internal static RadarStatus ToSDK(this iOSBinding.RadarStatus status)
             => (RadarStatus)status;
 
+        internal static RadarAddress ToSDK(this iOSBinding.RadarAddress address)
+            => new RadarAddress
+            {
+                Coordinate = address.Coordinate.ToSDK(),
+                FormattedAddress = address.FormattedAddress,
+                Country = address.Country,
+                CountryCode = address.CountryCode,
+                CountryFlag = address.CountryFlag,
+                Dma = address.Dma,
+                DmaCode = address.DmaCode,
+                State = address.State,
+                StateCode = address.StateCode,
+                PostalCode = address.PostalCode,
+                City = address.City,
+                Borough = address.Borough,
+                County = address.County,
+                Neighborhood = address.Neighborhood,
+                Number = address.Number,
+                AddressLabel = address.AddressLabel,
+                PlaceLabel = address.PlaceLabel,
+                Confidence = (RadarAddressConfidence)address.Confidence
+            };
+
+        internal static RadarCoordinate ToSDK(this CLLocationCoordinate2D coordinate)
+            => new RadarCoordinate
+            {
+                Latitude = coordinate.Latitude,
+                Longitude = coordinate.Longitude
+            };
+
         internal static RadarLocation ToSDK(this CLLocation location)
             => new RadarLocation
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using static RadarIO.Xamarin.RadarSingleton;
@@ -23,7 +24,13 @@ namespace RadarIO.Xamarin.Shared.Sample
             };
         }
 
-        public static async Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
-            => await Radar.TrackOnce();
+        public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> Test()
+        {
+            var ret = await Radar.TrackOnce();
+            var (status, loc, events, user) = ret;
+            var res = await Radar.Autocomplete("restaurants", loc, 5);
+
+            return ret;
+        }
     }
 }

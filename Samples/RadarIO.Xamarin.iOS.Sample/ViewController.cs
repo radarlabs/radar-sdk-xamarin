@@ -43,7 +43,7 @@ namespace RadarIO.Xamarin.iOS.Sample
             {
                 toggle = !toggle;
 
-                var (status, location, events, user) = await Demo.TrackOnce();
+                var (status, location, events, user) = await Demo.Test();
                 //var fences = user.Geofences.ToList();
                 //if (toggle)
                 //{

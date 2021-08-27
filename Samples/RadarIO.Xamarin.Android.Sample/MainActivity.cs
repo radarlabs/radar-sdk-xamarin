@@ -108,7 +108,7 @@ namespace RadarIO.Xamarin.Android.Sample
             var ResultView = FindViewById<AppCompatTextView>(Resource.Id.result_view);
             ResultView.Text = "Loading...";
             
-            var (status, location, events, user) = await Demo.TrackOnce();
+            var (status, location, events, user) = await Demo.Test();
             RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");    
 
             //toggle = !toggle;

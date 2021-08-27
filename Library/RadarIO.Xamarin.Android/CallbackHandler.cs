@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Android.Locations;
@@ -9,7 +10,7 @@ namespace RadarIO.Xamarin
     {
         protected TaskCompletionSource<T> taskSource = new TaskCompletionSource<T>();
 
-        public Task<T> Result => taskSource.Task;
+        public Task<T> Task => taskSource.Task;
     }
 
     public abstract class RepeatingCallbackHandler<T> : Java.Lang.Object
@@ -23,12 +24,12 @@ namespace RadarIO.Xamarin
     }
 
     public class TrackCallbackHandler
-        : TaskCallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
+        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
-            taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+            taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
         }
     }
 
@@ -42,16 +43,26 @@ namespace RadarIO.Xamarin
         }
     }
 
+    public class GeocodeCallbackHandler
+        : TaskCallbackHandler<(RadarStatus, IEnumerable<RadarAddress>)>
+        , AndroidBinding.Radar.IRadarGeocodeCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress[] addresses)
+        {
+            taskSource.SetResult(((RadarStatus)status.Ordinal(), addresses?.Select(Conversion.ToSDK)));
+        }
+    }
+
     public class RepeatingTrackCallbackHandler
-        : RepeatingCallbackHandler<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>
+        : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
-        public RepeatingTrackCallbackHandler(Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
+        public RepeatingTrackCallbackHandler(Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
             : base(callback) { }
 
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
-            callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+            callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
         }
     }
 }

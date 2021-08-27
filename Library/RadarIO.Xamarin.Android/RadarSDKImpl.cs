@@ -26,80 +26,6 @@ namespace RadarIO.Xamarin
         public event RadarEventHandler<RadarStatus> Error;
         public event RadarEventHandler<string> Log;
 
-        public void Initialize(string publishableKey)
-        {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
-            //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
-        }
-
-        public string UserId
-        {
-            get => AndroidBinding.Radar.UserId;
-            set => AndroidBinding.Radar.UserId = value;
-        }
-
-        public string Description
-        {
-            get => AndroidBinding.Radar.Description;
-            set => AndroidBinding.Radar.Description = value;
-        }
-
-        public JSONObject Metadata
-        {
-            get => AndroidBinding.Radar.Metadata?.ToSDK();
-            set => AndroidBinding.Radar.Metadata = value?.ToBinding();
-        }
-
-        public Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
-        {
-            var handler = new TrackCallbackHandler();
-            AndroidBinding.Radar.TrackOnce(handler);
-            return handler.Result;
-        }
-
-        public void StartTracking(RadarTrackingOptions options)
-        {
-            AndroidBinding.Radar.StartTracking(options.ToBinding());
-        }
-
-        public void StopTracking()
-        {
-            AndroidBinding.Radar.StopTracking();
-        }
-
-        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
-        {
-            var handler = new RepeatingTrackCallbackHandler(callback);
-            AndroidBinding.Radar.MockTracking(
-                origin?.ToBinding(),
-                destination?.ToBinding(),
-                AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode],
-                steps,
-                interval,
-                handler);
-        }
-
-        public Task<RadarStatus> StartTrip(RadarTripOptions options)
-        {
-            var handler = new TripCallbackHandler();
-            AndroidBinding.Radar.StartTrip(options.ToBinding(), handler);
-            return handler.Result;
-        }
-
-        public Task<RadarStatus> CancelTrip()
-        {
-            var handler = new TripCallbackHandler();
-            AndroidBinding.Radar.CancelTrip(handler);
-            return handler.Result;
-        }
-
-        public Task<RadarStatus> CompleteTrip()
-        {
-            var handler = new TripCallbackHandler();
-            AndroidBinding.Radar.CompleteTrip(handler);
-            return handler.Result;
-        }
-
         #region RadarReceiver
 
         RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
@@ -145,5 +71,86 @@ namespace RadarIO.Xamarin
         }
 
         #endregion
+
+        public void Initialize(string publishableKey)
+        {
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
+            //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
+        }
+
+        public string UserId
+        {
+            get => AndroidBinding.Radar.UserId;
+            set => AndroidBinding.Radar.UserId = value;
+        }
+
+        public string Description
+        {
+            get => AndroidBinding.Radar.Description;
+            set => AndroidBinding.Radar.Description = value;
+        }
+
+        public JSONObject Metadata
+        {
+            get => AndroidBinding.Radar.Metadata?.ToSDK();
+            set => AndroidBinding.Radar.Metadata = value?.ToBinding();
+        }
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
+        {
+            var handler = new TrackCallbackHandler();
+            AndroidBinding.Radar.TrackOnce(handler);
+            return handler.Task;
+        }
+
+        public void StartTracking(RadarTrackingOptions options)
+        {
+            AndroidBinding.Radar.StartTracking(options.ToBinding());
+        }
+
+        public void StopTracking()
+        {
+            AndroidBinding.Radar.StopTracking();
+        }
+
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
+        {
+            var handler = new RepeatingTrackCallbackHandler(callback);
+            AndroidBinding.Radar.MockTracking(
+                origin?.ToBinding(),
+                destination?.ToBinding(),
+                AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode],
+                steps,
+                interval,
+                handler);
+        }
+
+        public Task<RadarStatus> StartTrip(RadarTripOptions options)
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.StartTrip(options.ToBinding(), handler);
+            return handler.Task;
+        }
+
+        public Task<RadarStatus> CancelTrip()
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.CancelTrip(handler);
+            return handler.Task;
+        }
+
+        public Task<RadarStatus> CompleteTrip()
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.CompleteTrip(handler);
+            return handler.Task;
+        }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit)
+        {
+            var handler = new GeocodeCallbackHandler();
+            AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), limit, handler);
+            return handler.Task;
+        }
     }
 }

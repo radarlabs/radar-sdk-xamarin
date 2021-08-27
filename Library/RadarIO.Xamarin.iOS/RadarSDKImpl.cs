@@ -16,6 +16,37 @@ namespace RadarIO.Xamarin
         public RadarTrackingOptions EfficientTrackingOptions
             => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
 
+        #region RadarDelegate
+
+        RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
+
+        public override void DidFailWithStatus(iOSBinding.RadarStatus status)
+        {
+            Radar.Error?.Invoke((RadarStatus)status);
+        }
+
+        public override void DidLogMessage(string message)
+        {
+            Radar.Log?.Invoke(message);
+        }
+
+        public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
+        {
+            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
+        }
+
+        public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
+        {
+            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
+        }
+
+        public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
+        {
+            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+        }
+
+        #endregion
+
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
         public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
         public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
@@ -46,9 +77,9 @@ namespace RadarIO.Xamarin
             set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
         }
 
-        public Task<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> TrackOnce()
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
         {
-            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>();
             iOSBinding.Radar.TrackOnceWithCompletionHandler((status, location, ev, user) =>
             {
                 src.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
@@ -66,7 +97,7 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.StopTracking();
         }
 
-        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, RadarEvent[], RadarUser)> callback)
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
         {
             iOSBinding.Radar.MockTrackingWithOrigin(
                 origin?.ToBinding(),
@@ -107,35 +138,14 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        #region RadarDelegate
-
-        RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
-
-        public override void DidFailWithStatus(iOSBinding.RadarStatus status)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit)
         {
-            Radar.Error?.Invoke((RadarStatus)status);
+            var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
+            iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), limit, (status, addresses) =>
+            {
+                src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+            });
+            return src.Task;
         }
-
-        public override void DidLogMessage(string message)
-        {
-            Radar.Log?.Invoke(message);
-        }
-
-        public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
-        {
-            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
-        }
-
-        public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
-        {
-            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
-        }
-
-        public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
-        {
-            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
-        }
-
-        #endregion
     }
 }

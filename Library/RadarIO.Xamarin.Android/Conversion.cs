@@ -9,6 +9,30 @@ namespace RadarIO.Xamarin
         internal static RadarStatus ToSDK(this AndroidBinding.Radar.RadarStatus status)
             => (RadarStatus)status.Ordinal();
 
+        internal static RadarAddress ToSDK(this AndroidBinding.RadarAddress address)
+            => new RadarAddress
+            {
+                Coordinate = address.Coordinate?.ToSDK(),
+                FormattedAddress = address.FormattedAddress,
+                Country = address.Country,
+                CountryCode = address.CountryCode,
+                CountryFlag = address.CountryFlag,
+                Dma = address.Dma,
+                DmaCode = address.DmaCode,
+                State = address.State,
+                StateCode = address.StateCode,
+                PostalCode = address.PostalCode,
+                City = address.City,
+                Borough = address.Borough,
+                County = address.County,
+                Neighborhood = address.Neighborhood,
+                Street = address.Street,
+                Number = address.Number,
+                AddressLabel = address.AddressLabel,
+                PlaceLabel = address.PlaceLabel,
+                Confidence = (RadarAddressConfidence)address.Confidence.Ordinal()
+            };
+
         internal static RadarLocation ToSDK(this Location location)
             => new RadarLocation
             {
