@@ -9,11 +9,11 @@ namespace RadarIO.Xamarin
 {
     public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     {
-        public RadarTrackingOptions ContinuousTrackingOptions
+        public RadarTrackingOptions TrackingOptionsContinuous
             => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
-        public RadarTrackingOptions ResponsiveTrackingOptions
+        public RadarTrackingOptions TrackingOptionsResponsive
             => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
-        public RadarTrackingOptions EfficientTrackingOptions
+        public RadarTrackingOptions TrackingOptionsEfficient
             => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
 
         #region RadarDelegate

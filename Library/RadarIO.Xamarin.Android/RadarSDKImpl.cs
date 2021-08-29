@@ -13,11 +13,11 @@ namespace RadarIO.Xamarin
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
     public class RadarSDKImpl : AndroidBinding.RadarReceiver, RadarSDK
     {
-        public RadarTrackingOptions ContinuousTrackingOptions
+        public RadarTrackingOptions TrackingOptionsContinuous
             => AndroidBinding.RadarTrackingOptions.Continuous.ToSDK();
-        public RadarTrackingOptions ResponsiveTrackingOptions
+        public RadarTrackingOptions TrackingOptionsResponsive
             => AndroidBinding.RadarTrackingOptions.Responsive.ToSDK();
-        public RadarTrackingOptions EfficientTrackingOptions
+        public RadarTrackingOptions TrackingOptionsEfficient
             => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
 
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;

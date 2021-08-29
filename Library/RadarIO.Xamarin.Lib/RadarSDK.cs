@@ -7,9 +7,9 @@ namespace RadarIO.Xamarin
 {
     public interface RadarSDK
     {
-        RadarTrackingOptions ResponsiveTrackingOptions { get; }
-        RadarTrackingOptions ContinuousTrackingOptions { get; }
-        RadarTrackingOptions EfficientTrackingOptions { get; }
+        RadarTrackingOptions TrackingOptionsResponsive { get; }
+        RadarTrackingOptions TrackingOptionsContinuous { get; }
+        RadarTrackingOptions TrackingOptionsEfficient { get; }
 
         event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
         event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
@@ -43,6 +43,8 @@ namespace RadarIO.Xamarin
 
         Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
         Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+
+
     }
 
     public delegate void RadarEventHandler<T>(T args);
