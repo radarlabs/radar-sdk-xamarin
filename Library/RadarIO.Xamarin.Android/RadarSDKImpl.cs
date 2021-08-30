@@ -215,6 +215,13 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.GetMatrix(origins?.Select(Conversion.ToBinding).ToArray(), destinations?.Select(Conversion.ToBinding).ToArray(), AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode], AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
             return handler.Task;
         }
+
+        public Task<(RadarStatus, RadarAddress, bool)> IpGeocode()
+        {
+            var handler = new IpGeocodeallbackHandler();
+            AndroidBinding.Radar.IpGeocode(handler);
+            return handler.Task;
+        }
     }
 
     internal class RadarRouteMatrixImpl : RadarRouteMatrix

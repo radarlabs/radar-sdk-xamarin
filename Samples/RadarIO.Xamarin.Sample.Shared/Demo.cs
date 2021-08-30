@@ -40,6 +40,7 @@ namespace RadarIO.Xamarin.Shared.Sample
             var (_, routes) = await Radar.GetDistance(address, new[] { RadarRouteMode.Bike, RadarRouteMode.Car }, RadarRouteUnits.Metric);
             var (_, matrix) = await Radar.GetMatrix(new[] { loc }, new[] { address }, RadarRouteMode.Car, RadarRouteUnits.Imperial);
             var matrixTest = matrix.RouteBetween(0, 0);
+            var (_, ipGeocode, isProxy) = await Radar.IpGeocode();
 
             return ret;
         }

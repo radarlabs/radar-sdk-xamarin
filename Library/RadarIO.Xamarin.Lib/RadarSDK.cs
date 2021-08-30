@@ -45,6 +45,8 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
 
         Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units);
+
+        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
     }
 
     public abstract class RadarRouteMatrix

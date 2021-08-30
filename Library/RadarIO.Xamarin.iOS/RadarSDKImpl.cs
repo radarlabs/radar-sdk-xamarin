@@ -233,7 +233,17 @@ namespace RadarIO.Xamarin
             var src = new TaskCompletionSource<(RadarStatus, RadarRouteMatrix)>();
             iOSBinding.Radar.GetMatrixFromOrigins(origins?.Select(Conversion.ToBinding).ToArray(), destinations?.Select(Conversion.ToBinding).ToArray(), (iOSBinding.RadarRouteMode)mode, (iOSBinding.RadarRouteUnits)units, (status, matrix) =>
             {
-                src.SetResult((status.ToSDK(), matrix.ToSDK()));
+                src.SetResult((status.ToSDK(), matrix?.ToSDK()));
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, RadarAddress, bool)> IpGeocode()
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarAddress, bool)>();
+            iOSBinding.Radar.IpGeocodeWithCompletionHandler((status, address, isProxy) =>
+            {
+                src.SetResult((status.ToSDK(), address?.ToSDK(), isProxy));
             });
             return src.Task;
         }

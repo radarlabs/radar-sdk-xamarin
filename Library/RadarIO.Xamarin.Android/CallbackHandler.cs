@@ -93,6 +93,16 @@ namespace RadarIO.Xamarin
         }
     }
 
+    public class IpGeocodeallbackHandler
+        : TaskCallbackHandler<(RadarStatus, RadarAddress, bool)>
+        , AndroidBinding.Radar.IRadarIpGeocodeCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress address, bool proxy)
+        {
+            taskSource.SetResult(((RadarStatus)status.Ordinal(), address.ToSDK(), proxy));
+        }
+    }
+
     public class RepeatingTrackCallbackHandler
         : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
