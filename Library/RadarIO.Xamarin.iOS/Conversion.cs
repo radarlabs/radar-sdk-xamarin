@@ -10,6 +10,55 @@ namespace RadarIO.Xamarin
         internal static RadarStatus ToSDK(this iOSBinding.RadarStatus status)
             => (RadarStatus)status;
 
+        internal static RadarRouteMatrix ToSDK(this iOSBinding.RadarRouteMatrix matrix)
+        {
+            // linq isn't working..
+            var res = new List<IEnumerable<RadarRoute>>();
+            foreach (var arr in matrix?.ArrayValue)
+            {
+                var routes = new List<RadarRoute>();
+                foreach (var dict in arr)
+                {
+                    var route = new RadarRoute()
+                    {
+                        Distance =  new RadarRouteDistance
+                        {
+                            Text = dict["distance"].ValueForKey(new Foundation.NSString("text")).ToString(),
+                            Value = ((Foundation.NSNumber)dict["distance"].ValueForKey(new Foundation.NSString("value"))).DoubleValue
+                        },
+                        Duration = new RadarRouteDuration
+                        {
+                            Text = dict["duration"].ValueForKey(new Foundation.NSString("text")).ToString(),
+                            Value = ((Foundation.NSNumber)dict["duration"].ValueForKey(new Foundation.NSString("value"))).DoubleValue
+                        }
+                        // no geometry
+                    };
+                    routes.Add(route);
+                }
+                res.Add(routes);
+            }
+            return new RadarRouteMatrixImpl { matrix = res };
+            //m?.ToList().ForEach(arr =>
+            //{
+            //    arr?.ToList().Select(dict =>
+            //                 {
+            //                     return new RadarRoute();
+            //                 });
+            //});
+            //return new RadarRouteMatrixImpl
+            //{
+            //    matrix = matrix?.ArrayValue?.Select(arr => arr.Select(ToSDK).Select(obj =>
+            //    {
+            //        var route = new RadarRoute();
+            //        //route.Distance = new RadarRouteDistance
+            //        //{
+            //        //    Text =  = obj?.GetValueOrDefault("distance")?.
+            //        //};
+            //        return route;
+            //    }))
+            //           };
+        }
+
         internal static RadarRoutes ToSDK(this iOSBinding.RadarRoutes routes)
             => new RadarRoutes
             {

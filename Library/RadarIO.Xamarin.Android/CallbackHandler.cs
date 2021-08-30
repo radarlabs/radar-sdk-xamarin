@@ -83,6 +83,16 @@ namespace RadarIO.Xamarin
         }
     }
 
+    public class MatrixCallbackHandler
+        : TaskCallbackHandler<(RadarStatus, RadarRouteMatrix)>
+        , AndroidBinding.Radar.IRadarMatrixCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarRouteMatrix matrix)
+        {
+            taskSource.SetResult(((RadarStatus)status.Ordinal(), matrix.ToSDK()));
+        }
+    }
+
     public class RepeatingTrackCallbackHandler
         : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback

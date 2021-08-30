@@ -73,7 +73,7 @@
       <Name>RadarIO.Xamarin.AndroidBinding</Name>
     </ProjectReference>
     <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
-      <Project>{AA8E9151-326C-416B-A4AF-1252050CA24C}</Project>
+      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
       <Name>RadarIO.Xamarin.Lib</Name>
     </ProjectReference>
   </ItemGroup>

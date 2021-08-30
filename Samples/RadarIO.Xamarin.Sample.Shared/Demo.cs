@@ -36,8 +36,10 @@ namespace RadarIO.Xamarin.Shared.Sample
             (_, _, geofences) = await Radar.SearchGeofences(loc, 10, new[] { "tag" });
             var (_, _, places) = await Radar.SearchPlaces(1000, categories: new[] { "food-beverage" });
             (_, _, places) = await Radar.SearchPlaces(loc, 1000, categories: new[] { "food-beverage" });
-            var (_, routes) = await Radar.GetDistance(addresses.Select(a => new RadarLocation { Latitude = a.Coordinate.Latitude, Longitude = a.Coordinate.Longitude }).First(), new[] { RadarRouteMode.Bike, RadarRouteMode.Car }, RadarRouteUnits.Metric);
-
+            var address = addresses.Select(a => new RadarLocation { Latitude = a.Coordinate.Latitude, Longitude = a.Coordinate.Longitude }).First();
+            var (_, routes) = await Radar.GetDistance(address, new[] { RadarRouteMode.Bike, RadarRouteMode.Car }, RadarRouteUnits.Metric);
+            var (_, matrix) = await Radar.GetMatrix(new[] { loc }, new[] { address }, RadarRouteMode.Car, RadarRouteUnits.Imperial);
+            var matrixTest = matrix.RouteBetween(0, 0);
 
             return ret;
         }

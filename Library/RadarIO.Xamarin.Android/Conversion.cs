@@ -10,6 +10,12 @@ namespace RadarIO.Xamarin
         internal static RadarStatus ToSDK(this AndroidBinding.Radar.RadarStatus status)
             => (RadarStatus)status.Ordinal();
 
+        internal static RadarRouteMatrix ToSDK(this AndroidBinding.RadarRouteMatrix matrix)
+            => new RadarRouteMatrixImpl
+            {
+                matrix = matrix?.GetMatrix()?.Select(arr => arr?.Select(ToSDK))
+            };
+
         internal static RadarRoutes ToSDK(this AndroidBinding.RadarRoutes routes)
             => new RadarRoutes
             {

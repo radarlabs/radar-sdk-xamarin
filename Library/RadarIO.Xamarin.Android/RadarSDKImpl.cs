@@ -208,5 +208,18 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.GetDistance(source?.ToBinding(), destination?.ToBinding(), modes?.ToBinding(), AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
             return handler.Task;
         }
+
+        public Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units)
+        {
+            var handler = new MatrixCallbackHandler();
+            AndroidBinding.Radar.GetMatrix(origins?.Select(Conversion.ToBinding).ToArray(), destinations?.Select(Conversion.ToBinding).ToArray(), AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode], AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
+            return handler.Task;
+        }
+    }
+
+    internal class RadarRouteMatrixImpl : RadarRouteMatrix
+    {
+        public override RadarRoute RouteBetween(int originIndex, int destinationIndex)
+            => matrix.ElementAtOrDefault(originIndex)?.ElementAtOrDefault(destinationIndex);
     }
 }

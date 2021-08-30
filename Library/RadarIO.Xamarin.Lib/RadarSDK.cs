@@ -44,7 +44,14 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
         Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
 
+        Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units);
+    }
 
+    public abstract class RadarRouteMatrix
+    {
+        public IEnumerable<IEnumerable<RadarRoute>> matrix;
+            
+        public abstract RadarRoute RouteBetween(int originIndex, int destinationIndex);
     }
 
     public delegate void RadarEventHandler<T>(T args);
