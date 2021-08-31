@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Android.Locations;
+using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
@@ -79,13 +79,13 @@ namespace RadarIO.Xamarin
                 Confidence = (RadarAddressConfidence)address.Confidence.Ordinal()
             };
 
-        internal static RadarLocation ToSDK(this Location location)
-            => new RadarLocation
+        internal static Location ToSDK(this Android.Locations.Location location)
+            => new Location
             {
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
                 Accuracy = location.Accuracy,
-                Bearing = location.Bearing,
+                Course = location.Bearing,
                 Altitude = location.Altitude,
                 Speed = location.Speed,
                 Timestamp = location.Time.ToDateTime()
@@ -390,15 +390,15 @@ namespace RadarIO.Xamarin
                     new Java.Lang.Integer(service.Id)
                 );
 
-        internal static Location ToBinding(this RadarLocation location)
-            => new Location("mock")
+        internal static Android.Locations.Location ToBinding(this Location location)
+            => new Android.Locations.Location("mock")
             {
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
-                Bearing = location.Bearing,
-                Altitude = location.Altitude,
-                Speed = location.Speed,
-                Time = (long)(location.Timestamp?.Ticks / 10000)
+                Bearing = (float)(location.Course ?? 0),
+                Altitude = location.Altitude ?? 0,
+                Speed = (float)(location.Speed ?? 0),
+                Time = location.Timestamp.Ticks / 10000
             };
 
         internal static Java.Util.EnumSet ToBinding(this IEnumerable<RadarRouteMode> modes)

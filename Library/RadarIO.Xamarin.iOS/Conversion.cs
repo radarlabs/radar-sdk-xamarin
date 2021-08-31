@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CoreLocation;
+using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
@@ -38,25 +39,6 @@ namespace RadarIO.Xamarin
                 res.Add(routes);
             }
             return new RadarRouteMatrixImpl { matrix = res };
-            //m?.ToList().ForEach(arr =>
-            //{
-            //    arr?.ToList().Select(dict =>
-            //                 {
-            //                     return new RadarRoute();
-            //                 });
-            //});
-            //return new RadarRouteMatrixImpl
-            //{
-            //    matrix = matrix?.ArrayValue?.Select(arr => arr.Select(ToSDK).Select(obj =>
-            //    {
-            //        var route = new RadarRoute();
-            //        //route.Distance = new RadarRouteDistance
-            //        //{
-            //        //    Text =  = obj?.GetValueOrDefault("distance")?.
-            //        //};
-            //        return route;
-            //    }))
-            //           };
         }
 
         internal static RadarRoutes ToSDK(this iOSBinding.RadarRoutes routes)
@@ -128,16 +110,16 @@ namespace RadarIO.Xamarin
                 Longitude = coordinate.Longitude
             };
 
-        internal static RadarLocation ToSDK(this CLLocation location)
-            => new RadarLocation
+        internal static Location ToSDK(this CLLocation location)
+            => new Location
             {
                 Latitude = location.Coordinate.Latitude,
                 Longitude = location.Coordinate.Longitude,
                 Accuracy = Math.Min(location.HorizontalAccuracy, location.VerticalAccuracy),
-                Bearing = (float)location.Course,
+                Course = (float)location.Course,
                 Altitude = location.Altitude,
                 Speed = (float)location.Speed,
-                Timestamp = (DateTime?)location.Timestamp
+                Timestamp = (DateTime)location.Timestamp
             };
 
         internal static RadarEvent ToSDK(this iOSBinding.RadarEvent ev)
@@ -401,19 +383,19 @@ namespace RadarIO.Xamarin
                 Beacons = options.Beacons
             };
 
-        internal static CLLocation ToBinding(this RadarLocation location)
+        internal static CLLocation ToBinding(this Location location)
             => new CLLocation(
                 new CLLocationCoordinate2D
                 {
                     Latitude = location.Latitude,
                     Longitude = location.Longitude
                 },
-                location.Altitude,
-                location.Accuracy,
-                location.Accuracy,
-                location.Bearing,
-                location.Speed,
-                (Foundation.NSDate)location.Timestamp);
+                location.Altitude ?? 0,
+                location.Accuracy ?? 0,
+                location.Accuracy ?? 0,
+                location.Course ?? 0,
+                location.Speed ?? 0,
+                (Foundation.NSDate)location.Timestamp.LocalDateTime);
 
         internal static iOSBinding.RadarRouteMode ToBinding(this IEnumerable<RadarRouteMode> modes)
             => (iOSBinding.RadarRouteMode)modes?.Sum(m => Math.Pow(2, (double)m));

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Android.Locations;
+using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
@@ -24,10 +24,10 @@ namespace RadarIO.Xamarin
     }
 
     public class TrackCallbackHandler
-        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
+        : TaskCallbackHandler<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
-        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
             taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
         }
@@ -54,20 +54,20 @@ namespace RadarIO.Xamarin
     }
 
     public class SearchGeofencesCallbackHandler
-        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>
+        : TaskCallbackHandler<(RadarStatus, Location, IEnumerable<RadarGeofence>)>
         , AndroidBinding.Radar.IRadarSearchGeofencesCallback
     {
-        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarGeofence[] geofences)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarGeofence[] geofences)
         {
             taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
         }
     }
 
     public class SearchPlacesCallbackHandler
-        : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)>
+        : TaskCallbackHandler<(RadarStatus, Location, IEnumerable<RadarPlace>)>
         , AndroidBinding.Radar.IRadarSearchPlacesCallback
     {
-        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarPlace[] places)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarPlace[] places)
         {
             taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), places?.Select(Conversion.ToSDK)));
         }
@@ -104,13 +104,13 @@ namespace RadarIO.Xamarin
     }
 
     public class RepeatingTrackCallbackHandler
-        : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
+        : RepeatingCallbackHandler<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>
         , AndroidBinding.Radar.IRadarTrackCallback
     {
-        public RepeatingTrackCallbackHandler(Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
+        public RepeatingTrackCallbackHandler(Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback)
             : base(callback) { }
 
-        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
             callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
         }

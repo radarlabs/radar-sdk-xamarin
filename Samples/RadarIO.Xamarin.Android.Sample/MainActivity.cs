@@ -77,8 +77,8 @@ namespace RadarIO.Xamarin.Android.Sample
             //};
             //Radar.StartTracking(trackingOptions);
             //Radar.MockTracking(
-            //    new RadarLocation { Latitude = 40.78382, Longitude = -73.97536 },
-            //    new RadarLocation { Latitude = 40.70390, Longitude = -73.98670 },
+            //    new Location { Latitude = 40.78382, Longitude = -73.97536 },
+            //    new Location { Latitude = 40.70390, Longitude = -73.98670 },
             //    RadarRouteMode.Car,
             //    10,
             //    3,

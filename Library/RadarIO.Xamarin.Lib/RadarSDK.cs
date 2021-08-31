@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
@@ -12,8 +13,8 @@ namespace RadarIO.Xamarin
         RadarTrackingOptions TrackingOptionsEfficient { get; }
 
         event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
-        event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
+        event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
+        event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
@@ -22,29 +23,29 @@ namespace RadarIO.Xamarin
         string Description { get; set; }
         JSONObject Metadata { get; set; }
 
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
         void StartTracking(RadarTrackingOptions options);
         void StopTracking();
-        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback);
+        void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback);
 
         Task<RadarStatus> StartTrip(RadarTripOptions options);
         Task<RadarStatus> CancelTrip();
         Task<RadarStatus> CompleteTrip();
 
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
 
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
 
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
 
-        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
-        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+        Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+        Task<(RadarStatus, RadarRoutes)> GetDistance(Location source, Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
 
-        Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units);
+        Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units);
 
         Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
     }
@@ -215,7 +216,7 @@ namespace RadarIO.Xamarin
         public string DeviceId;
         public string Description;
         public JSONObject Metadata;
-        public RadarLocation Location;
+        public Location Location;
         public IEnumerable<RadarGeofence> Geofences;
         public RadarPlace Place;
         public RadarUserInsights Insights;
@@ -422,7 +423,7 @@ namespace RadarIO.Xamarin
         public RadarEventVerification Verification;
         public RadarEventConfidence Confidence;
         public float Duration;
-        public RadarLocation Location;
+        public Location Location;
     }
 
     public enum RadarEventConfidence
@@ -473,17 +474,29 @@ namespace RadarIO.Xamarin
         UserExitedRegionPostalCode
     }
 
-    public class RadarLocation
-    {
-        public double Longitude;
-        public double Latitude;
-        public double Accuracy;
-        public float Bearing;
-        public double Altitude;
-        public float Speed;
-        public DateTime? Timestamp = DateTime.Now;
-        // todo
-    }
+    //public class Location
+    //{
+    //    public double Longitude;
+    //    public double Latitude;
+    //    public double Accuracy;
+    //    public float Bearing;
+    //    public double Altitude;
+    //    public float Speed;
+    //    public DateTime? Timestamp = DateTime.Now;
+
+    //    public static implicit operator Location(Location loc)
+    //        => new Location
+    //        {
+    //            Longitude = loc.Longitude,
+    //            Latitude = loc.Latitude,
+    //            Accuracy = loc.Accuracy,
+    //            Course = loc.Bearing,
+    //            Altitude = loc.Altitude,
+    //            Speed = loc.Speed,
+    //            Timestamp = (DateTimeOffset)loc.Timestamp
+    //        };
+    //    // todo
+    //}
 
     public enum RadarStatus
     {

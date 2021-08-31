@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>RadarIO.Xamarin</id>
-		<version>0.1.6</version>
+		<version>0.1.7</version>
 		<title>Radar Xamarin SDK</title>
 		<authors>Radar Labs, Inc.</authors>
 		<owners>Radar Labs, Inc.</owners>
@@ -16,13 +16,18 @@
 		<!--<copyright>$copyright$</copyright>-->
 		<tags>radar, radario, xamarin, android, ios, plugin for xamarin, geocoding, radar, geolocation, geofencing, background geolocation, location tracking</tags>
 		<dependencies>
-			<group targetFramework="netstandard2.0"></group>
+			<group targetFramework="netstandard2.0">
+				<dependency id="Xamarin.Essentials" version="1.7.0" />
+			</group>
 			<group targetFramework="MonoAndroid4.4">
+				<dependency id="Xamarin.Essentials" version="1.7.0" />
 				<dependency id="Xamarin.Kotlin.StdLib" version="1.5.21" />
 				<dependency id="Xamarin.GooglePlayServices.Location" version="118.0.0" />
 				<dependency id="Xamarin.GooglePlayServices.Ads.Identifier" version="117.0.1" />
 			</group>
-			<group targetFramework="xamarinios10"></group>
+			<group targetFramework="xamarinios10">
+				<dependency id="Xamarin.Essentials" version="1.7.0" />
+			</group>
 		</dependencies>
 	</metadata>
 	<files>
