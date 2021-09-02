@@ -1,4 +1,4 @@
-![Radar](https://raw.githubusercontent.com/radarlabs/radar-sdk-xamarin/master/logo.png)
+![Radar](https://github.com/radarlabs/radar-sdk-xamarin/blob/master/logo.png?raw=true)
 
 [![npm](https://img.shields.io/nuget/v/RadarIO.Xamarin)](https://www.nuget.org/packages/RadarIO.Xamarin/)
 
