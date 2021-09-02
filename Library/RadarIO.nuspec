@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>RadarIO.Xamarin</id>
-		<version>0.1.8</version>
+		<version>3.1.0</version>
 		<title>Radar Xamarin SDK</title>
 		<authors>Radar Labs, Inc.</authors>
 		<owners>Radar Labs, Inc.</owners>
