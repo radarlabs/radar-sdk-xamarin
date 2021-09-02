@@ -383,6 +383,10 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.Color.bright_foreground_inverse_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_inverse_material_light;
 			global::RadarIO.Xamarin.Resource.Color.bright_foreground_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_material_dark;
 			global::RadarIO.Xamarin.Resource.Color.bright_foreground_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_material_light;
+			global::RadarIO.Xamarin.Resource.Color.browser_actions_bg_grey = global::RadarIO.Xamarin.Android.Sample.Resource.Color.browser_actions_bg_grey;
+			global::RadarIO.Xamarin.Resource.Color.browser_actions_divider_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.browser_actions_divider_color;
+			global::RadarIO.Xamarin.Resource.Color.browser_actions_text_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.browser_actions_text_color;
+			global::RadarIO.Xamarin.Resource.Color.browser_actions_title_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.browser_actions_title_color;
 			global::RadarIO.Xamarin.Resource.Color.button_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.button_material_dark;
 			global::RadarIO.Xamarin.Resource.Color.button_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.button_material_light;
 			global::RadarIO.Xamarin.Resource.Color.common_google_signin_btn_text_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark;
@@ -520,6 +524,8 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::RadarIO.Xamarin.Resource.Dimension.abc_text_size_title_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_title_material;
 			global::RadarIO.Xamarin.Resource.Dimension.abc_text_size_title_material_toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::RadarIO.Xamarin.Resource.Dimension.browser_actions_context_menu_max_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::RadarIO.Xamarin.Resource.Dimension.browser_actions_context_menu_min_padding = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::RadarIO.Xamarin.Resource.Dimension.compat_button_inset_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_inset_horizontal_material;
 			global::RadarIO.Xamarin.Resource.Dimension.compat_button_inset_vertical_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_inset_vertical_material;
 			global::RadarIO.Xamarin.Resource.Dimension.compat_button_padding_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_padding_horizontal_material;
@@ -752,6 +758,11 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.Id.beginning = global::RadarIO.Xamarin.Android.Sample.Resource.Id.beginning;
 			global::RadarIO.Xamarin.Resource.Id.blocking = global::RadarIO.Xamarin.Android.Sample.Resource.Id.blocking;
 			global::RadarIO.Xamarin.Resource.Id.bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.bottom;
+			global::RadarIO.Xamarin.Resource.Id.browser_actions_header_text = global::RadarIO.Xamarin.Android.Sample.Resource.Id.browser_actions_header_text;
+			global::RadarIO.Xamarin.Resource.Id.browser_actions_menu_items = global::RadarIO.Xamarin.Android.Sample.Resource.Id.browser_actions_menu_items;
+			global::RadarIO.Xamarin.Resource.Id.browser_actions_menu_item_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Id.browser_actions_menu_item_icon;
+			global::RadarIO.Xamarin.Resource.Id.browser_actions_menu_item_text = global::RadarIO.Xamarin.Android.Sample.Resource.Id.browser_actions_menu_item_text;
+			global::RadarIO.Xamarin.Resource.Id.browser_actions_menu_view = global::RadarIO.Xamarin.Android.Sample.Resource.Id.browser_actions_menu_view;
 			global::RadarIO.Xamarin.Resource.Id.buttonPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.buttonPanel;
 			global::RadarIO.Xamarin.Resource.Id.center_vertical = global::RadarIO.Xamarin.Android.Sample.Resource.Id.center_vertical;
 			global::RadarIO.Xamarin.Resource.Id.checkbox = global::RadarIO.Xamarin.Android.Sample.Resource.Id.checkbox;
@@ -906,6 +917,8 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.Layout.abc_search_view = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_search_view;
 			global::RadarIO.Xamarin.Resource.Layout.abc_select_dialog_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_select_dialog_material;
 			global::RadarIO.Xamarin.Resource.Layout.abc_tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_tooltip;
+			global::RadarIO.Xamarin.Resource.Layout.browser_actions_context_menu_page = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.browser_actions_context_menu_page;
+			global::RadarIO.Xamarin.Resource.Layout.browser_actions_context_menu_row = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.browser_actions_context_menu_row;
 			global::RadarIO.Xamarin.Resource.Layout.custom_dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.custom_dialog;
 			global::RadarIO.Xamarin.Resource.Layout.notification_action = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_action;
 			global::RadarIO.Xamarin.Resource.Layout.notification_action_tombstone = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_action_tombstone;
@@ -963,6 +976,10 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.String.common_open_on_phone = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_open_on_phone;
 			global::RadarIO.Xamarin.Resource.String.common_signin_button_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_signin_button_text;
 			global::RadarIO.Xamarin.Resource.String.common_signin_button_text_long = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_signin_button_text_long;
+			global::RadarIO.Xamarin.Resource.String.copy_toast_msg = global::RadarIO.Xamarin.Android.Sample.Resource.String.copy_toast_msg;
+			global::RadarIO.Xamarin.Resource.String.fallback_menu_item_copy_link = global::RadarIO.Xamarin.Android.Sample.Resource.String.fallback_menu_item_copy_link;
+			global::RadarIO.Xamarin.Resource.String.fallback_menu_item_open_in_browser = global::RadarIO.Xamarin.Android.Sample.Resource.String.fallback_menu_item_open_in_browser;
+			global::RadarIO.Xamarin.Resource.String.fallback_menu_item_share_link = global::RadarIO.Xamarin.Android.Sample.Resource.String.fallback_menu_item_share_link;
 			global::RadarIO.Xamarin.Resource.String.hello = global::RadarIO.Xamarin.Android.Sample.Resource.String.hello;
 			global::RadarIO.Xamarin.Resource.String.search_menu_title = global::RadarIO.Xamarin.Android.Sample.Resource.String.search_menu_title;
 			global::RadarIO.Xamarin.Resource.String.status_bar_notification_info_overflow = global::RadarIO.Xamarin.Android.Sample.Resource.String.status_bar_notification_info_overflow;
@@ -1800,6 +1817,8 @@ namespace RadarIO.Xamarin.Android.Sample
 			global::RadarIO.Xamarin.Resource.Styleable.View_paddingEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_paddingEnd;
 			global::RadarIO.Xamarin.Resource.Styleable.View_paddingStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_paddingStart;
 			global::RadarIO.Xamarin.Resource.Styleable.View_theme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_theme;
+			global::RadarIO.Xamarin.Resource.Xml.image_share_filepaths = global::RadarIO.Xamarin.Android.Sample.Resource.Xml.image_share_filepaths;
+			global::RadarIO.Xamarin.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::RadarIO.Xamarin.Android.Sample.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderAuthority;

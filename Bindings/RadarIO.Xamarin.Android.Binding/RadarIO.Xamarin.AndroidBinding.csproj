@@ -50,9 +50,6 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\sdk-3.1.13.aar" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Xamarin.GooglePlayServices.Ads.Identifier">
       <Version>117.0.1</Version>
     </PackageReference>
@@ -62,6 +59,9 @@
     <PackageReference Include="Xamarin.Kotlin.StdLib">
       <Version>1.5.21</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="Jars\sdk-3.1.13.aar" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
