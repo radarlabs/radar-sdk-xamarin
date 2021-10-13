@@ -14,6 +14,7 @@ namespace RadarIO.Xamarin.Shared.Sample
         public static void Initialize()
         {
             Radar.Initialize(RADAR_KEY);
+            Radar.SetLogLevel(RadarLogLevel.Debug);
             Radar.UserId = "test user";
             Radar.Description = "test desc";
             Radar.Metadata = new JSONObject

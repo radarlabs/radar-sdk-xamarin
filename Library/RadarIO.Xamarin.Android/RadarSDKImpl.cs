@@ -78,6 +78,11 @@ namespace RadarIO.Xamarin
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
+        public void SetLogLevel(RadarLogLevel level)
+        {
+            AndroidBinding.Radar.SetLogLevel(AndroidBinding.Radar.RadarLogLevel.Values()[(int)level]);
+        }
+
         public string UserId
         {
             get => AndroidBinding.Radar.UserId;

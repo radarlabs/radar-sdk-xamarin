@@ -19,6 +19,7 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<string> Log;
 
         void Initialize(string publishableKey);
+        void SetLogLevel(RadarLogLevel level);
         string UserId { get; set; }
         string Description { get; set; }
         JSONObject Metadata { get; set; }
@@ -48,6 +49,15 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units);
 
         Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
+    }
+
+    public enum RadarLogLevel
+    {
+        None,
+        Error,
+        Warning,
+        Info,
+        Debug
     }
 
     public abstract class RadarRouteMatrix

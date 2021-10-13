@@ -60,6 +60,11 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.SetDelegate(this);
         }
 
+        public void SetLogLevel(RadarLogLevel level)
+        {
+            iOSBinding.Radar.SetLogLevel((iOSBinding.RadarLogLevel)level);
+        }
+
         public string UserId
         {
             get => iOSBinding.Radar.UserId;
