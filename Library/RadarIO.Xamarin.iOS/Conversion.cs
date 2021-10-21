@@ -365,13 +365,13 @@ namespace RadarIO.Xamarin
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
                 DesiredSyncInterval = options.DesiredSyncInterval,
-                DesiredAccuracy = (iOSBinding.RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy,
+                DesiredAccuracy = InvertEnum<iOSBinding.RadarTrackingOptionsDesiredAccuracy>((int)options.DesiredAccuracy),
                 StopDuration = options.StopDuration,
                 StopDistance = options.StopDistance,
                 StartTrackingAfter = (Foundation.NSDate)options.StartTrackingAfter,
                 StopTrackingAfter = (Foundation.NSDate)options.StopTrackingAfter,
-                Replay = (iOSBinding.RadarTrackingOptionsReplay)options.Replay,
-                Sync = (iOSBinding.RadarTrackingOptionsSync)options.Sync,
+                Replay = InvertEnum<iOSBinding.RadarTrackingOptionsReplay>((int)options.Replay),
+                Sync = InvertEnum<iOSBinding.RadarTrackingOptionsSync>((int)options.Sync),
                 ShowBlueBar = options.ShowBlueBar,
                 UseStoppedGeofence = options.UseStoppedGeofence,
                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,
@@ -405,5 +405,8 @@ namespace RadarIO.Xamarin
                 metadata.Values.ToArray(),
                 metadata.Keys.ToArray(),
                 metadata.Count);
+
+        internal static T InvertEnum<T>(int val)
+            => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
     }
 }
