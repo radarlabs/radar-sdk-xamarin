@@ -74,7 +74,7 @@ namespace RadarIO.Xamarin
 
         public void Initialize(string publishableKey)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this);
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
@@ -130,21 +130,21 @@ namespace RadarIO.Xamarin
                 handler);
         }
 
-        public Task<RadarStatus> StartTrip(RadarTripOptions options)
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options)
         {
             var handler = new TripCallbackHandler();
             AndroidBinding.Radar.StartTrip(options.ToBinding(), handler);
             return handler.Task;
         }
 
-        public Task<RadarStatus> CancelTrip()
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip()
         {
             var handler = new TripCallbackHandler();
             AndroidBinding.Radar.CancelTrip(handler);
             return handler.Task;
         }
 
-        public Task<RadarStatus> CompleteTrip()
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip()
         {
             var handler = new TripCallbackHandler();
             AndroidBinding.Radar.CompleteTrip(handler);
@@ -154,7 +154,7 @@ namespace RadarIO.Xamarin
         public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit)
         {
             var handler = new GeocodeCallbackHandler();
-            AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), limit, handler);
+            AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
