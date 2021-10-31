@@ -29,9 +29,9 @@ namespace RadarIO.Xamarin
         void StopTracking();
         void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback);
 
-        Task<RadarStatus> StartTrip(RadarTripOptions options);
-        Task<RadarStatus> CancelTrip();
-        Task<RadarStatus> CompleteTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options);
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip();
 
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);

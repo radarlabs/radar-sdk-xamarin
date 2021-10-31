@@ -34,12 +34,12 @@ namespace RadarIO.Xamarin
     }
 
     public class TripCallbackHandler
-        : TaskCallbackHandler<RadarStatus>
+        : TaskCallbackHandler<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>
         , AndroidBinding.Radar.IRadarTripCallback
     {
-        public void OnComplete(AndroidBinding.Radar.RadarStatus status)
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarTrip trip, AndroidBinding.RadarEvent[] events)
         {
-            taskSource.SetResult(status.ToSDK());
+            taskSource.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
         }
     }
 
