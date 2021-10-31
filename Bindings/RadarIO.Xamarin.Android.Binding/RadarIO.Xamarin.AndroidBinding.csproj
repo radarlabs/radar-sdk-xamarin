@@ -51,10 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.GooglePlayServices.Ads.Identifier">
-      <Version>117.0.1</Version>
+      <Version>117.0.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Location">
-      <Version>118.0.0</Version>
+      <Version>118.0.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Kotlin.StdLib">
       <Version>1.5.31.2</Version>
