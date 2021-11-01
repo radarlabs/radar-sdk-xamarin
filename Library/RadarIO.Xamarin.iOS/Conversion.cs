@@ -276,7 +276,7 @@ namespace RadarIO.Xamarin
                 {
                     Center = polygon.Center?.ToSDK(),
                     Radius = polygon.Radius,
-                    Coordinates = polygon.Coordinates?.Select(ToSDK)
+                    Coordinates = polygon._coordinates?.Select(ToSDK)
                 };
             }
 
@@ -371,7 +371,7 @@ namespace RadarIO.Xamarin
                 StartTrackingAfter = (Foundation.NSDate)options.StartTrackingAfter,
                 StopTrackingAfter = (Foundation.NSDate)options.StopTrackingAfter,
                 Replay = (iOSBinding.RadarTrackingOptionsReplay)options.Replay,
-                Sync = InvertEnum<iOSBinding.RadarTrackingOptionsSync>((int)options.Sync),
+                SyncLocations = InvertEnum<iOSBinding.RadarTrackingOptionsSyncLocations>((int)options.Sync),
                 ShowBlueBar = options.ShowBlueBar,
                 UseStoppedGeofence = options.UseStoppedGeofence,
                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,

@@ -11,11 +11,11 @@ namespace RadarIO.Xamarin
     public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     {
         public RadarTrackingOptions TrackingOptionsContinuous
-            => iOSBinding.RadarTrackingOptions.Continuous.ToSDK();
+            => iOSBinding.RadarTrackingOptions.PresetContinuous.ToSDK();
         public RadarTrackingOptions TrackingOptionsResponsive
-            => iOSBinding.RadarTrackingOptions.Responsive.ToSDK();
+            => iOSBinding.RadarTrackingOptions.PresetResponsive.ToSDK();
         public RadarTrackingOptions TrackingOptionsEfficient
-            => iOSBinding.RadarTrackingOptions.Efficient.ToSDK();
+            => iOSBinding.RadarTrackingOptions.PresetEfficient.ToSDK();
 
         #region RadarDelegate
 
@@ -114,32 +114,32 @@ namespace RadarIO.Xamarin
                 (status, location, events, user) => callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK())));
         }
 
-        public Task<RadarStatus> StartTrip(RadarTripOptions options)
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options)
         {
-            var src = new TaskCompletionSource<RadarStatus>();
-            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), status =>
+            var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
+            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), (status, trip, events) =>
             {
-                src.SetResult(status.ToSDK());
+                src.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
             });
             return src.Task;
         }
 
-        public Task<RadarStatus> CancelTrip()
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip()
         {
-            var src = new TaskCompletionSource<RadarStatus>();
-            iOSBinding.Radar.CancelTripWithCompletionHandler(status =>
+            var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
+            iOSBinding.Radar.CancelTripWithCompletionHandler((status, trip, events) =>
             {
-                src.SetResult(status.ToSDK());
+                src.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
             });
             return src.Task;
         }
 
-        public Task<RadarStatus> CompleteTrip()
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip()
         {
-            var src = new TaskCompletionSource<RadarStatus>();
-            iOSBinding.Radar.CompleteTripWithCompletionHandler(status =>
+            var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
+            iOSBinding.Radar.CompleteTripWithCompletionHandler((status, trip, events) =>
             {
-                src.SetResult(status.ToSDK());
+                src.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
             });
             return src.Task;
         }

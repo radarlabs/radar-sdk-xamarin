@@ -32,7 +32,7 @@ namespace RadarIO.Xamarin.Shared.Sample
 
             trackingOptions.Sync = RadarTrackingOptionsSync.All;
             trackingOptions.Replay = RadarTrackingOptionsReplay.Stops;
-            trackingOptions.DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.None;
+            trackingOptions.DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium;
 
             Radar.StartTracking(trackingOptions);
             return (RadarStatus.Success, null, null, null);
