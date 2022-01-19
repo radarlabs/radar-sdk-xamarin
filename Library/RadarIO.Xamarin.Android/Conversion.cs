@@ -288,13 +288,13 @@ namespace RadarIO.Xamarin
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
                 FastestMovingUpdateInterval = options.FastestMovingUpdateInterval,
                 DesiredSyncInterval = options.DesiredSyncInterval,
-                DesiredAccuracy = InvertEnum<RadarTrackingOptionsDesiredAccuracy>(options.DesiredAccuracy.Ordinal()),
+                DesiredAccuracy = (RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy.Ordinal(),
                 StopDuration = options.StopDuration,
                 StopDistance = options.StopDistance,
                 StartTrackingAfter = options.StartTrackingAfter?.ToSDK(),
                 StopTrackingAfter = options.StopTrackingAfter?.ToSDK(),
-                Replay = InvertEnum<RadarTrackingOptionsReplay>(options.Replay.Ordinal()),
-                Sync = InvertEnum<RadarTrackingOptionsSync>(options.Sync.Ordinal()),
+                Replay = (RadarTrackingOptionsReplay)options.Replay.Ordinal(),
+                Sync = (RadarTrackingOptionsSync)options.Sync.Ordinal(),
                 UseStoppedGeofence = options.UseStoppedGeofence,
                 StoppedGeofenceRadius = options.StoppedGeofenceRadius,
                 UseMovingGeofence = options.UseMovingGeofence,
@@ -415,8 +415,8 @@ namespace RadarIO.Xamarin
         internal static Java.Util.Date ToBinding(this DateTime date)
             => new Java.Util.Date(new DateTimeOffset(date).ToUnixTimeMilliseconds());
 
-        internal static T InvertEnum<T>(int val)
-            => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
+        //internal static T InvertEnum<T>(int val)
+        //    => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
 
         //internal static T ToBinding<T>(this Enum e) where T : Java.Lang.Enum
         //    => (T)Java.Lang.Enum.ValueOf(Java.Lang.Class.FromType(typeof(T)), e.ToString().ToUpper());

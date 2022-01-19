@@ -28,11 +28,14 @@ namespace RadarIO.Xamarin.Shared.Sample
 
         public static async Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> Test()
         {
-            RadarTrackingOptions trackingOptions = new RadarTrackingOptions();
+            //var trackingOptions = new RadarTrackingOptions
+            //{
+            //    Sync = RadarTrackingOptionsSync.All,
+            //    Replay = RadarTrackingOptionsReplay.Stops,
+            //    DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium
+            //};
 
-            trackingOptions.Sync = RadarTrackingOptionsSync.All;
-            trackingOptions.Replay = RadarTrackingOptionsReplay.Stops;
-            trackingOptions.DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium;
+            var trackingOptions = Radar.TrackingOptionsResponsive;
 
             Radar.StartTracking(trackingOptions);
             return (RadarStatus.Success, null, null, null);
