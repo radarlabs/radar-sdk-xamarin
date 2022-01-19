@@ -346,7 +346,13 @@ namespace RadarIO.Xamarin
                 SyncGeofences = options.SyncGeofences,
                 ShowBlueBar = options.ShowBlueBar,
                 UseVisits = options.UseVisits,
-                UseSignificantLocationChanges = options.UseSignificantLocationChanges
+                UseSignificantLocationChanges = options.UseSignificantLocationChanges,
+                Beacons = options.Beacons,
+                DesiredAccuracy = (RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy,
+                Replay = (RadarTrackingOptionsReplay)options.Replay,
+                StartTrackingAfter = options.StartTrackingAfter == null ? null : (DateTime?)options.StartTrackingAfter,
+                StopTrackingAfter = options.StopTrackingAfter == null ? null : (DateTime?)options.StopTrackingAfter,
+                Sync = InvertEnum<RadarTrackingOptionsSync>((int)options.SyncLocations)
             };
 
         internal static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
