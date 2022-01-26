@@ -310,11 +310,11 @@ namespace RadarIO.Xamarin
             {
                 Text = service.Text,
                 Title = service.Title,
-                Icon = (int)service.Icon,
+                Icon = service.Icon is null ? 0 : (int)service.Icon,
                 UpdatesOnly = service.UpdatesOnly,
                 Activity = service.Activity,
-                Importance = (int)service.Importance,
-                Id = (int)service.Id
+                Importance = service.Importance is null ? 0 : (int)service.Importance,
+                Id = service.Id is null ? 0 : (int)service.Id
             };
 
         internal static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
