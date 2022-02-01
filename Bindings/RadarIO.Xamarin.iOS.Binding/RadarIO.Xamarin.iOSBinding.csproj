@@ -47,15 +47,7 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="RadarSDK.xcframework\ios-arm64_armv7\RadarSDK.framework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-    <NativeReference Include="RadarSDK.xcframework\ios-arm64_armv7\RadarSDK.framework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-    <NativeReference Include="RadarSDK.xcframework\ios-arm64_i386_x86_64-simulator\RadarSDK.framework">
+    <NativeReference Include="fat\RadarSDK.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
