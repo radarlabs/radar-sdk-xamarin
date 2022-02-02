@@ -20,9 +20,9 @@ namespace RadarIO.Xamarin
         public RadarTrackingOptions TrackingOptionsEfficient
             => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
 
-        public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        public event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
-        public event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
+        public event RadarEventHandler<IEnumerable<RadarEvent>, RadarUser> EventsReceived;
+        public event RadarEventHandler<Location, RadarUser> LocationUpdated;
+        public event RadarEventHandler<Location, bool, RadarLocationSource> ClientLocationUpdated;
         public event RadarEventHandler<RadarStatus> Error;
         public event RadarEventHandler<string> Log;
 
@@ -33,7 +33,7 @@ namespace RadarIO.Xamarin
         public override void OnClientLocationUpdated(Context context, Android.Locations.Location location, bool stopped, AndroidBinding.Radar.RadarLocationSource source)
         {
             LaunchApp(context);
-            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source.Ordinal()));
+            Radar.ClientLocationUpdated?.Invoke(location?.ToSDK(), stopped, (RadarLocationSource)source.Ordinal());
         }
 
         public override void OnError(Context context, AndroidBinding.Radar.RadarStatus status)
@@ -45,13 +45,13 @@ namespace RadarIO.Xamarin
         public override void OnEventsReceived(Context context, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
             LaunchApp(context);
-            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
+            Radar.EventsReceived?.Invoke(events?.Select(e => e?.ToSDK()), user?.ToSDK());
         }
 
         public override void OnLocationUpdated(Context context, Android.Locations.Location location, AndroidBinding.RadarUser user)
         {
             LaunchApp(context);
-            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+            Radar.LocationUpdated?.Invoke(location?.ToSDK(), user?.ToSDK());
         }
 
         public override void OnLog(Context context, string message)

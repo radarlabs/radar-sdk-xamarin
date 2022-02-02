@@ -12,9 +12,9 @@ namespace RadarIO.Xamarin
         RadarTrackingOptions TrackingOptionsContinuous { get; }
         RadarTrackingOptions TrackingOptionsEfficient { get; }
 
-        event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
-        event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
+        event RadarEventHandler<IEnumerable<RadarEvent>, RadarUser> EventsReceived;
+        event RadarEventHandler<Location, RadarUser> LocationUpdated;
+        event RadarEventHandler<Location, bool, RadarLocationSource> ClientLocationUpdated;
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
@@ -67,7 +67,9 @@ namespace RadarIO.Xamarin
         public abstract RadarRoute RouteBetween(int originIndex, int destinationIndex);
     }
 
-    public delegate void RadarEventHandler<T>(T args);
+    public delegate void RadarEventHandler<T>(T arg);
+    public delegate void RadarEventHandler<T1, T2>(T1 arg1, T2 arg2);
+    public delegate void RadarEventHandler<T1, T2, T3>(T1 arg1, T2 arg2, T3 arg3);
 
     public enum RadarRouteUnits
     {
