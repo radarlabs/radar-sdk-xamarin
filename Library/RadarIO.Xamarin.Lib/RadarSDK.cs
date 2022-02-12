@@ -77,11 +77,10 @@ namespace RadarIO.Xamarin
 
     public class RadarRoutes
     {
-#if MONOANDROID
+        /// <summary>
+        /// iOS only uses distance property
+        /// </summary>
         public RadarRoute Geodesic;
-#elif XAMARINIOS
-        public RadarRouteDistance Geodesic;
-#endif
         public RadarRoute Foot;
         public RadarRoute Bike;
         public RadarRoute Car;
@@ -129,13 +128,15 @@ namespace RadarIO.Xamarin
         public string Borough;
         public string County;
         public string Neighborhood;
-#if MONOANDROID
-        public string Street;
-#endif
         public string Number;
         public string AddressLabel;
         public string PlaceLabel;
         public RadarAddressConfidence Confidence;
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        public string Street;
     }
 
     public enum RadarAddressConfidence
@@ -173,19 +174,47 @@ namespace RadarIO.Xamarin
         public int MovingGeofenceRadius;
         public bool SyncGeofences;
         public bool Beacons;
-#if MONOANDROID
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
         public int FastestStoppedUpdateInterval;
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
         public int FastestMovingUpdateInterval;
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
         public int SyncGeofencesLimit;
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
         public RadarTrackingOptionsForegroundService ForegroundService;
-#elif XAMARINIOS
+
+
+        /// <summary>
+        /// iOS-only
+        /// </summary>
         public bool ShowBlueBar;
+
+        /// <summary>
+        /// iOS-only
+        /// </summary>
         public bool UseVisits;
+
+        /// <summary>
+        /// iOS-only
+        /// </summary>
         public bool UseSignificantLocationChanges;
-#endif
     }
 
-#if MONOANDROID
+    /// <summary>
+    /// Android-only
+    /// </summary>
     public class RadarTrackingOptionsForegroundService
     {
         public string Text;
@@ -196,7 +225,6 @@ namespace RadarIO.Xamarin
         public int Importance;
         public int Id;
     }
-#endif
 
     public enum RadarTrackingOptionsSync
     {
