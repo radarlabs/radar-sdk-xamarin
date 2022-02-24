@@ -88,7 +88,14 @@ namespace RadarIO.Xamarin
             var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
             iOSBinding.Radar.TrackOnceWithCompletionHandler((status, location, ev, user) =>
             {
-                src.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+                try
+                {
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
             });
             return src.Task;
         }
