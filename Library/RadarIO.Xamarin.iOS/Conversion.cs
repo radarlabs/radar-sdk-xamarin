@@ -44,7 +44,14 @@ namespace RadarIO.Xamarin
         internal static RadarRoutes ToSDK(this iOSBinding.RadarRoutes routes)
             => routes == null ? null : new RadarRoutes
             {
-                Geodesic = routes.Geodesic?.ToSDK(),
+                Geodesic = routes.Geodesic == null ? null : new RadarRoute
+                {
+                    Distance = new RadarRouteDistance
+                    {
+                        Value = routes.Geodesic.Value,
+                        Text = routes.Geodesic.Text
+                    }
+                },
                 Foot = routes.Foot?.ToSDK(),
                 Bike = routes.Bike?.ToSDK(),
                 Car = routes.Car?.ToSDK(),
