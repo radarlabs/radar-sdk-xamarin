@@ -29,7 +29,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
         {
-            taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+            try
+            {
+                taskSource.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -39,7 +46,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarTrip trip, AndroidBinding.RadarEvent[] events)
         {
-            taskSource.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
+            try
+            {
+                taskSource.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -49,7 +63,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress[] addresses)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), addresses?.Select(Conversion.ToSDK)));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), addresses?.Select(Conversion.ToSDK)));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -59,7 +80,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarGeofence[] geofences)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -69,7 +97,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarPlace[] places)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), places?.Select(Conversion.ToSDK)));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), places?.Select(Conversion.ToSDK)));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -79,7 +114,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarRoutes routes)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), routes?.ToSDK()));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), routes?.ToSDK()));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -89,7 +131,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarRouteMatrix matrix)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), matrix.ToSDK()));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), matrix.ToSDK()));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 
@@ -99,7 +148,14 @@ namespace RadarIO.Xamarin
     {
         public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress address, bool proxy)
         {
-            taskSource.SetResult(((RadarStatus)status.Ordinal(), address.ToSDK(), proxy));
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), address.ToSDK(), proxy));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
         }
     }
 

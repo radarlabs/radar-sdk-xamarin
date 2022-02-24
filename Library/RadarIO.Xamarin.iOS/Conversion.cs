@@ -42,7 +42,7 @@ namespace RadarIO.Xamarin
         }
 
         internal static RadarRoutes ToSDK(this iOSBinding.RadarRoutes routes)
-            => new RadarRoutes
+            => routes == null ? null : new RadarRoutes
             {
                 Geodesic = routes.Geodesic?.ToSDK(),
                 Foot = routes.Foot?.ToSDK(),
@@ -53,7 +53,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarRoute ToSDK(this iOSBinding.RadarRoute route)
-            => new RadarRoute
+            => route == null ? null : new RadarRoute
             {
                 Distance = route.Distance?.ToSDK(),
                 Duration = route.Duration?.ToSDK(),
@@ -61,27 +61,27 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarRouteDistance ToSDK(this iOSBinding.RadarRouteDistance distance)
-            => new RadarRouteDistance
+            => distance == null ? null : new RadarRouteDistance
             {
                 Value = distance.Value,
                 Text = distance.Text
             };
 
         internal static RadarRouteDuration ToSDK(this iOSBinding.RadarRouteDuration duration)
-            => new RadarRouteDuration
+            => duration == null ? null : new RadarRouteDuration
             {
                 Value = duration.Value,
                 Text = duration.Text
             };
 
         internal static RadarRouteGeometry ToSDK(this iOSBinding.RadarRouteGeometry geometry)
-            => new RadarRouteGeometry
+            => geometry == null ? null : new RadarRouteGeometry
             {
                 Coordinates = geometry.Coordinates?.Select(ToSDK)
             };
 
         internal static RadarAddress ToSDK(this iOSBinding.RadarAddress address)
-            => new RadarAddress
+            => address == null ? null : new RadarAddress
             {
                 Coordinate = address.Coordinate.ToSDK(),
                 FormattedAddress = address.FormattedAddress,
@@ -111,7 +111,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static Location ToSDK(this CLLocation location)
-            => new Location
+            => location == null ? null : new Location
             {
                 Latitude = location.Coordinate.Latitude,
                 Longitude = location.Coordinate.Longitude,
@@ -123,7 +123,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarEvent ToSDK(this iOSBinding.RadarEvent ev)
-            => new RadarEvent
+            => ev == null ? null : new RadarEvent
             {
                 Id = ev._id,
                 CreatedAt = (DateTime)ev.CreatedAt,
@@ -144,7 +144,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarUser ToSDK(this iOSBinding.RadarUser user)
-            => new RadarUser
+            => user == null ? null : new RadarUser
             {
                 Id = user._id,
                 UserId = user.UserId,
@@ -171,14 +171,14 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
-            => new RadarSegment
+            => segment == null ? null : new RadarSegment
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
             };
 
         internal static RadarUserInsights ToSDK(this iOSBinding.RadarUserInsights insights)
-            => new RadarUserInsights
+            => insights == null ? null : new RadarUserInsights
             {
                 HomeLocation = insights.HomeLocation?.ToSDK(),
                 OfficeLocation = insights.OfficeLocation?.ToSDK(),
@@ -186,7 +186,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarUserInsightsState ToSDK(this iOSBinding.RadarUserInsightsState state)
-            => new RadarUserInsightsState
+            => state == null ? null : new RadarUserInsightsState
             {
                 Home = state.Home,
                 Office = state.Office,
@@ -195,7 +195,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
-            => new RadarUserInsightsLocation
+            => location == null ? null : new RadarUserInsightsLocation
             {
                 Type = (RadarUserInsightsLocationType)location.Type,
                 Location = location.Location?.ToSDK(),
@@ -208,7 +208,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
-            => new RadarTrip
+            => trip == null ? null : new RadarTrip
             {
                 Id = trip._id,
                 ExternalId = trip.ExternalId,
@@ -223,7 +223,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarRegion ToSDK(this iOSBinding.RadarRegion region)
-            => new RadarRegion
+            => region == null ? null : new RadarRegion
             {
                 Id = region._id,
                 Name = region.Name,
@@ -233,7 +233,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
-            => new RadarBeacon
+            => beacon == null ? null : new RadarBeacon
             {
                 Id = beacon._id,
                 Description = beacon.Description,
@@ -247,7 +247,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarGeofence ToSDK(this iOSBinding.RadarGeofence geofence)
-            => new RadarGeofence
+            => geofence == null ? null : new RadarGeofence
             {
                 Id = geofence._id,
                 Description = geofence.Description,
@@ -259,6 +259,9 @@ namespace RadarIO.Xamarin
 
         internal static RadarGeofenceGeometry ToSDK(this iOSBinding.RadarGeofenceGeometry geometry)
         {
+            if (geometry == null)
+                return null;
+
             if (geometry is iOSBinding.RadarCircleGeometry)
             {
                 var circle = geometry as iOSBinding.RadarCircleGeometry;
@@ -284,14 +287,14 @@ namespace RadarIO.Xamarin
         }
 
         internal static RadarCoordinate ToSDK(this iOSBinding.RadarCoordinate coordinate)
-            => new RadarCoordinate
+            => coordinate == null ? null : new RadarCoordinate
             {
                 Latitude = coordinate.Coordinate.Latitude,
                 Longitude = coordinate.Coordinate.Longitude
             };
 
         internal static RadarPlace ToSDK(this iOSBinding.RadarPlace place)
-            => new RadarPlace
+            => place == null ? null : new RadarPlace
             {
                 Id = place._id,
                 Name = place.Name,
@@ -303,7 +306,7 @@ namespace RadarIO.Xamarin
             };
 
         internal static RadarChain ToSDK(this iOSBinding.RadarChain chain)
-            => new RadarChain
+            => chain == null ? null : new RadarChain
             {
                 Slug = chain.Slug,
                 Name = chain.Name,
@@ -313,6 +316,9 @@ namespace RadarIO.Xamarin
 
         internal static JSONObject ToSDK(this Foundation.NSDictionary metadata)
         {
+            if (metadata == null)
+                return null;
+
             var res = new JSONObject();
             foreach (var pair in metadata)
                 res.Add(pair.Key.ToString(), pair.Value?.ToSDK());
@@ -321,6 +327,9 @@ namespace RadarIO.Xamarin
 
         internal static object ToSDK(this Foundation.NSObject obj)
         {
+            if (obj == null)
+                return null;
+
             if (obj is Foundation.NSNumber num)
             {
                 if (num.ObjCType == "c")
@@ -332,7 +341,7 @@ namespace RadarIO.Xamarin
         }
 
         internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
-            => new RadarTrackingOptions
+            => options == null ? null : new RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
