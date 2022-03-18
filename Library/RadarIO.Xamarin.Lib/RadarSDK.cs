@@ -18,37 +18,74 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
+        // Initialization
         void Initialize(string publishableKey);
-        void SetLogLevel(RadarLogLevel level);
+
+        // Properties
         string UserId { get; set; }
         string Description { get; set; }
         JSONObject Metadata { get; set; }
+        bool AdIdEnabled { set; }
 
+        // Get Location
+        Task<(RadarStatus, Location, bool)> GetLocation();
+        Task<(RadarStatus, Location, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy);
+
+        // Tracking
         Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(Location location);
         void StartTracking(RadarTrackingOptions options);
-        void StopTracking();
         void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback);
+        void StopTracking();
+        bool IsTracking { get; }
+        RadarTrackingOptions TrackingOptions { get; }
 
+        // todo: ios-only SetDelegate
+
+        // Event IDs
+        void AcceptEventId(string eventId, string verifiedPlaceId = null);
+        void RejectEventId(string eventId);
+
+        // Trips
+        RadarTripOptions TripOptions { get; }
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options);
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown);
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
 
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
+        // Device Context
+        Task<(RadarStatus, Location, RadarContext)> GetContext();
+        Task<(RadarStatus, Location, RadarContext)> GetContext(Location location);
 
-        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-
+        // Search
         Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
         Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, int limit = 100);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, IEnumerable<string> layers = null, int limit = 100, string country = null);
 
+        // Geocoding
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode();
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
+        Task<(RadarStatus, IEnumerable<RadarAddress>, bool)> IpGeocode();
+
+        // Distances
         Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
         Task<(RadarStatus, RadarRoutes)> GetDistance(Location source, Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
-
         Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units);
 
-        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
+        // Logging
+        void SetLogLevel(RadarLogLevel level);
+
+        // Utilities
+        string StringForStatus(RadarStatus status);
+        string StringForLocationSource(RadarLocationSource source);
+        string StringForMode(RadarRouteMode mode);
+        string StringForTripStatus(RadarTripStatus status);
+        JSONObject DictionaryForLocation(Location location);
     }
 
     public enum RadarLogLevel
@@ -58,6 +95,16 @@ namespace RadarIO.Xamarin
         Warning,
         Info,
         Debug
+    }
+
+    public class RadarContext
+    {
+        public RadarRegion Country;
+        public RadarRegion Dma;
+        public IEnumerable<RadarGeofence> Geofences;
+        public RadarPlace Place;
+        public RadarRegion PostalCode;
+        public RadarRegion State;
     }
 
     public abstract class RadarRouteMatrix
@@ -244,6 +291,9 @@ namespace RadarIO.Xamarin
         High,
         Medium,
         Low,
+        /// <summary>
+        ///  Android-only
+        /// </summary>
         None
     }
 

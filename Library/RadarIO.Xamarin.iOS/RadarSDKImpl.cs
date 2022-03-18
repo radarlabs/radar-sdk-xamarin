@@ -83,6 +83,40 @@ namespace RadarIO.Xamarin
             set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
         }
 
+        public Task<(RadarStatus, Location, bool)> GetLocation()
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, bool)>();
+            iOSBinding.Radar.GetLocationWithCompletionHandler((status, location, stopped) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), stopped));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, Location, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, bool)>();
+            iOSBinding.Radar.GetLocationWithDesiredAccuracy(desiredAccuracy.ToBinding(), (status, location, stopped) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), stopped));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
         public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
         {
             var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();

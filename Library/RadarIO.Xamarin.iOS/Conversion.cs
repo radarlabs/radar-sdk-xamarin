@@ -387,7 +387,7 @@ namespace RadarIO.Xamarin
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
                 DesiredSyncInterval = options.DesiredSyncInterval,
-                DesiredAccuracy = options.DesiredAccuracy == RadarTrackingOptionsDesiredAccuracy.None ? iOSBinding.RadarTrackingOptionsDesiredAccuracy.Low : (iOSBinding.RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy,
+                DesiredAccuracy = options.DesiredAccuracy.ToBinding(),
                 StopDuration = options.StopDuration,
                 StopDistance = options.StopDistance,
                 StartTrackingAfter = (Foundation.NSDate)options.StartTrackingAfter,
@@ -404,6 +404,9 @@ namespace RadarIO.Xamarin
                 UseSignificantLocationChanges = options.UseSignificantLocationChanges,
                 Beacons = options.Beacons
             };
+
+        internal static iOSBinding.RadarTrackingOptionsDesiredAccuracy ToBinding(this RadarTrackingOptionsDesiredAccuracy accuracy)
+            => accuracy == RadarTrackingOptionsDesiredAccuracy.None ? iOSBinding.RadarTrackingOptionsDesiredAccuracy.Low : (iOSBinding.RadarTrackingOptionsDesiredAccuracy)accuracy;
 
         internal static CLLocation ToBinding(this Location location)
             => new CLLocation(
