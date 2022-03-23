@@ -70,7 +70,7 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode();
         Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
-        Task<(RadarStatus, IEnumerable<RadarAddress>, bool)> IpGeocode();
+        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
 
         // Distances
         Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);

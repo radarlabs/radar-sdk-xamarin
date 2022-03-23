@@ -371,6 +371,17 @@ namespace RadarIO.Xamarin
                 Sync = InvertEnum<RadarTrackingOptionsSync>((int)options.SyncLocations)
             };
 
+        internal static RadarContext ToSDK(this iOSBinding.RadarContext context)
+            => context == null ? null : new RadarContext
+            {
+                Country = context.Country?.ToSDK(),
+                Dma = context.Dma?.ToSDK(),
+                Geofences = context.Geofences?.Select(ToSDK),
+                Place = context.Place?.ToSDK(),
+                PostalCode = context.PostalCode?.ToSDK(),
+                State = context.State?.ToSDK()
+            };
+
         internal static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
             => new iOSBinding.RadarTripOptions
             {
@@ -380,6 +391,18 @@ namespace RadarIO.Xamarin
                 Mode = (iOSBinding.RadarRouteMode)Math.Pow(2, (double)options.Mode),
                 Metadata = options.Metadata?.ToBinding()
             };
+
+        internal static iOSBinding.RadarStatus ToBinding(this RadarStatus status)
+            => (iOSBinding.RadarStatus)status;
+
+        internal static iOSBinding.RadarTripStatus ToBinding(this RadarTripStatus status)
+            => (iOSBinding.RadarTripStatus)status;
+
+        internal static iOSBinding.RadarLocationSource ToBinding(this RadarLocationSource source)
+            => (iOSBinding.RadarLocationSource)source;
+
+        internal static iOSBinding.RadarRouteMode ToBinding(this RadarRouteMode mode)
+            => (iOSBinding.RadarRouteMode)mode;
 
         internal static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new iOSBinding.RadarTrackingOptions

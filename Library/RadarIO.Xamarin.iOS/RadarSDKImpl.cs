@@ -82,6 +82,13 @@ namespace RadarIO.Xamarin
             get => iOSBinding.Radar.Metadata?.ToSDK();
             set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
         }
+        public bool AdIdEnabled { set => throw new NotImplementedException(); }
+
+        public bool IsTracking => throw new NotImplementedException();
+
+        public RadarTrackingOptions TrackingOptions => throw new NotImplementedException();
+
+        public RadarTripOptions TripOptions => throw new NotImplementedException();
 
         public Task<(RadarStatus, Location, bool)> GetLocation()
         {
@@ -134,6 +141,40 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            iOSBinding.Radar.TrackOnceWithDesiredAccuracy(desiredAccuracy.ToBinding(), beacons, (status, location, ev, user) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(Location location)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            iOSBinding.Radar.TrackOnceWithLocation(location?.ToBinding(), (status, _location, ev, user) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), _location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
         public void StartTracking(RadarTrackingOptions options)
         {
             iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
@@ -163,6 +204,23 @@ namespace RadarIO.Xamarin
                 try
                 {
                     src.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
+            iOSBinding.Radar.UpdateTripWithOptions(options?.ToBinding(), status.ToBinding(), (_status, trip, events) =>
+            {
+                try
+                {
+                    src.SetResult((_status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
                 }
                 catch (Exception ex)
                 {
@@ -223,10 +281,44 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
+            iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), limit, (status, addresses) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
         public Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query)
         {
             var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
             iOSBinding.Radar.GeocodeAddress(query, (status, addresses) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode()
+        {
+            var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
+            iOSBinding.Radar.ReverseGeocodeWithCompletionHandler((status, addresses) =>
             {
                 try
                 {
@@ -248,6 +340,23 @@ namespace RadarIO.Xamarin
                 try
                 {
                     src.SetResult((status.ToSDK(), addresses?.Select(Conversion.ToSDK)));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, RadarAddress, bool)> IpGeocode()
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarAddress, bool)>();
+            iOSBinding.Radar.IpGeocodeWithCompletionHandler((status, address, isProxy)  =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), address?.ToSDK(), isProxy));
                 }
                 catch (Exception ex)
                 {
@@ -376,14 +485,24 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public Task<(RadarStatus, RadarAddress, bool)> IpGeocode()
+        public void AcceptEventId(string eventId, string verifiedPlaceId = null)
         {
-            var src = new TaskCompletionSource<(RadarStatus, RadarAddress, bool)>();
-            iOSBinding.Radar.IpGeocodeWithCompletionHandler((status, address, isProxy) =>
+            iOSBinding.Radar.AcceptEventId(eventId, verifiedPlaceId);
+        }
+
+        public void RejectEventId(string eventId)
+        {
+            iOSBinding.Radar.RejectEventId(eventId);
+        }
+
+        public Task<(RadarStatus, Location, RadarContext)> GetContext()
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, RadarContext)>();
+            iOSBinding.Radar.GetContextWithCompletionHandler((status, location, context) =>
             {
                 try
                 {
-                    src.SetResult((status.ToSDK(), address?.ToSDK(), isProxy));
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), context?.ToSDK()));
                 }
                 catch (Exception ex)
                 {
@@ -392,6 +511,38 @@ namespace RadarIO.Xamarin
             });
             return src.Task;
         }
+
+        public Task<(RadarStatus, Location, RadarContext)> GetContext(Location location)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, RadarContext)>();
+            iOSBinding.Radar.GetContextForLocation(location?.ToBinding(), (status, _location, context) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), _location?.ToSDK(), context?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public string StringForStatus(RadarStatus status)
+            => iOSBinding.Radar.StringForStatus(status.ToBinding());
+
+        public string StringForLocationSource(RadarLocationSource source)
+            => iOSBinding.Radar.StringForLocationSource(source.ToBinding());
+
+        public string StringForMode(RadarRouteMode mode)
+            => iOSBinding.Radar.StringForMode(mode.ToBinding());
+
+        public string StringForTripStatus(RadarTripStatus status)
+            => iOSBinding.Radar.StringForTripStatus(status.ToBinding());
+
+        public JSONObject DictionaryForLocation(Location location)
+            => iOSBinding.Radar.DictionaryForLocation(location?.ToBinding())?.ToSDK();
     }
 
     internal class RadarRouteMatrixImpl : RadarRouteMatrix
