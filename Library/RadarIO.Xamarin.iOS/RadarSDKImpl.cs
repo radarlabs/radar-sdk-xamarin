@@ -82,13 +82,13 @@ namespace RadarIO.Xamarin
             get => iOSBinding.Radar.Metadata?.ToSDK();
             set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
         }
-        public bool AdIdEnabled { set => throw new NotImplementedException(); }
+        public bool AdIdEnabled { set => iOSBinding.Radar.SetAdIdEnabled(value); }
 
-        public bool IsTracking => throw new NotImplementedException();
+        public bool IsTracking => iOSBinding.Radar.IsTracking;
 
-        public RadarTrackingOptions TrackingOptions => throw new NotImplementedException();
+        public RadarTrackingOptions TrackingOptions => iOSBinding.Radar.TrackingOptions?.ToSDK();
 
-        public RadarTripOptions TripOptions => throw new NotImplementedException();
+        public RadarTripOptions TripOptions => iOSBinding.Radar.TripOptions?.ToSDK();
 
         public Task<(RadarStatus, Location, bool)> GetLocation()
         {
