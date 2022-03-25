@@ -347,6 +347,16 @@ namespace RadarIO.Xamarin
             return obj.ToString();
         }
 
+        internal static RadarTripOptions ToSDK(this iOSBinding.RadarTripOptions options)
+            => options == null ? null : new RadarTripOptions
+            {
+                ExternalId = options.ExternalId,
+                DestinationGeofenceTag = options.DestinationGeofenceTag,
+                DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
+                Mode = (RadarRouteMode)options.Mode,
+                Metadata = options.Metadata?.ToSDK()
+            };
+
         internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
             => options == null ? null : new RadarTrackingOptions
             {
