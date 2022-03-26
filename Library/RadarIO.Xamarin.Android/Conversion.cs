@@ -283,6 +283,16 @@ namespace RadarIO.Xamarin
                 Metadata = chain.ToJson()?.ToSDK()
             };
 
+        internal static RadarTripOptions ToSDK(this AndroidBinding.RadarTripOptions options)
+            => options == null ? null : new RadarTripOptions
+            {
+                ExternalId = options.ExternalId,
+                DestinationGeofenceTag = options.DestinationGeofenceTag,
+                DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
+                Mode = (RadarRouteMode)options.Mode.Ordinal(),
+                Metadata = options.Metadata?.ToSDK()
+            };
+
         internal static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
             => options == null ? null : new RadarTrackingOptions
             {
@@ -306,6 +316,17 @@ namespace RadarIO.Xamarin
                 SyncGeofencesLimit = options.SyncGeofencesLimit,
                 ForegroundService = options.ForegroundService?.ToSDK(),
                 Beacons = options.Beacons
+            };
+
+        internal static RadarContext ToSDK(this AndroidBinding.RadarContext context)
+            => context == null ? null : new RadarContext
+            {
+                Country = context.Country?.ToSDK(),
+                Dma = context.Dma?.ToSDK(),
+                Geofences = context.GetGeofences().Select(ToSDK),
+                Place = context.Place?.ToSDK(),
+                PostalCode = context.PostalCode?.ToSDK(),
+                State = context.State?.ToSDK()
             };
 
         internal static RadarTrackingOptionsForegroundService ToSDK(this AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsForegroundService service)
@@ -336,7 +357,7 @@ namespace RadarIO.Xamarin
                  options.DesiredMovingUpdateInterval,
                  options.FastestMovingUpdateInterval,
                  options.DesiredSyncInterval,
-                 AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy.Values().ElementAt((int)options.DesiredAccuracy),
+                 options.DesiredAccuracy.ToBinding(),
                  options.StopDuration,
                  options.StopDistance,
                  options.StartTrackingAfter?.ToBinding(),
@@ -381,6 +402,18 @@ namespace RadarIO.Xamarin
             }
             return res;
         }
+
+        internal static AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy ToBinding(this RadarTrackingOptionsDesiredAccuracy accuracy)
+            => AndroidBinding.RadarTrackingOptions.RadarTrackingOptionsDesiredAccuracy.Values().ElementAt((int)accuracy);
+
+        internal static AndroidBinding.RadarTrip.RadarTripStatus ToBinding(this RadarTripStatus status)
+            => AndroidBinding.RadarTrip.RadarTripStatus.Values().ElementAt((int)status);
+
+        internal static AndroidBinding.Radar.RadarLocationSource ToBinding(this RadarLocationSource source)
+            => AndroidBinding.Radar.RadarLocationSource.Values().ElementAt((int)source);
+
+        internal static AndroidBinding.Radar.RadarRouteMode ToBinding(this RadarRouteMode mode)
+            => AndroidBinding.Radar.RadarRouteMode.Values().ElementAt((int)mode);
 
         internal static Org.Json.JSONObject ToBinding(this JSONObject obj)
             => new Org.Json.JSONObject(obj);

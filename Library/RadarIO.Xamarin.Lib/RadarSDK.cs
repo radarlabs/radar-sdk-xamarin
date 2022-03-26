@@ -81,10 +81,16 @@ namespace RadarIO.Xamarin
         void SetLogLevel(RadarLogLevel level);
 
         // Utilities
+        /// <summary>
+        /// iOS-only
+        /// </summary>
         string StringForStatus(RadarStatus status);
         string StringForLocationSource(RadarLocationSource source);
         string StringForMode(RadarRouteMode mode);
         string StringForTripStatus(RadarTripStatus status);
+        /// <summary>
+        /// iOS-only
+        /// </summary>
         JSONObject DictionaryForLocation(Location location);
     }
 
