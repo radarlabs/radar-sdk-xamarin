@@ -321,7 +321,7 @@ namespace RadarIO.Xamarin
             => AndroidBinding.Radar.StringForTripStatus(status.ToBinding());
 
         public JSONObject DictionaryForLocation(Location location)
-            => throw new NotImplementedException();
+            => AndroidBinding.Radar.JsonForLocation(location?.ToBinding())?.ToSDK();
     }
 
     internal class RadarRouteMatrixImpl : RadarRouteMatrix

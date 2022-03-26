@@ -86,9 +86,6 @@ namespace RadarIO.Xamarin
         string StringForLocationSource(RadarLocationSource source);
         string StringForMode(RadarRouteMode mode);
         string StringForTripStatus(RadarTripStatus status);
-        /// <summary>
-        /// iOS-only
-        /// </summary>
         JSONObject DictionaryForLocation(Location location);
     }
 
