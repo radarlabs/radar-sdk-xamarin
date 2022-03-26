@@ -41,8 +41,6 @@ namespace RadarIO.Xamarin
         bool IsTracking { get; }
         RadarTrackingOptions TrackingOptions { get; }
 
-        // todo: ios-only SetDelegate
-
         // Event IDs
         void AcceptEventId(string eventId, string verifiedPlaceId = null);
         void RejectEventId(string eventId);
@@ -568,6 +566,7 @@ namespace RadarIO.Xamarin
         UserExitedRegionPostalCode
     }
 
+    // replaced with Xamarin.Essentials.Location
     //public class Location
     //{
     //    public double Longitude;
@@ -589,7 +588,6 @@ namespace RadarIO.Xamarin
     //            Speed = loc.Speed,
     //            Timestamp = (DateTimeOffset)loc.Timestamp
     //        };
-    //    // todo
     //}
 
     public enum RadarStatus
