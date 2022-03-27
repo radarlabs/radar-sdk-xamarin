@@ -79,9 +79,6 @@ namespace RadarIO.Xamarin
         void SetLogLevel(RadarLogLevel level);
 
         // Utilities
-        /// <summary>
-        /// iOS-only
-        /// </summary>
         string StringForStatus(RadarStatus status);
         string StringForLocationSource(RadarLocationSource source);
         string StringForMode(RadarRouteMode mode);
@@ -111,7 +108,7 @@ namespace RadarIO.Xamarin
     public abstract class RadarRouteMatrix
     {
         public IEnumerable<IEnumerable<RadarRoute>> matrix;
-            
+
         public abstract RadarRoute RouteBetween(int originIndex, int destinationIndex);
     }
 

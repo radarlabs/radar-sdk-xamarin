@@ -309,7 +309,7 @@ namespace RadarIO.Xamarin
         }
 
         public string StringForStatus(RadarStatus status)
-            => throw new NotImplementedException();
+            => status.ToString();
 
         public string StringForLocationSource(RadarLocationSource source)
             => AndroidBinding.Radar.StringForSource(source.ToBinding());
