@@ -23,4 +23,4 @@ jobs:
         msbuild /p:Configuration=Release RadarIO.Xamarin.iOS
         msbuild /p:Configuration=Release RadarIO.Xamarin.Android
         nuget pack
-        echo ${{ NUGET_API_KEY }}
+        echo ${{ secrets.NUGET_API_KEY }}
