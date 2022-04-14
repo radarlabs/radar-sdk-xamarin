@@ -1,11 +1,12 @@
-name: CI Build
+name: Deploy Release to NuGet
 
 on:
-  push:
+  release:
+    types: [ published ]
 
 jobs:
       
-  Android:
+  Publish NuGet Package:
     runs-on: macos-latest
     steps:
 
@@ -18,21 +19,9 @@ jobs:
     - name: Android
       run: |
         nuget restore
-        cd Samples/RadarIO.Xamarin.Android.Sample
-        msbuild
-       
-  iOS:
-    runs-on: macos-11
-    steps:
-
-    - name: Setup .NET Core SDK 5.0.x
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '5.0.x'
-
-    - uses: actions/checkout@v1
-    - name: iOS
-      run: |
-        nuget restore
-        cd Samples/RadarIO.Xamarin.iOS.Sample
-        msbuild
+        cd Library
+        msbuild /p:Configuration=Release RadarIO.Xamarin
+        msbuild /p:Configuration=Release RadarIO.Xamarin.iOS
+        msbuild /p:Configuration=Release RadarIO.Xamarin.Android
+        nuget pack
+        nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
