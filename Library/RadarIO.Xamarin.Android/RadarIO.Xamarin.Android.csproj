@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RadarIO.Xamarin</RootNamespace>
-    <AssemblyName>RadarIO.Xamarin</AssemblyName>
+    <AssemblyName>RadarIO.Xamarin.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -51,9 +51,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CallbackHandler.cs" />
     <Compile Include="Conversion.cs" />
-    <Compile Include="..\RadarIO.Xamarin\RadarSingleton.cs">
-      <Link>RadarSingleton.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -75,6 +72,10 @@
     <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
       <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
       <Name>RadarIO.Xamarin.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+      <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
+      <Name>RadarIO.Xamarin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
