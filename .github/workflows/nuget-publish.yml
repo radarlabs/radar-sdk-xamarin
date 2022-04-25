@@ -16,7 +16,7 @@ jobs:
         dotnet-version: '5.0.x'
 
     - uses: actions/checkout@v1
-    - name: Android
+    - name: Build and Publish
       run: |
         nuget restore
         cd Library
