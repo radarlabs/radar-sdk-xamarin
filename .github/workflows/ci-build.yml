@@ -1,0 +1,21 @@
+name: Deploy Release to NuGet
+
+on:
+  push:
+
+jobs:
+      
+  Publish NuGet Package:
+    runs-on: macos-latest
+    steps:
+
+    - name: Setup .NET Core SDK 5.0.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+
+    - uses: actions/checkout@v1
+    - name: build
+      run: |
+        nuget restore
+        msbuild /p:Configuration=Release

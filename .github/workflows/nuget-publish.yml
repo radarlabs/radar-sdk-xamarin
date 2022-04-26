@@ -1,11 +1,8 @@
-name: CI Build
+name: Deploy Release to NuGet
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: NuGet Package Version
-        required: true
+  release:
+    types: [ published ]
 
 jobs:
       
@@ -19,7 +16,7 @@ jobs:
         dotnet-version: '5.0.x'
 
     - uses: actions/checkout@v1
-    - name: Android
+    - name: Build and Publish
       run: |
         nuget restore
         cd Library
@@ -27,4 +24,4 @@ jobs:
         msbuild /p:Configuration=Release RadarIO.Xamarin.iOS
         msbuild /p:Configuration=Release RadarIO.Xamarin.Android
         nuget pack
-        echo ${{ github.event.inputs.version }}
+        nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
