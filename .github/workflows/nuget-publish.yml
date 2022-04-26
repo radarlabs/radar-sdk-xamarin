@@ -6,7 +6,7 @@ on:
 
 jobs:
       
-  Publish NuGet Package:
+  Publish-NuGet-Package:
     runs-on: macos-latest
     steps:
 

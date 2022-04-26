@@ -5,7 +5,7 @@ on:
 
 jobs:
       
-  Publish NuGet Package:
+  Build-Solution:
     runs-on: macos-latest
     steps:
 
