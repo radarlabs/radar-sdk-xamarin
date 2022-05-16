@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RadarIO.Xamarin.iOSBinding</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RadarIO.Xamarin.iOS</AssemblyName>
+    <AssemblyName>RadarIO.Xamarin.iOSBinding</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

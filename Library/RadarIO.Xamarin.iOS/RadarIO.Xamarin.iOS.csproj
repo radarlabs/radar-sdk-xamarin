@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RadarIO.Xamarin</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>RadarIO.Xamarin</AssemblyName>
+    <AssemblyName>RadarIO.Xamarin.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,9 +45,6 @@
     <Compile Include="RadarSDKImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conversion.cs" />
-    <Compile Include="..\RadarIO.Xamarin\RadarSingleton.cs">
-      <Link>RadarSingleton.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
@@ -56,6 +53,10 @@
     <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
       <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
       <Name>RadarIO.Xamarin.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+      <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
+      <Name>RadarIO.Xamarin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

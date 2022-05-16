@@ -130,6 +130,10 @@
       <Project>{A58253CF-FE16-41D7-BDAF-E90662E3EB36}</Project>
       <Name>RadarIO.Xamarin.Android</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Library\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+      <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
+      <Name>RadarIO.Xamarin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
