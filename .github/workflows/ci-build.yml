@@ -1,4 +1,4 @@
-name: Deploy Release to NuGet
+name: CI
 
 on:
   push:
