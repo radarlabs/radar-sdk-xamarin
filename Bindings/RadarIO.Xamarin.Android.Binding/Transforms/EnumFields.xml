@@ -3,7 +3,7 @@
   This example converts the constants Fragment_id, Fragment_name,
   and Fragment_tag from android.support.v4.app.FragmentActivity.FragmentTag
   to an enum called Android.Support.V4.App.FragmentTagType with values
-  Id, Name, and Tag.
+  Id, Name, and Tag
   
   <mapping jni-class="android/support/v4/app/FragmentActivity$FragmentTag" clr-enum-type="Android.Support.V4.App.FragmentTagType">
     <field jni-name="Fragment_name" clr-name="Name" value="0" />

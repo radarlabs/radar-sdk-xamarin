@@ -123,7 +123,6 @@ namespace RadarIO.Xamarin
                 Location = user.Location?.ToSDK(),
                 Geofences = user.GetGeofences()?.Select(ToSDK),
                 Place = user.Place?.ToSDK(),
-                Insights = user.Insights?.ToSDK(),
                 Beacons = user.GetBeacons()?.Select(ToSDK),
                 Stopped = user.Stopped,
                 Foreground = user.Foreground,
@@ -144,36 +143,6 @@ namespace RadarIO.Xamarin
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
-            };
-
-        internal static RadarUserInsights ToSDK(this AndroidBinding.RadarUserInsights insights)
-            => insights == null ? null : new RadarUserInsights
-            {
-                HomeLocation = insights.HomeLocation?.ToSDK(),
-                OfficeLocation = insights.OfficeLocation?.ToSDK(),
-                State = insights.State?.ToSDK(),
-            };
-
-        internal static RadarUserInsightsState ToSDK(this AndroidBinding.RadarUserInsightsState state)
-            => state == null ? null : new RadarUserInsightsState
-            {
-                Home = state.Home,
-                Office = state.Office,
-                Traveling = state.Traveling,
-                Commuting = state.Commuting
-            };
-
-        internal static RadarUserInsightsLocation ToSDK(this AndroidBinding.RadarUserInsightsLocation location)
-            => location == null ? null : new RadarUserInsightsLocation
-            {
-                Type = (RadarUserInsightsLocationType)location.Type.Ordinal(),
-                Location = location.Location?.ToSDK(),
-                Confidence = (RadarUserInsightsLocationConfidence)location.Confidence.Ordinal(),
-                UpdatedAt = location.UpdatedAt?.ToSDK(),
-                Country = location.Country?.ToSDK(),
-                State = location.State?.ToSDK(),
-                DMA = location.Dma?.ToSDK(),
-                PostalCode = location.PostalCode?.ToSDK(),
             };
 
         internal static RadarTrip ToSDK(this AndroidBinding.RadarTrip trip)
@@ -314,7 +283,7 @@ namespace RadarIO.Xamarin
                 MovingGeofenceRadius = options.MovingGeofenceRadius,
                 SyncGeofences = options.SyncGeofences,
                 SyncGeofencesLimit = options.SyncGeofencesLimit,
-                ForegroundService = options.ForegroundService?.ToSDK(),
+                ForegroundServiceEnabled = options.ForegroundServiceEnabled,
                 Beacons = options.Beacons
             };
 
@@ -347,7 +316,9 @@ namespace RadarIO.Xamarin
                 options.Metadata?.ToBinding(),
                 options.DestinationGeofenceTag,
                 options.DestinationGeofenceExternalId,
-                AndroidBinding.Radar.RadarRouteMode.Values()[(int)options.Mode]
+                AndroidBinding.Radar.RadarRouteMode.Values()[(int)options.Mode],
+                options.ScheduledArrivalAt?.ToBinding(),
+                options.ApproachingThreshold
             );
 
         internal static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
@@ -370,7 +341,7 @@ namespace RadarIO.Xamarin
                  options.MovingGeofenceRadius,
                  options.SyncGeofences,
                  options.SyncGeofencesLimit,
-                 options.ForegroundService?.ToBinding(),
+                 options.ForegroundServiceEnabled,
                  options.Beacons
                 );
 
@@ -415,6 +386,9 @@ namespace RadarIO.Xamarin
         internal static AndroidBinding.Radar.RadarRouteMode ToBinding(this RadarRouteMode mode)
             => AndroidBinding.Radar.RadarRouteMode.Values().ElementAt((int)mode);
 
+        internal static AndroidBinding.Radar.RadarLocationServicesProvider ToBinding(this RadarLocationServicesProvider locationServicesProvider)
+            => AndroidBinding.Radar.RadarLocationServicesProvider.Values().ElementAt((int)locationServicesProvider);
+
         internal static Org.Json.JSONObject ToBinding(this JSONObject obj)
             => new Org.Json.JSONObject(obj);
 
@@ -426,7 +400,8 @@ namespace RadarIO.Xamarin
                     service.UpdatesOnly,
                     service.Activity,
                     new Java.Lang.Integer(service.Importance),
-                    new Java.Lang.Integer(service.Id)
+                    new Java.Lang.Integer(service.Id),
+                    service.ChannelName
                 );
 
         internal static Android.Locations.Location ToBinding(this Location location)

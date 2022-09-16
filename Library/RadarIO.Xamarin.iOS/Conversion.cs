@@ -161,7 +161,6 @@ namespace RadarIO.Xamarin
                 Location = user.Location?.ToSDK(),
                 Geofences = user.Geofences?.Select(ToSDK),
                 Place = user.Place?.ToSDK(),
-                Insights = user.Insights?.ToSDK(),
                 Beacons = user.Beacons?.Select(ToSDK),
                 Stopped = user.Stopped,
                 Foreground = user.Foreground,
@@ -182,36 +181,6 @@ namespace RadarIO.Xamarin
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
-            };
-
-        internal static RadarUserInsights ToSDK(this iOSBinding.RadarUserInsights insights)
-            => insights == null ? null : new RadarUserInsights
-            {
-                HomeLocation = insights.HomeLocation?.ToSDK(),
-                OfficeLocation = insights.OfficeLocation?.ToSDK(),
-                State = insights.State?.ToSDK(),
-            };
-
-        internal static RadarUserInsightsState ToSDK(this iOSBinding.RadarUserInsightsState state)
-            => state == null ? null : new RadarUserInsightsState
-            {
-                Home = state.Home,
-                Office = state.Office,
-                Traveling = state.Traveling,
-                Commuting = state.Commuting
-            };
-
-        internal static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
-            => location == null ? null : new RadarUserInsightsLocation
-            {
-                Type = (RadarUserInsightsLocationType)location.Type,
-                Location = location.Location?.ToSDK(),
-                Confidence = (RadarUserInsightsLocationConfidence)location.Confidence,
-                UpdatedAt = (DateTime?)location.UpdatedAt,
-                Country = location.Country?.ToSDK(),
-                State = location.State?.ToSDK(),
-                DMA = location.Dma?.ToSDK(),
-                PostalCode = location.PostalCode?.ToSDK(),
             };
 
         internal static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
@@ -354,7 +323,9 @@ namespace RadarIO.Xamarin
                 DestinationGeofenceTag = options.DestinationGeofenceTag,
                 DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
                 Mode = (RadarRouteMode)options.Mode,
-                Metadata = options.Metadata?.ToSDK()
+                Metadata = options.Metadata?.ToSDK(),
+                ScheduledArrivalAt = (DateTime?)options.ScheduledArrivalAt,
+                ApproachingThreshold = options.ApproachingThreshold
             };
 
         internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)

@@ -20,6 +20,10 @@ namespace RadarIO.Xamarin
 
         // Initialization
         void Initialize(string publishableKey);
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider);
 
         // Properties
         string UserId { get; set; }
@@ -199,6 +203,8 @@ namespace RadarIO.Xamarin
         public string DestinationGeofenceExternalId;
         public RadarRouteMode Mode;
         public JSONObject Metadata;
+        public DateTime? ScheduledArrivalAt;
+        public int ApproachingThreshold;
     }
 
     public class RadarTrackingOptions
@@ -238,7 +244,7 @@ namespace RadarIO.Xamarin
         /// <summary>
         /// Android-only
         /// </summary>
-        public RadarTrackingOptionsForegroundService ForegroundService;
+        public bool ForegroundServiceEnabled;
 
 
         /// <summary>
@@ -269,6 +275,7 @@ namespace RadarIO.Xamarin
         public string Activity;
         public int Importance;
         public int Id;
+        public string ChannelName;
     }
 
     public enum RadarTrackingOptionsSync
@@ -305,7 +312,6 @@ namespace RadarIO.Xamarin
         public Location Location;
         public IEnumerable<RadarGeofence> Geofences;
         public RadarPlace Place;
-        public RadarUserInsights Insights;
         public IEnumerable<RadarBeacon> Beacons;
         public bool Stopped;
         public bool Foreground;
@@ -406,48 +412,6 @@ namespace RadarIO.Xamarin
         public string Minor;
         public JSONObject Metadata;
         public RadarCoordinate Location;
-    }
-
-    public class RadarUserInsights
-    {
-        public RadarUserInsightsLocation HomeLocation;
-        public RadarUserInsightsLocation OfficeLocation;
-        public RadarUserInsightsState State;
-    }
-
-    public class RadarUserInsightsState
-    {
-        public bool Home;
-        public bool Office;
-        public bool Traveling;
-        public bool Commuting;
-    }
-
-    public class RadarUserInsightsLocation
-    {
-        public RadarUserInsightsLocationType Type;
-        public RadarCoordinate Location;
-        public RadarUserInsightsLocationConfidence Confidence;
-        public DateTime? UpdatedAt;
-        public RadarRegion Country;
-        public RadarRegion State;
-        public RadarRegion DMA;
-        public RadarRegion PostalCode;
-    }
-
-    public enum RadarUserInsightsLocationConfidence
-    {
-        None,
-        Low,
-        Medium,
-        High
-    }
-
-    public enum RadarUserInsightsLocationType
-    {
-        Unknown,
-        Home,
-        Office
     }
 
     public class RadarPlace
@@ -600,6 +564,15 @@ namespace RadarIO.Xamarin
         ErrorRateLimit,
         ErrorServer,
         ErrorUnknown
+    }
+
+    /// <summary>
+    /// Android-only
+    /// </summary>
+    public enum RadarLocationServicesProvider
+    {
+        Google,
+        Huawei
     }
 
     public class JSONObject : Dictionary<string, object> { }

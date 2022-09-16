@@ -74,7 +74,13 @@ namespace RadarIO.Xamarin
 
         public void Initialize(string publishableKey)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this);
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
+            //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
+        }
+
+        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
+        {
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, locationServicesProvider.ToBinding());
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 

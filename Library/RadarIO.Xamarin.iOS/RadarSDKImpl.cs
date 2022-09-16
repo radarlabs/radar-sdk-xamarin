@@ -60,6 +60,9 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.SetDelegate(this);
         }
 
+        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
+            => Initialize(publishableKey);
+
         public void SetLogLevel(RadarLogLevel level)
         {
             iOSBinding.Radar.SetLogLevel((iOSBinding.RadarLogLevel)level);
