@@ -314,6 +314,13 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata)
+        {
+            var handler = new SendEventCallbackHandler();
+            AndroidBinding.Radar.SendEvent(customType, metadata?.ToBinding(), handler);
+            return handler.Task;
+        }
+
         public string StringForStatus(RadarStatus status)
             => status.ToString();
 

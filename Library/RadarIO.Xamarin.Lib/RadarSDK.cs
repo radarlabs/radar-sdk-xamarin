@@ -18,6 +18,8 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata);
+
         // Initialization
         void Initialize(string publishableKey);
         /// <summary>

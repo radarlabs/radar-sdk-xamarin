@@ -532,6 +532,23 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            iOSBinding.Radar.SendEvent(customType, metadata?.ToBinding(), (status, location, events, user) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
         public string StringForStatus(RadarStatus status)
             => iOSBinding.Radar.StringForStatus(status.ToBinding());
 

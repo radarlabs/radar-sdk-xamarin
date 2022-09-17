@@ -205,4 +205,21 @@ namespace RadarIO.Xamarin
             }
         }
     }
+
+    public class SendEventCallbackHandler
+        : TaskCallbackHandler<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>
+        , AndroidBinding.Radar.IRadarSendEventCallback
+    {
+        public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
+        {
+            try
+            {
+                taskSource.SetResult(((RadarStatus)status.Ordinal(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+            }
+            catch (Exception ex)
+            {
+                taskSource.SetException(ex);
+            }
+        }
+    }
 }
