@@ -134,6 +134,9 @@
       <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
       <Name>RadarIO.Xamarin</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.AndroidBinding.csproj">
+      <Name>RadarIO.Xamarin.AndroidBinding</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

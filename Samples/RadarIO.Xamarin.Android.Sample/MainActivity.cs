@@ -43,7 +43,7 @@ namespace RadarIO.Xamarin.Android.Sample
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
 
-            Demo.Initialize();
+            Demo.Initialize(new RadarSDKImpl());
 
             //Radar.Log += args =>
             //{

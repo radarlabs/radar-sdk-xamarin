@@ -9,10 +9,11 @@ namespace RadarIO.Xamarin.Shared.Sample
 {
     public static class Demo
     {
-        private const string RADAR_KEY = "prj_test_pk_8c93cbcd86a49ae4cc090c67ae378767b48638ec "; // "ENTER KEY HERE";
+        private const string RADAR_KEY = "ENTER KEY HERE";
 
-        public static void Initialize()
+        public static void Initialize(RadarSDK sdk)
         {
+            RadarSingleton.Initialize(sdk);
             Radar.Initialize(RADAR_KEY);
             Radar.SetLogLevel(RadarLogLevel.Debug);
             Radar.UserId = "test user";
@@ -35,10 +36,13 @@ namespace RadarIO.Xamarin.Shared.Sample
             //    DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium
             //};
 
-            var trackingOptions = Radar.TrackingOptionsResponsive;
+            var res = await Radar.SendEvent("test-event", new JSONObject { { "asd", 123 } });
+            return res;
 
-            Radar.StartTracking(trackingOptions);
-            return (RadarStatus.Success, null, null, null);
+            //var trackingOptions = Radar.TrackingOptionsResponsive;
+
+            //Radar.StartTracking(trackingOptions);
+            //return (RadarStatus.Success, null, null, null);
 
             //var ret = await Radar.TrackOnce();
             //var (_, loc, _, _) = ret;
