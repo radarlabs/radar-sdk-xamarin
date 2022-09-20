@@ -337,7 +337,7 @@ namespace RadarIO.Xamarin
         public string DestinationGeofenceTag;
         public string DestinationGeofenceExternalId;
         public RadarCoordinate DestinationLocation;
-        public RadarRouteMode Mode;
+        public RadarRouteMode? Mode;
         public double EtaDistance;
         public double EtaDuration;
         public RadarTripStatus Status;

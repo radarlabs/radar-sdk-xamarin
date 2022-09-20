@@ -154,7 +154,7 @@ namespace RadarIO.Xamarin
                 DestinationGeofenceTag = trip.DestinationGeofenceTag,
                 DestinationGeofenceExternalId = trip.DestinationGeofenceExternalId,
                 DestinationLocation = trip.DestinationLocation?.ToSDK(),
-                Mode = (RadarRouteMode)trip.Mode.Ordinal(),
+                Mode = trip.Mode == null ? null : (RadarRouteMode?)trip.Mode.Ordinal(),
                 EtaDistance = trip.EtaDistance?.DoubleValue() ?? 0,
                 EtaDuration = trip.EtaDuration?.DoubleValue() ?? 0,
                 Status = (RadarTripStatus)trip.Status.Ordinal()
