@@ -433,13 +433,13 @@ namespace RadarIO.Xamarin
             => (iOSBinding.RadarRouteMode)modes?.Sum(m => Math.Pow(2, (double)m));
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
-            => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
+            => metadata.Count == 0 ? new Foundation.NSDictionary() : Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
                 metadata.Values.ToArray(),
                 metadata.Keys.ToArray(),
                 metadata.Count);
 
         internal static Foundation.NSDictionary<Foundation.NSString, Foundation.NSString> ToBinding(this IDictionary<string, string> metadata)
-            => Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>.FromObjectsAndKeys(
+            => metadata.Count == 0 ? new Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>() : Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>.FromObjectsAndKeys(
                 metadata.Values.ToArray(),
                 metadata.Keys.ToArray(),
                 metadata.Count);
