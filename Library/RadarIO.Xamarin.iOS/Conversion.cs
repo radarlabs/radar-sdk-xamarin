@@ -137,6 +137,7 @@ namespace RadarIO.Xamarin
                 ActualCreatedAt = (DateTime)ev.ActualCreatedAt,
                 Live = ev.Live,
                 Type = (RadarEventType)ev.Type,
+                CustomType = ev.CustomType,
                 Geofence = ev.Geofence?.ToSDK(),
                 Place = ev.Place?.ToSDK(),
                 Region = ev.Region?.ToSDK(),
@@ -147,7 +148,8 @@ namespace RadarIO.Xamarin
                 Verification = (RadarEventVerification)ev.Verification,
                 Confidence = (RadarEventConfidence)ev.Confidence,
                 Duration = ev.Duration,
-                Location = ev.Location?.ToSDK()
+                Location = ev.Location?.ToSDK(),
+                Metadata = ev.Metadata?.ToSDK()
             };
 
         internal static RadarUser ToSDK(this iOSBinding.RadarUser user)
@@ -220,6 +222,7 @@ namespace RadarIO.Xamarin
                 Minor = beacon.Minor,
                 Metadata = beacon.Metadata?.ToSDK(),
                 Location = beacon.Geometry?.ToSDK(),
+                Rssi = (int)beacon.Rssi
             };
 
         internal static RadarGeofence ToSDK(this iOSBinding.RadarGeofence geofence)
@@ -431,6 +434,12 @@ namespace RadarIO.Xamarin
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
             => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
+                metadata.Values.ToArray(),
+                metadata.Keys.ToArray(),
+                metadata.Count);
+
+        internal static Foundation.NSDictionary<Foundation.NSString, Foundation.NSString> ToBinding(this IDictionary<string, string> metadata)
+            => Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>.FromObjectsAndKeys(
                 metadata.Values.ToArray(),
                 metadata.Keys.ToArray(),
                 metadata.Count);

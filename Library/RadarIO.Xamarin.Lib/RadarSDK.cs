@@ -19,6 +19,7 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<string> Log;
 
         Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata);
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata);
 
         // Initialization
         void Initialize(string publishableKey);
@@ -63,8 +64,8 @@ namespace RadarIO.Xamarin
         Task<(RadarStatus, Location, RadarContext)> GetContext(Location location);
 
         // Search
-        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
-        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
         Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
         Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
         Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, int limit = 100);
@@ -327,6 +328,8 @@ namespace RadarIO.Xamarin
         public RadarLocationSource Source;
         public bool Proxy;
         public RadarTrip Trip;
+        public RadarFraud Fraud;
+        public bool Mocked;
     }
 
     public class RadarTrip
@@ -414,6 +417,7 @@ namespace RadarIO.Xamarin
         public string Minor;
         public JSONObject Metadata;
         public RadarCoordinate Location;
+        public int Rssi;
     }
 
     public class RadarPlace
@@ -465,6 +469,7 @@ namespace RadarIO.Xamarin
         public DateTime? ActualCreatedAt;
         public bool Live;
         public RadarEventType Type;
+        public string CustomType;
         public RadarGeofence Geofence;
         public RadarPlace Place;
         public RadarRegion Region;
@@ -476,6 +481,18 @@ namespace RadarIO.Xamarin
         public RadarEventConfidence Confidence;
         public float Duration;
         public Location Location;
+        public JSONObject Metadata;
+    }
+
+    public class RadarFraud
+    {
+        public bool Mocked;
+        public bool Proxy;
+    }
+
+    public class RadarMeta
+    {
+        public RadarTrackingOptions TrackingOptions;
     }
 
     public enum RadarEventConfidence
@@ -496,14 +513,9 @@ namespace RadarIO.Xamarin
     public enum RadarEventType
     {
         Unknown,
+        Custom,
         UserEnteredGeofence,
         UserExitedGeofence,
-        UserEnteredHome,
-        UserExitedHome,
-        UserEnteredOffice,
-        UserExitedOffice,
-        UserStartedTraveling,
-        UserStoppedTraveling,
         UserEnteredPlace,
         UserExitedPlace,
         UserNearbyPlaceChain,
@@ -513,8 +525,6 @@ namespace RadarIO.Xamarin
         UserExitedRegionState,
         UserEnteredRegionDMA,
         UserExitedRegionDMA,
-        UserStartedCommuting,
-        UserStoppedCommuting,
         UserStartedTrip,
         UserUpdatedTrip,
         UserApproachingTripDestination,
@@ -523,7 +533,8 @@ namespace RadarIO.Xamarin
         UserEnteredBeacon,
         UserExitedBeacon,
         UserEnteredRegionPostalCode,
-        UserExitedRegionPostalCode
+        UserExitedRegionPostalCode,
+        UserDwelledInGeofence
     }
 
     // replaced with Xamarin.Essentials.Location

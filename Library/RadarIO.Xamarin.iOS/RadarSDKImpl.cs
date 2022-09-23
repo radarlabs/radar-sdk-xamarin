@@ -403,10 +403,10 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100)
+        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
         {
             var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarPlace>)>();
-            iOSBinding.Radar.SearchPlacesNear(near?.ToBinding(), radius, chains?.ToArray(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
+            iOSBinding.Radar.SearchPlacesNear(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata?.ToBinding(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
             {
                 try
                 {
@@ -420,10 +420,10 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100)
+        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
         {
             var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarPlace>)>();
-            iOSBinding.Radar.SearchPlacesWithRadius(radius, chains?.ToArray(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
+            iOSBinding.Radar.SearchPlacesWithRadius(radius, chains?.ToArray(), chainMetadata?.ToBinding(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
             {
                 try
                 {
@@ -540,6 +540,23 @@ namespace RadarIO.Xamarin
                 try
                 {
                     src.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            iOSBinding.Radar.SendEvent(customType, location?.ToBinding(), metadata?.ToBinding(), (status, loc, events, user) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), loc?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
                 }
                 catch (Exception ex)
                 {

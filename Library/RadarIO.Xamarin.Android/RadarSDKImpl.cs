@@ -234,17 +234,17 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0)
+        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
         {
             var handler = new SearchPlacesCallbackHandler();
-            AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0)
+        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
         {
             var handler = new SearchPlacesCallbackHandler();
-            AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
@@ -318,6 +318,13 @@ namespace RadarIO.Xamarin
         {
             var handler = new SendEventCallbackHandler();
             AndroidBinding.Radar.SendEvent(customType, metadata?.ToBinding(), handler);
+            return handler.Task;
+        }
+
+        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata)
+        {
+            var handler = new SendEventCallbackHandler();
+            AndroidBinding.Radar.SendEvent(customType, location?.ToBinding(), metadata?.ToBinding(), handler);
             return handler.Task;
         }
 

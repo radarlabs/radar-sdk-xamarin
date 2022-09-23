@@ -99,6 +99,7 @@ namespace RadarIO.Xamarin
                 ActualCreatedAt = ev.ActualCreatedAt?.ToSDK(),
                 Live = ev.Live,
                 Type = (RadarEventType)ev.Type.Ordinal(),
+                CustomType = ev.CustomType,
                 Geofence = ev.Geofence?.ToSDK(),
                 Place = ev.Place?.ToSDK(),
                 Region = ev.Region?.ToSDK(),
@@ -109,7 +110,8 @@ namespace RadarIO.Xamarin
                 Verification = (RadarEventVerification)ev.Verification.Ordinal(),
                 Confidence = (RadarEventConfidence)ev.Confidence.Ordinal(),
                 Duration = ev.Duration,
-                Location = ev.Location?.ToSDK()
+                Location = ev.Location?.ToSDK(),
+                Metadata = ev.Metadata?.ToSDK()
             };
 
         internal static RadarUser ToSDK(this AndroidBinding.RadarUser user)
@@ -135,7 +137,9 @@ namespace RadarIO.Xamarin
                 TopChains = user.GetTopChains()?.Select(ToSDK),
                 Source = (RadarLocationSource)user.Source.Ordinal(),
                 Proxy = user.Proxy,
-                Trip = user.Trip?.ToSDK()
+                Trip = user.Trip?.ToSDK(),
+                Fraud = user.Fraud?.ToSDK(),
+                Mocked = user.Mocked
             };
 
         internal static RadarSegment ToSDK(this AndroidBinding.RadarSegment segment)
@@ -182,6 +186,7 @@ namespace RadarIO.Xamarin
                 Minor = beacon.Minor,
                 Metadata = beacon.ToJson()?.ToSDK(),
                 Location = beacon.Location?.ToSDK(),
+                Rssi = (int)beacon.Rssi
             };
 
         internal static RadarGeofence ToSDK(this AndroidBinding.RadarGeofence geofence)
@@ -308,6 +313,13 @@ namespace RadarIO.Xamarin
                 Activity = service.Activity,
                 Importance = service.Importance is null ? 0 : (int)service.Importance,
                 Id = service.Id is null ? 0 : (int)service.Id
+            };
+
+        internal static RadarFraud ToSDK(this AndroidBinding.RadarFraud fraud)
+            => fraud == null ? null : new RadarFraud
+            {
+                Mocked = fraud.Mocked,
+                Proxy = fraud.Proxy
             };
 
         internal static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
