@@ -23,23 +23,13 @@
 typedef NS_ENUM(NSInteger, RadarEventType) {
     /// Unknown
     RadarEventTypeUnknown NS_SWIFT_NAME(unknown),
+    // A custom type, created by calling `Radar.sendEvent()`. The custom value
+    // will be assigned to the `customType` property.
+    RadarEventTypeCustom NS_SWIFT_NAME(custom),
     /// `user.entered_geofence`
     RadarEventTypeUserEnteredGeofence NS_SWIFT_NAME(userEnteredGeofence),
     /// `user.exited_geofence`
     RadarEventTypeUserExitedGeofence NS_SWIFT_NAME(userExitedGeofence),
-    /// `user.entered_home`
-    RadarEventTypeUserEnteredHome NS_SWIFT_NAME(userEnteredHome),
-    /// `user.exited_home`
-    RadarEventTypeUserExitedHome NS_SWIFT_NAME(userExitedHome),
-    /// `user.entered_office`
-    RadarEventTypeUserEnteredOffice NS_SWIFT_NAME(userEnteredOffice),
-    /// `user.exited_office`
-    RadarEventTypeUserExitedOffice NS_SWIFT_NAME(userExitedOffice),
-    /// `user.started_traveling`
-    RadarEventTypeUserStartedTraveling NS_SWIFT_NAME(userStartedTraveling),
-    /// `user.stopped_traveling`
-    RadarEventTypeUserStoppedTraveling NS_SWIFT_NAME(userStoppedTraveling),
-    /// `user.entered_place`
     RadarEventTypeUserEnteredPlace NS_SWIFT_NAME(userEnteredPlace),
     /// `user.exited_place`
     RadarEventTypeUserExitedPlace NS_SWIFT_NAME(userExitedPlace),
@@ -57,10 +47,6 @@ typedef NS_ENUM(NSInteger, RadarEventType) {
     RadarEventTypeUserEnteredRegionDMA NS_SWIFT_NAME(userEnteredRegionDMA),
     /// `user.exited_region_dma`
     RadarEventTypeUserExitedRegionDMA NS_SWIFT_NAME(userExitedRegionDMA),
-    /// `user.started_commuting`
-    RadarEventTypeUserStartedCommuting NS_SWIFT_NAME(userStartedCommuting),
-    /// `user.stopped_commuting`
-    RadarEventTypeUserStoppedCommuting NS_SWIFT_NAME(userStoppedCommuting),
     /// `user.started_trip`
     RadarEventTypeUserStartedTrip NS_SWIFT_NAME(userStartedTrip),
     /// `user.updated_trip`
@@ -78,7 +64,9 @@ typedef NS_ENUM(NSInteger, RadarEventType) {
     /// `user.entered_region_postal_code`
     RadarEventTypeUserEnteredRegionPostalCode NS_SWIFT_NAME(userEnteredRegionPostalCode),
     /// `user.exited_region_postal_code`
-    RadarEventTypeUserExitedRegionPostalCode NS_SWIFT_NAME(userExitedRegionPostalCode)
+    RadarEventTypeUserExitedRegionPostalCode NS_SWIFT_NAME(userExitedRegionPostalCode),
+    /// `user.dwelled_in_geofence`
+    RadarEventTypeUserDwelledInGeofence NS_SWIFT_NAME(userDwelledInGeofence)
 };
 
 /**
@@ -131,6 +119,11 @@ typedef NS_ENUM(NSInteger, RadarEventVerification) {
  The type of the event.
  */
 @property (assign, nonatomic, readonly) RadarEventType type;
+
+/**
+ The custom type of the event. This will only be set if the `type` is `RadarEventTypeCustom`.
+ */
+@property (nullable, copy, nonatomic, readonly) NSString *customType;
 
 /**
  The geofence for which the event was generated. May be `nil` for non-geofence events.
@@ -186,6 +179,11 @@ typedef NS_ENUM(NSInteger, RadarEventVerification) {
  The location of the event.
  */
 @property (nonnull, strong, nonatomic, readonly) CLLocation *location;
+
+/**
+ The metadata of the event. Present on custom events only.
+ */
+@property (nonnull, copy, nonatomic, readonly) NSDictionary *metadata;
 
 + (NSString *_Nullable)stringForType:(RadarEventType)type;
 + (NSArray<NSDictionary *> *_Nullable)arrayForEvents:(NSArray<RadarEvent *> *_Nullable)events;

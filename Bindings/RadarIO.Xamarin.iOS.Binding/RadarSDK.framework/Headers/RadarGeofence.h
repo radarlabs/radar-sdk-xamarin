@@ -11,7 +11,7 @@
 /**
  Represents a geofence.
 
- @see https://radar.io/documentation/geofences
+ @see https://radar.com/documentation/geofences
  */
 @interface RadarGeofence : NSObject
 
@@ -41,7 +41,7 @@
 @property (nullable, copy, nonatomic, readonly) NSDictionary *metadata;
 
 /**
- The geometry of the geofence.
+ The geometry of the geofence, which can be cast to either `RadarCircleGeometry` or `RadarPolygonGeometry`.
  */
 @property (nonnull, strong, nonatomic, readonly) RadarGeofenceGeometry *geometry;
 

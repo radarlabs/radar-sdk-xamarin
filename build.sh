@@ -1,4 +1,5 @@
-﻿
+#!/bin/bash
+
 nuget restore
 
 find Samples -type f -name "*.csproj" | for proj in $(cat) ; do 

@@ -18,37 +18,79 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata);
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata);
+
+        // Initialization
         void Initialize(string publishableKey);
-        void SetLogLevel(RadarLogLevel level);
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider);
+
+        // Properties
         string UserId { get; set; }
         string Description { get; set; }
         JSONObject Metadata { get; set; }
+        bool AdIdEnabled { set; }
 
+        // Get Location
+        Task<(RadarStatus, Location, bool)> GetLocation();
+        Task<(RadarStatus, Location, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy);
+
+        // Tracking
         Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
+        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(Location location);
         void StartTracking(RadarTrackingOptions options);
-        void StopTracking();
         void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback);
+        void StopTracking();
+        bool IsTracking { get; }
+        RadarTrackingOptions TrackingOptions { get; }
 
+        // Event IDs
+        void AcceptEventId(string eventId, string verifiedPlaceId = null);
+        void RejectEventId(string eventId);
+
+        // Trips
+        RadarTripOptions TripOptions { get; }
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options);
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown);
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip();
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
 
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
+        // Device Context
+        Task<(RadarStatus, Location, RadarContext)> GetContext();
+        Task<(RadarStatus, Location, RadarContext)> GetContext(Location location);
 
+        // Search
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
+        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
         Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
         Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, int limit = 100);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, IEnumerable<string> layers = null, int limit = 100, string country = null);
 
-        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
-        Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100);
+        // Geocoding
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode();
+        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location);
+        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
 
+        // Distances
         Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
         Task<(RadarStatus, RadarRoutes)> GetDistance(Location source, Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
-
         Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units);
 
-        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
+        // Logging
+        void SetLogLevel(RadarLogLevel level);
+
+        // Utilities
+        string StringForStatus(RadarStatus status);
+        string StringForLocationSource(RadarLocationSource source);
+        string StringForMode(RadarRouteMode mode);
+        string StringForTripStatus(RadarTripStatus status);
+        JSONObject DictionaryForLocation(Location location);
     }
 
     public enum RadarLogLevel
@@ -60,10 +102,20 @@ namespace RadarIO.Xamarin
         Debug
     }
 
+    public class RadarContext
+    {
+        public RadarRegion Country;
+        public RadarRegion Dma;
+        public IEnumerable<RadarGeofence> Geofences;
+        public RadarPlace Place;
+        public RadarRegion PostalCode;
+        public RadarRegion State;
+    }
+
     public abstract class RadarRouteMatrix
     {
         public IEnumerable<IEnumerable<RadarRoute>> matrix;
-            
+
         public abstract RadarRoute RouteBetween(int originIndex, int destinationIndex);
     }
 
@@ -154,6 +206,8 @@ namespace RadarIO.Xamarin
         public string DestinationGeofenceExternalId;
         public RadarRouteMode Mode;
         public JSONObject Metadata;
+        public DateTime? ScheduledArrivalAt;
+        public int ApproachingThreshold;
     }
 
     public class RadarTrackingOptions
@@ -193,7 +247,7 @@ namespace RadarIO.Xamarin
         /// <summary>
         /// Android-only
         /// </summary>
-        public RadarTrackingOptionsForegroundService ForegroundService;
+        public bool ForegroundServiceEnabled;
 
 
         /// <summary>
@@ -224,6 +278,7 @@ namespace RadarIO.Xamarin
         public string Activity;
         public int Importance;
         public int Id;
+        public string ChannelName;
     }
 
     public enum RadarTrackingOptionsSync
@@ -244,6 +299,9 @@ namespace RadarIO.Xamarin
         High,
         Medium,
         Low,
+        /// <summary>
+        ///  Android-only
+        /// </summary>
         None
     }
 
@@ -257,7 +315,6 @@ namespace RadarIO.Xamarin
         public Location Location;
         public IEnumerable<RadarGeofence> Geofences;
         public RadarPlace Place;
-        public RadarUserInsights Insights;
         public IEnumerable<RadarBeacon> Beacons;
         public bool Stopped;
         public bool Foreground;
@@ -271,6 +328,8 @@ namespace RadarIO.Xamarin
         public RadarLocationSource Source;
         public bool Proxy;
         public RadarTrip Trip;
+        public RadarFraud Fraud;
+        public bool Mocked;
     }
 
     public class RadarTrip
@@ -281,7 +340,7 @@ namespace RadarIO.Xamarin
         public string DestinationGeofenceTag;
         public string DestinationGeofenceExternalId;
         public RadarCoordinate DestinationLocation;
-        public RadarRouteMode Mode;
+        public RadarRouteMode? Mode;
         public double EtaDistance;
         public double EtaDuration;
         public RadarTripStatus Status;
@@ -358,48 +417,7 @@ namespace RadarIO.Xamarin
         public string Minor;
         public JSONObject Metadata;
         public RadarCoordinate Location;
-    }
-
-    public class RadarUserInsights
-    {
-        public RadarUserInsightsLocation HomeLocation;
-        public RadarUserInsightsLocation OfficeLocation;
-        public RadarUserInsightsState State;
-    }
-
-    public class RadarUserInsightsState
-    {
-        public bool Home;
-        public bool Office;
-        public bool Traveling;
-        public bool Commuting;
-    }
-
-    public class RadarUserInsightsLocation
-    {
-        public RadarUserInsightsLocationType Type;
-        public RadarCoordinate Location;
-        public RadarUserInsightsLocationConfidence Confidence;
-        public DateTime? UpdatedAt;
-        public RadarRegion Country;
-        public RadarRegion State;
-        public RadarRegion DMA;
-        public RadarRegion PostalCode;
-    }
-
-    public enum RadarUserInsightsLocationConfidence
-    {
-        None,
-        Low,
-        Medium,
-        High
-    }
-
-    public enum RadarUserInsightsLocationType
-    {
-        Unknown,
-        Home,
-        Office
+        public int Rssi;
     }
 
     public class RadarPlace
@@ -451,6 +469,7 @@ namespace RadarIO.Xamarin
         public DateTime? ActualCreatedAt;
         public bool Live;
         public RadarEventType Type;
+        public string CustomType;
         public RadarGeofence Geofence;
         public RadarPlace Place;
         public RadarRegion Region;
@@ -462,6 +481,18 @@ namespace RadarIO.Xamarin
         public RadarEventConfidence Confidence;
         public float Duration;
         public Location Location;
+        public JSONObject Metadata;
+    }
+
+    public class RadarFraud
+    {
+        public bool Mocked;
+        public bool Proxy;
+    }
+
+    public class RadarMeta
+    {
+        public RadarTrackingOptions TrackingOptions;
     }
 
     public enum RadarEventConfidence
@@ -482,14 +513,9 @@ namespace RadarIO.Xamarin
     public enum RadarEventType
     {
         Unknown,
+        Custom,
         UserEnteredGeofence,
         UserExitedGeofence,
-        UserEnteredHome,
-        UserExitedHome,
-        UserEnteredOffice,
-        UserExitedOffice,
-        UserStartedTraveling,
-        UserStoppedTraveling,
         UserEnteredPlace,
         UserExitedPlace,
         UserNearbyPlaceChain,
@@ -499,8 +525,6 @@ namespace RadarIO.Xamarin
         UserExitedRegionState,
         UserEnteredRegionDMA,
         UserExitedRegionDMA,
-        UserStartedCommuting,
-        UserStoppedCommuting,
         UserStartedTrip,
         UserUpdatedTrip,
         UserApproachingTripDestination,
@@ -509,9 +533,11 @@ namespace RadarIO.Xamarin
         UserEnteredBeacon,
         UserExitedBeacon,
         UserEnteredRegionPostalCode,
-        UserExitedRegionPostalCode
+        UserExitedRegionPostalCode,
+        UserDwelledInGeofence
     }
 
+    // replaced with Xamarin.Essentials.Location
     //public class Location
     //{
     //    public double Longitude;
@@ -533,7 +559,6 @@ namespace RadarIO.Xamarin
     //            Speed = loc.Speed,
     //            Timestamp = (DateTimeOffset)loc.Timestamp
     //        };
-    //    // todo
     //}
 
     public enum RadarStatus
@@ -552,6 +577,15 @@ namespace RadarIO.Xamarin
         ErrorRateLimit,
         ErrorServer,
         ErrorUnknown
+    }
+
+    /// <summary>
+    /// Android-only
+    /// </summary>
+    public enum RadarLocationServicesProvider
+    {
+        Google,
+        Huawei
     }
 
     public class JSONObject : Dictionary<string, object> { }

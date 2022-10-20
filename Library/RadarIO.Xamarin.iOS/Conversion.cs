@@ -137,6 +137,7 @@ namespace RadarIO.Xamarin
                 ActualCreatedAt = (DateTime)ev.ActualCreatedAt,
                 Live = ev.Live,
                 Type = (RadarEventType)ev.Type,
+                CustomType = ev.CustomType,
                 Geofence = ev.Geofence?.ToSDK(),
                 Place = ev.Place?.ToSDK(),
                 Region = ev.Region?.ToSDK(),
@@ -147,7 +148,8 @@ namespace RadarIO.Xamarin
                 Verification = (RadarEventVerification)ev.Verification,
                 Confidence = (RadarEventConfidence)ev.Confidence,
                 Duration = ev.Duration,
-                Location = ev.Location?.ToSDK()
+                Location = ev.Location?.ToSDK(),
+                Metadata = ev.Metadata?.ToSDK()
             };
 
         internal static RadarUser ToSDK(this iOSBinding.RadarUser user)
@@ -161,7 +163,6 @@ namespace RadarIO.Xamarin
                 Location = user.Location?.ToSDK(),
                 Geofences = user.Geofences?.Select(ToSDK),
                 Place = user.Place?.ToSDK(),
-                Insights = user.Insights?.ToSDK(),
                 Beacons = user.Beacons?.Select(ToSDK),
                 Stopped = user.Stopped,
                 Foreground = user.Foreground,
@@ -182,36 +183,6 @@ namespace RadarIO.Xamarin
             {
                 Description = segment.Description,
                 ExternalId = segment.ExternalId
-            };
-
-        internal static RadarUserInsights ToSDK(this iOSBinding.RadarUserInsights insights)
-            => insights == null ? null : new RadarUserInsights
-            {
-                HomeLocation = insights.HomeLocation?.ToSDK(),
-                OfficeLocation = insights.OfficeLocation?.ToSDK(),
-                State = insights.State?.ToSDK(),
-            };
-
-        internal static RadarUserInsightsState ToSDK(this iOSBinding.RadarUserInsightsState state)
-            => state == null ? null : new RadarUserInsightsState
-            {
-                Home = state.Home,
-                Office = state.Office,
-                Traveling = state.Traveling,
-                Commuting = state.Commuting
-            };
-
-        internal static RadarUserInsightsLocation ToSDK(this iOSBinding.RadarUserInsightsLocation location)
-            => location == null ? null : new RadarUserInsightsLocation
-            {
-                Type = (RadarUserInsightsLocationType)location.Type,
-                Location = location.Location?.ToSDK(),
-                Confidence = (RadarUserInsightsLocationConfidence)location.Confidence,
-                UpdatedAt = (DateTime?)location.UpdatedAt,
-                Country = location.Country?.ToSDK(),
-                State = location.State?.ToSDK(),
-                DMA = location.Dma?.ToSDK(),
-                PostalCode = location.PostalCode?.ToSDK(),
             };
 
         internal static RadarTrip ToSDK(this iOSBinding.RadarTrip trip)
@@ -251,6 +222,7 @@ namespace RadarIO.Xamarin
                 Minor = beacon.Minor,
                 Metadata = beacon.Metadata?.ToSDK(),
                 Location = beacon.Geometry?.ToSDK(),
+                Rssi = (int)beacon.Rssi
             };
 
         internal static RadarGeofence ToSDK(this iOSBinding.RadarGeofence geofence)
@@ -347,6 +319,18 @@ namespace RadarIO.Xamarin
             return obj.ToString();
         }
 
+        internal static RadarTripOptions ToSDK(this iOSBinding.RadarTripOptions options)
+            => options == null ? null : new RadarTripOptions
+            {
+                ExternalId = options.ExternalId,
+                DestinationGeofenceTag = options.DestinationGeofenceTag,
+                DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
+                Mode = (RadarRouteMode)options.Mode,
+                Metadata = options.Metadata?.ToSDK(),
+                ScheduledArrivalAt = (DateTime?)options.ScheduledArrivalAt,
+                ApproachingThreshold = options.ApproachingThreshold
+            };
+
         internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
             => options == null ? null : new RadarTrackingOptions
             {
@@ -371,6 +355,17 @@ namespace RadarIO.Xamarin
                 Sync = InvertEnum<RadarTrackingOptionsSync>((int)options.SyncLocations)
             };
 
+        internal static RadarContext ToSDK(this iOSBinding.RadarContext context)
+            => context == null ? null : new RadarContext
+            {
+                Country = context.Country?.ToSDK(),
+                Dma = context.Dma?.ToSDK(),
+                Geofences = context.Geofences?.Select(ToSDK),
+                Place = context.Place?.ToSDK(),
+                PostalCode = context.PostalCode?.ToSDK(),
+                State = context.State?.ToSDK()
+            };
+
         internal static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
             => new iOSBinding.RadarTripOptions
             {
@@ -381,13 +376,25 @@ namespace RadarIO.Xamarin
                 Metadata = options.Metadata?.ToBinding()
             };
 
+        internal static iOSBinding.RadarStatus ToBinding(this RadarStatus status)
+            => (iOSBinding.RadarStatus)status;
+
+        internal static iOSBinding.RadarTripStatus ToBinding(this RadarTripStatus status)
+            => (iOSBinding.RadarTripStatus)status;
+
+        internal static iOSBinding.RadarLocationSource ToBinding(this RadarLocationSource source)
+            => (iOSBinding.RadarLocationSource)source;
+
+        internal static iOSBinding.RadarRouteMode ToBinding(this RadarRouteMode mode)
+            => (iOSBinding.RadarRouteMode)mode;
+
         internal static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
             => new iOSBinding.RadarTrackingOptions
             {
                 DesiredStoppedUpdateInterval = options.DesiredStoppedUpdateInterval,
                 DesiredMovingUpdateInterval = options.DesiredMovingUpdateInterval,
                 DesiredSyncInterval = options.DesiredSyncInterval,
-                DesiredAccuracy = options.DesiredAccuracy == RadarTrackingOptionsDesiredAccuracy.None ? iOSBinding.RadarTrackingOptionsDesiredAccuracy.Low : (iOSBinding.RadarTrackingOptionsDesiredAccuracy)options.DesiredAccuracy,
+                DesiredAccuracy = options.DesiredAccuracy.ToBinding(),
                 StopDuration = options.StopDuration,
                 StopDistance = options.StopDistance,
                 StartTrackingAfter = (Foundation.NSDate)options.StartTrackingAfter,
@@ -404,6 +411,9 @@ namespace RadarIO.Xamarin
                 UseSignificantLocationChanges = options.UseSignificantLocationChanges,
                 Beacons = options.Beacons
             };
+
+        internal static iOSBinding.RadarTrackingOptionsDesiredAccuracy ToBinding(this RadarTrackingOptionsDesiredAccuracy accuracy)
+            => accuracy == RadarTrackingOptionsDesiredAccuracy.None ? iOSBinding.RadarTrackingOptionsDesiredAccuracy.Low : (iOSBinding.RadarTrackingOptionsDesiredAccuracy)accuracy;
 
         internal static CLLocation ToBinding(this Location location)
             => new CLLocation(
@@ -423,7 +433,13 @@ namespace RadarIO.Xamarin
             => (iOSBinding.RadarRouteMode)modes?.Sum(m => Math.Pow(2, (double)m));
 
         internal static Foundation.NSDictionary ToBinding(this JSONObject metadata)
-            => Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
+            => metadata.Count == 0 ? new Foundation.NSDictionary() : Foundation.NSDictionary<Foundation.NSString, Foundation.NSObject>.FromObjectsAndKeys(
+                metadata.Values.ToArray(),
+                metadata.Keys.ToArray(),
+                metadata.Count);
+
+        internal static Foundation.NSDictionary<Foundation.NSString, Foundation.NSString> ToBinding(this IDictionary<string, string> metadata)
+            => metadata.Count == 0 ? new Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>() : Foundation.NSDictionary<Foundation.NSString, Foundation.NSString>.FromObjectsAndKeys(
                 metadata.Values.ToArray(),
                 metadata.Keys.ToArray(),
                 metadata.Count);
