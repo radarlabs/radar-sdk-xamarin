@@ -28,6 +28,11 @@ namespace RadarIO.Xamarin
         /// </summary>
         void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider);
 
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options);
+
         // Properties
         string UserId { get; set; }
         string Description { get; set; }
