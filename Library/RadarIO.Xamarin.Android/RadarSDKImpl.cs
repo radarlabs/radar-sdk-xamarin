@@ -84,6 +84,11 @@ namespace RadarIO.Xamarin
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
+        public void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options)
+        {
+            AndroidBinding.Radar.SetForegroundServiceOptions(options?.ToBinding());
+        }
+
         public void SetLogLevel(RadarLogLevel level)
         {
             AndroidBinding.Radar.SetLogLevel(AndroidBinding.Radar.RadarLogLevel.Values()[(int)level]);

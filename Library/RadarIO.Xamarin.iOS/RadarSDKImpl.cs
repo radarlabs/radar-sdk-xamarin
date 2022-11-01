@@ -63,6 +63,8 @@ namespace RadarIO.Xamarin
         public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
             => Initialize(publishableKey);
 
+        public void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options) { }
+
         public void SetLogLevel(RadarLogLevel level)
         {
             iOSBinding.Radar.SetLogLevel((iOSBinding.RadarLogLevel)level);
