@@ -13,7 +13,7 @@ using RadarIO.Xamarin; // contains cross-platform sdk library as well as platfor
 using static RadarIO.Xamarin.RadarSingleton; // to use static Radar instance
 
 // initialize
-RadarSingleton.Initialize(new RadarSDKImpl());
+RadarSingleton.Initialize(new RadarSDKImpl()); // RadarSDKImpl can only be constructed from an Android or iOS project, not a NetStandard project
 
 // enable or disable the foreground service
 RadarTrackingOptions trackingOptions = RadarTrackingOptions(...);
