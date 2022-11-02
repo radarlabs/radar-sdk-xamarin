@@ -8,28 +8,31 @@
 ```c#
 // 3.5.3
 
+// using statements
+using RadarIO.Xamarin; // contains cross-platform sdk library as well as platform-specific RadarSDKImpl
+using static RadarIO.Xamarin.RadarSingleton; // to use static Radar instance
+
 // initialize
-using RadarIO.Xamarin; // to import RadarSDKImpl
-RadarSingleton.Initialize(new RadarSDKImpl())
+RadarSingleton.Initialize(new RadarSDKImpl());
 
 // enable or disable the foreground service
-RadarTrackingOptions trackingOptions = RadarTrackingOptions(...)
-trackingOptions.ForegroundServiceEnabled = true
+RadarTrackingOptions trackingOptions = RadarTrackingOptions(...);
+trackingOptions.ForegroundServiceEnabled = true;
 // set the foreground service options
-RadarTrackingOptionsForegroundService foregroundOptions = RadarTrackingOptionsForegroundService(...)
-Radar.SetForegroundServiceOptions(foregroundOptions)
+RadarTrackingOptionsForegroundService foregroundOptions = RadarTrackingOptionsForegroundService(...);
+Radar.SetForegroundServiceOptions(foregroundOptions);
 // start tracking
-Radar.StartTracking(trackingOptions)
+Radar.StartTracking(trackingOptions);
 ```
 
 ```c#
 // 3.2.x
 
 // initialize
-RadarSingleton.Initialize()
+RadarSingleton.Initialize();
 
 // enabling foreground service
-RadarTrackingOptions trackingOptions = RadarTrackingOptions(...)
-trackingOptions.ForegroundService = RadarTrackingOptionsForegroundService(...)
-Radar.StartTracking(trackingOptions)
+RadarTrackingOptions trackingOptions = RadarTrackingOptions(...);
+trackingOptions.ForegroundService = RadarTrackingOptionsForegroundService(...);
+Radar.StartTracking(trackingOptions);
 ```
