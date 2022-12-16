@@ -172,7 +172,7 @@ namespace RadarIO.Xamarin
         public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions)
         {
             var handler = new TripCallbackHandler();
-            AndroidBinding.Radar.StartTrip(options.ToBinding(), trackingOptions.ToBinding(), handler);
+            AndroidBinding.Radar.StartTrip(options.ToBinding(), trackingOptions?.ToBinding(), handler);
             return handler.Task;
         }
 

@@ -221,7 +221,7 @@ namespace RadarIO.Xamarin
         public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions)
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
-            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), trackingOptions.ToBinding(), (status, trip, events) =>
+            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), trackingOptions?.ToBinding(), (status, trip, events) =>
             {
                 try
                 {
