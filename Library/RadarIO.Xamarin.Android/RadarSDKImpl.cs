@@ -169,6 +169,13 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions)
+        {
+            var handler = new TripCallbackHandler();
+            AndroidBinding.Radar.StartTrip(options.ToBinding(), trackingOptions?.ToBinding(), handler);
+            return handler.Task;
+        }
+
         public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown)
         {
             var handler = new TripCallbackHandler();

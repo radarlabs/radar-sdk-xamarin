@@ -60,6 +60,7 @@ namespace RadarIO.Xamarin
         // Trips
         RadarTripOptions TripOptions { get; }
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options);
+        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions);
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown);
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip();
         Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();

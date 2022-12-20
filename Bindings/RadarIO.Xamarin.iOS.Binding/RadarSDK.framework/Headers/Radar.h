@@ -313,6 +313,14 @@ typedef void(^_Nonnull RadarSendEventCompletionHandler)(RadarStatus status, CLLo
 + (NSDictionary *_Nullable)getMetadata;
 
 /**
+ Enables anonymous tracking for privacy reasons. Avoids creating user records on the server and avoids sending any stable device IDs, user IDs, and user metadata
+ to the server when calling `trackOnce()` or `startTracking()`. Disabled by default.
+
+ @param enabled A boolean indicating whether anonymous tracking should be enabled.
+ */
++ (void)setAnonymousTrackingEnabled:(BOOL)enabled;
+
+/**
  Enables `adId` (IDFA) collection. Disabled by default.
 
  @param enabled A boolean indicating whether `adId` should be collected.
@@ -514,7 +522,8 @@ completionHandler:(RadarSendEventCompletionHandler)completionHandler NS_SWIFT_NA
 
  @see https://radar.com/documentation/trip-tracking
  */
-+ (void)startTripWithOptions:(RadarTripOptions *_Nonnull)options NS_SWIFT_NAME(startTrip(options:));
++ (void)startTripWithOptions:(RadarTripOptions *_Nonnull)options
+    NS_SWIFT_NAME(startTrip(options:));
 
 /**
  Starts a trip.
@@ -525,7 +534,22 @@ completionHandler:(RadarSendEventCompletionHandler)completionHandler NS_SWIFT_NA
  @see https://radar.com/documentation/trip-tracking
  */
 + (void)startTripWithOptions:(RadarTripOptions *_Nonnull)options
-           completionHandler:(RadarTripCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(startTrip(options:completionHandler:));
+           completionHandler:(RadarTripCompletionHandler _Nullable)completionHandler
+    NS_SWIFT_NAME(startTrip(options:completionHandler:));
+
+/**
+ Starts a trip.
+
+ @param tripOptions Configurable trip options.
+ @param trackingOptions Tracking options to use during the trip.
+ @param completionHandler An optional completion handler.
+
+ @see https://radar.com/documentation/trip-tracking
+ */
++ (void)startTripWithOptions:(RadarTripOptions *_Nonnull)tripOptions
+             trackingOptions:(RadarTrackingOptions *_Nullable)trackingOptions
+           completionHandler:(RadarTripCompletionHandler _Nullable)completionHandler
+    NS_SWIFT_NAME(startTrip(options:trackingOptions:completionHandler:));
 
 /**
  Manually updates a trip.

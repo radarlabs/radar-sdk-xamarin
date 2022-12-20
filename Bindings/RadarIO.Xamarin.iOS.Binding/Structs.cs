@@ -1,8 +1,9 @@
 using System;
 using ObjCRuntime;
 
-namespace iOSBinding
+namespace RadarIO.Xamarin.iOSBinding
 {
+
 	[Native]
 	public enum RadarAddressConfidence : long
 	{
@@ -154,4 +155,5 @@ namespace iOSBinding
 		Imperial,
 		Metric
 	}
+
 }

@@ -218,6 +218,23 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
+        public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions)
+        {
+            var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();
+            iOSBinding.Radar.StartTripWithOptions(options.ToBinding(), trackingOptions?.ToBinding(), (status, trip, events) =>
+            {
+                try
+                {
+                    src.SetResult((status.ToSDK(), trip.ToSDK(), events?.Select(Conversion.ToSDK)));
+                }
+                catch (Exception ex)
+                {
+                    src.SetException(ex);
+                }
+            });
+            return src.Task;
+        }
+
         public Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown)
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>();

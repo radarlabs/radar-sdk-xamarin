@@ -3,8 +3,9 @@ using CoreLocation;
 using Foundation;
 using ObjCRuntime;
 
-namespace iOSBinding
+namespace RadarIO.Xamarin.iOSBinding
 {
+
 	[Static]
 
 	partial interface Constants
@@ -900,9 +901,10 @@ namespace iOSBinding
 		[Export("syncLocationsForString:")]
 		RadarTrackingOptionsSyncLocations SyncLocationsForString(string str);
 
-		// +(RadarTrackingOptions * _Nonnull)trackingOptionsFromDictionary:(NSDictionary * _Nonnull)dictionary;
+		// +(RadarTrackingOptions * _Nullable)trackingOptionsFromDictionary:(NSDictionary * _Nonnull)dictionary;
 		[Static]
 		[Export("trackingOptionsFromDictionary:")]
+		[return: NullAllowed]
 		RadarTrackingOptions TrackingOptionsFromDictionary(NSDictionary dictionary);
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
@@ -993,6 +995,11 @@ namespace iOSBinding
 		[NullAllowed, Export("getMetadata")]
 
 		NSDictionary Metadata { get; }
+
+		// +(void)setAnonymousTrackingEnabled:(BOOL)enabled;
+		[Static]
+		[Export("setAnonymousTrackingEnabled:")]
+		void SetAnonymousTrackingEnabled(bool enabled);
 
 		// +(void)setAdIdEnabled:(BOOL)enabled;
 		[Static]
@@ -1091,6 +1098,11 @@ namespace iOSBinding
 		[Static]
 		[Export("startTripWithOptions:completionHandler:")]
 		void StartTripWithOptions(RadarTripOptions options, [NullAllowed] RadarTripCompletionHandler completionHandler);
+
+		// +(void)startTripWithOptions:(RadarTripOptions * _Nonnull)tripOptions trackingOptions:(RadarTrackingOptions * _Nullable)trackingOptions completionHandler:(RadarTripCompletionHandler _Nullable)completionHandler __attribute__((swift_name("startTrip(options:trackingOptions:completionHandler:)")));
+		[Static]
+		[Export("startTripWithOptions:trackingOptions:completionHandler:")]
+		void StartTripWithOptions(RadarTripOptions tripOptions, [NullAllowed] RadarTrackingOptions trackingOptions, [NullAllowed] RadarTripCompletionHandler completionHandler);
 
 		// +(void)updateTripWithOptions:(RadarTripOptions * _Nonnull)options status:(RadarTripStatus)status completionHandler:(RadarTripCompletionHandler _Nullable)completionHandler __attribute__((swift_name("updateTrip(options:status:completionHandler:)")));
 		[Static]
@@ -1343,9 +1355,10 @@ namespace iOSBinding
 		[Export("approachingThreshold")]
 		byte ApproachingThreshold { get; set; }
 
-		// +(RadarTripOptions * _Nonnull)tripOptionsFromDictionary:(NSDictionary * _Nonnull)dict;
+		// +(RadarTripOptions * _Nullable)tripOptionsFromDictionary:(NSDictionary * _Nonnull)dict;
 		[Static]
 		[Export("tripOptionsFromDictionary:")]
+		[return: NullAllowed]
 		RadarTripOptions TripOptionsFromDictionary(NSDictionary dict);
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
@@ -1353,4 +1366,5 @@ namespace iOSBinding
 
 		NSDictionary DictionaryValue { get; }
 	}
+
 }
