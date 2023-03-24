@@ -24,6 +24,14 @@ namespace RadarIO.Xamarin.Android.Sample
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Demo.Initialize(new RadarSDKImpl());
+            RadarTrackingOptions trackingOptions = new RadarTrackingOptions();
+            //trackingOptions.ForegroundServiceEnabled = true;
+            // set the foreground service options
+            //RadarTrackingOptionsForegroundService foregroundOptions = null;
+            //Radar.SetForegroundServiceOptions(foregroundOptions);
+            // start tracking
+            Radar.StartTracking(trackingOptions);
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -42,8 +50,6 @@ namespace RadarIO.Xamarin.Android.Sample
             {
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
-
-            Demo.Initialize(new RadarSDKImpl());
 
             //Radar.Log += args =>
             //{

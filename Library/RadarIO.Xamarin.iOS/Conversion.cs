@@ -18,7 +18,7 @@ namespace RadarIO.Xamarin
             foreach (var arr in matrix?.ArrayValue)
             {
                 var routes = new List<RadarRoute>();
-                foreach (var dict in arr)
+                foreach (var dict in (IEnumerable<Foundation.NSDictionary>)arr)
                 {
                     var route = new RadarRoute()
                     {
