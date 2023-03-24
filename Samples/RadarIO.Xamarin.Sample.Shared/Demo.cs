@@ -25,6 +25,11 @@ namespace RadarIO.Xamarin.Shared.Sample
                 { "int", 10 },
                 { "bool", true }
             };
+            Radar.LocationUpdated += (loc, user) =>
+            {
+                // look at the user information including user.trip.status
+                Console.WriteLine(user.Trip.Status);
+            };
         }
 
         public static async Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> Test()

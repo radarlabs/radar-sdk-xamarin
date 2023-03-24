@@ -33,24 +33,24 @@ namespace RadarIO.Xamarin
 
         public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
         {
-            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
+            Radar.EventsReceived?.Invoke(events?.Select(e => e?.ToSDK()), user?.ToSDK());
         }
 
         public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
         {
-            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
+            Radar.ClientLocationUpdated?.Invoke(location?.ToSDK(), stopped, (RadarLocationSource)source);
         }
 
         public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
         {
-            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+            Radar.LocationUpdated?.Invoke(location?.ToSDK(), user?.ToSDK());
         }
 
         #endregion
 
-        public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        public event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
-        public event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
+        public event RadarEventHandler<IEnumerable<RadarEvent>, RadarUser> EventsReceived;
+        public event RadarEventHandler<Location, RadarUser> LocationUpdated;
+        public event RadarEventHandler<Location, bool, RadarLocationSource> ClientLocationUpdated;
         public event RadarEventHandler<RadarStatus> Error;
         public event RadarEventHandler<string> Log;
 
