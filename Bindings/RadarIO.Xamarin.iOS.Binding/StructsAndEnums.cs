@@ -1,7 +1,7 @@
 using System;
 using ObjCRuntime;
 
-namespace RadarIO.Xamarin.iOSBinding
+namespace iOSBinding
 {
 
 	[Native]
@@ -93,7 +93,8 @@ namespace RadarIO.Xamarin.iOSBinding
 	public enum RadarTrackingOptionsReplay : long
 	{
 		Stops,
-		None
+		None,
+		All
 	}
 
 	[Native]
