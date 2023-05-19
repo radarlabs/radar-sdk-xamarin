@@ -40,7 +40,7 @@ namespace iOSBinding
 	public enum RadarEventType : long
 	{
 		Unknown,
-		Custom,
+		Conversion,
 		UserEnteredGeofence,
 		UserExitedGeofence,
 		UserEnteredPlace,
@@ -151,10 +151,31 @@ namespace iOSBinding
 	}
 
 	[Native]
+	public enum RadarLogType : long
+	{
+		None = 0,
+		SDKCall = 1,
+		SDKError = 2,
+		SDKException = 3,
+		AppLifecycleEvent = 4,
+		PermissionEvent = 5
+	}
+
+	[Native]
 	public enum RadarRouteUnits : long
 	{
 		Imperial,
 		Metric
+	}
+
+	[Native]
+	public enum RadarAddressVerificationStatus : long
+	{
+		None = 0,
+		Verified = 1,
+		PartiallyVerified = 2,
+		Ambiguous = 3,
+		Unverified = 4
 	}
 
 }
