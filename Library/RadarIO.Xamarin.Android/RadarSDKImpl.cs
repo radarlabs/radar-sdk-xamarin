@@ -78,9 +78,9 @@ namespace RadarIO.Xamarin
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
-        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
+        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, locationServicesProvider.ToBinding());
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, locationServicesProvider.ToBinding(), fraud);
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
@@ -111,13 +111,14 @@ namespace RadarIO.Xamarin
             get => AndroidBinding.Radar.Metadata?.ToSDK();
             set => AndroidBinding.Radar.Metadata = value?.ToBinding();
         }
-        public bool AdIdEnabled { set => AndroidBinding.Radar.SetAdIdEnabled(value); }
+        public bool AnonymousTrackingEnabled { set => AndroidBinding.Radar.SetAnonymousTrackingEnabled(value); }
 
         public bool IsTracking => AndroidBinding.Radar.IsTracking;
 
         public RadarTrackingOptions TrackingOptions => AndroidBinding.Radar.TrackingOptions?.ToSDK();
 
         public RadarTripOptions TripOptions => AndroidBinding.Radar.TripOptions?.ToSDK();
+
 
         public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
         {
@@ -326,17 +327,17 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, JSONObject metadata)
         {
-            var handler = new SendEventCallbackHandler();
-            AndroidBinding.Radar.SendEvent(customType, metadata?.ToBinding(), handler);
+            var handler = new LogConversionCallbackHandler();
+            AndroidBinding.Radar.LogConversion(name, metadata?.ToBinding(), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, double revenue, JSONObject metadata)
         {
-            var handler = new SendEventCallbackHandler();
-            AndroidBinding.Radar.SendEvent(customType, location?.ToBinding(), metadata?.ToBinding(), handler);
+            var handler = new LogConversionCallbackHandler();
+            AndroidBinding.Radar.LogConversion(name, revenue, metadata?.ToBinding(), handler);
             return handler.Task;
         }
 

@@ -60,7 +60,7 @@ namespace RadarIO.Xamarin
             iOSBinding.Radar.SetDelegate(this);
         }
 
-        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
+        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud)
             => Initialize(publishableKey);
 
         public void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options) { }
@@ -87,7 +87,7 @@ namespace RadarIO.Xamarin
             get => iOSBinding.Radar.Metadata?.ToSDK();
             set => iOSBinding.Radar.SetMetadata(value?.ToBinding());
         }
-        public bool AdIdEnabled { set => iOSBinding.Radar.SetAdIdEnabled(value); }
+        public bool AnonymousTrackingEnabled { set => iOSBinding.Radar.SetAnonymousTrackingEnabled(value); }
 
         public bool IsTracking => iOSBinding.Radar.IsTracking;
 
@@ -551,14 +551,14 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, JSONObject metadata)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
-            iOSBinding.Radar.SendEvent(customType, metadata?.ToBinding(), (status, location, events, user) =>
+            var src = new TaskCompletionSource<(RadarStatus, RadarEvent)>();
+            iOSBinding.Radar.LogConversionWithName(name, metadata?.ToBinding(), (status, events) =>
             {
                 try
                 {
-                    src.SetResult((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+                    src.SetResult((status.ToSDK(), events?.ToSDK()));
                 }
                 catch (Exception ex)
                 {
@@ -568,14 +568,14 @@ namespace RadarIO.Xamarin
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, double revenue, JSONObject metadata)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
-            iOSBinding.Radar.SendEvent(customType, location?.ToBinding(), metadata?.ToBinding(), (status, loc, events, user) =>
+            var src = new TaskCompletionSource<(RadarStatus, RadarEvent)>();
+            iOSBinding.Radar.LogConversionWithName(name, revenue, metadata?.ToBinding(), (status, events) =>
             {
                 try
                 {
-                    src.SetResult((status.ToSDK(), loc?.ToSDK(), events?.Select(Conversion.ToSDK), user?.ToSDK()));
+                    src.SetResult((status.ToSDK(), events?.ToSDK()));
                 }
                 catch (Exception ex)
                 {

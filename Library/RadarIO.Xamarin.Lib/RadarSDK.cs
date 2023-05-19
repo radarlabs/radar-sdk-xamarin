@@ -18,15 +18,15 @@ namespace RadarIO.Xamarin
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
 
-        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata);
-        Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata);
+        Task<(RadarStatus, RadarEvent)> LogConversion(string name, JSONObject metadata);
+        Task<(RadarStatus, RadarEvent)> LogConversion(string name, double revenue, JSONObject metadata);
 
         // Initialization
         void Initialize(string publishableKey);
         /// <summary>
         /// Android-only
         /// </summary>
-        void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider);
+        void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud);
 
         /// <summary>
         /// Android-only
@@ -37,7 +37,7 @@ namespace RadarIO.Xamarin
         string UserId { get; set; }
         string Description { get; set; }
         JSONObject Metadata { get; set; }
-        bool AdIdEnabled { set; }
+        bool AnonymousTrackingEnabled { set; }
 
         // Get Location
         Task<(RadarStatus, Location, bool)> GetLocation();
@@ -195,6 +195,10 @@ namespace RadarIO.Xamarin
         /// Android-only
         /// </summary>
         public string Street;
+        public string Unit;
+        public string Plus4;
+        public string Layer;
+        public JSONObject Metadata;
     }
 
     public enum RadarAddressConfidence
@@ -332,10 +336,13 @@ namespace RadarIO.Xamarin
         public IEnumerable<RadarSegment> Segments;
         public IEnumerable<RadarChain> TopChains;
         public RadarLocationSource Source;
-        public bool Proxy;
         public RadarTrip Trip;
         public RadarFraud Fraud;
-        public bool Mocked;
+
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        public bool Debug;
     }
 
     public class RadarTrip
@@ -410,6 +417,7 @@ namespace RadarIO.Xamarin
         public string Code;
         public string Type;
         public string Flag;
+        public bool Allowed;
     }
 
     public class RadarBeacon
@@ -475,7 +483,7 @@ namespace RadarIO.Xamarin
         public DateTime? ActualCreatedAt;
         public bool Live;
         public RadarEventType Type;
-        public string CustomType;
+        public string ConversionName;
         public RadarGeofence Geofence;
         public RadarPlace Place;
         public RadarRegion Region;
@@ -492,8 +500,18 @@ namespace RadarIO.Xamarin
 
     public class RadarFraud
     {
-        public bool Mocked;
+        public bool Passed;
+        public bool Bypassed;
+        public bool Verified;
         public bool Proxy;
+        public bool Mocked;
+        public bool Compromised;
+        public bool Jumped;
+
+        /// <summary>
+        /// Android-onlyZ
+        /// </summary>
+        public bool Sharing;
     }
 
     public class RadarMeta
@@ -519,7 +537,7 @@ namespace RadarIO.Xamarin
     public enum RadarEventType
     {
         Unknown,
-        Custom,
+        Conversion,
         UserEnteredGeofence,
         UserExitedGeofence,
         UserEnteredPlace,

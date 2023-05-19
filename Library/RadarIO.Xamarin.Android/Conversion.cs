@@ -76,6 +76,10 @@ namespace RadarIO.Xamarin
                 Number = address.Number,
                 AddressLabel = address.AddressLabel,
                 PlaceLabel = address.PlaceLabel,
+                Unit = address.Unit,
+                Plus4 = address.Plus4,
+                Layer = address.Layer,
+                Metadata = address.Metadata?.ToSDK(),
                 Confidence = (RadarAddressConfidence)address.Confidence.Ordinal()
             };
 
@@ -99,7 +103,7 @@ namespace RadarIO.Xamarin
                 ActualCreatedAt = ev.ActualCreatedAt?.ToSDK(),
                 Live = ev.Live,
                 Type = (RadarEventType)ev.Type.Ordinal(),
-                CustomType = ev.CustomType,
+                ConversionName = ev.ConversionName,
                 Geofence = ev.Geofence?.ToSDK(),
                 Place = ev.Place?.ToSDK(),
                 Region = ev.Region?.ToSDK(),
@@ -136,10 +140,9 @@ namespace RadarIO.Xamarin
                 Segments = user.GetSegments()?.Select(ToSDK),
                 TopChains = user.GetTopChains()?.Select(ToSDK),
                 Source = (RadarLocationSource)user.Source.Ordinal(),
-                Proxy = user.Proxy,
                 Trip = user.Trip?.ToSDK(),
+                Debug = user.Debug,
                 Fraud = user.Fraud?.ToSDK(),
-                Mocked = user.Mocked
             };
 
         internal static RadarSegment ToSDK(this AndroidBinding.RadarSegment segment)
@@ -171,7 +174,8 @@ namespace RadarIO.Xamarin
                 Name = region.Name,
                 Code = region.Code,
                 Type = region.Type,
-                Flag = region.Flag
+                Flag = region.Flag,
+                Allowed = region.Allowed
             };
 
         internal static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
@@ -318,8 +322,14 @@ namespace RadarIO.Xamarin
         internal static RadarFraud ToSDK(this AndroidBinding.RadarFraud fraud)
             => fraud == null ? null : new RadarFraud
             {
+                Passed = fraud.Passed,
+                Bypassed = fraud.Bypassed,
+                Verified = fraud.Verified,
+                Proxy = fraud.Proxy,
                 Mocked = fraud.Mocked,
-                Proxy = fraud.Proxy
+                Compromised = fraud.Compromised,
+                Jumped = fraud.Jumped,
+                Sharing = fraud.Sharing
             };
 
         internal static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
