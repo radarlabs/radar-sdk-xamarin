@@ -2,8 +2,9 @@ using System;
 using CoreLocation;
 using Foundation;
 using ObjCRuntime;
+using UserNotifications;
 
-namespace RadarIO.Xamarin.iOSBinding
+namespace iOSBinding
 {
 
 	[Static]
@@ -93,6 +94,10 @@ namespace RadarIO.Xamarin.iOSBinding
 		[NullAllowed, Export("number")]
 		string Number { get; }
 
+		// @property (readonly, copy, nonatomic) NSString * _Nullable street;
+		[NullAllowed, Export("street")]
+		string Street { get; }
+
 		// @property (readonly, copy, nonatomic) NSString * _Nullable addressLabel;
 		[NullAllowed, Export("addressLabel")]
 		string AddressLabel { get; }
@@ -101,9 +106,31 @@ namespace RadarIO.Xamarin.iOSBinding
 		[NullAllowed, Export("placeLabel")]
 		string PlaceLabel { get; }
 
+		// @property (readonly, copy, nonatomic) NSString * _Nullable unit;
+		[NullAllowed, Export("unit")]
+		string Unit { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable plus4;
+		[NullAllowed, Export("plus4")]
+		string Plus4 { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable layer;
+		[NullAllowed, Export("layer")]
+		string Layer { get; }
+
+		// @property (readonly, copy, nonatomic) NSDictionary * _Nullable metadata;
+		[NullAllowed, Export("metadata", ArgumentSemantic.Copy)]
+		NSDictionary Metadata { get; }
+
 		// @property (assign, nonatomic) enum RadarAddressConfidence confidence;
 		[Export("confidence", ArgumentSemantic.Assign)]
 		RadarAddressConfidence Confidence { get; set; }
+
+		// +(RadarAddress * _Nullable)addressFromObject:(id _Nonnull)object;
+		[Static]
+		[Export("addressFromObject:")]
+		[return: NullAllowed]
+		RadarAddress AddressFromObject(NSObject @object);
 
 		// +(NSArray<NSDictionary *> * _Nullable)arrayForAddresses:(NSArray<RadarAddress *> * _Nullable)addresses;
 		[Static]
@@ -271,6 +298,10 @@ namespace RadarIO.Xamarin.iOSBinding
 		[NullAllowed, Export("flag")]
 		string Flag { get; }
 
+		// @property (readonly, assign, nonatomic) BOOL allowed;
+		[Export("allowed")]
+		bool Allowed { get; }
+
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
 
@@ -371,13 +402,33 @@ namespace RadarIO.Xamarin.iOSBinding
 	[BaseType(typeof(NSObject))]
 	interface RadarFraud
 	{
-		// @property (readonly, nonatomic) _Bool mocked;
+		// @property (readonly, assign, nonatomic) _Bool passed;
+		[Export("passed")]
+		bool Passed { get; }
+
+		// @property (readonly, assign, nonatomic) _Bool bypassed;
+		[Export("bypassed")]
+		bool Bypassed { get; }
+
+		// @property (readonly, assign, nonatomic) _Bool verified;
+		[Export("verified")]
+		bool Verified { get; }
+
+		// @property (readonly, assign, nonatomic) _Bool proxy;
+		[Export("proxy")]
+		bool Proxy { get; }
+
+		// @property (readonly, assign, nonatomic) _Bool mocked;
 		[Export("mocked")]
 		bool Mocked { get; }
 
-		// @property (readonly, nonatomic) _Bool proxy;
-		[Export("proxy")]
-		bool Proxy { get; }
+		// @property (readonly, assign, nonatomic) _Bool compromised;
+		[Export("compromised")]
+		bool Compromised { get; }
+
+		// @property (readonly, assign, nonatomic) _Bool jumped;
+		[Export("jumped")]
+		bool Jumped { get; }
 
 		// -(NSDictionary * _Nonnull)dictionaryValue;
 		[Export("dictionaryValue")]
@@ -544,21 +595,13 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("source", ArgumentSemantic.Assign)]
 		RadarLocationSource Source { get; }
 
-		// @property (readonly, assign, nonatomic) BOOL proxy;
-		[Export("proxy")]
-		bool Proxy { get; }
-
-		// @property (readonly, assign, nonatomic) BOOL mocked;
-		[Export("mocked")]
-		bool Mocked { get; }
-
-		// @property (readonly, copy, nonatomic) RadarFraud * _Nonnull fraud;
-		[Export("fraud", ArgumentSemantic.Copy)]
-		RadarFraud Fraud { get; }
-
 		// @property (readonly, nonatomic, strong) RadarTrip * _Nullable trip;
 		[NullAllowed, Export("trip", ArgumentSemantic.Strong)]
 		RadarTrip Trip { get; }
+
+		// @property (readonly, copy, nonatomic) RadarFraud * _Nullable fraud;
+		[NullAllowed, Export("fraud", ArgumentSemantic.Copy)]
+		RadarFraud Fraud { get; }
 	}
 
 	// @interface RadarEvent : NSObject
@@ -585,9 +628,9 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("type", ArgumentSemantic.Assign)]
 		RadarEventType Type { get; }
 
-		// @property (readonly, copy, nonatomic) NSString * _Nullable customType;
-		[NullAllowed, Export("customType")]
-		string CustomType { get; }
+		// @property (readonly, copy, nonatomic) NSString * _Nullable conversionName;
+		[NullAllowed, Export("conversionName")]
+		string ConversionName { get; }
 
 		// @property (readonly, nonatomic, strong) RadarGeofence * _Nullable geofence;
 		[NullAllowed, Export("geofence", ArgumentSemantic.Strong)]
@@ -940,14 +983,17 @@ namespace RadarIO.Xamarin.iOSBinding
 	// typedef void (^ _Nonnull)(RadarStatus, RadarAddress * _Nullable, BOOL) RadarIPGeocodeCompletionHandler;
 	delegate void RadarIPGeocodeCompletionHandler(RadarStatus arg0, [NullAllowed] RadarAddress arg1, bool arg2);
 
+	// typedef void (^ _Nonnull)(RadarStatus, RadarAddress * _Nullable, RadarAddressVerificationStatus) RadarValidateAddressCompletionHandler;
+	delegate void RadarValidateAddressCompletionHandler(RadarStatus arg0, [NullAllowed] RadarAddress arg1, RadarAddressVerificationStatus arg2);
+
 	// typedef void (^ _Nonnull)(RadarStatus, RadarRoutes * _Nullable) RadarRouteCompletionHandler;
 	delegate void RadarRouteCompletionHandler(RadarStatus arg0, [NullAllowed] RadarRoutes arg1);
 
 	// typedef void (^ _Nonnull)(RadarStatus, RadarRouteMatrix * _Nullable) RadarRouteMatrixCompletionHandler;
 	delegate void RadarRouteMatrixCompletionHandler(RadarStatus arg0, [NullAllowed] RadarRouteMatrix arg1);
 
-	// typedef void (^ _Nonnull)(RadarStatus, CLLocation * _Nullable, NSArray<RadarEvent *> * _Nullable, RadarUser * _Nullable) RadarSendEventCompletionHandler;
-	delegate void RadarSendEventCompletionHandler(RadarStatus arg0, [NullAllowed] CLLocation arg1, [NullAllowed] RadarEvent[] arg2, [NullAllowed] RadarUser arg3);
+	// typedef void (^ _Nonnull)(RadarStatus, RadarEvent * _Nullable) RadarLogConversionCompletionHandler;
+	delegate void RadarLogConversionCompletionHandler(RadarStatus arg0, [NullAllowed] RadarEvent arg1);
 
 	// @interface Radar : NSObject
 	[BaseType(typeof(NSObject))]
@@ -1001,11 +1047,6 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("setAnonymousTrackingEnabled:")]
 		void SetAnonymousTrackingEnabled(bool enabled);
 
-		// +(void)setAdIdEnabled:(BOOL)enabled;
-		[Static]
-		[Export("setAdIdEnabled:")]
-		void SetAdIdEnabled(bool enabled);
-
 		// +(void)getLocationWithCompletionHandler:(RadarLocationCompletionHandler _Nullable)completionHandler __attribute__((swift_name("getLocation(completionHandler:)")));
 		[Static]
 		[Export("getLocationWithCompletionHandler:")]
@@ -1030,6 +1071,11 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Static]
 		[Export("trackOnceWithLocation:completionHandler:")]
 		void TrackOnceWithLocation(CLLocation location, [NullAllowed] RadarTrackCompletionHandler completionHandler);
+
+		// +(void)trackVerifiedWithCompletionHandler:(RadarTrackCompletionHandler _Nullable)completionHandler __attribute__((swift_name("trackVerified(completionHandler:)")));
+		[Static]
+		[Export("trackVerifiedWithCompletionHandler:")]
+		void TrackVerifiedWithCompletionHandler([NullAllowed] RadarTrackCompletionHandler completionHandler);
 
 		// +(void)startTrackingWithOptions:(RadarTrackingOptions * _Nonnull)options __attribute__((swift_name("startTracking(trackingOptions:)")));
 		[Static]
@@ -1073,15 +1119,20 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("rejectEventId:")]
 		void RejectEventId(string eventId);
 
-		// +(void)sendEvent:(NSString * _Nonnull)customType withMetadata:(NSDictionary * _Nullable)metadata completionHandler:(RadarSendEventCompletionHandler)completionHandler __attribute__((swift_name("sendEvent(customType:metadata:completionHandler:)")));
+		// +(void)logConversionWithName:(NSString * _Nonnull)name metadata:(NSDictionary * _Nullable)metadata completionHandler:(RadarLogConversionCompletionHandler)completionHandler __attribute__((swift_name("logConversion(name:metadata:completionHandler:)")));
 		[Static]
-		[Export("sendEvent:withMetadata:completionHandler:")]
-		void SendEvent(string customType, [NullAllowed] NSDictionary metadata, RadarSendEventCompletionHandler completionHandler);
+		[Export("logConversionWithName:metadata:completionHandler:")]
+		void LogConversionWithName(string name, [NullAllowed] NSDictionary metadata, RadarLogConversionCompletionHandler completionHandler);
 
-		// +(void)sendEvent:(NSString * _Nonnull)customType withLocation:(CLLocation * _Nullable)location metadata:(NSDictionary * _Nullable)metadata completionHandler:(RadarSendEventCompletionHandler)completionHandler __attribute__((swift_name("sendEvent(customType:location:metadata:completionHandler:)")));
+		// +(void)logConversionWithName:(NSString * _Nonnull)name revenue:(NSNumber * _Nonnull)revenue metadata:(NSDictionary * _Nullable)metadata completionHandler:(RadarLogConversionCompletionHandler)completionHandler __attribute__((swift_name("logConversion(name:revenue:metadata:completionHandler:)")));
 		[Static]
-		[Export("sendEvent:withLocation:metadata:completionHandler:")]
-		void SendEvent(string customType, [NullAllowed] CLLocation location, [NullAllowed] NSDictionary metadata, RadarSendEventCompletionHandler completionHandler);
+		[Export("logConversionWithName:revenue:metadata:completionHandler:")]
+		void LogConversionWithName(string name, NSNumber revenue, [NullAllowed] NSDictionary metadata, RadarLogConversionCompletionHandler completionHandler);
+
+		// +(void)logConversionWithNotification:(UNNotificationRequest * _Nullable)request __attribute__((swift_name("logConversion(request:)")));
+		[Static]
+		[Export("logConversionWithNotification:")]
+		void LogConversionWithNotification([NullAllowed] UNNotificationRequest request);
 
 		// +(RadarTripOptions * _Nullable)getTripOptions;
 		[Static]
@@ -1169,6 +1220,11 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("searchGeofencesNear:radius:tags:metadata:limit:completionHandler:")]
 		void SearchGeofencesNear(CLLocation near, int radius, [NullAllowed] string[] tags, [NullAllowed] NSDictionary metadata, int limit, RadarSearchGeofencesCompletionHandler completionHandler);
 
+		// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country expandUnits:(BOOL)expandUnits completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:expandUnits:completionHandler:)")));
+		[Static]
+		[Export("autocompleteQuery:near:layers:limit:country:expandUnits:completionHandler:")]
+		void AutocompleteQuery(string query, [NullAllowed] CLLocation near, [NullAllowed] string[] layers, int limit, [NullAllowed] string country, bool expandUnits, RadarGeocodeCompletionHandler completionHandler);
+
 		// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:completionHandler:)")));
 		[Static]
 		[Export("autocompleteQuery:near:layers:limit:country:completionHandler:")]
@@ -1199,6 +1255,11 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("ipGeocodeWithCompletionHandler:")]
 		void IpGeocodeWithCompletionHandler(RadarIPGeocodeCompletionHandler completionHandler);
 
+		// +(void)validateAddress:(RadarAddress * _Nonnull)address completionHandler:(RadarValidateAddressCompletionHandler)completionHandler __attribute__((swift_name("validateAddress(address:completionHandler:)")));
+		[Static]
+		[Export("validateAddress:completionHandler:")]
+		void ValidateAddress(RadarAddress address, RadarValidateAddressCompletionHandler completionHandler);
+
 		// +(void)getDistanceToDestination:(CLLocation * _Nonnull)destination modes:(RadarRouteMode)modes units:(RadarRouteUnits)units completionHandler:(RadarRouteCompletionHandler)completionHandler __attribute__((swift_name("getDistance(destination:modes:units:completionHandler:)")));
 		[Static]
 		[Export("getDistanceToDestination:modes:units:completionHandler:")]
@@ -1223,6 +1284,11 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Static]
 		[Export("stringForStatus:")]
 		string StringForStatus(RadarStatus status);
+
+		// +(NSString * _Nonnull)stringForVerificationStatus:(RadarAddressVerificationStatus)verificationStatus __attribute__((swift_name("stringForVerificationStatus(_:)")));
+		[Static]
+		[Export("stringForVerificationStatus:")]
+		string StringForVerificationStatus(RadarAddressVerificationStatus verificationStatus);
 
 		// +(NSString * _Nonnull)stringForLocationSource:(RadarLocationSource)source __attribute__((swift_name("stringForLocationSource(_:)")));
 		[Static]
@@ -1289,15 +1355,6 @@ namespace RadarIO.Xamarin.iOSBinding
 		void DidLogMessage(string message);
 	}
 
-	// @interface RadarMeta : NSObject
-	[BaseType(typeof(NSObject))]
-	interface RadarMeta
-	{
-		// @property (readwrite, nonatomic, strong) RadarTrackingOptions * _Nullable trackingOptions;
-		[NullAllowed, Export("trackingOptions", ArgumentSemantic.Strong)]
-		RadarTrackingOptions TrackingOptions { get; set; }
-	}
-
 	// @interface RadarPolygonGeometry : RadarGeofenceGeometry
 	[BaseType(typeof(RadarGeofenceGeometry))]
 	interface RadarPolygonGeometry
@@ -1319,14 +1376,6 @@ namespace RadarIO.Xamarin.iOSBinding
 	[BaseType(typeof(NSObject))]
 	interface RadarTripOptions
 	{
-		// -(instancetype _Nonnull)initWithExternalId:(NSString * _Nonnull)externalId destinationGeofenceTag:(NSString * _Nullable)destinationGeofenceTag destinationGeofenceExternalId:(NSString * _Nullable)destinationGeofenceExternalId;
-		[Export("initWithExternalId:destinationGeofenceTag:destinationGeofenceExternalId:")]
-		IntPtr Constructor(string externalId, [NullAllowed] string destinationGeofenceTag, [NullAllowed] string destinationGeofenceExternalId);
-
-		// -(instancetype _Nonnull)initWithExternalId:(NSString * _Nonnull)externalId destinationGeofenceTag:(NSString * _Nullable)destinationGeofenceTag destinationGeofenceExternalId:(NSString * _Nullable)destinationGeofenceExternalId scheduledArrivalAt:(NSDate * _Nullable)scheduledArrivalAt;
-		[Export("initWithExternalId:destinationGeofenceTag:destinationGeofenceExternalId:scheduledArrivalAt:")]
-		IntPtr Constructor(string externalId, [NullAllowed] string destinationGeofenceTag, [NullAllowed] string destinationGeofenceExternalId, [NullAllowed] NSDate scheduledArrivalAt);
-
 		// @property (copy, nonatomic) NSString * _Nonnull externalId;
 		[Export("externalId")]
 		string ExternalId { get; set; }
@@ -1351,9 +1400,9 @@ namespace RadarIO.Xamarin.iOSBinding
 		[Export("mode", ArgumentSemantic.Assign)]
 		RadarRouteMode Mode { get; set; }
 
-		// @property (assign, nonatomic) UInt8 approachingThreshold;
+		// @property (assign, nonatomic) UInt16 approachingThreshold;
 		[Export("approachingThreshold")]
-		byte ApproachingThreshold { get; set; }
+		ushort ApproachingThreshold { get; set; }
 
 		// +(RadarTripOptions * _Nullable)tripOptionsFromDictionary:(NSDictionary * _Nonnull)dict;
 		[Static]

@@ -107,6 +107,10 @@ namespace RadarIO.Xamarin
                 Number = address.Number,
                 AddressLabel = address.AddressLabel,
                 PlaceLabel = address.PlaceLabel,
+                Unit = address.Unit,
+                Plus4 = address.Plus4,
+                Layer = address.Layer,
+                Metadata = address.Metadata?.ToSDK(),
                 Confidence = (RadarAddressConfidence)address.Confidence
             };
 
@@ -137,7 +141,7 @@ namespace RadarIO.Xamarin
                 ActualCreatedAt = (DateTime)ev.ActualCreatedAt,
                 Live = ev.Live,
                 Type = (RadarEventType)ev.Type,
-                CustomType = ev.CustomType,
+                ConversionName = ev.ConversionName,
                 Geofence = ev.Geofence?.ToSDK(),
                 Place = ev.Place?.ToSDK(),
                 Region = ev.Region?.ToSDK(),
@@ -174,8 +178,8 @@ namespace RadarIO.Xamarin
                 Segments = user.Segments?.Select(ToSDK),
                 TopChains = user.TopChains?.Select(ToSDK),
                 Source = (RadarLocationSource)user.Source,
-                Proxy = user.Proxy,
-                Trip = user.Trip?.ToSDK()
+                Trip = user.Trip?.ToSDK(),
+                Fraud = user.Fraud?.ToSDK(),
             };
 
         internal static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
@@ -207,7 +211,8 @@ namespace RadarIO.Xamarin
                 Name = region.Name,
                 Code = region.Code,
                 Type = region.Type,
-                Flag = region.Flag
+                Flag = region.Flag,
+                Allowed = region.Allowed
             };
 
         internal static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
@@ -303,6 +308,19 @@ namespace RadarIO.Xamarin
                 res.Add(pair.Key.ToString(), pair.Value?.ToSDK());
             return res;
         }
+
+        internal static RadarFraud ToSDK(this iOSBinding.RadarFraud fraud)
+            => fraud == null ? null : new RadarFraud
+            {
+                Passed = fraud.Passed,
+                Bypassed = fraud.Bypassed,
+                Verified = fraud.Verified,
+                Proxy = fraud.Proxy,
+                Mocked = fraud.Mocked,
+                Compromised = fraud.Compromised,
+                Jumped = fraud.Jumped,
+                //Sharing = fraud.Sharing
+            };
 
         internal static object ToSDK(this Foundation.NSObject obj)
         {
