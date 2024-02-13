@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
@@ -106,6 +105,20 @@ namespace RadarIO.Xamarin
         Warning,
         Info,
         Debug
+    }
+
+    public class Location
+    {
+        public double? Accuracy { get; set; }
+        public double? Altitude { get; set; }
+        // ars?
+        public double? Course { get; set; }
+        public bool IsFromMockProvider { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double? Speed { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
+        public double? VerticalAccuracy { get; set; }
     }
 
     public class RadarContext
@@ -560,30 +573,6 @@ namespace RadarIO.Xamarin
         UserExitedRegionPostalCode,
         UserDwelledInGeofence
     }
-
-    // replaced with Xamarin.Essentials.Location
-    //public class Location
-    //{
-    //    public double Longitude;
-    //    public double Latitude;
-    //    public double Accuracy;
-    //    public float Bearing;
-    //    public double Altitude;
-    //    public float Speed;
-    //    public DateTime? Timestamp = DateTime.Now;
-
-    //    public static implicit operator Location(Location loc)
-    //        => new Location
-    //        {
-    //            Longitude = loc.Longitude,
-    //            Latitude = loc.Latitude,
-    //            Accuracy = loc.Accuracy,
-    //            Course = loc.Bearing,
-    //            Altitude = loc.Altitude,
-    //            Speed = loc.Speed,
-    //            Timestamp = (DateTimeOffset)loc.Timestamp
-    //        };
-    //}
 
     public enum RadarStatus
     {

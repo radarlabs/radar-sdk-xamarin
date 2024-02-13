@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using AndroidX.AppCompat.App;
-using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {

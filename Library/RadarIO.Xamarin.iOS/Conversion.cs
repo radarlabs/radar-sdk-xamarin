@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using CoreLocation;
-using Xamarin.Essentials;
 
 namespace RadarIO.Xamarin
 {
