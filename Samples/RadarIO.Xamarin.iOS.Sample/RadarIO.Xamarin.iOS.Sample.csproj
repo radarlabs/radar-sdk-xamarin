@@ -145,7 +145,7 @@
         <Name>RadarIO.Xamarin.Lib</Name>
       </ProjectReference>
       <ProjectReference Include="..\RadarIO.Xamarin.Sample.Shared\RadarIO.Xamarin.Sample.Shared.csproj">
-        <Project>{971F6D4F-60AE-4DE1-B4D4-4B4232BBDA31}</Project>
+        <Project>{CF16D540-65AC-4BBF-AE29-73249827EBD0}</Project>
         <Name>RadarIO.Xamarin.Sample.Shared</Name>
       </ProjectReference>
       <ProjectReference Include="..\..\Library\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
