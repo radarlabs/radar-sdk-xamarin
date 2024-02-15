@@ -1,5 +1,4 @@
-﻿using RadarIO.Xamarin;
-using static RadarIO.Xamarin.RadarSingleton;
+﻿using static RadarIO.Xamarin.RadarSingleton;
 
 namespace RadarIO.Maui.Sample;
 

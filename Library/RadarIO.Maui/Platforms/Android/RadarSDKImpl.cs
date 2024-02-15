@@ -71,7 +71,7 @@ public class RadarSDKImpl : AndroidBinding.RadarReceiver, RadarSDK
 
     public void Initialize(string publishableKey)
     {
-        AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
+        AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, AndroidBinding.Radar.RadarLocationServicesProvider.Google, false);
         //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
     }
 

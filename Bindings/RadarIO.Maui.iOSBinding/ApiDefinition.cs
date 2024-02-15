@@ -1326,6 +1326,7 @@ namespace iOSBinding
 
     // @protocol RadarDelegate <NSObject>
     [Protocol]
+    [Model]
     [BaseType(typeof(NSObject))]
     interface RadarDelegate
     {
