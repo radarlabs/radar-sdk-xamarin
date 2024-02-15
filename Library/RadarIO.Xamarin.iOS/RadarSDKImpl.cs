@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using CoreLocation;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     {

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using AndroidX.AppCompat.App;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     [BroadcastReceiver(Enabled = true, Exported = true)]
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]

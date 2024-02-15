@@ -8,6 +8,7 @@
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<RootNamespace>RadarIO</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
@@ -20,7 +21,6 @@
 	  <ProjectReference Include="..\..\Bindings\RadarIO.Maui.AndroidBinding\RadarIO.Maui.AndroidBinding.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj" />
-	  <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj" />
+	  <ProjectReference Include="..\RadarIO\RadarIO.csproj" />
 	</ItemGroup>
 </Project>

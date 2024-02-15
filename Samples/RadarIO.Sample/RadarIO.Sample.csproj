@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj" />
+    <ProjectReference Include="..\..\Library\RadarIO\RadarIO.csproj" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     public abstract class TaskCallbackHandler<T> : Java.Lang.Object
     {

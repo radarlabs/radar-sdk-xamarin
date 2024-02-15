@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using static RadarIO.Xamarin.RadarSingleton;
+using static RadarIO.RadarSingleton;
 
-namespace RadarIO.Xamarin.Shared.Sample
+namespace RadarIO.Sample
 {
     public static class Demo
     {

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using RadarIO.Xamarin;
-using Location = RadarIO.Xamarin.Location;
-
-namespace RadarIO.Maui;
+﻿namespace RadarIO;
 
 public abstract class TaskCallbackHandler<T> : Java.Lang.Object
 {

@@ -42,8 +42,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\Library\RadarIO.Maui\RadarIO.Maui.csproj" />
-		<ProjectReference Include="..\..\Library\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj" />
-		<ProjectReference Include="..\..\Library\RadarIO.Xamarin\RadarIO.Xamarin.csproj" />
+		<ProjectReference Include="..\RadarIO.Sample\RadarIO.Sample.csproj" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 		<PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.0.1.4" />

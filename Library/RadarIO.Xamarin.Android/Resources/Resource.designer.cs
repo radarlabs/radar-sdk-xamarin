@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("RadarIO.Xamarin.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("RadarIO.Resource", IsApplication=false)]
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
 	
 	

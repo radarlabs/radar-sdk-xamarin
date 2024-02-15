@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     public static class RadarSingleton
     {

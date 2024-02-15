@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CoreLocation;
+﻿using CoreLocation;
 
-using RadarIO.Xamarin;
-using Location = RadarIO.Xamarin.Location;
-
-namespace RadarIO.Maui;
+namespace RadarIO;
 
 internal static class Conversion
 {

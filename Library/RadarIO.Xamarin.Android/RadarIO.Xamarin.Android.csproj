@@ -10,7 +10,7 @@
     <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RadarIO.Xamarin</RootNamespace>
+    <RootNamespace>RadarIO</RootNamespace>
     <AssemblyName>RadarIO.Xamarin.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
@@ -69,13 +69,9 @@
       <Project>{9E0ED523-3FA7-482D-ABFD-EA805D3314E6}</Project>
       <Name>RadarIO.Xamarin.AndroidBinding</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
-      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
-      <Name>RadarIO.Xamarin.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+    <ProjectReference Include="..\RadarIO\RadarIO.csproj">
       <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
-      <Name>RadarIO.Xamarin</Name>
+      <Name>RadarIO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

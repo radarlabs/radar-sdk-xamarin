@@ -1,10 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 
-using RadarIO.Xamarin;
-using Location = RadarIO.Xamarin.Location;
-
-namespace RadarIO.Maui;
+namespace RadarIO;
 
 [BroadcastReceiver(Enabled = true, Exported = true)]
 [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]

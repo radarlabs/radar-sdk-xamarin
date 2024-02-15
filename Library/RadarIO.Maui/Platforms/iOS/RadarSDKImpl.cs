@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CoreLocation;
+﻿using CoreLocation;
 
-using RadarIO.Xamarin;
-using Location = RadarIO.Xamarin.Location;
-
-namespace RadarIO.Maui;
+namespace RadarIO;
 
 public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
 {

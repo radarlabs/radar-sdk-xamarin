@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreLocation;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     internal static class Conversion
     {
