@@ -47,8 +47,8 @@ namespace RadarIO
         #endregion
 
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        public event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
-        public event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
+        public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
+        public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
         public event RadarEventHandler<RadarStatus> Error;
         public event RadarEventHandler<string> Log;
 
@@ -93,9 +93,9 @@ namespace RadarIO
 
         public RadarTripOptions TripOptions => iOSBinding.Radar.TripOptions?.ToSDK();
 
-        public Task<(RadarStatus, Location, bool)> GetLocation()
+        public Task<(RadarStatus, RadarLocation, bool)> GetLocation()
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, bool)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, bool)>();
             iOSBinding.Radar.GetLocationWithCompletionHandler((status, location, stopped) =>
             {
                 try
@@ -110,9 +110,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy)
+        public Task<(RadarStatus, RadarLocation, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, bool)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, bool)>();
             iOSBinding.Radar.GetLocationWithDesiredAccuracy(desiredAccuracy.ToBinding(), (status, location, stopped) =>
             {
                 try
@@ -127,9 +127,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>();
             iOSBinding.Radar.TrackOnceWithCompletionHandler((status, location, ev, user) =>
             {
                 try
@@ -144,9 +144,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>();
             iOSBinding.Radar.TrackOnceWithDesiredAccuracy(desiredAccuracy.ToBinding(), beacons, (status, location, ev, user) =>
             {
                 try
@@ -161,9 +161,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(Location location)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarLocation location)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>();
             iOSBinding.Radar.TrackOnceWithLocation(location?.ToBinding(), (status, _location, ev, user) =>
             {
                 try
@@ -188,7 +188,7 @@ namespace RadarIO
             iOSBinding.Radar.StopTracking();
         }
 
-        public void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback)
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
         {
             iOSBinding.Radar.MockTrackingWithOrigin(
                 origin?.ToBinding(),
@@ -284,7 +284,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit)
         {
             var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
             iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), limit, (status, addresses) =>
@@ -301,7 +301,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
         {
             var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
             iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), limit, (status, addresses) =>
@@ -352,7 +352,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location)
         {
             var src = new TaskCompletionSource<(RadarStatus, IEnumerable<RadarAddress>)>();
             iOSBinding.Radar.ReverseGeocodeLocation(location?.ToBinding(), (status, addresses) =>
@@ -386,9 +386,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarGeofence>)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>();
             iOSBinding.Radar.SearchGeofencesNear(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit, (status, location, geofences) =>
             {
                 try
@@ -403,9 +403,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarGeofence>)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>();
             iOSBinding.Radar.SearchGeofencesWithRadius(radius, tags?.ToArray(), metadata?.ToBinding(), limit, (status, location, geofences) =>
             {
                 try
@@ -420,9 +420,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarPlace>)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)>();
             iOSBinding.Radar.SearchPlacesNear(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata?.ToBinding(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
             {
                 try
@@ -437,9 +437,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, IEnumerable<RadarPlace>)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)>();
             iOSBinding.Radar.SearchPlacesWithRadius(radius, chains?.ToArray(), chainMetadata?.ToBinding(), categories?.ToArray(), groups?.ToArray(), limit, (status, location, places) =>
             {
                 try
@@ -454,7 +454,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarRoutes)>();
             iOSBinding.Radar.GetDistanceToDestination(destination?.ToBinding(), modes?.ToBinding() ?? 0, (iOSBinding.RadarRouteUnits)units, (status, routes) =>
@@ -471,7 +471,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, RadarRoutes)> GetDistance(Location source, Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarRoutes)>();
             iOSBinding.Radar.GetDistanceFromOrigin(source?.ToBinding(), destination?.ToBinding(), modes?.ToBinding() ?? 0, (iOSBinding.RadarRouteUnits)units, (status, routes) =>
@@ -488,7 +488,7 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units)
         {
             var src = new TaskCompletionSource<(RadarStatus, RadarRouteMatrix)>();
             iOSBinding.Radar.GetMatrixFromOrigins(origins?.Select(Conversion.ToBinding).ToArray(), destinations?.Select(Conversion.ToBinding).ToArray(), (iOSBinding.RadarRouteMode)mode, (iOSBinding.RadarRouteUnits)units, (status, matrix) =>
@@ -515,9 +515,9 @@ namespace RadarIO
             iOSBinding.Radar.RejectEventId(eventId);
         }
 
-        public Task<(RadarStatus, Location, RadarContext)> GetContext()
+        public Task<(RadarStatus, RadarLocation, RadarContext)> GetContext()
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, RadarContext)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarContext)>();
             iOSBinding.Radar.GetContextWithCompletionHandler((status, location, context) =>
             {
                 try
@@ -532,9 +532,9 @@ namespace RadarIO
             return src.Task;
         }
 
-        public Task<(RadarStatus, Location, RadarContext)> GetContext(Location location)
+        public Task<(RadarStatus, RadarLocation, RadarContext)> GetContext(RadarLocation location)
         {
-            var src = new TaskCompletionSource<(RadarStatus, Location, RadarContext)>();
+            var src = new TaskCompletionSource<(RadarStatus, RadarLocation, RadarContext)>();
             iOSBinding.Radar.GetContextForLocation(location?.ToBinding(), (status, _location, context) =>
             {
                 try
@@ -595,7 +595,7 @@ namespace RadarIO
         public string StringForTripStatus(RadarTripStatus status)
             => iOSBinding.Radar.StringForTripStatus(status.ToBinding());
 
-        public JSONObject DictionaryForLocation(Location location)
+        public JSONObject DictionaryForLocation(RadarLocation location)
             => iOSBinding.Radar.DictionaryForLocation(location?.ToBinding())?.ToSDK();
     }
 

@@ -10,10 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOSBinding", "Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj", "{5FB78078-54B6-4051-9657-542C56C8FE74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{DB730659-604C-434D-93B4-9B10160BF05F}"
-	ProjectSection(SolutionItems) = preProject
-		Library\RadarIO.nuspec = Library\RadarIO.nuspec
-		Library\radar-nuget-icon.png = Library\radar-nuget-icon.png
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO.Xamarin.iOS", "Library\RadarIO.Xamarin.iOS\RadarIO.Xamarin.iOS.csproj", "{96A9AE3E-4F49-4201-99B4-132D54C4BCD7}"
 EndProject
@@ -28,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\nuget-publish.yml = .github\workflows\nuget-publish.yml
 		.github\workflows\ci-build.yml = .github\workflows\ci-build.yml
 		MIGRATION.md = MIGRATION.md
+		radar-nuget-icon.png = radar-nuget-icon.png
+		RadarIO.nuspec = RadarIO.nuspec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarIO", "Library\RadarIO\RadarIO.csproj", "{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}"

@@ -10,18 +10,14 @@ jobs:
     runs-on: macos-latest
     steps:
 
-    - name: Setup .NET Core SDK 5.0.x
+    - name: Setup .NET Core SDK 7.0.x
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.x'
+        dotnet-version: '7.0.x'
 
     - uses: actions/checkout@v1
     - name: Build and Publish
       run: |
-        nuget restore
-        cd Library
-        msbuild /p:Configuration=Release RadarIO.Xamarin
-        msbuild /p:Configuration=Release RadarIO.Xamarin.iOS
-        msbuild /p:Configuration=Release RadarIO.Xamarin.Android
+        ./build.sh
         nuget pack
         nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json

@@ -117,8 +117,8 @@ internal static class Conversion
             Longitude = coordinate.Longitude
         };
 
-    internal static Location ToSDK(this CLLocation location)
-        => location == null ? null : new Location
+    internal static RadarLocation ToSDK(this CLLocation location)
+        => location == null ? null : new RadarLocation
         {
             Latitude = location.Coordinate.Latitude,
             Longitude = location.Coordinate.Longitude,
@@ -429,7 +429,7 @@ internal static class Conversion
     internal static iOSBinding.RadarTrackingOptionsDesiredAccuracy ToBinding(this RadarTrackingOptionsDesiredAccuracy accuracy)
         => accuracy == RadarTrackingOptionsDesiredAccuracy.None ? iOSBinding.RadarTrackingOptionsDesiredAccuracy.Low : (iOSBinding.RadarTrackingOptionsDesiredAccuracy)accuracy;
 
-    internal static CLLocation ToBinding(this Location location)
+    internal static CLLocation ToBinding(this RadarLocation location)
         => new CLLocation(
             new CLLocationCoordinate2D
             {

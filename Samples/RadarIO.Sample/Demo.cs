@@ -24,7 +24,7 @@ namespace RadarIO.Sample
             };
         }
 
-        public static async Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> Test()
+        public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> Test()
         {
             //var trackingOptions = new RadarTrackingOptions
             //{

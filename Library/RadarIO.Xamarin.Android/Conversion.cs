@@ -82,8 +82,8 @@ namespace RadarIO
                 Confidence = (RadarAddressConfidence)address.Confidence.Ordinal()
             };
 
-        internal static Location ToSDK(this Android.Locations.Location location)
-            => location == null ? null : new Location
+        internal static RadarLocation ToSDK(this Android.Locations.Location location)
+            => location == null ? null : new RadarLocation
             {
                 Latitude = location.Latitude,
                 Longitude = location.Longitude,
@@ -425,7 +425,7 @@ namespace RadarIO
                     service.ChannelName
                 );
 
-        internal static Android.Locations.Location ToBinding(this Location location)
+        internal static Android.Locations.Location ToBinding(this RadarLocation location)
             => new Android.Locations.Location("mock")
             {
                 Latitude = location.Latitude,
