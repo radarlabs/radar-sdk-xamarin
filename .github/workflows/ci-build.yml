@@ -15,8 +15,7 @@ jobs:
         dotnet-version: '7.0.x'
 
     - name: Install MAUI Workloads
-    run: |
-        dotnet workload install android ios --ignore-failed-sources
+        run: dotnet workload install android ios --ignore-failed-sources
 
     - uses: actions/checkout@v1
     - name: build
