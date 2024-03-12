@@ -8,10 +8,10 @@ namespace RadarIO.Sample
     {
         private const string RADAR_KEY = "prj_test_pk_8d7149cfe4a0fa5e5bb6a440a47a978995447ffc";
 
-        public static void Initialize(RadarSDK sdk)
+        public static void Initialize(RadarSDK sdk, string radarKey = null)
         {
             RadarSingleton.Initialize(sdk);
-            Radar.Initialize(RADAR_KEY);
+            Radar.Initialize(radarKey ?? RADAR_KEY);
             Radar.SetLogLevel(RadarLogLevel.Debug);
             Radar.UserId = "test user";
             Radar.Description = "test desc";
@@ -61,5 +61,36 @@ namespace RadarIO.Sample
 
             return ret;
         }
+
+        public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
+            => await Radar.TrackOnce();
+
+
+        public static void StartTrackingResponsive()
+            => Radar.StartTracking(Radar.TrackingOptionsResponsive);
+
+
+        public static void StartTrackingContinuous()
+            => Radar.StartTracking(Radar.TrackingOptionsContinuous);
+
+
+        public static void StopTracking()
+            => Radar.StopTracking();
+
+
+        public static void StartTrip()
+            => Radar.StartTrip(
+                new RadarTripOptions
+                {
+                    ExternalId = System.Guid.NewGuid().ToString(),
+                    Mode = RadarRouteMode.Car,
+                    DestinationGeofenceExternalId = "maui-demo",
+                    DestinationGeofenceTag = "maui-demo"
+                },
+                Radar.TrackingOptionsContinuous);
+
+
+        public static async Task StopTrip()
+            => await Radar.CompleteTrip();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace RadarIO.Maui.Sample;
+﻿using CommunityToolkit.Maui;
+
+namespace RadarIO.Maui.Sample;
 
 public static class MauiProgram
 {
@@ -7,6 +9,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
