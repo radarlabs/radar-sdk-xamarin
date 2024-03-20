@@ -7,9 +7,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.radar.maui-ios-sample</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
@@ -42,5 +42,10 @@
 	<string>New Entry</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>New Entry</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>fetch</string>
+	</array>
 </dict>
 </plist>
