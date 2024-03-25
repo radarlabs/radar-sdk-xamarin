@@ -16,6 +16,8 @@ public partial class MainPage : ContentPage
         TrackingResponsiveBtn.IsVisible = false;
         TrackingContinuousBtn.IsVisible = false;
         TripBtn.IsVisible = false;
+        GeofenceIdEntry.IsVisible = false;
+        GeofenceTagEntry.IsVisible = false;
     }
 
     void OnEntryCompleted(object sender, EventArgs e)
@@ -26,6 +28,8 @@ public partial class MainPage : ContentPage
         TrackingResponsiveBtn.IsVisible = true;
         TrackingContinuousBtn.IsVisible = true;
         TripBtn.IsVisible = true;
+        GeofenceIdEntry.IsVisible = true;
+        GeofenceTagEntry.IsVisible = true;
     }
 
     private async void OnTrackOnceClicked(object sender, EventArgs e)
@@ -39,7 +43,7 @@ public partial class MainPage : ContentPage
 
             var (status, loc, _, _) = await TrackOnce();
             TrackOnceBtn.Text = status == RadarStatus.Success
-                ? $"TrackOnce Success! {loc.Latitude} {loc.Longitude}"
+                ? $"TrackOnce Success! {loc.Latitude:#0.0000} {loc.Longitude:#0.0000}"
                 : $"TrackOnce Failed! {status}";
             TrackOnceBtn.IsEnabled = true;
         }
@@ -151,10 +155,12 @@ public partial class MainPage : ContentPage
             try
             {
                 TripBtn.IsEnabled = false;
+                GeofenceIdEntry.IsEnabled = false;
+                GeofenceTagEntry.IsEnabled = false;
 
                 await Permissions.RequestAsync<Permissions.LocationAlways>();
 
-                StartTrip();
+                StartTrip(GeofenceIdEntry.Text, GeofenceTagEntry.Text);
                 TripBtn.Text = "Stop trip";
                 TripBtn.IsEnabled = true;
                 isTrip = true;
@@ -171,11 +177,12 @@ public partial class MainPage : ContentPage
             try
             {
                 TripBtn.IsEnabled = false;
-                TripBtn.IsEnabled = false;
 
                 await StopTrip();
                 TripBtn.Text = "Start trip";
                 TripBtn.IsEnabled = true;
+                GeofenceIdEntry.IsEnabled = true;
+                GeofenceTagEntry.IsEnabled = true;
                 isTrip = false;
             }
             catch (Exception ex)

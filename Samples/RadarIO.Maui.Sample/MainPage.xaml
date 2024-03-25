@@ -42,6 +42,20 @@
                 Clicked="OnTripClicked"
                 HorizontalOptions="Center" />
 
+
+            <HorizontalStackLayout
+                Spacing="15"
+                Padding="10,0"
+                HorizontalOptions="Center">
+                
+                <Entry x:Name="GeofenceIdEntry"
+                   Placeholder="Geofence Id" />
+
+                <Entry x:Name="GeofenceTagEntry"
+                   Placeholder="Geofence Tag" />
+
+            </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 

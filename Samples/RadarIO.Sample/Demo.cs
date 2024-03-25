@@ -11,7 +11,7 @@ namespace RadarIO.Sample
         public static void Initialize(RadarSDK sdk, string radarKey = null)
         {
             RadarSingleton.Initialize(sdk);
-            Radar.Initialize(radarKey ?? RADAR_KEY);
+            Radar.Initialize(string.IsNullOrEmpty(radarKey) ? RADAR_KEY : radarKey);
             Radar.SetLogLevel(RadarLogLevel.Debug);
             Radar.UserId = "test user";
             Radar.Description = "test desc";
@@ -78,14 +78,14 @@ namespace RadarIO.Sample
             => Radar.StopTracking();
 
 
-        public static void StartTrip()
+        public static void StartTrip(string geofenceId = null, string geofenceTag = null)
             => Radar.StartTrip(
                 new RadarTripOptions
                 {
                     ExternalId = System.Guid.NewGuid().ToString(),
                     Mode = RadarRouteMode.Car,
-                    DestinationGeofenceExternalId = "maui-demo",
-                    DestinationGeofenceTag = "maui-demo"
+                    DestinationGeofenceExternalId = string.IsNullOrEmpty(geofenceId) ? "maui-demo" : geofenceId,
+                    DestinationGeofenceTag = string.IsNullOrEmpty(geofenceTag) ? "maui-demo" : geofenceTag
                 },
                 Radar.TrackingOptionsContinuous);
 
