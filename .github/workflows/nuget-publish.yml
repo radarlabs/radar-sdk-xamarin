@@ -2,10 +2,6 @@ name: Deploy Release to NuGet
 
 on:
   release:
-    inputs:
-      version:
-        description: 'Version string of package (e.g. X.X.X)'
-        required: true
     types: [ published ]
 
 jobs:
@@ -26,5 +22,5 @@ jobs:
     - name: Build and Publish
       run: |
         ./build.sh
-        nuget pack -version ${{ inputs.version }}
+        nuget pack
         nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
