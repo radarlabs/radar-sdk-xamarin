@@ -1,11 +1,8 @@
 #!/bin/bash
 
-nuget restore
+dotnet restore
 
-find Samples -type f -name "*.csproj" | for proj in $(cat) ; do 
-msbuild $proj /p:Configuration=Release
-done || exit 1
-
-# find Samples -type f -name "*.csproj" | for proj in $(cat) ; do 
-# msbuild $proj /p:Configuration=Debug
-# done
+dotnet build -c Release Library/RadarIO/RadarIO.csproj
+msbuild $proj /p:Configuration=Release Library/RadarIO.Xamarin.iOS/RadarIO.Xamarin.iOS.csproj
+msbuild $proj /p:Configuration=Release Library/RadarIO.Xamarin.Android/RadarIO.Xamarin.Android.csproj
+dotnet build -c Release Library/RadarIO.Maui/RadarIO.Maui.csproj

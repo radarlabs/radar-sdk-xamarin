@@ -9,15 +9,13 @@ using AndroidX.AppCompat.App;
 using Google.Android.Material.FloatingActionButton;
 using Google.Android.Material.Snackbar;
 
-using static RadarIO.Xamarin.RadarSingleton;
-
 namespace RadarIO.Xamarin.Android.Sample
 {
     using Xamarin = global::Xamarin;
     using global::Android;
     using System.Threading.Tasks;
     using System.Linq;
-    using RadarIO.Xamarin.Shared.Sample;
+    using RadarIO.Sample;
 
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -26,12 +24,6 @@ namespace RadarIO.Xamarin.Android.Sample
         {
             Demo.Initialize(new RadarSDKImpl());
             RadarTrackingOptions trackingOptions = new RadarTrackingOptions();
-            //trackingOptions.ForegroundServiceEnabled = true;
-            // set the foreground service options
-            //RadarTrackingOptionsForegroundService foregroundOptions = null;
-            //Radar.SetForegroundServiceOptions(foregroundOptions);
-            // start tracking
-            Radar.StartTracking(trackingOptions);
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -50,45 +42,6 @@ namespace RadarIO.Xamarin.Android.Sample
             {
                 RequestPermissions(new[] { Manifest.Permission.AccessFineLocation }, 0);
             }
-
-            //Radar.Log += args =>
-            //{
-            //    //var (loc, user) = args;
-            //};
-
-            //Radar.Initialize(RADAR_KEY);
-
-            //Radar.StartTrip(new RadarTripOptions
-            //{
-            //    ExternalId = "999",
-            //    DestinationGeofenceTag = "tag",
-            //    DestinationGeofenceExternalId = "id",
-            //    Mode = RadarRouteMode.Truck,
-            //    Metadata = new JSONObject
-            //        {
-            //            { "bing", "bong" },
-            //            { "ding", "dong" },
-            //            { "int", 5 },
-            //            { "bool", true }
-            //        },
-            //});
-            //Radar.StopTracking();
-            //var trackingOptions = RadarTrackingOptions.Responsive;
-            //trackingOptions.ForegroundService = new RadarTrackingOptionsForegroundService
-            //{
-            //    Id = 123,
-            //    Title = "title",
-            //    Text = "text",
-            //    Activity = "RadarIO.Xamarin.Android.Sample.MainActivity", 
-            //};
-            //Radar.StartTracking(trackingOptions);
-            //Radar.MockTracking(
-            //    new Location { Latitude = 40.78382, Longitude = -73.97536 },
-            //    new Location { Latitude = 40.70390, Longitude = -73.98670 },
-            //    RadarRouteMode.Car,
-            //    10,
-            //    3,
-            //    _ => { });
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -116,34 +69,6 @@ namespace RadarIO.Xamarin.Android.Sample
             
             var (status, location, events, user) = await Demo.Test();
             RunOnUiThread(() => ResultView.Text = $"Status: {status}\nLocation: {location?.Latitude} {location?.Longitude}\nEvents: {events?.Count()}\nUser: {user?.UserId}");    
-
-            //toggle = !toggle;
-            //if (toggle)
-            //{
-            //    var res = await Radar.StartTrip(new RadarTripOptions
-            //    {
-            //        ExternalId = "999",
-            //        DestinationGeofenceTag = "tag",
-            //        DestinationGeofenceExternalId = "id",
-            //        Mode = RadarRouteMode.Truck,
-            //        Metadata = new JSONObject
-            //        {
-            //            { "bing", "bong" },
-            //            { "ding", "dong" },
-            //            { "int", 5 },
-            //            { "bool", true }
-            //        }
-            //    });
-            //    Radar.StartTracking(RadarTrackingOptions.Continuous);
-            //    RunOnUiThread(() => ResultView.Text = $"Started trip: {res}");
-            //}
-            //else
-            //{
-            //    var res = await Radar.CompleteTrip();
-            //    Radar.StopTracking();
-            //    RunOnUiThread(() => ResultView.Text = $"Completed trip: {res}");
-            //}
-
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

@@ -9,7 +9,7 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{a52b8a63-bc84-4b47-910d-692533484892}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>RadarIO.Xamarin</RootNamespace>
+    <RootNamespace>RadarIO</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>RadarIO.Xamarin.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -50,13 +50,9 @@
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
       <Name>RadarIO.Xamarin.iOSBinding</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
-      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
-      <Name>RadarIO.Xamarin.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+    <ProjectReference Include="..\RadarIO\RadarIO.csproj">
       <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
-      <Name>RadarIO.Xamarin</Name>
+      <Name>RadarIO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

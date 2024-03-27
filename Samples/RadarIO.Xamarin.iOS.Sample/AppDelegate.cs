@@ -1,10 +1,7 @@
 ﻿using CoreLocation;
 using Foundation;
 using UIKit;
-using RadarIO.Xamarin;
-
-using static RadarIO.Xamarin.RadarSingleton;
-using RadarIO.Xamarin.Shared.Sample;
+using RadarIO.Sample;
 
 namespace RadarIO.Xamarin.iOS.Sample
 {

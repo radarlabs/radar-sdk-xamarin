@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RadarIO.Maui.Sample.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Radar Maui Sample App"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="RadarKeyEntry"
+               Placeholder="Enter radar key"
+               Completed="OnEntryCompleted" />
+
+            <Button
+                x:Name="TrackOnceBtn"
+                Text="Track Once"
+                Clicked="OnTrackOnceClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="TrackingResponsiveBtn"
+                Text="Start Tracking Responsive"
+                Clicked="OnTrackingResponsiveClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="TrackingContinuousBtn"
+                Text="Start Tracking Continuous"
+                Clicked="OnTrackingContinuousClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="TripBtn"
+                Text="Start Trip"
+                Clicked="OnTripClicked"
+                HorizontalOptions="Center" />
+
+
+            <HorizontalStackLayout
+                Spacing="15"
+                Padding="10,0"
+                HorizontalOptions="Center">
+                
+                <Entry x:Name="GeofenceIdEntry"
+                   Placeholder="Geofence Id" />
+
+                <Entry x:Name="GeofenceTagEntry"
+                   Placeholder="Geofence Tag" />
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+

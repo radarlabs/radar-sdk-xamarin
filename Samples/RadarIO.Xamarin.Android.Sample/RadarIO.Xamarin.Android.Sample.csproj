@@ -18,7 +18,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
@@ -104,35 +104,31 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.3.1.3" />
-    <PackageReference Include="Xamarin.Google.Android.Material" Version="1.4.0.4" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.1" />
+    <PackageReference Include="Xamarin.Google.Android.Material" Version="1.8.0.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
     <PackageReference Include="Xamarin.Kotlin.StdLib">
-      <Version>1.5.31.2</Version>
+      <Version>1.8.20.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Location">
-      <Version>118.0.0.1</Version>
+      <Version>121.0.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Ads.Identifier">
-      <Version>117.0.1.1</Version>
+      <Version>118.0.1.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Lib\RadarIO.Xamarin.Lib.csproj">
-      <Project>{1184D2A1-CFB1-4898-9D30-55B52BC66703}</Project>
-      <Name>RadarIO.Xamarin.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RadarIO.Xamarin.Sample.Shared\RadarIO.Xamarin.Sample.Shared.csproj">
-      <Project>{971F6D4F-60AE-4DE1-B4D4-4B4232BBDA31}</Project>
-      <Name>RadarIO.Xamarin.Sample.Shared</Name>
+    <ProjectReference Include="..\RadarIO.Sample\RadarIO.Sample.csproj">
+      <Project>{CF16D540-65AC-4BBF-AE29-73249827EBD0}</Project>
+      <Name>RadarIO.Sample</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Library\RadarIO.Xamarin.Android\RadarIO.Xamarin.Android.csproj">
       <Project>{A58253CF-FE16-41D7-BDAF-E90662E3EB36}</Project>
       <Name>RadarIO.Xamarin.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Library\RadarIO.Xamarin\RadarIO.Xamarin.csproj">
+    <ProjectReference Include="..\..\Library\RadarIO\RadarIO.csproj">
       <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
-      <Name>RadarIO.Xamarin</Name>
+      <Name>RadarIO</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.Android.Binding\RadarIO.Xamarin.AndroidBinding.csproj">
       <Name>RadarIO.Xamarin.AndroidBinding</Name>
