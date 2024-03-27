@@ -21,8 +21,6 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)|$(Platform)'=='net7.0-ios|AnyCPU'">
 		<CreatePackage>false</CreatePackage>
-		<CodesignProvision>maui</CodesignProvision>
-		<CodesignKey>Apple Distribution: Cameron Morrow (L937V7C3UH)</CodesignKey>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<WarningLevel>4</WarningLevel>
