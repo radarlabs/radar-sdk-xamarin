@@ -19,6 +19,6 @@
     <ProjectReference Include="..\..\Library\RadarIO\RadarIO.csproj" />
   </ItemGroup>
 	<ItemGroup Condition="'$(Configuration)' == 'nuget'">
-	  <PackageReference Include="RadarIO.Xamarin" Version="3.7.8-beta.1" />
+	  <PackageReference Include="RadarIO.Xamarin" Version="3.7.8" />
 	</ItemGroup>
 </Project>
