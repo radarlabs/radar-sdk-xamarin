@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;nuget</Configurations>
+  </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'nuget|AnyCPU' ">
+        <IntermediateOutputPath>obj\nuget</IntermediateOutputPath>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\nuget</OutputPath>
+        <DefineConstants>NUGET;TRACE;RELEASE;NET;NET7_0;NETCOREAPP</DefineConstants>
+        <WarningLevel>4</WarningLevel>
+        <NoWarn>1701;1702;IL2121;CS1573;CS1591</NoWarn>
+    </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)' != 'nuget'">
+    <ProjectReference Include="..\..\Library\RadarIO\RadarIO.csproj" />
+  </ItemGroup>
+	<ItemGroup Condition="'$(Configuration)' == 'nuget'">
+	  <PackageReference Include="RadarIO.Xamarin" Version="3.7.8" />
+	</ItemGroup>
+</Project>

@@ -1,6 +1,11 @@
 ﻿# Migration guides
 
-## 3.2.x to 3.5.3
+## Upgrading to 3.7.8
+
+- The `RadarIO.Xamarin` namespace has been replaced with `RadarIO`.
+- The use of the `Xamarin.Essentials.Location` class has been replaced with `RadarIO.RadarLocation`.
+
+## Upgrading to 3.5.3
 
 - `foregroundService` is no longer available in `RadarTrackingOptions`. This has been replaced by `Radar.SetForegroundServiceOptions` instead.
 - `RadarSingleton` must now be initialized before use. Call `RadarSingleton.Initialize(new RadarSDKImpl())` before using it.

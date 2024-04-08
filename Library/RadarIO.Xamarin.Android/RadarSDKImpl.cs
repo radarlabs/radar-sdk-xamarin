@@ -4,10 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using AndroidX.AppCompat.App;
-using Xamarin.Essentials;
 
-namespace RadarIO.Xamarin
+namespace RadarIO
 {
     [BroadcastReceiver(Enabled = true, Exported = true)]
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
@@ -21,8 +19,8 @@ namespace RadarIO.Xamarin
             => AndroidBinding.RadarTrackingOptions.Efficient.ToSDK();
 
         public event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        public event RadarEventHandler<(Location, RadarUser)> LocationUpdated;
-        public event RadarEventHandler<(Location, bool, RadarLocationSource)> ClientLocationUpdated;
+        public event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
+        public event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
         public event RadarEventHandler<RadarStatus> Error;
         public event RadarEventHandler<string> Log;
 
@@ -74,13 +72,13 @@ namespace RadarIO.Xamarin
 
         public void Initialize(string publishableKey)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, AndroidBinding.Radar.RadarLocationServicesProvider.Google, false);
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
-        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider)
+        public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, locationServicesProvider.ToBinding());
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, this, locationServicesProvider.ToBinding(), fraud);
             //Application.Context.RegisterReceiver(this, new IntentFilter("io.radar.sdk.RECEIVED"));
         }
 
@@ -111,7 +109,7 @@ namespace RadarIO.Xamarin
             get => AndroidBinding.Radar.Metadata?.ToSDK();
             set => AndroidBinding.Radar.Metadata = value?.ToBinding();
         }
-        public bool AdIdEnabled { set => AndroidBinding.Radar.SetAdIdEnabled(value); }
+        public bool AnonymousTrackingEnabled { set => AndroidBinding.Radar.SetAnonymousTrackingEnabled(value); }
 
         public bool IsTracking => AndroidBinding.Radar.IsTracking;
 
@@ -119,21 +117,22 @@ namespace RadarIO.Xamarin
 
         public RadarTripOptions TripOptions => AndroidBinding.Radar.TripOptions?.ToSDK();
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
+
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
         {
             var handler = new TrackCallbackHandler();
             AndroidBinding.Radar.TrackOnce(handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons)
         {
             var handler = new TrackCallbackHandler();
             AndroidBinding.Radar.TrackOnce(desiredAccuracy.ToBinding(), beacons, handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(Location location)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarLocation location)
         {
             var handler = new TrackCallbackHandler();
             AndroidBinding.Radar.TrackOnce(location?.ToBinding(), handler);
@@ -150,7 +149,7 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.StopTracking();
         }
 
-        public void MockTracking(Location origin, Location destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> callback)
+        public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
         {
             var handler = new RepeatingTrackCallbackHandler(callback);
             AndroidBinding.Radar.MockTracking(
@@ -197,14 +196,14 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near, int limit)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near, int limit)
         {
             var handler = new GeocodeCallbackHandler();
             AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, Location near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
         {
             var handler = new GeocodeCallbackHandler();
             AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), layers?.ToArray(), new Java.Lang.Integer(limit), country, handler);
@@ -225,56 +224,56 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(Location location)
+        public Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location)
         {
             var handler = new GeocodeCallbackHandler();
             AndroidBinding.Radar.ReverseGeocode(location?.ToBinding(), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(Location near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
         {
             var handler = new SearchGeofencesCallbackHandler();
             AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
         {
             var handler = new SearchGeofencesCallbackHandler();
             AndroidBinding.Radar.SearchGeofences(radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(Location near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
         {
             var handler = new SearchPlacesCallbackHandler();
             AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
+        public Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
         {
             var handler = new SearchPlacesCallbackHandler();
             AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, RadarRoutes)> GetDistance(Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
         {
             var handler = new RouteCallbackHandler();
             AndroidBinding.Radar.GetDistance(destination?.ToBinding(), modes?.ToBinding(), AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, RadarRoutes)> GetDistance(Location source, Location destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units)
         {
             var handler = new RouteCallbackHandler();
             AndroidBinding.Radar.GetDistance(source?.ToBinding(), destination?.ToBinding(), modes?.ToBinding(), AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<Location> origins, IEnumerable<Location> destinations, RadarRouteMode mode, RadarRouteUnits units)
+        public Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units)
         {
             var handler = new MatrixCallbackHandler();
             AndroidBinding.Radar.GetMatrix(origins?.Select(Conversion.ToBinding).ToArray(), destinations?.Select(Conversion.ToBinding).ToArray(), AndroidBinding.Radar.RadarRouteMode.Values()[(int)mode], AndroidBinding.Radar.RadarRouteUnits.Values()[(int)units], handler);
@@ -288,14 +287,14 @@ namespace RadarIO.Xamarin
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, bool)> GetLocation()
+        public Task<(RadarStatus, RadarLocation, bool)> GetLocation()
         {
             var handler = new LocationCallbackHandler();
             AndroidBinding.Radar.GetLocation(handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy)
+        public Task<(RadarStatus, RadarLocation, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy)
         {
             var handler = new LocationCallbackHandler();
             AndroidBinding.Radar.GetLocation(desiredAccuracy.ToBinding(), handler);
@@ -312,31 +311,31 @@ namespace RadarIO.Xamarin
             AndroidBinding.Radar.RejectEvent(eventId);
         }
 
-        public Task<(RadarStatus, Location, RadarContext)> GetContext()
+        public Task<(RadarStatus, RadarLocation, RadarContext)> GetContext()
         {
             var handler = new ContextCallbackHandler();
             AndroidBinding.Radar.GetContext(handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, RadarContext)> GetContext(Location location)
+        public Task<(RadarStatus, RadarLocation, RadarContext)> GetContext(RadarLocation location)
         {
             var handler = new ContextCallbackHandler();
             AndroidBinding.Radar.GetContext(location?.ToBinding(), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, JSONObject metadata)
         {
-            var handler = new SendEventCallbackHandler();
-            AndroidBinding.Radar.SendEvent(customType, metadata?.ToBinding(), handler);
+            var handler = new LogConversionCallbackHandler();
+            AndroidBinding.Radar.LogConversion(name, metadata?.ToBinding(), handler);
             return handler.Task;
         }
 
-        public Task<(RadarStatus, Location, IEnumerable<RadarEvent>, RadarUser)> SendEvent(string customType, Location location, JSONObject metadata)
+        public Task<(RadarStatus, RadarEvent)> LogConversion(string name, double revenue, JSONObject metadata)
         {
-            var handler = new SendEventCallbackHandler();
-            AndroidBinding.Radar.SendEvent(customType, location?.ToBinding(), metadata?.ToBinding(), handler);
+            var handler = new LogConversionCallbackHandler();
+            AndroidBinding.Radar.LogConversion(name, revenue, metadata?.ToBinding(), handler);
             return handler.Task;
         }
 
@@ -352,7 +351,7 @@ namespace RadarIO.Xamarin
         public string StringForTripStatus(RadarTripStatus status)
             => AndroidBinding.Radar.StringForTripStatus(status.ToBinding());
 
-        public JSONObject DictionaryForLocation(Location location)
+        public JSONObject DictionaryForLocation(RadarLocation location)
             => AndroidBinding.Radar.JsonForLocation(location?.ToBinding())?.ToSDK();
     }
 
