@@ -61,7 +61,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\sdk.aar" />
+    <LibraryProjectZip Include="..\RadarIO.Maui.AndroidBinding\sdk-3.9.8.aar">
+      <Link>Jars\sdk-3.9.8.aar</Link>
+    </LibraryProjectZip>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -362,6 +362,15 @@ internal static class Conversion
              options.Beacons
             );
 
+    internal static AndroidBinding.RadarNotificationOptions ToBinding(this RadarNotificationOptions options)
+        => options == null ? null : new AndroidBinding.RadarNotificationOptions(
+            options.IconString,
+            options.IconColor,
+            options.ForegroundServiceIconString,
+            options.ForegroundServiceIconColor,
+            options.EventIconString,
+            options.EventIconColor);
+
     internal static DateTime ToSDK(this Java.Util.Date date)
         => date == null ? DateTime.MinValue : date.Time.ToDateTime();
 
@@ -418,7 +427,8 @@ internal static class Conversion
                 service.Activity,
                 new Java.Lang.Integer(service.Importance),
                 new Java.Lang.Integer(service.Id),
-                service.ChannelName
+                service.ChannelName,
+                "todo", "todo"
             );
 
     internal static Android.Locations.Location ToBinding(this RadarLocation location)
