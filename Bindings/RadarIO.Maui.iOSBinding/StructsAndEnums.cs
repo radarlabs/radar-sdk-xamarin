@@ -3,7 +3,6 @@ using ObjCRuntime;
 
 namespace iOSBinding
 {
-
     [Native]
     public enum RadarAddressConfidence : long
     {
@@ -61,7 +60,9 @@ namespace iOSBinding
         UserExitedBeacon,
         UserEnteredRegionPostalCode,
         UserExitedRegionPostalCode,
-        UserDwelledInGeofence
+        UserDwelledInGeofence,
+        UserArrivedAtWrongTripDestination,
+        UserFailedFraud
     }
 
     [Native]
@@ -177,5 +178,4 @@ namespace iOSBinding
         Ambiguous = 3,
         Unverified = 4
     }
-
 }

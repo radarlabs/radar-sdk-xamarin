@@ -17,43 +17,37 @@ public class RadarSDKImpl : RadarSDK
     public event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
     public event RadarEventHandler<RadarStatus> Error;
     public event RadarEventHandler<string> Log;
-
     public event RadarEventHandler<string> TokenUpdated;
 
     public void Initialize(string publishableKey, bool fraud = false)
     {
-#if NET
-        Preferences.Set("x_platform_sdk_type", "Maui");
-        Preferences.Set("x_platform_sdk_version", "3.9.3");
-#else
-        var prefs = Application.Context.GetSharedPreferences(null, FileCreationMode.WorldWriteable);
+        var prefs = Android.App.Application.Context.GetSharedPreferences("RadarSDK", FileCreationMode.WorldWriteable);
         var edit = prefs.Edit();
+#if NET
+        edit.PutString("x_platform_sdk_type", "Maui");
+#else
         edit.PutString("x_platform_sdk_type", "Xamarin");
+#endif
         edit.PutString("x_platform_sdk_version", "3.9.3");
         edit.Apply();
-#endif
 
         if (fraud)
         {
-            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, new RadarReceiver(), AndroidBinding.Radar.RadarLocationServicesProvider.Google, fraud);
-            AndroidBinding.Radar.SetVerifiedReceiver(new RadarVerifiedReceiver());
+            AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey, new RadarReceiver(this), AndroidBinding.Radar.RadarLocationServicesProvider.Google, fraud);
+            AndroidBinding.Radar.SetVerifiedReceiver(new RadarVerifiedReceiver(this));
         }
         else
         {
             AndroidBinding.Radar.Initialize(Android.App.Application.Context, publishableKey);
-            AndroidBinding.Radar.SetReceiver(new RadarReceiver());
+            AndroidBinding.Radar.SetReceiver(new RadarReceiver(this));
         }
     }
 
     public void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options)
-    {
-        AndroidBinding.Radar.SetForegroundServiceOptions(options?.ToBinding());
-    }
+        => AndroidBinding.Radar.SetForegroundServiceOptions(options?.ToBinding());
 
     public void SetLogLevel(RadarLogLevel level)
-    {
-        AndroidBinding.Radar.SetLogLevel(AndroidBinding.Radar.RadarLogLevel.Values()[(int)level]);
-    }
+        => AndroidBinding.Radar.SetLogLevel(AndroidBinding.Radar.RadarLogLevel.Values()[(int)level]);
 
     public string UserId
     {
@@ -76,10 +70,6 @@ public class RadarSDKImpl : RadarSDK
     public bool AnonymousTrackingEnabled { set => AndroidBinding.Radar.SetAnonymousTrackingEnabled(value); }
 
     public bool IsTracking => AndroidBinding.Radar.IsTracking;
-
-    public string Host => AndroidBinding.Radar.Host;
-
-    public string PublishableKey => AndroidBinding.Radar.PublishableKey;
 
     public RadarTrackingOptions TrackingOptions => AndroidBinding.Radar.TrackingOptions?.ToSDK();
 
@@ -334,7 +324,12 @@ public class RadarSDKImpl : RadarSDK
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
     class RadarReceiver : AndroidBinding.RadarReceiver
     {
-        RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
+        private readonly RadarSDKImpl Radar;
+
+        public RadarReceiver(RadarSDKImpl radar)
+        {
+            Radar = radar;
+        }
 
         public override void OnClientLocationUpdated(Context context, Android.Locations.Location location, bool stopped, AndroidBinding.Radar.RadarLocationSource source)
         {
@@ -381,7 +376,12 @@ public class RadarSDKImpl : RadarSDK
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
     class RadarVerifiedReceiver : AndroidBinding.RadarVerifiedReceiver
     {
-        RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
+        private readonly RadarSDKImpl Radar;
+
+        public RadarVerifiedReceiver(RadarSDKImpl radar)
+        {
+            Radar = radar;
+        }
 
         public override void OnTokenUpdated(Context context, string token)
         {

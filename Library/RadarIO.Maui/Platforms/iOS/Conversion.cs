@@ -460,4 +460,5 @@ internal static class Conversion
 
     internal static T InvertEnum<T>(int val)
         => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
+
 }

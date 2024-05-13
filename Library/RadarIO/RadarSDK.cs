@@ -15,13 +15,21 @@ namespace RadarIO
         event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
+        event RadarEventHandler<string> TokenUpdated;
 
         Task<EventData> LogConversion(string name, JSONObject metadata);
         Task<EventData> LogConversion(string name, double revenue, JSONObject metadata);
 
         void Initialize(string publishableKey, bool fraud = false);
         void SetLogLevel(RadarLogLevel level);
+        /// <summary>
+        /// Android-only
+        /// </summary>
         void SetNotificationOptions(RadarNotificationOptions options);
+        /// <summary>
+        /// Android-only
+        /// </summary>
+        void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options);
 
         // todo: request permissions
 
@@ -30,14 +38,7 @@ namespace RadarIO
         string SdkVersion { get; }
         JSONObject Metadata { get; set; }
         bool AnonymousTrackingEnabled { set; }
-        string Host { get; }
-        string PublishableKey { get; }
         // todo: permission status
-
-        /// <summary>
-        /// Android-only
-        /// </summary>
-        void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options);
 
         Task<LocationData> GetLocation();
         Task<LocationData> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy);

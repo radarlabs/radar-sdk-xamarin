@@ -22,9 +22,14 @@ namespace RadarIO.Sample
                 { "int", 10 },
                 { "bool", true }
             };
+
+            Radar.Log += msg =>
+            {
+
+            };
         }
 
-        public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> Test()
+        public static async Task<TrackData> Test()
         {
             //var trackingOptions = new RadarTrackingOptions
             //{
@@ -58,11 +63,19 @@ namespace RadarIO.Sample
             //var (_, ipGeocode, isProxy) = await Radar.IpGeocode();
 
             //var (status, loc2, places) = await Radar.SearchPlaces(10, chainMetadata: new Dictionary<string, string> { { "asd", "qwe" } });
-
+            RadarTrackingOptions trackingOptions = Radar.TrackingOptionsContinuous;
+            trackingOptions.DesiredStoppedUpdateInterval = 180;
+            trackingOptions.DesiredStoppedUpdateInterval = 60;
+            trackingOptions.DesiredSyncInterval = 50;
+            trackingOptions.DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.High;
+            trackingOptions.StopDuration = 140;
+            trackingOptions.StopDistance = 70;
+            trackingOptions.Sync = RadarTrackingOptionsSync.All;
+            trackingOptions.Replay = RadarTrackingOptionsReplay.None;
             return ret;
         }
 
-        public static async Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce()
+        public static async Task<TrackData> TrackOnce()
             => await Radar.TrackOnce();
 
 

@@ -2,7 +2,7 @@
 
 namespace RadarIO;
 
-public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
+public class RadarSDKImpl : RadarSDK
 {
     public RadarTrackingOptions TrackingOptionsContinuous
         => iOSBinding.RadarTrackingOptions.PresetContinuous.ToSDK();
@@ -13,31 +13,54 @@ public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
 
     #region RadarDelegate
 
-    RadarSDKImpl Radar => (RadarSDKImpl)RadarSingleton.Radar;
-
-    public override void DidFailWithStatus(iOSBinding.RadarStatus status)
+    class RadarDelegate : iOSBinding.RadarDelegate
     {
-        Radar.Error?.Invoke((RadarStatus)status);
+        private readonly RadarSDKImpl Radar;
+
+        public RadarDelegate(RadarSDKImpl radar)
+        {
+            Radar = radar;
+        }
+
+        public override void DidFailWithStatus(iOSBinding.RadarStatus status)
+        {
+            Radar.Error?.Invoke((RadarStatus)status);
+        }
+
+        public override void DidLogMessage(string message)
+        {
+            Radar.Log?.Invoke(message);
+        }
+
+        public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
+        {
+            Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
+        }
+
+        public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
+        {
+            Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
+        }
+
+        public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
+        {
+            Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+        }
     }
 
-    public override void DidLogMessage(string message)
+    class RadarVerifiedDelegate : iOSBinding.RadarVerifiedDelegate
     {
-        Radar.Log?.Invoke(message);
-    }
+        private readonly RadarSDKImpl Radar;
 
-    public override void DidReceiveEvents(iOSBinding.RadarEvent[] events, iOSBinding.RadarUser user)
-    {
-        Radar.EventsReceived?.Invoke((events?.Select(e => e?.ToSDK()), user?.ToSDK()));
-    }
+        public RadarVerifiedDelegate(RadarSDKImpl radar)
+        {
+            Radar = radar;
+        }
 
-    public override void DidUpdateClientLocation(CLLocation location, bool stopped, iOSBinding.RadarLocationSource source)
-    {
-        Radar.ClientLocationUpdated?.Invoke((location?.ToSDK(), stopped, (RadarLocationSource)source));
-    }
-
-    public override void DidUpdateLocation(CLLocation location, iOSBinding.RadarUser user)
-    {
-        Radar.LocationUpdated?.Invoke((location?.ToSDK(), user?.ToSDK()));
+        public override void DidUpdateToken(string token)
+        {
+            Radar.TokenUpdated?.Invoke(token);
+        }
     }
 
     #endregion
@@ -47,22 +70,28 @@ public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     public event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
     public event RadarEventHandler<RadarStatus> Error;
     public event RadarEventHandler<string> Log;
+    public event RadarEventHandler<string> TokenUpdated;
 
-    public void Initialize(string publishableKey)
+    public void Initialize(string publishableKey, bool fraud = false)
     {
-        iOSBinding.Radar.InitializeWithPublishableKey(publishableKey);
-        iOSBinding.Radar.SetDelegate(this);
-    }
+        var defaults = new Foundation.NSUserDefaults("RadarSDK");
+#if NET
+        defaults.SetString("x_platform_sdk_type","Maui");
+#else
+        defaults.SetString("x_platform_sdk_type", "Xamarin");
+#endif
+        defaults.SetString("x_platform_sdk_version", "3.9.3");
+        defaults.Synchronize();
 
-    public void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud)
-        => Initialize(publishableKey);
+        iOSBinding.Radar.InitializeWithPublishableKey(publishableKey);
+        iOSBinding.Radar.SetDelegate(new RadarDelegate(this));
+        iOSBinding.Radar.SetVerifiedDelegate(new RadarVerifiedDelegate(this));
+    }
 
     public void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options) { }
 
     public void SetLogLevel(RadarLogLevel level)
-    {
-        iOSBinding.Radar.SetLogLevel((iOSBinding.RadarLogLevel)level);
-    }
+        => iOSBinding.Radar.SetLogLevel((iOSBinding.RadarLogLevel)level);
 
     public string UserId
     {
@@ -88,6 +117,10 @@ public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
     public RadarTrackingOptions TrackingOptions => iOSBinding.Radar.TrackingOptions?.ToSDK();
 
     public RadarTripOptions TripOptions => iOSBinding.Radar.TripOptions?.ToSDK();
+
+    public string SdkVersion => iOSBinding.Radar.SdkVersion;
+
+    public bool IsUsingRemoteTrackingOptions => iOSBinding.Radar.IsUsingRemoteTrackingOptions;
 
     public Task<LocationData> GetLocation()
     {
@@ -174,26 +207,57 @@ public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
         return src.Task;
     }
 
-    public void StartTracking(RadarTrackingOptions options)
+    public Task<TrackData> TrackVerified(bool beacons)
     {
-        iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
+        var src = new TaskCompletionSource<TrackData>();
+        iOSBinding.Radar.TrackVerifiedWithBeacons(beacons, (status, _location, ev, user) =>
+        {
+            try
+            {
+                src.SetResult((status.ToSDK(), _location?.ToSDK(), ev?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK()));
+            }
+            catch (Exception ex)
+            {
+                src.SetException(ex);
+            }
+        });
+        return src.Task;
     }
+
+    public Task<TokenData> TrackVerifiedToken(bool beacons)
+    {
+        var src = new TaskCompletionSource<TokenData>();
+        iOSBinding.Radar.TrackVerifiedTokenWithBeacons(beacons, (status, token) =>
+        {
+            try
+            {
+                src.SetResult((status.ToSDK(), token));
+            }
+            catch (Exception ex)
+            {
+                src.SetException(ex);
+            }
+        });
+        return src.Task;
+    }
+
+    public void StartTracking(RadarTrackingOptions options)
+        => iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
+
+    public void StartTrackingVerified(bool token, int interval, bool beacons)
+        => iOSBinding.Radar.StartTrackingVerified(token, interval, beacons);
 
     public void StopTracking()
-    {
-        iOSBinding.Radar.StopTracking();
-    }
+        => iOSBinding.Radar.StopTracking();
 
     public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<TrackData> callback)
-    {
-        iOSBinding.Radar.MockTrackingWithOrigin(
+        => iOSBinding.Radar.MockTrackingWithOrigin(
             origin?.ToBinding(),
             destination?.ToBinding(),
             (iOSBinding.RadarRouteMode)mode,
             steps,
             interval,
             (status, location, events, user) => callback?.Invoke((status.ToSDK(), location?.ToSDK(), events?.Select(Conversion.ToSDK).ToArray(), user?.ToSDK())));
-    }
 
     public Task<TripData> StartTrip(RadarTripOptions options)
     {
@@ -578,6 +642,8 @@ public class RadarSDKImpl : iOSBinding.RadarDelegate, RadarSDK
         });
         return src.Task;
     }
+
+    public void SetNotificationOptions(RadarNotificationOptions options) { }
 
     public string StringForStatus(RadarStatus status)
         => iOSBinding.Radar.StringForStatus(status.ToBinding());
