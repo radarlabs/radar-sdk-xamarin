@@ -46,10 +46,10 @@ namespace RadarIO
         Task<TrackData> TrackOnce();
         Task<TrackData> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
         Task<TrackData> TrackOnce(RadarLocation location);
-        Task<TrackData> TrackVerified(bool beacons);
-        Task<TokenData> TrackVerifiedToken(bool beacons);
+        Task<TrackData> TrackVerified(bool beacons = false);
+        Task<TokenData> TrackVerifiedToken(bool beacons = false);
         void StartTracking(RadarTrackingOptions options);
-        void StartTrackingVerified(bool token, int interval, bool beacons);
+        void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false);
         void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<TrackData> callback);
         void StopTracking();
         bool IsTracking { get; }
@@ -78,7 +78,7 @@ namespace RadarIO
         Task<GeofencesData> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
         Task<GeofencesData> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
         Task<AddressesData> Autocomplete(string query, RadarLocation near = null, int limit = 100);
-        Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null);
+        Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false);
 
         // Geocoding
         Task<AddressesData> Geocode(string query);

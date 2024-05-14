@@ -26,6 +26,1829 @@ namespace RadarIO.Xamarin.Android.Sample
 		
 		public static void UpdateIdValues()
 		{
+			global::RadarIO.Resource.Animation.abc_fade_in = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_fade_in;
+			global::RadarIO.Resource.Animation.abc_fade_out = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_fade_out;
+			global::RadarIO.Resource.Animation.abc_grow_fade_in_from_bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::RadarIO.Resource.Animation.abc_popup_enter = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_popup_enter;
+			global::RadarIO.Resource.Animation.abc_popup_exit = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_popup_exit;
+			global::RadarIO.Resource.Animation.abc_shrink_fade_out_from_bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::RadarIO.Resource.Animation.abc_slide_in_bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_slide_in_bottom;
+			global::RadarIO.Resource.Animation.abc_slide_in_top = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_slide_in_top;
+			global::RadarIO.Resource.Animation.abc_slide_out_bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_slide_out_bottom;
+			global::RadarIO.Resource.Animation.abc_slide_out_top = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_slide_out_top;
+			global::RadarIO.Resource.Animation.abc_tooltip_enter = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_tooltip_enter;
+			global::RadarIO.Resource.Animation.abc_tooltip_exit = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.abc_tooltip_exit;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::RadarIO.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::RadarIO.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::RadarIO.Resource.Animation.fragment_fast_out_extra_slow_in = global::RadarIO.Xamarin.Android.Sample.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::RadarIO.Resource.Animator.fragment_close_enter = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_close_enter;
+			global::RadarIO.Resource.Animator.fragment_close_exit = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_close_exit;
+			global::RadarIO.Resource.Animator.fragment_fade_enter = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_fade_enter;
+			global::RadarIO.Resource.Animator.fragment_fade_exit = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_fade_exit;
+			global::RadarIO.Resource.Animator.fragment_open_enter = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_open_enter;
+			global::RadarIO.Resource.Animator.fragment_open_exit = global::RadarIO.Xamarin.Android.Sample.Resource.Animator.fragment_open_exit;
+			global::RadarIO.Resource.Attribute.actionBarDivider = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarDivider;
+			global::RadarIO.Resource.Attribute.actionBarItemBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarItemBackground;
+			global::RadarIO.Resource.Attribute.actionBarPopupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarPopupTheme;
+			global::RadarIO.Resource.Attribute.actionBarSize = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarSize;
+			global::RadarIO.Resource.Attribute.actionBarSplitStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarSplitStyle;
+			global::RadarIO.Resource.Attribute.actionBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarStyle;
+			global::RadarIO.Resource.Attribute.actionBarTabBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarTabBarStyle;
+			global::RadarIO.Resource.Attribute.actionBarTabStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarTabStyle;
+			global::RadarIO.Resource.Attribute.actionBarTabTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarTabTextStyle;
+			global::RadarIO.Resource.Attribute.actionBarTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarTheme;
+			global::RadarIO.Resource.Attribute.actionBarWidgetTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionBarWidgetTheme;
+			global::RadarIO.Resource.Attribute.actionButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionButtonStyle;
+			global::RadarIO.Resource.Attribute.actionDropDownStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionDropDownStyle;
+			global::RadarIO.Resource.Attribute.actionLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionLayout;
+			global::RadarIO.Resource.Attribute.actionMenuTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionMenuTextAppearance;
+			global::RadarIO.Resource.Attribute.actionMenuTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionMenuTextColor;
+			global::RadarIO.Resource.Attribute.actionModeBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeBackground;
+			global::RadarIO.Resource.Attribute.actionModeCloseButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeCloseButtonStyle;
+			global::RadarIO.Resource.Attribute.actionModeCloseContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeCloseContentDescription;
+			global::RadarIO.Resource.Attribute.actionModeCloseDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeCloseDrawable;
+			global::RadarIO.Resource.Attribute.actionModeCopyDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeCopyDrawable;
+			global::RadarIO.Resource.Attribute.actionModeCutDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeCutDrawable;
+			global::RadarIO.Resource.Attribute.actionModeFindDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeFindDrawable;
+			global::RadarIO.Resource.Attribute.actionModePasteDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModePasteDrawable;
+			global::RadarIO.Resource.Attribute.actionModePopupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModePopupWindowStyle;
+			global::RadarIO.Resource.Attribute.actionModeSelectAllDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeSelectAllDrawable;
+			global::RadarIO.Resource.Attribute.actionModeShareDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeShareDrawable;
+			global::RadarIO.Resource.Attribute.actionModeSplitBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeSplitBackground;
+			global::RadarIO.Resource.Attribute.actionModeStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeStyle;
+			global::RadarIO.Resource.Attribute.actionModeTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeTheme;
+			global::RadarIO.Resource.Attribute.actionModeWebSearchDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionModeWebSearchDrawable;
+			global::RadarIO.Resource.Attribute.actionOverflowButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionOverflowButtonStyle;
+			global::RadarIO.Resource.Attribute.actionOverflowMenuStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionOverflowMenuStyle;
+			global::RadarIO.Resource.Attribute.actionProviderClass = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionProviderClass;
+			global::RadarIO.Resource.Attribute.actionViewClass = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.actionViewClass;
+			global::RadarIO.Resource.Attribute.activityChooserViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.activityChooserViewStyle;
+			global::RadarIO.Resource.Attribute.alertDialogButtonGroupStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::RadarIO.Resource.Attribute.alertDialogCenterButtons = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alertDialogCenterButtons;
+			global::RadarIO.Resource.Attribute.alertDialogStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alertDialogStyle;
+			global::RadarIO.Resource.Attribute.alertDialogTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alertDialogTheme;
+			global::RadarIO.Resource.Attribute.allowStacking = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.allowStacking;
+			global::RadarIO.Resource.Attribute.alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alpha;
+			global::RadarIO.Resource.Attribute.alphabeticModifiers = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alphabeticModifiers;
+			global::RadarIO.Resource.Attribute.arrowHeadLength = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.arrowHeadLength;
+			global::RadarIO.Resource.Attribute.arrowShaftLength = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.arrowShaftLength;
+			global::RadarIO.Resource.Attribute.autoCompleteTextViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoCompleteTextViewStyle;
+			global::RadarIO.Resource.Attribute.autoSizeMaxTextSize = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoSizeMaxTextSize;
+			global::RadarIO.Resource.Attribute.autoSizeMinTextSize = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoSizeMinTextSize;
+			global::RadarIO.Resource.Attribute.autoSizePresetSizes = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoSizePresetSizes;
+			global::RadarIO.Resource.Attribute.autoSizeStepGranularity = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoSizeStepGranularity;
+			global::RadarIO.Resource.Attribute.autoSizeTextType = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.autoSizeTextType;
+			global::RadarIO.Resource.Attribute.background = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.background;
+			global::RadarIO.Resource.Attribute.backgroundSplit = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.backgroundSplit;
+			global::RadarIO.Resource.Attribute.backgroundStacked = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.backgroundStacked;
+			global::RadarIO.Resource.Attribute.backgroundTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.backgroundTint;
+			global::RadarIO.Resource.Attribute.backgroundTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.backgroundTintMode;
+			global::RadarIO.Resource.Attribute.barLength = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.barLength;
+			global::RadarIO.Resource.Attribute.borderlessButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.borderlessButtonStyle;
+			global::RadarIO.Resource.Attribute.buttonBarButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonBarButtonStyle;
+			global::RadarIO.Resource.Attribute.buttonBarNegativeButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::RadarIO.Resource.Attribute.buttonBarNeutralButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::RadarIO.Resource.Attribute.buttonBarPositiveButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::RadarIO.Resource.Attribute.buttonBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonBarStyle;
+			global::RadarIO.Resource.Attribute.buttonCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonCompat;
+			global::RadarIO.Resource.Attribute.buttonGravity = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonGravity;
+			global::RadarIO.Resource.Attribute.buttonIconDimen = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonIconDimen;
+			global::RadarIO.Resource.Attribute.buttonPanelSideLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonPanelSideLayout;
+			global::RadarIO.Resource.Attribute.buttonSize = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonSize;
+			global::RadarIO.Resource.Attribute.buttonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonStyle;
+			global::RadarIO.Resource.Attribute.buttonStyleSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonStyleSmall;
+			global::RadarIO.Resource.Attribute.buttonTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonTint;
+			global::RadarIO.Resource.Attribute.buttonTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.buttonTintMode;
+			global::RadarIO.Resource.Attribute.checkboxStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.checkboxStyle;
+			global::RadarIO.Resource.Attribute.checkedTextViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.checkedTextViewStyle;
+			global::RadarIO.Resource.Attribute.checkMarkCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.checkMarkCompat;
+			global::RadarIO.Resource.Attribute.checkMarkTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.checkMarkTint;
+			global::RadarIO.Resource.Attribute.checkMarkTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.checkMarkTintMode;
+			global::RadarIO.Resource.Attribute.circleCrop = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.circleCrop;
+			global::RadarIO.Resource.Attribute.closeIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.closeIcon;
+			global::RadarIO.Resource.Attribute.closeItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.closeItemLayout;
+			global::RadarIO.Resource.Attribute.collapseContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.collapseContentDescription;
+			global::RadarIO.Resource.Attribute.collapseIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.collapseIcon;
+			global::RadarIO.Resource.Attribute.color = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.color;
+			global::RadarIO.Resource.Attribute.colorAccent = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorAccent;
+			global::RadarIO.Resource.Attribute.colorBackgroundFloating = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorBackgroundFloating;
+			global::RadarIO.Resource.Attribute.colorButtonNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorButtonNormal;
+			global::RadarIO.Resource.Attribute.colorControlActivated = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorControlActivated;
+			global::RadarIO.Resource.Attribute.colorControlHighlight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorControlHighlight;
+			global::RadarIO.Resource.Attribute.colorControlNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorControlNormal;
+			global::RadarIO.Resource.Attribute.colorError = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorError;
+			global::RadarIO.Resource.Attribute.colorPrimary = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorPrimary;
+			global::RadarIO.Resource.Attribute.colorPrimaryDark = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorPrimaryDark;
+			global::RadarIO.Resource.Attribute.colorScheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorScheme;
+			global::RadarIO.Resource.Attribute.colorSwitchThumbNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.colorSwitchThumbNormal;
+			global::RadarIO.Resource.Attribute.commitIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.commitIcon;
+			global::RadarIO.Resource.Attribute.contentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentDescription;
+			global::RadarIO.Resource.Attribute.contentInsetEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetEnd;
+			global::RadarIO.Resource.Attribute.contentInsetEndWithActions = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetEndWithActions;
+			global::RadarIO.Resource.Attribute.contentInsetLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetLeft;
+			global::RadarIO.Resource.Attribute.contentInsetRight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetRight;
+			global::RadarIO.Resource.Attribute.contentInsetStart = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetStart;
+			global::RadarIO.Resource.Attribute.contentInsetStartWithNavigation = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.contentInsetStartWithNavigation;
+			global::RadarIO.Resource.Attribute.controlBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.controlBackground;
+			global::RadarIO.Resource.Attribute.customNavigationLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.customNavigationLayout;
+			global::RadarIO.Resource.Attribute.defaultQueryHint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.defaultQueryHint;
+			global::RadarIO.Resource.Attribute.dialogCornerRadius = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dialogCornerRadius;
+			global::RadarIO.Resource.Attribute.dialogPreferredPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dialogPreferredPadding;
+			global::RadarIO.Resource.Attribute.dialogTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dialogTheme;
+			global::RadarIO.Resource.Attribute.displayOptions = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.displayOptions;
+			global::RadarIO.Resource.Attribute.divider = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.divider;
+			global::RadarIO.Resource.Attribute.dividerHorizontal = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dividerHorizontal;
+			global::RadarIO.Resource.Attribute.dividerPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dividerPadding;
+			global::RadarIO.Resource.Attribute.dividerVertical = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dividerVertical;
+			global::RadarIO.Resource.Attribute.drawableBottomCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableBottomCompat;
+			global::RadarIO.Resource.Attribute.drawableEndCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableEndCompat;
+			global::RadarIO.Resource.Attribute.drawableLeftCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableLeftCompat;
+			global::RadarIO.Resource.Attribute.drawableRightCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableRightCompat;
+			global::RadarIO.Resource.Attribute.drawableSize = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableSize;
+			global::RadarIO.Resource.Attribute.drawableStartCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableStartCompat;
+			global::RadarIO.Resource.Attribute.drawableTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableTint;
+			global::RadarIO.Resource.Attribute.drawableTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableTintMode;
+			global::RadarIO.Resource.Attribute.drawableTopCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawableTopCompat;
+			global::RadarIO.Resource.Attribute.drawerArrowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawerArrowStyle;
+			global::RadarIO.Resource.Attribute.drawerLayoutStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.drawerLayoutStyle;
+			global::RadarIO.Resource.Attribute.dropdownListPreferredItemHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::RadarIO.Resource.Attribute.dropDownListViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.dropDownListViewStyle;
+			global::RadarIO.Resource.Attribute.editTextBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.editTextBackground;
+			global::RadarIO.Resource.Attribute.editTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.editTextColor;
+			global::RadarIO.Resource.Attribute.editTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.editTextStyle;
+			global::RadarIO.Resource.Attribute.elevation = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.elevation;
+			global::RadarIO.Resource.Attribute.emojiCompatEnabled = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.emojiCompatEnabled;
+			global::RadarIO.Resource.Attribute.expandActivityOverflowButtonDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::RadarIO.Resource.Attribute.firstBaselineToTopHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.firstBaselineToTopHeight;
+			global::RadarIO.Resource.Attribute.font = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.font;
+			global::RadarIO.Resource.Attribute.fontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontFamily;
+			global::RadarIO.Resource.Attribute.fontProviderAuthority = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderAuthority;
+			global::RadarIO.Resource.Attribute.fontProviderCerts = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderCerts;
+			global::RadarIO.Resource.Attribute.fontProviderFetchStrategy = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderFetchStrategy;
+			global::RadarIO.Resource.Attribute.fontProviderFetchTimeout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderFetchTimeout;
+			global::RadarIO.Resource.Attribute.fontProviderPackage = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderPackage;
+			global::RadarIO.Resource.Attribute.fontProviderQuery = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderQuery;
+			global::RadarIO.Resource.Attribute.fontProviderSystemFontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderSystemFontFamily;
+			global::RadarIO.Resource.Attribute.fontStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontStyle;
+			global::RadarIO.Resource.Attribute.fontVariationSettings = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontVariationSettings;
+			global::RadarIO.Resource.Attribute.fontWeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontWeight;
+			global::RadarIO.Resource.Attribute.gapBetweenBars = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.gapBetweenBars;
+			global::RadarIO.Resource.Attribute.goIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.goIcon;
+			global::RadarIO.Resource.Attribute.height = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.height;
+			global::RadarIO.Resource.Attribute.hideOnContentScroll = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.hideOnContentScroll;
+			global::RadarIO.Resource.Attribute.homeAsUpIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.homeAsUpIndicator;
+			global::RadarIO.Resource.Attribute.homeLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.homeLayout;
+			global::RadarIO.Resource.Attribute.icon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.icon;
+			global::RadarIO.Resource.Attribute.iconifiedByDefault = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.iconifiedByDefault;
+			global::RadarIO.Resource.Attribute.iconTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.iconTint;
+			global::RadarIO.Resource.Attribute.iconTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.iconTintMode;
+			global::RadarIO.Resource.Attribute.imageAspectRatio = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.imageAspectRatio;
+			global::RadarIO.Resource.Attribute.imageAspectRatioAdjust = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.imageAspectRatioAdjust;
+			global::RadarIO.Resource.Attribute.imageButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.imageButtonStyle;
+			global::RadarIO.Resource.Attribute.indeterminateProgressStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.indeterminateProgressStyle;
+			global::RadarIO.Resource.Attribute.initialActivityCount = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.initialActivityCount;
+			global::RadarIO.Resource.Attribute.isLightTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.isLightTheme;
+			global::RadarIO.Resource.Attribute.itemPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.itemPadding;
+			global::RadarIO.Resource.Attribute.lastBaselineToBottomHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.lastBaselineToBottomHeight;
+			global::RadarIO.Resource.Attribute.layout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.layout;
+			global::RadarIO.Resource.Attribute.lineHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.lineHeight;
+			global::RadarIO.Resource.Attribute.listChoiceBackgroundIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::RadarIO.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::RadarIO.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listChoiceIndicatorSingleAnimated;
+			global::RadarIO.Resource.Attribute.listDividerAlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listDividerAlertDialog;
+			global::RadarIO.Resource.Attribute.listItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listItemLayout;
+			global::RadarIO.Resource.Attribute.listLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listLayout;
+			global::RadarIO.Resource.Attribute.listMenuViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listMenuViewStyle;
+			global::RadarIO.Resource.Attribute.listPopupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPopupWindowStyle;
+			global::RadarIO.Resource.Attribute.listPreferredItemHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemHeight;
+			global::RadarIO.Resource.Attribute.listPreferredItemHeightLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemHeightLarge;
+			global::RadarIO.Resource.Attribute.listPreferredItemHeightSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemHeightSmall;
+			global::RadarIO.Resource.Attribute.listPreferredItemPaddingEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemPaddingEnd;
+			global::RadarIO.Resource.Attribute.listPreferredItemPaddingLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::RadarIO.Resource.Attribute.listPreferredItemPaddingRight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemPaddingRight;
+			global::RadarIO.Resource.Attribute.listPreferredItemPaddingStart = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.listPreferredItemPaddingStart;
+			global::RadarIO.Resource.Attribute.logo = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.logo;
+			global::RadarIO.Resource.Attribute.logoDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.logoDescription;
+			global::RadarIO.Resource.Attribute.lStar = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.lStar;
+			global::RadarIO.Resource.Attribute.maxButtonHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.maxButtonHeight;
+			global::RadarIO.Resource.Attribute.measureWithLargestChild = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.measureWithLargestChild;
+			global::RadarIO.Resource.Attribute.menu = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.menu;
+			global::RadarIO.Resource.Attribute.multiChoiceItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.multiChoiceItemLayout;
+			global::RadarIO.Resource.Attribute.navigationContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.navigationContentDescription;
+			global::RadarIO.Resource.Attribute.navigationIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.navigationIcon;
+			global::RadarIO.Resource.Attribute.navigationMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.navigationMode;
+			global::RadarIO.Resource.Attribute.nestedScrollViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.nestedScrollViewStyle;
+			global::RadarIO.Resource.Attribute.numericModifiers = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.numericModifiers;
+			global::RadarIO.Resource.Attribute.overlapAnchor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.overlapAnchor;
+			global::RadarIO.Resource.Attribute.paddingBottomNoButtons = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.paddingBottomNoButtons;
+			global::RadarIO.Resource.Attribute.paddingEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.paddingEnd;
+			global::RadarIO.Resource.Attribute.paddingStart = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.paddingStart;
+			global::RadarIO.Resource.Attribute.paddingTopNoTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.paddingTopNoTitle;
+			global::RadarIO.Resource.Attribute.panelBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.panelBackground;
+			global::RadarIO.Resource.Attribute.panelMenuListTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.panelMenuListTheme;
+			global::RadarIO.Resource.Attribute.panelMenuListWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.panelMenuListWidth;
+			global::RadarIO.Resource.Attribute.popupMenuStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.popupMenuStyle;
+			global::RadarIO.Resource.Attribute.popupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.popupTheme;
+			global::RadarIO.Resource.Attribute.popupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.popupWindowStyle;
+			global::RadarIO.Resource.Attribute.preserveIconSpacing = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.preserveIconSpacing;
+			global::RadarIO.Resource.Attribute.progressBarPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.progressBarPadding;
+			global::RadarIO.Resource.Attribute.progressBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.progressBarStyle;
+			global::RadarIO.Resource.Attribute.queryBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.queryBackground;
+			global::RadarIO.Resource.Attribute.queryHint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.queryHint;
+			global::RadarIO.Resource.Attribute.queryPatterns = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.queryPatterns;
+			global::RadarIO.Resource.Attribute.radioButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.radioButtonStyle;
+			global::RadarIO.Resource.Attribute.ratingBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.ratingBarStyle;
+			global::RadarIO.Resource.Attribute.ratingBarStyleIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.ratingBarStyleIndicator;
+			global::RadarIO.Resource.Attribute.ratingBarStyleSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.ratingBarStyleSmall;
+			global::RadarIO.Resource.Attribute.scopeUris = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.scopeUris;
+			global::RadarIO.Resource.Attribute.searchHintIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.searchHintIcon;
+			global::RadarIO.Resource.Attribute.searchIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.searchIcon;
+			global::RadarIO.Resource.Attribute.searchViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.searchViewStyle;
+			global::RadarIO.Resource.Attribute.seekBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.seekBarStyle;
+			global::RadarIO.Resource.Attribute.selectableItemBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.selectableItemBackground;
+			global::RadarIO.Resource.Attribute.selectableItemBackgroundBorderless = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::RadarIO.Resource.Attribute.shortcutMatchRequired = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.shortcutMatchRequired;
+			global::RadarIO.Resource.Attribute.showAsAction = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.showAsAction;
+			global::RadarIO.Resource.Attribute.showDividers = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.showDividers;
+			global::RadarIO.Resource.Attribute.showText = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.showText;
+			global::RadarIO.Resource.Attribute.showTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.showTitle;
+			global::RadarIO.Resource.Attribute.singleChoiceItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.singleChoiceItemLayout;
+			global::RadarIO.Resource.Attribute.spinBars = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.spinBars;
+			global::RadarIO.Resource.Attribute.spinnerDropDownItemStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.spinnerDropDownItemStyle;
+			global::RadarIO.Resource.Attribute.spinnerStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.spinnerStyle;
+			global::RadarIO.Resource.Attribute.splitTrack = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.splitTrack;
+			global::RadarIO.Resource.Attribute.srcCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.srcCompat;
+			global::RadarIO.Resource.Attribute.state_above_anchor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.state_above_anchor;
+			global::RadarIO.Resource.Attribute.subMenuArrow = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.subMenuArrow;
+			global::RadarIO.Resource.Attribute.submitBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.submitBackground;
+			global::RadarIO.Resource.Attribute.subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.subtitle;
+			global::RadarIO.Resource.Attribute.subtitleTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.subtitleTextAppearance;
+			global::RadarIO.Resource.Attribute.subtitleTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.subtitleTextColor;
+			global::RadarIO.Resource.Attribute.subtitleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.subtitleTextStyle;
+			global::RadarIO.Resource.Attribute.suggestionRowLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.suggestionRowLayout;
+			global::RadarIO.Resource.Attribute.switchMinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.switchMinWidth;
+			global::RadarIO.Resource.Attribute.switchPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.switchPadding;
+			global::RadarIO.Resource.Attribute.switchStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.switchStyle;
+			global::RadarIO.Resource.Attribute.switchTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.switchTextAppearance;
+			global::RadarIO.Resource.Attribute.textAllCaps = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAllCaps;
+			global::RadarIO.Resource.Attribute.textAppearanceLargePopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::RadarIO.Resource.Attribute.textAppearanceListItem = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceListItem;
+			global::RadarIO.Resource.Attribute.textAppearanceListItemSecondary = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceListItemSecondary;
+			global::RadarIO.Resource.Attribute.textAppearanceListItemSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceListItemSmall;
+			global::RadarIO.Resource.Attribute.textAppearancePopupMenuHeader = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::RadarIO.Resource.Attribute.textAppearanceSearchResultSubtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::RadarIO.Resource.Attribute.textAppearanceSearchResultTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::RadarIO.Resource.Attribute.textAppearanceSmallPopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::RadarIO.Resource.Attribute.textColorAlertDialogListItem = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textColorAlertDialogListItem;
+			global::RadarIO.Resource.Attribute.textColorSearchUrl = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textColorSearchUrl;
+			global::RadarIO.Resource.Attribute.textLocale = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.textLocale;
+			global::RadarIO.Resource.Attribute.theme = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.theme;
+			global::RadarIO.Resource.Attribute.thickness = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.thickness;
+			global::RadarIO.Resource.Attribute.thumbTextPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.thumbTextPadding;
+			global::RadarIO.Resource.Attribute.thumbTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.thumbTint;
+			global::RadarIO.Resource.Attribute.thumbTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.thumbTintMode;
+			global::RadarIO.Resource.Attribute.tickMark = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tickMark;
+			global::RadarIO.Resource.Attribute.tickMarkTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tickMarkTint;
+			global::RadarIO.Resource.Attribute.tickMarkTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tickMarkTintMode;
+			global::RadarIO.Resource.Attribute.tint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tint;
+			global::RadarIO.Resource.Attribute.tintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tintMode;
+			global::RadarIO.Resource.Attribute.title = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.title;
+			global::RadarIO.Resource.Attribute.titleMargin = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMargin;
+			global::RadarIO.Resource.Attribute.titleMarginBottom = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMarginBottom;
+			global::RadarIO.Resource.Attribute.titleMarginEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMarginEnd;
+			global::RadarIO.Resource.Attribute.titleMargins = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMargins;
+			global::RadarIO.Resource.Attribute.titleMarginStart = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMarginStart;
+			global::RadarIO.Resource.Attribute.titleMarginTop = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleMarginTop;
+			global::RadarIO.Resource.Attribute.titleTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleTextAppearance;
+			global::RadarIO.Resource.Attribute.titleTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleTextColor;
+			global::RadarIO.Resource.Attribute.titleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.titleTextStyle;
+			global::RadarIO.Resource.Attribute.toolbarNavigationButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::RadarIO.Resource.Attribute.toolbarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.toolbarStyle;
+			global::RadarIO.Resource.Attribute.tooltipForegroundColor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tooltipForegroundColor;
+			global::RadarIO.Resource.Attribute.tooltipFrameBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tooltipFrameBackground;
+			global::RadarIO.Resource.Attribute.tooltipText = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.tooltipText;
+			global::RadarIO.Resource.Attribute.track = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.track;
+			global::RadarIO.Resource.Attribute.trackTint = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.trackTint;
+			global::RadarIO.Resource.Attribute.trackTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.trackTintMode;
+			global::RadarIO.Resource.Attribute.ttcIndex = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.ttcIndex;
+			global::RadarIO.Resource.Attribute.viewInflaterClass = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.viewInflaterClass;
+			global::RadarIO.Resource.Attribute.voiceIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.voiceIcon;
+			global::RadarIO.Resource.Attribute.windowActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowActionBar;
+			global::RadarIO.Resource.Attribute.windowActionBarOverlay = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowActionBarOverlay;
+			global::RadarIO.Resource.Attribute.windowActionModeOverlay = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowActionModeOverlay;
+			global::RadarIO.Resource.Attribute.windowFixedHeightMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowFixedHeightMajor;
+			global::RadarIO.Resource.Attribute.windowFixedHeightMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowFixedHeightMinor;
+			global::RadarIO.Resource.Attribute.windowFixedWidthMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowFixedWidthMajor;
+			global::RadarIO.Resource.Attribute.windowFixedWidthMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowFixedWidthMinor;
+			global::RadarIO.Resource.Attribute.windowMinWidthMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowMinWidthMajor;
+			global::RadarIO.Resource.Attribute.windowMinWidthMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowMinWidthMinor;
+			global::RadarIO.Resource.Attribute.windowNoTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.windowNoTitle;
+			global::RadarIO.Resource.Boolean.abc_action_bar_embed_tabs = global::RadarIO.Xamarin.Android.Sample.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::RadarIO.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::RadarIO.Xamarin.Android.Sample.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::RadarIO.Resource.Color.abc_background_cache_hint_selector_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::RadarIO.Resource.Color.abc_background_cache_hint_selector_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::RadarIO.Resource.Color.abc_btn_colored_borderless_text_material = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::RadarIO.Resource.Color.abc_btn_colored_text_material = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_btn_colored_text_material;
+			global::RadarIO.Resource.Color.abc_color_highlight_material = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_color_highlight_material;
+			global::RadarIO.Resource.Color.abc_decor_view_status_guard = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_decor_view_status_guard;
+			global::RadarIO.Resource.Color.abc_decor_view_status_guard_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_decor_view_status_guard_light;
+			global::RadarIO.Resource.Color.abc_hint_foreground_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_hint_foreground_material_dark;
+			global::RadarIO.Resource.Color.abc_hint_foreground_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_hint_foreground_material_light;
+			global::RadarIO.Resource.Color.abc_primary_text_disable_only_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::RadarIO.Resource.Color.abc_primary_text_disable_only_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::RadarIO.Resource.Color.abc_primary_text_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_primary_text_material_dark;
+			global::RadarIO.Resource.Color.abc_primary_text_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_primary_text_material_light;
+			global::RadarIO.Resource.Color.abc_search_url_text = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_search_url_text;
+			global::RadarIO.Resource.Color.abc_search_url_text_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_search_url_text_normal;
+			global::RadarIO.Resource.Color.abc_search_url_text_pressed = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_search_url_text_pressed;
+			global::RadarIO.Resource.Color.abc_search_url_text_selected = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_search_url_text_selected;
+			global::RadarIO.Resource.Color.abc_secondary_text_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_secondary_text_material_dark;
+			global::RadarIO.Resource.Color.abc_secondary_text_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_secondary_text_material_light;
+			global::RadarIO.Resource.Color.abc_tint_btn_checkable = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_btn_checkable;
+			global::RadarIO.Resource.Color.abc_tint_default = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_default;
+			global::RadarIO.Resource.Color.abc_tint_edittext = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_edittext;
+			global::RadarIO.Resource.Color.abc_tint_seek_thumb = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_seek_thumb;
+			global::RadarIO.Resource.Color.abc_tint_spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_spinner;
+			global::RadarIO.Resource.Color.abc_tint_switch_track = global::RadarIO.Xamarin.Android.Sample.Resource.Color.abc_tint_switch_track;
+			global::RadarIO.Resource.Color.accent_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.accent_material_dark;
+			global::RadarIO.Resource.Color.accent_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.accent_material_light;
+			global::RadarIO.Resource.Color.androidx_core_ripple_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.androidx_core_ripple_material_light;
+			global::RadarIO.Resource.Color.androidx_core_secondary_text_default_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.androidx_core_secondary_text_default_material_light;
+			global::RadarIO.Resource.Color.background_floating_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.background_floating_material_dark;
+			global::RadarIO.Resource.Color.background_floating_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.background_floating_material_light;
+			global::RadarIO.Resource.Color.background_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.background_material_dark;
+			global::RadarIO.Resource.Color.background_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.background_material_light;
+			global::RadarIO.Resource.Color.bright_foreground_disabled_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_disabled_material_dark;
+			global::RadarIO.Resource.Color.bright_foreground_disabled_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_disabled_material_light;
+			global::RadarIO.Resource.Color.bright_foreground_inverse_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_inverse_material_dark;
+			global::RadarIO.Resource.Color.bright_foreground_inverse_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_inverse_material_light;
+			global::RadarIO.Resource.Color.bright_foreground_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_material_dark;
+			global::RadarIO.Resource.Color.bright_foreground_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.bright_foreground_material_light;
+			global::RadarIO.Resource.Color.button_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.button_material_dark;
+			global::RadarIO.Resource.Color.button_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.button_material_light;
+			global::RadarIO.Resource.Color.call_notification_answer_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.call_notification_answer_color;
+			global::RadarIO.Resource.Color.call_notification_decline_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.call_notification_decline_color;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_dark_default = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark_default;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_dark_disabled = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark_disabled;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_dark_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark_focused;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_dark_pressed = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_dark_pressed;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_light;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_light_default = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_light_default;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_light_disabled = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_light_disabled;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_light_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_light_focused;
+			global::RadarIO.Resource.Color.common_google_signin_btn_text_light_pressed = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_text_light_pressed;
+			global::RadarIO.Resource.Color.common_google_signin_btn_tint = global::RadarIO.Xamarin.Android.Sample.Resource.Color.common_google_signin_btn_tint;
+			global::RadarIO.Resource.Color.dim_foreground_disabled_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.dim_foreground_disabled_material_dark;
+			global::RadarIO.Resource.Color.dim_foreground_disabled_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.dim_foreground_disabled_material_light;
+			global::RadarIO.Resource.Color.dim_foreground_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.dim_foreground_material_dark;
+			global::RadarIO.Resource.Color.dim_foreground_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.dim_foreground_material_light;
+			global::RadarIO.Resource.Color.error_color_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.error_color_material_dark;
+			global::RadarIO.Resource.Color.error_color_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.error_color_material_light;
+			global::RadarIO.Resource.Color.foreground_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.foreground_material_dark;
+			global::RadarIO.Resource.Color.foreground_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.foreground_material_light;
+			global::RadarIO.Resource.Color.highlighted_text_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.highlighted_text_material_dark;
+			global::RadarIO.Resource.Color.highlighted_text_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.highlighted_text_material_light;
+			global::RadarIO.Resource.Color.material_blue_grey_800 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_blue_grey_800;
+			global::RadarIO.Resource.Color.material_blue_grey_900 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_blue_grey_900;
+			global::RadarIO.Resource.Color.material_blue_grey_950 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_blue_grey_950;
+			global::RadarIO.Resource.Color.material_deep_teal_200 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_deep_teal_200;
+			global::RadarIO.Resource.Color.material_deep_teal_500 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_deep_teal_500;
+			global::RadarIO.Resource.Color.material_grey_100 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_100;
+			global::RadarIO.Resource.Color.material_grey_300 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_300;
+			global::RadarIO.Resource.Color.material_grey_50 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_50;
+			global::RadarIO.Resource.Color.material_grey_600 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_600;
+			global::RadarIO.Resource.Color.material_grey_800 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_800;
+			global::RadarIO.Resource.Color.material_grey_850 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_850;
+			global::RadarIO.Resource.Color.material_grey_900 = global::RadarIO.Xamarin.Android.Sample.Resource.Color.material_grey_900;
+			global::RadarIO.Resource.Color.notification_action_color_filter = global::RadarIO.Xamarin.Android.Sample.Resource.Color.notification_action_color_filter;
+			global::RadarIO.Resource.Color.notification_icon_bg_color = global::RadarIO.Xamarin.Android.Sample.Resource.Color.notification_icon_bg_color;
+			global::RadarIO.Resource.Color.primary_dark_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_dark_material_dark;
+			global::RadarIO.Resource.Color.primary_dark_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_dark_material_light;
+			global::RadarIO.Resource.Color.primary_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_material_dark;
+			global::RadarIO.Resource.Color.primary_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_material_light;
+			global::RadarIO.Resource.Color.primary_text_default_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_text_default_material_dark;
+			global::RadarIO.Resource.Color.primary_text_default_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_text_default_material_light;
+			global::RadarIO.Resource.Color.primary_text_disabled_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_text_disabled_material_dark;
+			global::RadarIO.Resource.Color.primary_text_disabled_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.primary_text_disabled_material_light;
+			global::RadarIO.Resource.Color.ripple_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.ripple_material_dark;
+			global::RadarIO.Resource.Color.ripple_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.ripple_material_light;
+			global::RadarIO.Resource.Color.secondary_text_default_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.secondary_text_default_material_dark;
+			global::RadarIO.Resource.Color.secondary_text_default_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.secondary_text_default_material_light;
+			global::RadarIO.Resource.Color.secondary_text_disabled_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.secondary_text_disabled_material_dark;
+			global::RadarIO.Resource.Color.secondary_text_disabled_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.secondary_text_disabled_material_light;
+			global::RadarIO.Resource.Color.switch_thumb_disabled_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_disabled_material_dark;
+			global::RadarIO.Resource.Color.switch_thumb_disabled_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_disabled_material_light;
+			global::RadarIO.Resource.Color.switch_thumb_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_material_dark;
+			global::RadarIO.Resource.Color.switch_thumb_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_material_light;
+			global::RadarIO.Resource.Color.switch_thumb_normal_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_normal_material_dark;
+			global::RadarIO.Resource.Color.switch_thumb_normal_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.switch_thumb_normal_material_light;
+			global::RadarIO.Resource.Color.tooltip_background_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Color.tooltip_background_dark;
+			global::RadarIO.Resource.Color.tooltip_background_light = global::RadarIO.Xamarin.Android.Sample.Resource.Color.tooltip_background_light;
+			global::RadarIO.Resource.Dimension.abc_action_bar_content_inset_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::RadarIO.Resource.Dimension.abc_action_bar_default_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_default_height_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_default_padding_end_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_default_padding_start_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_elevation_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_elevation_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_stacked_max_height = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::RadarIO.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::RadarIO.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::RadarIO.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::RadarIO.Resource.Dimension.abc_action_button_min_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_button_min_height_material;
+			global::RadarIO.Resource.Dimension.abc_action_button_min_width_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_button_min_width_material;
+			global::RadarIO.Resource.Dimension.abc_action_button_min_width_overflow_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::RadarIO.Resource.Dimension.abc_alert_dialog_button_bar_height = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::RadarIO.Resource.Dimension.abc_alert_dialog_button_dimen = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::RadarIO.Resource.Dimension.abc_button_inset_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::RadarIO.Resource.Dimension.abc_button_inset_vertical_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_button_inset_vertical_material;
+			global::RadarIO.Resource.Dimension.abc_button_padding_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::RadarIO.Resource.Dimension.abc_button_padding_vertical_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_button_padding_vertical_material;
+			global::RadarIO.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::RadarIO.Resource.Dimension.abc_config_prefDialogWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_config_prefDialogWidth;
+			global::RadarIO.Resource.Dimension.abc_control_corner_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_control_corner_material;
+			global::RadarIO.Resource.Dimension.abc_control_inset_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_control_inset_material;
+			global::RadarIO.Resource.Dimension.abc_control_padding_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_control_padding_material;
+			global::RadarIO.Resource.Dimension.abc_dialog_corner_radius_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::RadarIO.Resource.Dimension.abc_dialog_fixed_height_major = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::RadarIO.Resource.Dimension.abc_dialog_fixed_height_minor = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::RadarIO.Resource.Dimension.abc_dialog_fixed_width_major = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::RadarIO.Resource.Dimension.abc_dialog_fixed_width_minor = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::RadarIO.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::RadarIO.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::RadarIO.Resource.Dimension.abc_dialog_min_width_major = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_min_width_major;
+			global::RadarIO.Resource.Dimension.abc_dialog_min_width_minor = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_min_width_minor;
+			global::RadarIO.Resource.Dimension.abc_dialog_padding_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_padding_material;
+			global::RadarIO.Resource.Dimension.abc_dialog_padding_top_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_padding_top_material;
+			global::RadarIO.Resource.Dimension.abc_dialog_title_divider_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dialog_title_divider_material;
+			global::RadarIO.Resource.Dimension.abc_disabled_alpha_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::RadarIO.Resource.Dimension.abc_disabled_alpha_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::RadarIO.Resource.Dimension.abc_dropdownitem_icon_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::RadarIO.Resource.Dimension.abc_dropdownitem_text_padding_left = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::RadarIO.Resource.Dimension.abc_dropdownitem_text_padding_right = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::RadarIO.Resource.Dimension.abc_edit_text_inset_bottom_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::RadarIO.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::RadarIO.Resource.Dimension.abc_edit_text_inset_top_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::RadarIO.Resource.Dimension.abc_floating_window_z = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_floating_window_z;
+			global::RadarIO.Resource.Dimension.abc_list_item_height_large_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_list_item_height_large_material;
+			global::RadarIO.Resource.Dimension.abc_list_item_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_list_item_height_material;
+			global::RadarIO.Resource.Dimension.abc_list_item_height_small_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_list_item_height_small_material;
+			global::RadarIO.Resource.Dimension.abc_list_item_padding_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::RadarIO.Resource.Dimension.abc_panel_menu_list_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_panel_menu_list_width;
+			global::RadarIO.Resource.Dimension.abc_progress_bar_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_progress_bar_height_material;
+			global::RadarIO.Resource.Dimension.abc_search_view_preferred_height = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_search_view_preferred_height;
+			global::RadarIO.Resource.Dimension.abc_search_view_preferred_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_search_view_preferred_width;
+			global::RadarIO.Resource.Dimension.abc_seekbar_track_background_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::RadarIO.Resource.Dimension.abc_seekbar_track_progress_height_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::RadarIO.Resource.Dimension.abc_select_dialog_padding_start_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::RadarIO.Resource.Dimension.abc_star_big = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_star_big;
+			global::RadarIO.Resource.Dimension.abc_star_medium = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_star_medium;
+			global::RadarIO.Resource.Dimension.abc_star_small = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_star_small;
+			global::RadarIO.Resource.Dimension.abc_switch_padding = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_switch_padding;
+			global::RadarIO.Resource.Dimension.abc_text_size_body_1_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_body_1_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_body_2_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_body_2_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_button_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_button_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_caption_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_caption_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_display_1_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_display_1_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_display_2_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_display_2_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_display_3_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_display_3_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_display_4_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_display_4_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_headline_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_headline_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_large_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_large_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_medium_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_medium_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_menu_header_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_menu_header_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_menu_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_menu_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_small_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_small_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_subhead_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_subhead_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::RadarIO.Resource.Dimension.abc_text_size_title_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_title_material;
+			global::RadarIO.Resource.Dimension.abc_text_size_title_material_toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::RadarIO.Resource.Dimension.compat_button_inset_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::RadarIO.Resource.Dimension.compat_button_inset_vertical_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_inset_vertical_material;
+			global::RadarIO.Resource.Dimension.compat_button_padding_horizontal_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::RadarIO.Resource.Dimension.compat_button_padding_vertical_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_button_padding_vertical_material;
+			global::RadarIO.Resource.Dimension.compat_control_corner_material = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_control_corner_material;
+			global::RadarIO.Resource.Dimension.compat_notification_large_icon_max_height = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::RadarIO.Resource.Dimension.compat_notification_large_icon_max_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::RadarIO.Resource.Dimension.def_drawer_elevation = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.def_drawer_elevation;
+			global::RadarIO.Resource.Dimension.disabled_alpha_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.disabled_alpha_material_dark;
+			global::RadarIO.Resource.Dimension.disabled_alpha_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.disabled_alpha_material_light;
+			global::RadarIO.Resource.Dimension.highlight_alpha_material_colored = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.highlight_alpha_material_colored;
+			global::RadarIO.Resource.Dimension.highlight_alpha_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.highlight_alpha_material_dark;
+			global::RadarIO.Resource.Dimension.highlight_alpha_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.highlight_alpha_material_light;
+			global::RadarIO.Resource.Dimension.hint_alpha_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.hint_alpha_material_dark;
+			global::RadarIO.Resource.Dimension.hint_alpha_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.hint_alpha_material_light;
+			global::RadarIO.Resource.Dimension.hint_pressed_alpha_material_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::RadarIO.Resource.Dimension.hint_pressed_alpha_material_light = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::RadarIO.Resource.Dimension.notification_action_icon_size = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_action_icon_size;
+			global::RadarIO.Resource.Dimension.notification_action_text_size = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_action_text_size;
+			global::RadarIO.Resource.Dimension.notification_big_circle_margin = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_big_circle_margin;
+			global::RadarIO.Resource.Dimension.notification_content_margin_start = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_content_margin_start;
+			global::RadarIO.Resource.Dimension.notification_large_icon_height = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_large_icon_height;
+			global::RadarIO.Resource.Dimension.notification_large_icon_width = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_large_icon_width;
+			global::RadarIO.Resource.Dimension.notification_main_column_padding_top = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_main_column_padding_top;
+			global::RadarIO.Resource.Dimension.notification_media_narrow_margin = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_media_narrow_margin;
+			global::RadarIO.Resource.Dimension.notification_right_icon_size = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_right_icon_size;
+			global::RadarIO.Resource.Dimension.notification_right_side_padding_top = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_right_side_padding_top;
+			global::RadarIO.Resource.Dimension.notification_small_icon_background_padding = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_small_icon_background_padding;
+			global::RadarIO.Resource.Dimension.notification_small_icon_size_as_large = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_small_icon_size_as_large;
+			global::RadarIO.Resource.Dimension.notification_subtext_size = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_subtext_size;
+			global::RadarIO.Resource.Dimension.notification_top_pad = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_top_pad;
+			global::RadarIO.Resource.Dimension.notification_top_pad_large_text = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.notification_top_pad_large_text;
+			global::RadarIO.Resource.Dimension.tooltip_corner_radius = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_corner_radius;
+			global::RadarIO.Resource.Dimension.tooltip_horizontal_padding = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_horizontal_padding;
+			global::RadarIO.Resource.Dimension.tooltip_margin = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_margin;
+			global::RadarIO.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::RadarIO.Resource.Dimension.tooltip_precise_anchor_threshold = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::RadarIO.Resource.Dimension.tooltip_vertical_padding = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_vertical_padding;
+			global::RadarIO.Resource.Dimension.tooltip_y_offset_non_touch = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::RadarIO.Resource.Dimension.tooltip_y_offset_touch = global::RadarIO.Xamarin.Android.Sample.Resource.Dimension.tooltip_y_offset_touch;
+			global::RadarIO.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_action_bar_item_background_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_action_bar_item_background_material;
+			global::RadarIO.Resource.Drawable.abc_btn_borderless_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_borderless_material;
+			global::RadarIO.Resource.Drawable.abc_btn_check_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_check_material;
+			global::RadarIO.Resource.Drawable.abc_btn_check_material_anim = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_check_material_anim;
+			global::RadarIO.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::RadarIO.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::RadarIO.Resource.Drawable.abc_btn_colored_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_colored_material;
+			global::RadarIO.Resource.Drawable.abc_btn_default_mtrl_shape = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::RadarIO.Resource.Drawable.abc_btn_radio_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_radio_material;
+			global::RadarIO.Resource.Drawable.abc_btn_radio_material_anim = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_radio_material_anim;
+			global::RadarIO.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::RadarIO.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::RadarIO.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::RadarIO.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::RadarIO.Resource.Drawable.abc_cab_background_internal_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_cab_background_internal_bg;
+			global::RadarIO.Resource.Drawable.abc_cab_background_top_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_cab_background_top_material;
+			global::RadarIO.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_control_background_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_control_background_material;
+			global::RadarIO.Resource.Drawable.abc_dialog_material_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_dialog_material_background;
+			global::RadarIO.Resource.Drawable.abc_edit_text_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_edit_text_material;
+			global::RadarIO.Resource.Drawable.abc_ic_ab_back_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_ab_back_material;
+			global::RadarIO.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::RadarIO.Resource.Drawable.abc_ic_clear_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_clear_material;
+			global::RadarIO.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_go_search_api_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_go_search_api_material;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_overflow_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_ic_search_api_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_search_api_material;
+			global::RadarIO.Resource.Drawable.abc_ic_voice_search_api_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::RadarIO.Resource.Drawable.abc_item_background_holo_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_item_background_holo_dark;
+			global::RadarIO.Resource.Drawable.abc_item_background_holo_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_item_background_holo_light;
+			global::RadarIO.Resource.Drawable.abc_list_divider_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_divider_material;
+			global::RadarIO.Resource.Drawable.abc_list_divider_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_list_focused_holo = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_focused_holo;
+			global::RadarIO.Resource.Drawable.abc_list_longpressed_holo = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_longpressed_holo;
+			global::RadarIO.Resource.Drawable.abc_list_pressed_holo_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::RadarIO.Resource.Drawable.abc_list_pressed_holo_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_pressed_holo_light;
+			global::RadarIO.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::RadarIO.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::RadarIO.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::RadarIO.Resource.Drawable.abc_list_selector_disabled_holo_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::RadarIO.Resource.Drawable.abc_list_selector_holo_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_holo_dark;
+			global::RadarIO.Resource.Drawable.abc_list_selector_holo_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_list_selector_holo_light;
+			global::RadarIO.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::RadarIO.Resource.Drawable.abc_popup_background_mtrl_mult = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::RadarIO.Resource.Drawable.abc_ratingbar_indicator_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::RadarIO.Resource.Drawable.abc_ratingbar_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ratingbar_material;
+			global::RadarIO.Resource.Drawable.abc_ratingbar_small_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_ratingbar_small_material;
+			global::RadarIO.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::RadarIO.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::RadarIO.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_seekbar_thumb_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_seekbar_thumb_material;
+			global::RadarIO.Resource.Drawable.abc_seekbar_tick_mark_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::RadarIO.Resource.Drawable.abc_seekbar_track_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_seekbar_track_material;
+			global::RadarIO.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::RadarIO.Resource.Drawable.abc_spinner_textfield_background_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::RadarIO.Resource.Drawable.abc_star_black_48dp = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_star_black_48dp;
+			global::RadarIO.Resource.Drawable.abc_star_half_black_48dp = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_star_half_black_48dp;
+			global::RadarIO.Resource.Drawable.abc_switch_thumb_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_switch_thumb_material;
+			global::RadarIO.Resource.Drawable.abc_switch_track_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_tab_indicator_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_tab_indicator_material;
+			global::RadarIO.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::RadarIO.Resource.Drawable.abc_textfield_search_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_textfield_search_material;
+			global::RadarIO.Resource.Drawable.abc_text_cursor_material = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_text_cursor_material;
+			global::RadarIO.Resource.Drawable.abc_text_select_handle_left_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_text_select_handle_left_mtrl;
+			global::RadarIO.Resource.Drawable.abc_text_select_handle_middle_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_text_select_handle_middle_mtrl;
+			global::RadarIO.Resource.Drawable.abc_text_select_handle_right_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_text_select_handle_right_mtrl;
+			global::RadarIO.Resource.Drawable.abc_vector_test = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.abc_vector_test;
+			global::RadarIO.Resource.Drawable.btn_checkbox_checked_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::RadarIO.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::RadarIO.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::RadarIO.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::RadarIO.Resource.Drawable.btn_radio_off_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_radio_off_mtrl;
+			global::RadarIO.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::RadarIO.Resource.Drawable.btn_radio_on_mtrl = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_radio_on_mtrl;
+			global::RadarIO.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
+			global::RadarIO.Resource.Drawable.common_full_open_on_phone = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_full_open_on_phone;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_dark;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_dark_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_dark_focused;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_dark_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_dark_normal;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_disabled = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_disabled;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_light;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_light_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_light_focused;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_light_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_light_normal;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_icon_light_normal_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_icon_light_normal_background;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_dark;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_dark_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_dark_focused;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_dark_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_dark_normal;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_dark_normal_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_dark_normal_background;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_disabled = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_disabled;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_light;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_light_focused = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_light_focused;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_light_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_light_normal;
+			global::RadarIO.Resource.Drawable.common_google_signin_btn_text_light_normal_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.common_google_signin_btn_text_light_normal_background;
+			global::RadarIO.Resource.Drawable.googleg_disabled_color_18 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.googleg_disabled_color_18;
+			global::RadarIO.Resource.Drawable.googleg_standard_color_18 = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.googleg_standard_color_18;
+			global::RadarIO.Resource.Drawable.ic_call_answer = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_answer;
+			global::RadarIO.Resource.Drawable.ic_call_answer_low = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_answer_low;
+			global::RadarIO.Resource.Drawable.ic_call_answer_video = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_answer_video;
+			global::RadarIO.Resource.Drawable.ic_call_answer_video_low = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_answer_video_low;
+			global::RadarIO.Resource.Drawable.ic_call_decline = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_decline;
+			global::RadarIO.Resource.Drawable.ic_call_decline_low = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.ic_call_decline_low;
+			global::RadarIO.Resource.Drawable.notification_action_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_action_background;
+			global::RadarIO.Resource.Drawable.notification_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg;
+			global::RadarIO.Resource.Drawable.notification_bg_low = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg_low;
+			global::RadarIO.Resource.Drawable.notification_bg_low_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg_low_normal;
+			global::RadarIO.Resource.Drawable.notification_bg_low_pressed = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg_low_pressed;
+			global::RadarIO.Resource.Drawable.notification_bg_normal = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg_normal;
+			global::RadarIO.Resource.Drawable.notification_bg_normal_pressed = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_bg_normal_pressed;
+			global::RadarIO.Resource.Drawable.notification_icon_background = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_icon_background;
+			global::RadarIO.Resource.Drawable.notification_template_icon_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_template_icon_bg;
+			global::RadarIO.Resource.Drawable.notification_template_icon_low_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_template_icon_low_bg;
+			global::RadarIO.Resource.Drawable.notification_tile_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notification_tile_bg;
+			global::RadarIO.Resource.Drawable.notify_panel_notification_icon_bg = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::RadarIO.Resource.Drawable.test_level_drawable = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.test_level_drawable;
+			global::RadarIO.Resource.Drawable.tooltip_frame_dark = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.tooltip_frame_dark;
+			global::RadarIO.Resource.Drawable.tooltip_frame_light = global::RadarIO.Xamarin.Android.Sample.Resource.Drawable.tooltip_frame_light;
+			global::RadarIO.Resource.Id.accessibility_action_clickable_span = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_action_clickable_span;
+			global::RadarIO.Resource.Id.accessibility_custom_action_0 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_0;
+			global::RadarIO.Resource.Id.accessibility_custom_action_1 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_1;
+			global::RadarIO.Resource.Id.accessibility_custom_action_10 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_10;
+			global::RadarIO.Resource.Id.accessibility_custom_action_11 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_11;
+			global::RadarIO.Resource.Id.accessibility_custom_action_12 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_12;
+			global::RadarIO.Resource.Id.accessibility_custom_action_13 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_13;
+			global::RadarIO.Resource.Id.accessibility_custom_action_14 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_14;
+			global::RadarIO.Resource.Id.accessibility_custom_action_15 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_15;
+			global::RadarIO.Resource.Id.accessibility_custom_action_16 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_16;
+			global::RadarIO.Resource.Id.accessibility_custom_action_17 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_17;
+			global::RadarIO.Resource.Id.accessibility_custom_action_18 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_18;
+			global::RadarIO.Resource.Id.accessibility_custom_action_19 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_19;
+			global::RadarIO.Resource.Id.accessibility_custom_action_2 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_2;
+			global::RadarIO.Resource.Id.accessibility_custom_action_20 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_20;
+			global::RadarIO.Resource.Id.accessibility_custom_action_21 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_21;
+			global::RadarIO.Resource.Id.accessibility_custom_action_22 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_22;
+			global::RadarIO.Resource.Id.accessibility_custom_action_23 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_23;
+			global::RadarIO.Resource.Id.accessibility_custom_action_24 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_24;
+			global::RadarIO.Resource.Id.accessibility_custom_action_25 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_25;
+			global::RadarIO.Resource.Id.accessibility_custom_action_26 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_26;
+			global::RadarIO.Resource.Id.accessibility_custom_action_27 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_27;
+			global::RadarIO.Resource.Id.accessibility_custom_action_28 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_28;
+			global::RadarIO.Resource.Id.accessibility_custom_action_29 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_29;
+			global::RadarIO.Resource.Id.accessibility_custom_action_3 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_3;
+			global::RadarIO.Resource.Id.accessibility_custom_action_30 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_30;
+			global::RadarIO.Resource.Id.accessibility_custom_action_31 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_31;
+			global::RadarIO.Resource.Id.accessibility_custom_action_4 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_4;
+			global::RadarIO.Resource.Id.accessibility_custom_action_5 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_5;
+			global::RadarIO.Resource.Id.accessibility_custom_action_6 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_6;
+			global::RadarIO.Resource.Id.accessibility_custom_action_7 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_7;
+			global::RadarIO.Resource.Id.accessibility_custom_action_8 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_8;
+			global::RadarIO.Resource.Id.accessibility_custom_action_9 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.accessibility_custom_action_9;
+			global::RadarIO.Resource.Id.actions = global::RadarIO.Xamarin.Android.Sample.Resource.Id.actions;
+			global::RadarIO.Resource.Id.action_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar;
+			global::RadarIO.Resource.Id.action_bar_activity_content = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_activity_content;
+			global::RadarIO.Resource.Id.action_bar_container = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_container;
+			global::RadarIO.Resource.Id.action_bar_root = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_root;
+			global::RadarIO.Resource.Id.action_bar_spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_spinner;
+			global::RadarIO.Resource.Id.action_bar_subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_subtitle;
+			global::RadarIO.Resource.Id.action_bar_title = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_bar_title;
+			global::RadarIO.Resource.Id.action_container = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_container;
+			global::RadarIO.Resource.Id.action_context_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_context_bar;
+			global::RadarIO.Resource.Id.action_divider = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_divider;
+			global::RadarIO.Resource.Id.action_image = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_image;
+			global::RadarIO.Resource.Id.action_menu_divider = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_menu_divider;
+			global::RadarIO.Resource.Id.action_menu_presenter = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_menu_presenter;
+			global::RadarIO.Resource.Id.action_mode_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_mode_bar;
+			global::RadarIO.Resource.Id.action_mode_bar_stub = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_mode_bar_stub;
+			global::RadarIO.Resource.Id.action_mode_close_button = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_mode_close_button;
+			global::RadarIO.Resource.Id.action_text = global::RadarIO.Xamarin.Android.Sample.Resource.Id.action_text;
+			global::RadarIO.Resource.Id.activity_chooser_view_content = global::RadarIO.Xamarin.Android.Sample.Resource.Id.activity_chooser_view_content;
+			global::RadarIO.Resource.Id.add = global::RadarIO.Xamarin.Android.Sample.Resource.Id.add;
+			global::RadarIO.Resource.Id.adjust_height = global::RadarIO.Xamarin.Android.Sample.Resource.Id.adjust_height;
+			global::RadarIO.Resource.Id.adjust_width = global::RadarIO.Xamarin.Android.Sample.Resource.Id.adjust_width;
+			global::RadarIO.Resource.Id.alertTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Id.alertTitle;
+			global::RadarIO.Resource.Id.ALT = global::RadarIO.Xamarin.Android.Sample.Resource.Id.ALT;
+			global::RadarIO.Resource.Id.always = global::RadarIO.Xamarin.Android.Sample.Resource.Id.always;
+			global::RadarIO.Resource.Id.async = global::RadarIO.Xamarin.Android.Sample.Resource.Id.async;
+			global::RadarIO.Resource.Id.auto = global::RadarIO.Xamarin.Android.Sample.Resource.Id.auto;
+			global::RadarIO.Resource.Id.beginning = global::RadarIO.Xamarin.Android.Sample.Resource.Id.beginning;
+			global::RadarIO.Resource.Id.blocking = global::RadarIO.Xamarin.Android.Sample.Resource.Id.blocking;
+			global::RadarIO.Resource.Id.bottom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.bottom;
+			global::RadarIO.Resource.Id.buttonPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.buttonPanel;
+			global::RadarIO.Resource.Id.center_vertical = global::RadarIO.Xamarin.Android.Sample.Resource.Id.center_vertical;
+			global::RadarIO.Resource.Id.checkbox = global::RadarIO.Xamarin.Android.Sample.Resource.Id.checkbox;
+			global::RadarIO.Resource.Id.@checked = global::RadarIO.Xamarin.Android.Sample.Resource.Id.@checked;
+			global::RadarIO.Resource.Id.chronometer = global::RadarIO.Xamarin.Android.Sample.Resource.Id.chronometer;
+			global::RadarIO.Resource.Id.collapseActionView = global::RadarIO.Xamarin.Android.Sample.Resource.Id.collapseActionView;
+			global::RadarIO.Resource.Id.content = global::RadarIO.Xamarin.Android.Sample.Resource.Id.content;
+			global::RadarIO.Resource.Id.contentPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.contentPanel;
+			global::RadarIO.Resource.Id.CTRL = global::RadarIO.Xamarin.Android.Sample.Resource.Id.CTRL;
+			global::RadarIO.Resource.Id.custom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.custom;
+			global::RadarIO.Resource.Id.customPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.customPanel;
+			global::RadarIO.Resource.Id.dark = global::RadarIO.Xamarin.Android.Sample.Resource.Id.dark;
+			global::RadarIO.Resource.Id.decor_content_parent = global::RadarIO.Xamarin.Android.Sample.Resource.Id.decor_content_parent;
+			global::RadarIO.Resource.Id.default_activity_button = global::RadarIO.Xamarin.Android.Sample.Resource.Id.default_activity_button;
+			global::RadarIO.Resource.Id.dialog_button = global::RadarIO.Xamarin.Android.Sample.Resource.Id.dialog_button;
+			global::RadarIO.Resource.Id.disableHome = global::RadarIO.Xamarin.Android.Sample.Resource.Id.disableHome;
+			global::RadarIO.Resource.Id.edit_query = global::RadarIO.Xamarin.Android.Sample.Resource.Id.edit_query;
+			global::RadarIO.Resource.Id.end = global::RadarIO.Xamarin.Android.Sample.Resource.Id.end;
+			global::RadarIO.Resource.Id.expanded_menu = global::RadarIO.Xamarin.Android.Sample.Resource.Id.expanded_menu;
+			global::RadarIO.Resource.Id.expand_activities_button = global::RadarIO.Xamarin.Android.Sample.Resource.Id.expand_activities_button;
+			global::RadarIO.Resource.Id.forever = global::RadarIO.Xamarin.Android.Sample.Resource.Id.forever;
+			global::RadarIO.Resource.Id.fragment_container_view_tag = global::RadarIO.Xamarin.Android.Sample.Resource.Id.fragment_container_view_tag;
+			global::RadarIO.Resource.Id.FUNCTION = global::RadarIO.Xamarin.Android.Sample.Resource.Id.FUNCTION;
+			global::RadarIO.Resource.Id.group_divider = global::RadarIO.Xamarin.Android.Sample.Resource.Id.group_divider;
+			global::RadarIO.Resource.Id.home = global::RadarIO.Xamarin.Android.Sample.Resource.Id.home;
+			global::RadarIO.Resource.Id.homeAsUp = global::RadarIO.Xamarin.Android.Sample.Resource.Id.homeAsUp;
+			global::RadarIO.Resource.Id.icon = global::RadarIO.Xamarin.Android.Sample.Resource.Id.icon;
+			global::RadarIO.Resource.Id.icon_group = global::RadarIO.Xamarin.Android.Sample.Resource.Id.icon_group;
+			global::RadarIO.Resource.Id.icon_only = global::RadarIO.Xamarin.Android.Sample.Resource.Id.icon_only;
+			global::RadarIO.Resource.Id.ifRoom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.ifRoom;
+			global::RadarIO.Resource.Id.image = global::RadarIO.Xamarin.Android.Sample.Resource.Id.image;
+			global::RadarIO.Resource.Id.info = global::RadarIO.Xamarin.Android.Sample.Resource.Id.info;
+			global::RadarIO.Resource.Id.italic = global::RadarIO.Xamarin.Android.Sample.Resource.Id.italic;
+			global::RadarIO.Resource.Id.light = global::RadarIO.Xamarin.Android.Sample.Resource.Id.light;
+			global::RadarIO.Resource.Id.line1 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.line1;
+			global::RadarIO.Resource.Id.line3 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.line3;
+			global::RadarIO.Resource.Id.listMode = global::RadarIO.Xamarin.Android.Sample.Resource.Id.listMode;
+			global::RadarIO.Resource.Id.list_item = global::RadarIO.Xamarin.Android.Sample.Resource.Id.list_item;
+			global::RadarIO.Resource.Id.message = global::RadarIO.Xamarin.Android.Sample.Resource.Id.message;
+			global::RadarIO.Resource.Id.META = global::RadarIO.Xamarin.Android.Sample.Resource.Id.META;
+			global::RadarIO.Resource.Id.middle = global::RadarIO.Xamarin.Android.Sample.Resource.Id.middle;
+			global::RadarIO.Resource.Id.multiply = global::RadarIO.Xamarin.Android.Sample.Resource.Id.multiply;
+			global::RadarIO.Resource.Id.never = global::RadarIO.Xamarin.Android.Sample.Resource.Id.never;
+			global::RadarIO.Resource.Id.none = global::RadarIO.Xamarin.Android.Sample.Resource.Id.none;
+			global::RadarIO.Resource.Id.normal = global::RadarIO.Xamarin.Android.Sample.Resource.Id.normal;
+			global::RadarIO.Resource.Id.notification_background = global::RadarIO.Xamarin.Android.Sample.Resource.Id.notification_background;
+			global::RadarIO.Resource.Id.notification_main_column = global::RadarIO.Xamarin.Android.Sample.Resource.Id.notification_main_column;
+			global::RadarIO.Resource.Id.notification_main_column_container = global::RadarIO.Xamarin.Android.Sample.Resource.Id.notification_main_column_container;
+			global::RadarIO.Resource.Id.off = global::RadarIO.Xamarin.Android.Sample.Resource.Id.off;
+			global::RadarIO.Resource.Id.on = global::RadarIO.Xamarin.Android.Sample.Resource.Id.on;
+			global::RadarIO.Resource.Id.parentPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.parentPanel;
+			global::RadarIO.Resource.Id.progress_circular = global::RadarIO.Xamarin.Android.Sample.Resource.Id.progress_circular;
+			global::RadarIO.Resource.Id.progress_horizontal = global::RadarIO.Xamarin.Android.Sample.Resource.Id.progress_horizontal;
+			global::RadarIO.Resource.Id.radio = global::RadarIO.Xamarin.Android.Sample.Resource.Id.radio;
+			global::RadarIO.Resource.Id.report_drawn = global::RadarIO.Xamarin.Android.Sample.Resource.Id.report_drawn;
+			global::RadarIO.Resource.Id.right_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Id.right_icon;
+			global::RadarIO.Resource.Id.right_side = global::RadarIO.Xamarin.Android.Sample.Resource.Id.right_side;
+			global::RadarIO.Resource.Id.screen = global::RadarIO.Xamarin.Android.Sample.Resource.Id.screen;
+			global::RadarIO.Resource.Id.scrollIndicatorDown = global::RadarIO.Xamarin.Android.Sample.Resource.Id.scrollIndicatorDown;
+			global::RadarIO.Resource.Id.scrollIndicatorUp = global::RadarIO.Xamarin.Android.Sample.Resource.Id.scrollIndicatorUp;
+			global::RadarIO.Resource.Id.scrollView = global::RadarIO.Xamarin.Android.Sample.Resource.Id.scrollView;
+			global::RadarIO.Resource.Id.search_badge = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_badge;
+			global::RadarIO.Resource.Id.search_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_bar;
+			global::RadarIO.Resource.Id.search_button = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_button;
+			global::RadarIO.Resource.Id.search_close_btn = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_close_btn;
+			global::RadarIO.Resource.Id.search_edit_frame = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_edit_frame;
+			global::RadarIO.Resource.Id.search_go_btn = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_go_btn;
+			global::RadarIO.Resource.Id.search_mag_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_mag_icon;
+			global::RadarIO.Resource.Id.search_plate = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_plate;
+			global::RadarIO.Resource.Id.search_src_text = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_src_text;
+			global::RadarIO.Resource.Id.search_voice_btn = global::RadarIO.Xamarin.Android.Sample.Resource.Id.search_voice_btn;
+			global::RadarIO.Resource.Id.select_dialog_listview = global::RadarIO.Xamarin.Android.Sample.Resource.Id.select_dialog_listview;
+			global::RadarIO.Resource.Id.SHIFT = global::RadarIO.Xamarin.Android.Sample.Resource.Id.SHIFT;
+			global::RadarIO.Resource.Id.shortcut = global::RadarIO.Xamarin.Android.Sample.Resource.Id.shortcut;
+			global::RadarIO.Resource.Id.showCustom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.showCustom;
+			global::RadarIO.Resource.Id.showHome = global::RadarIO.Xamarin.Android.Sample.Resource.Id.showHome;
+			global::RadarIO.Resource.Id.showTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Id.showTitle;
+			global::RadarIO.Resource.Id.spacer = global::RadarIO.Xamarin.Android.Sample.Resource.Id.spacer;
+			global::RadarIO.Resource.Id.special_effects_controller_view_tag = global::RadarIO.Xamarin.Android.Sample.Resource.Id.special_effects_controller_view_tag;
+			global::RadarIO.Resource.Id.split_action_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Id.split_action_bar;
+			global::RadarIO.Resource.Id.src_atop = global::RadarIO.Xamarin.Android.Sample.Resource.Id.src_atop;
+			global::RadarIO.Resource.Id.src_in = global::RadarIO.Xamarin.Android.Sample.Resource.Id.src_in;
+			global::RadarIO.Resource.Id.src_over = global::RadarIO.Xamarin.Android.Sample.Resource.Id.src_over;
+			global::RadarIO.Resource.Id.standard = global::RadarIO.Xamarin.Android.Sample.Resource.Id.standard;
+			global::RadarIO.Resource.Id.submenuarrow = global::RadarIO.Xamarin.Android.Sample.Resource.Id.submenuarrow;
+			global::RadarIO.Resource.Id.submit_area = global::RadarIO.Xamarin.Android.Sample.Resource.Id.submit_area;
+			global::RadarIO.Resource.Id.SYM = global::RadarIO.Xamarin.Android.Sample.Resource.Id.SYM;
+			global::RadarIO.Resource.Id.tabMode = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tabMode;
+			global::RadarIO.Resource.Id.tag_accessibility_actions = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_accessibility_actions;
+			global::RadarIO.Resource.Id.tag_accessibility_clickable_spans = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_accessibility_clickable_spans;
+			global::RadarIO.Resource.Id.tag_accessibility_heading = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_accessibility_heading;
+			global::RadarIO.Resource.Id.tag_accessibility_pane_title = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_accessibility_pane_title;
+			global::RadarIO.Resource.Id.tag_on_apply_window_listener = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_on_apply_window_listener;
+			global::RadarIO.Resource.Id.tag_on_receive_content_listener = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_on_receive_content_listener;
+			global::RadarIO.Resource.Id.tag_on_receive_content_mime_types = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_on_receive_content_mime_types;
+			global::RadarIO.Resource.Id.tag_screen_reader_focusable = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_screen_reader_focusable;
+			global::RadarIO.Resource.Id.tag_state_description = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_state_description;
+			global::RadarIO.Resource.Id.tag_transition_group = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_transition_group;
+			global::RadarIO.Resource.Id.tag_unhandled_key_event_manager = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_unhandled_key_event_manager;
+			global::RadarIO.Resource.Id.tag_unhandled_key_listeners = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_unhandled_key_listeners;
+			global::RadarIO.Resource.Id.tag_window_insets_animation_callback = global::RadarIO.Xamarin.Android.Sample.Resource.Id.tag_window_insets_animation_callback;
+			global::RadarIO.Resource.Id.text = global::RadarIO.Xamarin.Android.Sample.Resource.Id.text;
+			global::RadarIO.Resource.Id.text2 = global::RadarIO.Xamarin.Android.Sample.Resource.Id.text2;
+			global::RadarIO.Resource.Id.textSpacerNoButtons = global::RadarIO.Xamarin.Android.Sample.Resource.Id.textSpacerNoButtons;
+			global::RadarIO.Resource.Id.textSpacerNoTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Id.textSpacerNoTitle;
+			global::RadarIO.Resource.Id.time = global::RadarIO.Xamarin.Android.Sample.Resource.Id.time;
+			global::RadarIO.Resource.Id.title = global::RadarIO.Xamarin.Android.Sample.Resource.Id.title;
+			global::RadarIO.Resource.Id.titleDividerNoCustom = global::RadarIO.Xamarin.Android.Sample.Resource.Id.titleDividerNoCustom;
+			global::RadarIO.Resource.Id.title_template = global::RadarIO.Xamarin.Android.Sample.Resource.Id.title_template;
+			global::RadarIO.Resource.Id.top = global::RadarIO.Xamarin.Android.Sample.Resource.Id.top;
+			global::RadarIO.Resource.Id.topPanel = global::RadarIO.Xamarin.Android.Sample.Resource.Id.topPanel;
+			global::RadarIO.Resource.Id.@unchecked = global::RadarIO.Xamarin.Android.Sample.Resource.Id.@unchecked;
+			global::RadarIO.Resource.Id.uniform = global::RadarIO.Xamarin.Android.Sample.Resource.Id.uniform;
+			global::RadarIO.Resource.Id.up = global::RadarIO.Xamarin.Android.Sample.Resource.Id.up;
+			global::RadarIO.Resource.Id.useLogo = global::RadarIO.Xamarin.Android.Sample.Resource.Id.useLogo;
+			global::RadarIO.Resource.Id.view_tree_lifecycle_owner = global::RadarIO.Xamarin.Android.Sample.Resource.Id.view_tree_lifecycle_owner;
+			global::RadarIO.Resource.Id.view_tree_on_back_pressed_dispatcher_owner = global::RadarIO.Xamarin.Android.Sample.Resource.Id.view_tree_on_back_pressed_dispatcher_owner;
+			global::RadarIO.Resource.Id.view_tree_saved_state_registry_owner = global::RadarIO.Xamarin.Android.Sample.Resource.Id.view_tree_saved_state_registry_owner;
+			global::RadarIO.Resource.Id.view_tree_view_model_store_owner = global::RadarIO.Xamarin.Android.Sample.Resource.Id.view_tree_view_model_store_owner;
+			global::RadarIO.Resource.Id.visible_removing_fragment_view_tag = global::RadarIO.Xamarin.Android.Sample.Resource.Id.visible_removing_fragment_view_tag;
+			global::RadarIO.Resource.Id.wide = global::RadarIO.Xamarin.Android.Sample.Resource.Id.wide;
+			global::RadarIO.Resource.Id.withText = global::RadarIO.Xamarin.Android.Sample.Resource.Id.withText;
+			global::RadarIO.Resource.Id.wrap_content = global::RadarIO.Xamarin.Android.Sample.Resource.Id.wrap_content;
+			global::RadarIO.Resource.Integer.abc_config_activityDefaultDur = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.abc_config_activityDefaultDur;
+			global::RadarIO.Resource.Integer.abc_config_activityShortDur = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.abc_config_activityShortDur;
+			global::RadarIO.Resource.Integer.cancel_button_image_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.cancel_button_image_alpha;
+			global::RadarIO.Resource.Integer.config_tooltipAnimTime = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.config_tooltipAnimTime;
+			global::RadarIO.Resource.Integer.google_play_services_version = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.google_play_services_version;
+			global::RadarIO.Resource.Integer.status_bar_notification_info_maxnum = global::RadarIO.Xamarin.Android.Sample.Resource.Integer.status_bar_notification_info_maxnum;
+			global::RadarIO.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::RadarIO.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::RadarIO.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::RadarIO.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::RadarIO.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::RadarIO.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::RadarIO.Resource.Interpolator.fast_out_slow_in = global::RadarIO.Xamarin.Android.Sample.Resource.Interpolator.fast_out_slow_in;
+			global::RadarIO.Resource.Layout.abc_action_bar_title_item = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_bar_title_item;
+			global::RadarIO.Resource.Layout.abc_action_bar_up_container = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_bar_up_container;
+			global::RadarIO.Resource.Layout.abc_action_menu_item_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_menu_item_layout;
+			global::RadarIO.Resource.Layout.abc_action_menu_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_menu_layout;
+			global::RadarIO.Resource.Layout.abc_action_mode_bar = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_mode_bar;
+			global::RadarIO.Resource.Layout.abc_action_mode_close_item_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_action_mode_close_item_material;
+			global::RadarIO.Resource.Layout.abc_activity_chooser_view = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_activity_chooser_view;
+			global::RadarIO.Resource.Layout.abc_activity_chooser_view_list_item = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::RadarIO.Resource.Layout.abc_alert_dialog_button_bar_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::RadarIO.Resource.Layout.abc_alert_dialog_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_alert_dialog_material;
+			global::RadarIO.Resource.Layout.abc_alert_dialog_title_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_alert_dialog_title_material;
+			global::RadarIO.Resource.Layout.abc_cascading_menu_item_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_cascading_menu_item_layout;
+			global::RadarIO.Resource.Layout.abc_dialog_title_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_dialog_title_material;
+			global::RadarIO.Resource.Layout.abc_expanded_menu_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_expanded_menu_layout;
+			global::RadarIO.Resource.Layout.abc_list_menu_item_checkbox = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_list_menu_item_checkbox;
+			global::RadarIO.Resource.Layout.abc_list_menu_item_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_list_menu_item_icon;
+			global::RadarIO.Resource.Layout.abc_list_menu_item_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_list_menu_item_layout;
+			global::RadarIO.Resource.Layout.abc_list_menu_item_radio = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_list_menu_item_radio;
+			global::RadarIO.Resource.Layout.abc_popup_menu_header_item_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::RadarIO.Resource.Layout.abc_popup_menu_item_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_popup_menu_item_layout;
+			global::RadarIO.Resource.Layout.abc_screen_content_include = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_screen_content_include;
+			global::RadarIO.Resource.Layout.abc_screen_simple = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_screen_simple;
+			global::RadarIO.Resource.Layout.abc_screen_simple_overlay_action_mode = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::RadarIO.Resource.Layout.abc_screen_toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_screen_toolbar;
+			global::RadarIO.Resource.Layout.abc_search_dropdown_item_icons_2line = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::RadarIO.Resource.Layout.abc_search_view = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_search_view;
+			global::RadarIO.Resource.Layout.abc_select_dialog_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_select_dialog_material;
+			global::RadarIO.Resource.Layout.abc_tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.abc_tooltip;
+			global::RadarIO.Resource.Layout.custom_dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.custom_dialog;
+			global::RadarIO.Resource.Layout.notification_action = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_action;
+			global::RadarIO.Resource.Layout.notification_action_tombstone = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_action_tombstone;
+			global::RadarIO.Resource.Layout.notification_template_custom_big = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_template_custom_big;
+			global::RadarIO.Resource.Layout.notification_template_icon_group = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_template_icon_group;
+			global::RadarIO.Resource.Layout.notification_template_part_chronometer = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_template_part_chronometer;
+			global::RadarIO.Resource.Layout.notification_template_part_time = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.notification_template_part_time;
+			global::RadarIO.Resource.Layout.select_dialog_item_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.select_dialog_item_material;
+			global::RadarIO.Resource.Layout.select_dialog_multichoice_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.select_dialog_multichoice_material;
+			global::RadarIO.Resource.Layout.select_dialog_singlechoice_material = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.select_dialog_singlechoice_material;
+			global::RadarIO.Resource.Layout.support_simple_spinner_dropdown_item = global::RadarIO.Xamarin.Android.Sample.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::RadarIO.Resource.String.abc_action_bar_home_description = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_action_bar_home_description;
+			global::RadarIO.Resource.String.abc_action_bar_up_description = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_action_bar_up_description;
+			global::RadarIO.Resource.String.abc_action_menu_overflow_description = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_action_menu_overflow_description;
+			global::RadarIO.Resource.String.abc_action_mode_done = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_action_mode_done;
+			global::RadarIO.Resource.String.abc_activitychooserview_choose_application = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_activitychooserview_choose_application;
+			global::RadarIO.Resource.String.abc_activity_chooser_view_see_all = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_activity_chooser_view_see_all;
+			global::RadarIO.Resource.String.abc_capital_off = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_capital_off;
+			global::RadarIO.Resource.String.abc_capital_on = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_capital_on;
+			global::RadarIO.Resource.String.abc_menu_alt_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_alt_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_ctrl_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_delete_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_delete_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_enter_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_enter_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_function_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_function_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_meta_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_meta_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_shift_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_shift_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_space_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_space_shortcut_label;
+			global::RadarIO.Resource.String.abc_menu_sym_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_menu_sym_shortcut_label;
+			global::RadarIO.Resource.String.abc_prepend_shortcut_label = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_prepend_shortcut_label;
+			global::RadarIO.Resource.String.abc_searchview_description_clear = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_searchview_description_clear;
+			global::RadarIO.Resource.String.abc_searchview_description_query = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_searchview_description_query;
+			global::RadarIO.Resource.String.abc_searchview_description_search = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_searchview_description_search;
+			global::RadarIO.Resource.String.abc_searchview_description_submit = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_searchview_description_submit;
+			global::RadarIO.Resource.String.abc_searchview_description_voice = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_searchview_description_voice;
+			global::RadarIO.Resource.String.abc_search_hint = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_search_hint;
+			global::RadarIO.Resource.String.abc_shareactionprovider_share_with = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_shareactionprovider_share_with;
+			global::RadarIO.Resource.String.abc_shareactionprovider_share_with_application = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_shareactionprovider_share_with_application;
+			global::RadarIO.Resource.String.abc_toolbar_collapse_description = global::RadarIO.Xamarin.Android.Sample.Resource.String.abc_toolbar_collapse_description;
+			global::RadarIO.Resource.String.androidx_startup = global::RadarIO.Xamarin.Android.Sample.Resource.String.androidx_startup;
+			global::RadarIO.Resource.String.app_name = global::RadarIO.Xamarin.Android.Sample.Resource.String.app_name;
+			global::RadarIO.Resource.String.call_notification_answer_action = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_answer_action;
+			global::RadarIO.Resource.String.call_notification_answer_video_action = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_answer_video_action;
+			global::RadarIO.Resource.String.call_notification_decline_action = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_decline_action;
+			global::RadarIO.Resource.String.call_notification_hang_up_action = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_hang_up_action;
+			global::RadarIO.Resource.String.call_notification_incoming_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_incoming_text;
+			global::RadarIO.Resource.String.call_notification_ongoing_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_ongoing_text;
+			global::RadarIO.Resource.String.call_notification_screening_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.call_notification_screening_text;
+			global::RadarIO.Resource.String.common_google_play_services_enable_button = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_enable_button;
+			global::RadarIO.Resource.String.common_google_play_services_enable_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_enable_text;
+			global::RadarIO.Resource.String.common_google_play_services_enable_title = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_enable_title;
+			global::RadarIO.Resource.String.common_google_play_services_install_button = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_install_button;
+			global::RadarIO.Resource.String.common_google_play_services_install_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_install_text;
+			global::RadarIO.Resource.String.common_google_play_services_install_title = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_install_title;
+			global::RadarIO.Resource.String.common_google_play_services_notification_channel_name = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_notification_channel_name;
+			global::RadarIO.Resource.String.common_google_play_services_notification_ticker = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_notification_ticker;
+			global::RadarIO.Resource.String.common_google_play_services_unknown_issue = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_unknown_issue;
+			global::RadarIO.Resource.String.common_google_play_services_unsupported_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_unsupported_text;
+			global::RadarIO.Resource.String.common_google_play_services_update_button = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_update_button;
+			global::RadarIO.Resource.String.common_google_play_services_update_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_update_text;
+			global::RadarIO.Resource.String.common_google_play_services_update_title = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_update_title;
+			global::RadarIO.Resource.String.common_google_play_services_updating_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_updating_text;
+			global::RadarIO.Resource.String.common_google_play_services_wear_update_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_google_play_services_wear_update_text;
+			global::RadarIO.Resource.String.common_open_on_phone = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_open_on_phone;
+			global::RadarIO.Resource.String.common_signin_button_text = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_signin_button_text;
+			global::RadarIO.Resource.String.common_signin_button_text_long = global::RadarIO.Xamarin.Android.Sample.Resource.String.common_signin_button_text_long;
+			global::RadarIO.Resource.String.hello = global::RadarIO.Xamarin.Android.Sample.Resource.String.hello;
+			global::RadarIO.Resource.String.search_menu_title = global::RadarIO.Xamarin.Android.Sample.Resource.String.search_menu_title;
+			global::RadarIO.Resource.String.status_bar_notification_info_overflow = global::RadarIO.Xamarin.Android.Sample.Resource.String.status_bar_notification_info_overflow;
+			global::RadarIO.Resource.Style.AlertDialog_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.AlertDialog_AppCompat;
+			global::RadarIO.Resource.Style.AlertDialog_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.AlertDialog_AppCompat_Light;
+			global::RadarIO.Resource.Style.Animation_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Animation_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Animation_AppCompat_DropDownUp = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::RadarIO.Resource.Style.Animation_AppCompat_Tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Animation_AppCompat_Tooltip;
+			global::RadarIO.Resource.Style.Base_AlertDialog_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_AlertDialog_AppCompat;
+			global::RadarIO.Resource.Style.Base_AlertDialog_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_Animation_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::RadarIO.Resource.Style.Base_Animation_AppCompat_Tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::RadarIO.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::RadarIO.Resource.Style.Base_DialogWindowTitle_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::RadarIO.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::RadarIO.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::RadarIO.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::RadarIO.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::RadarIO.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::RadarIO.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::RadarIO.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_V21_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V21_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_V21_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::RadarIO.Resource.Style.Base_V22_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V22_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V22_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V23_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V23_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V23_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V26_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V26_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V26_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::RadarIO.Resource.Style.Base_V28_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V28_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V28_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_V7_Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Theme_AppCompat;
+			global::RadarIO.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Base_V7_Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::RadarIO.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::RadarIO.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::RadarIO.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActionMode = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Button_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_EditText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ImageButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ListView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_RatingBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_SearchView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_SeekBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_TextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_TextView;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::RadarIO.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::RadarIO.Resource.Style.Platform_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_AppCompat;
+			global::RadarIO.Resource.Style.Platform_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_AppCompat_Light;
+			global::RadarIO.Resource.Style.Platform_ThemeOverlay_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::RadarIO.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::RadarIO.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::RadarIO.Resource.Style.Platform_V21_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_V21_AppCompat;
+			global::RadarIO.Resource.Style.Platform_V21_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_V21_AppCompat_Light;
+			global::RadarIO.Resource.Style.Platform_V25_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_V25_AppCompat;
+			global::RadarIO.Resource.Style.Platform_V25_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_V25_AppCompat_Light;
+			global::RadarIO.Resource.Style.Platform_Widget_AppCompat_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::RadarIO.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::RadarIO.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::RadarIO.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::RadarIO.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Body1 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Body2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Button;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Caption = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Display1 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Display2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Display3 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Display4 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Headline = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Large;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Medium = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Small;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Subhead = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Title;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Tooltip = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::RadarIO.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::RadarIO.Resource.Style.TextAppearance_Compat_Notification = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Compat_Notification;
+			global::RadarIO.Resource.Style.TextAppearance_Compat_Notification_Info = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::RadarIO.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::RadarIO.Resource.Style.TextAppearance_Compat_Notification_Time = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::RadarIO.Resource.Style.TextAppearance_Compat_Notification_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::RadarIO.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::RadarIO.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::RadarIO.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::RadarIO.Xamarin.Android.Sample.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_Dark = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::RadarIO.Resource.Style.ThemeOverlay_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::RadarIO.Resource.Style.Theme_AppCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat;
+			global::RadarIO.Resource.Style.Theme_AppCompat_CompactMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Dialog;
+			global::RadarIO.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Empty = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Empty;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_Dialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::RadarIO.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::RadarIO.Resource.Style.Theme_AppCompat_NoActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionButton;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActionMode = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActionMode;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ActivityChooserView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ButtonBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button_Borderless = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button_Colored = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Button_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Button_Small;
+			global::RadarIO.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::RadarIO.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::RadarIO.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::RadarIO.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::RadarIO.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::RadarIO.Resource.Style.Widget_AppCompat_EditText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_EditText;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ImageButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ImageButton;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionButton = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_SearchView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ListMenuView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ListPopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ListView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ListView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ListView_DropDown = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ListView_Menu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::RadarIO.Resource.Style.Widget_AppCompat_PopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::RadarIO.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_PopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ProgressBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::RadarIO.Resource.Style.Widget_AppCompat_RatingBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_RatingBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::RadarIO.Resource.Style.Widget_AppCompat_RatingBar_Small = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::RadarIO.Resource.Style.Widget_AppCompat_SearchView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_SearchView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_SeekBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_SeekBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Spinner;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::RadarIO.Resource.Style.Widget_AppCompat_TextView = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_TextView;
+			global::RadarIO.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Toolbar;
+			global::RadarIO.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::RadarIO.Resource.Style.Widget_Compat_NotificationActionContainer = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::RadarIO.Resource.Style.Widget_Compat_NotificationActionText = global::RadarIO.Xamarin.Android.Sample.Resource.Style.Widget_Compat_NotificationActionText;
+			global::RadarIO.Resource.Styleable.ActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar;
+			global::RadarIO.Resource.Styleable.ActionBarLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBarLayout;
+			global::RadarIO.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::RadarIO.Resource.Styleable.ActionBar_background = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_background;
+			global::RadarIO.Resource.Styleable.ActionBar_backgroundSplit = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_backgroundSplit;
+			global::RadarIO.Resource.Styleable.ActionBar_backgroundStacked = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_backgroundStacked;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetRight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetRight;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetStart;
+			global::RadarIO.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::RadarIO.Resource.Styleable.ActionBar_customNavigationLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::RadarIO.Resource.Styleable.ActionBar_displayOptions = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_displayOptions;
+			global::RadarIO.Resource.Styleable.ActionBar_divider = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_divider;
+			global::RadarIO.Resource.Styleable.ActionBar_elevation = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_elevation;
+			global::RadarIO.Resource.Styleable.ActionBar_height = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_height;
+			global::RadarIO.Resource.Styleable.ActionBar_hideOnContentScroll = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::RadarIO.Resource.Styleable.ActionBar_homeAsUpIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::RadarIO.Resource.Styleable.ActionBar_homeLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_homeLayout;
+			global::RadarIO.Resource.Styleable.ActionBar_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_icon;
+			global::RadarIO.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::RadarIO.Resource.Styleable.ActionBar_itemPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_itemPadding;
+			global::RadarIO.Resource.Styleable.ActionBar_logo = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_logo;
+			global::RadarIO.Resource.Styleable.ActionBar_navigationMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_navigationMode;
+			global::RadarIO.Resource.Styleable.ActionBar_popupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_popupTheme;
+			global::RadarIO.Resource.Styleable.ActionBar_progressBarPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_progressBarPadding;
+			global::RadarIO.Resource.Styleable.ActionBar_progressBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_progressBarStyle;
+			global::RadarIO.Resource.Styleable.ActionBar_subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_subtitle;
+			global::RadarIO.Resource.Styleable.ActionBar_subtitleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::RadarIO.Resource.Styleable.ActionBar_title = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_title;
+			global::RadarIO.Resource.Styleable.ActionBar_titleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionBar_titleTextStyle;
+			global::RadarIO.Resource.Styleable.ActionMenuItemView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMenuItemView;
+			global::RadarIO.Resource.Styleable.ActionMenuItemView_android_minWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::RadarIO.Resource.Styleable.ActionMenuView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMenuView;
+			global::RadarIO.Resource.Styleable.ActionMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode;
+			global::RadarIO.Resource.Styleable.ActionMode_background = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_background;
+			global::RadarIO.Resource.Styleable.ActionMode_backgroundSplit = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_backgroundSplit;
+			global::RadarIO.Resource.Styleable.ActionMode_closeItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_closeItemLayout;
+			global::RadarIO.Resource.Styleable.ActionMode_height = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_height;
+			global::RadarIO.Resource.Styleable.ActionMode_subtitleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::RadarIO.Resource.Styleable.ActionMode_titleTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActionMode_titleTextStyle;
+			global::RadarIO.Resource.Styleable.ActivityChooserView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActivityChooserView;
+			global::RadarIO.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::RadarIO.Resource.Styleable.ActivityChooserView_initialActivityCount = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::RadarIO.Resource.Styleable.AlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog;
+			global::RadarIO.Resource.Styleable.AlertDialog_android_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_android_layout;
+			global::RadarIO.Resource.Styleable.AlertDialog_buttonIconDimen = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::RadarIO.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::RadarIO.Resource.Styleable.AlertDialog_listItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_listItemLayout;
+			global::RadarIO.Resource.Styleable.AlertDialog_listLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_listLayout;
+			global::RadarIO.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::RadarIO.Resource.Styleable.AlertDialog_showTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_showTitle;
+			global::RadarIO.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableTransition = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::RadarIO.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::RadarIO.Resource.Styleable.AppCompatEmojiHelper = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatEmojiHelper;
+			global::RadarIO.Resource.Styleable.AppCompatImageView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatImageView;
+			global::RadarIO.Resource.Styleable.AppCompatImageView_android_src = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatImageView_android_src;
+			global::RadarIO.Resource.Styleable.AppCompatImageView_srcCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::RadarIO.Resource.Styleable.AppCompatImageView_tint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatImageView_tint;
+			global::RadarIO.Resource.Styleable.AppCompatImageView_tintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatImageView_tintMode;
+			global::RadarIO.Resource.Styleable.AppCompatSeekBar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatSeekBar;
+			global::RadarIO.Resource.Styleable.AppCompatSeekBar_android_thumb = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::RadarIO.Resource.Styleable.AppCompatSeekBar_tickMark = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::RadarIO.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::RadarIO.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::RadarIO.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::RadarIO.Resource.Styleable.AppCompatTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_android_textAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_emojiCompatEnabled = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_emojiCompatEnabled;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_fontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_fontVariationSettings;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_lineHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_textAllCaps = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::RadarIO.Resource.Styleable.AppCompatTextView_textLocale = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTextView_textLocale;
+			global::RadarIO.Resource.Styleable.AppCompatTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarDivider = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeCloseContentDescription;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_checkboxStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorAccent = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorControlActivated = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorControlNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorError = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorError;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorPrimary = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_controlBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dialogTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dividerVertical = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_editTextBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_editTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_editTextStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_panelBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_searchViewStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_seekBarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_spinnerStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_switchStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_toolbarStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowActionBar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::RadarIO.Resource.Styleable.AppCompatTheme_windowNoTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::RadarIO.Resource.Styleable.ButtonBarLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ButtonBarLayout;
+			global::RadarIO.Resource.Styleable.ButtonBarLayout_allowStacking = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::RadarIO.Resource.Styleable.Capability = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Capability;
+			global::RadarIO.Resource.Styleable.Capability_queryPatterns = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Capability_queryPatterns;
+			global::RadarIO.Resource.Styleable.Capability_shortcutMatchRequired = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Capability_shortcutMatchRequired;
+			global::RadarIO.Resource.Styleable.CheckedTextView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CheckedTextView;
+			global::RadarIO.Resource.Styleable.CheckedTextView_android_checkMark = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CheckedTextView_android_checkMark;
+			global::RadarIO.Resource.Styleable.CheckedTextView_checkMarkCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CheckedTextView_checkMarkCompat;
+			global::RadarIO.Resource.Styleable.CheckedTextView_checkMarkTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CheckedTextView_checkMarkTint;
+			global::RadarIO.Resource.Styleable.CheckedTextView_checkMarkTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CheckedTextView_checkMarkTintMode;
+			global::RadarIO.Resource.Styleable.ColorStateListItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem;
+			global::RadarIO.Resource.Styleable.ColorStateListItem_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem_alpha;
+			global::RadarIO.Resource.Styleable.ColorStateListItem_android_alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::RadarIO.Resource.Styleable.ColorStateListItem_android_color = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem_android_color;
+			global::RadarIO.Resource.Styleable.ColorStateListItem_android_lStar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem_android_lStar;
+			global::RadarIO.Resource.Styleable.ColorStateListItem_lStar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ColorStateListItem_lStar;
+			global::RadarIO.Resource.Styleable.CompoundButton = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CompoundButton;
+			global::RadarIO.Resource.Styleable.CompoundButton_android_button = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CompoundButton_android_button;
+			global::RadarIO.Resource.Styleable.CompoundButton_buttonCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CompoundButton_buttonCompat;
+			global::RadarIO.Resource.Styleable.CompoundButton_buttonTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CompoundButton_buttonTint;
+			global::RadarIO.Resource.Styleable.CompoundButton_buttonTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_barLength = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_color = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_color;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_drawableSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_spinBars = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::RadarIO.Resource.Styleable.DrawerArrowToggle_thickness = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::RadarIO.Resource.Styleable.DrawerLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerLayout;
+			global::RadarIO.Resource.Styleable.DrawerLayout_elevation = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.DrawerLayout_elevation;
+			global::RadarIO.Resource.Styleable.FontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily;
+			global::RadarIO.Resource.Styleable.FontFamilyFont = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_android_font = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_android_font;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_android_fontStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_android_fontWeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_font = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_font;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_fontStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_fontWeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::RadarIO.Resource.Styleable.FontFamilyFont_ttcIndex = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderAuthority = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderCerts = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderPackage = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderQuery = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::RadarIO.Resource.Styleable.FontFamily_fontProviderSystemFontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FontFamily_fontProviderSystemFontFamily;
+			global::RadarIO.Resource.Styleable.Fragment = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Fragment;
+			global::RadarIO.Resource.Styleable.FragmentContainerView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FragmentContainerView;
+			global::RadarIO.Resource.Styleable.FragmentContainerView_android_name = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FragmentContainerView_android_name;
+			global::RadarIO.Resource.Styleable.FragmentContainerView_android_tag = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.FragmentContainerView_android_tag;
+			global::RadarIO.Resource.Styleable.Fragment_android_id = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Fragment_android_id;
+			global::RadarIO.Resource.Styleable.Fragment_android_name = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Fragment_android_name;
+			global::RadarIO.Resource.Styleable.Fragment_android_tag = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Fragment_android_tag;
+			global::RadarIO.Resource.Styleable.GradientColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor;
+			global::RadarIO.Resource.Styleable.GradientColorItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColorItem;
+			global::RadarIO.Resource.Styleable.GradientColorItem_android_color = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColorItem_android_color;
+			global::RadarIO.Resource.Styleable.GradientColorItem_android_offset = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColorItem_android_offset;
+			global::RadarIO.Resource.Styleable.GradientColor_android_centerColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_centerColor;
+			global::RadarIO.Resource.Styleable.GradientColor_android_centerX = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_centerX;
+			global::RadarIO.Resource.Styleable.GradientColor_android_centerY = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_centerY;
+			global::RadarIO.Resource.Styleable.GradientColor_android_endColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_endColor;
+			global::RadarIO.Resource.Styleable.GradientColor_android_endX = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_endX;
+			global::RadarIO.Resource.Styleable.GradientColor_android_endY = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_endY;
+			global::RadarIO.Resource.Styleable.GradientColor_android_gradientRadius = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::RadarIO.Resource.Styleable.GradientColor_android_startColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_startColor;
+			global::RadarIO.Resource.Styleable.GradientColor_android_startX = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_startX;
+			global::RadarIO.Resource.Styleable.GradientColor_android_startY = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_startY;
+			global::RadarIO.Resource.Styleable.GradientColor_android_tileMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_tileMode;
+			global::RadarIO.Resource.Styleable.GradientColor_android_type = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.GradientColor_android_type;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_android_gravity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_android_orientation = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_divider = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_divider;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_Layout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::RadarIO.Resource.Styleable.LinearLayoutCompat_showDividers = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::RadarIO.Resource.Styleable.ListPopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ListPopupWindow;
+			global::RadarIO.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::RadarIO.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::RadarIO.Resource.Styleable.LoadingImageView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LoadingImageView;
+			global::RadarIO.Resource.Styleable.LoadingImageView_circleCrop = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LoadingImageView_circleCrop;
+			global::RadarIO.Resource.Styleable.LoadingImageView_imageAspectRatio = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LoadingImageView_imageAspectRatio;
+			global::RadarIO.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust;
+			global::RadarIO.Resource.Styleable.MenuGroup = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_checkableBehavior = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_enabled = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_enabled;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_id = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_id;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_menuCategory = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_orderInCategory = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::RadarIO.Resource.Styleable.MenuGroup_android_visible = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuGroup_android_visible;
+			global::RadarIO.Resource.Styleable.MenuItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem;
+			global::RadarIO.Resource.Styleable.MenuItem_actionLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_actionLayout;
+			global::RadarIO.Resource.Styleable.MenuItem_actionProviderClass = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_actionProviderClass;
+			global::RadarIO.Resource.Styleable.MenuItem_actionViewClass = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_actionViewClass;
+			global::RadarIO.Resource.Styleable.MenuItem_alphabeticModifiers = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::RadarIO.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::RadarIO.Resource.Styleable.MenuItem_android_checkable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_checkable;
+			global::RadarIO.Resource.Styleable.MenuItem_android_checked = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_checked;
+			global::RadarIO.Resource.Styleable.MenuItem_android_enabled = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_enabled;
+			global::RadarIO.Resource.Styleable.MenuItem_android_icon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_icon;
+			global::RadarIO.Resource.Styleable.MenuItem_android_id = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_id;
+			global::RadarIO.Resource.Styleable.MenuItem_android_menuCategory = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_menuCategory;
+			global::RadarIO.Resource.Styleable.MenuItem_android_numericShortcut = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::RadarIO.Resource.Styleable.MenuItem_android_onClick = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_onClick;
+			global::RadarIO.Resource.Styleable.MenuItem_android_orderInCategory = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::RadarIO.Resource.Styleable.MenuItem_android_title = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_title;
+			global::RadarIO.Resource.Styleable.MenuItem_android_titleCondensed = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::RadarIO.Resource.Styleable.MenuItem_android_visible = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_android_visible;
+			global::RadarIO.Resource.Styleable.MenuItem_contentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_contentDescription;
+			global::RadarIO.Resource.Styleable.MenuItem_iconTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_iconTint;
+			global::RadarIO.Resource.Styleable.MenuItem_iconTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_iconTintMode;
+			global::RadarIO.Resource.Styleable.MenuItem_numericModifiers = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_numericModifiers;
+			global::RadarIO.Resource.Styleable.MenuItem_showAsAction = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_showAsAction;
+			global::RadarIO.Resource.Styleable.MenuItem_tooltipText = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuItem_tooltipText;
+			global::RadarIO.Resource.Styleable.MenuView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView;
+			global::RadarIO.Resource.Styleable.MenuView_android_headerBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_headerBackground;
+			global::RadarIO.Resource.Styleable.MenuView_android_horizontalDivider = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::RadarIO.Resource.Styleable.MenuView_android_itemBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_itemBackground;
+			global::RadarIO.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::RadarIO.Resource.Styleable.MenuView_android_itemTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::RadarIO.Resource.Styleable.MenuView_android_verticalDivider = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_verticalDivider;
+			global::RadarIO.Resource.Styleable.MenuView_android_windowAnimationStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::RadarIO.Resource.Styleable.MenuView_preserveIconSpacing = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::RadarIO.Resource.Styleable.MenuView_subMenuArrow = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.MenuView_subMenuArrow;
+			global::RadarIO.Resource.Styleable.PopupWindow = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindow;
+			global::RadarIO.Resource.Styleable.PopupWindowBackgroundState = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindowBackgroundState;
+			global::RadarIO.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::RadarIO.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::RadarIO.Resource.Styleable.PopupWindow_android_popupBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::RadarIO.Resource.Styleable.PopupWindow_overlapAnchor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::RadarIO.Resource.Styleable.RecycleListView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.RecycleListView;
+			global::RadarIO.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::RadarIO.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::RadarIO.Resource.Styleable.SearchView = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView;
+			global::RadarIO.Resource.Styleable.SearchView_android_focusable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_android_focusable;
+			global::RadarIO.Resource.Styleable.SearchView_android_imeOptions = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_android_imeOptions;
+			global::RadarIO.Resource.Styleable.SearchView_android_inputType = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_android_inputType;
+			global::RadarIO.Resource.Styleable.SearchView_android_maxWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_android_maxWidth;
+			global::RadarIO.Resource.Styleable.SearchView_closeIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_closeIcon;
+			global::RadarIO.Resource.Styleable.SearchView_commitIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_commitIcon;
+			global::RadarIO.Resource.Styleable.SearchView_defaultQueryHint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_defaultQueryHint;
+			global::RadarIO.Resource.Styleable.SearchView_goIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_goIcon;
+			global::RadarIO.Resource.Styleable.SearchView_iconifiedByDefault = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::RadarIO.Resource.Styleable.SearchView_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_layout;
+			global::RadarIO.Resource.Styleable.SearchView_queryBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_queryBackground;
+			global::RadarIO.Resource.Styleable.SearchView_queryHint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_queryHint;
+			global::RadarIO.Resource.Styleable.SearchView_searchHintIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_searchHintIcon;
+			global::RadarIO.Resource.Styleable.SearchView_searchIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_searchIcon;
+			global::RadarIO.Resource.Styleable.SearchView_submitBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_submitBackground;
+			global::RadarIO.Resource.Styleable.SearchView_suggestionRowLayout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::RadarIO.Resource.Styleable.SearchView_voiceIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SearchView_voiceIcon;
+			global::RadarIO.Resource.Styleable.SignInButton = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SignInButton;
+			global::RadarIO.Resource.Styleable.SignInButton_buttonSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SignInButton_buttonSize;
+			global::RadarIO.Resource.Styleable.SignInButton_colorScheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SignInButton_colorScheme;
+			global::RadarIO.Resource.Styleable.SignInButton_scopeUris = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SignInButton_scopeUris;
+			global::RadarIO.Resource.Styleable.Spinner = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner;
+			global::RadarIO.Resource.Styleable.Spinner_android_dropDownWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::RadarIO.Resource.Styleable.Spinner_android_entries = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner_android_entries;
+			global::RadarIO.Resource.Styleable.Spinner_android_popupBackground = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner_android_popupBackground;
+			global::RadarIO.Resource.Styleable.Spinner_android_prompt = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner_android_prompt;
+			global::RadarIO.Resource.Styleable.Spinner_popupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Spinner_popupTheme;
+			global::RadarIO.Resource.Styleable.StateListDrawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable;
+			global::RadarIO.Resource.Styleable.StateListDrawableItem = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawableItem;
+			global::RadarIO.Resource.Styleable.StateListDrawableItem_android_drawable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_constantSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_dither = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_dither;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_variablePadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::RadarIO.Resource.Styleable.StateListDrawable_android_visible = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.StateListDrawable_android_visible;
+			global::RadarIO.Resource.Styleable.SwitchCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat;
+			global::RadarIO.Resource.Styleable.SwitchCompat_android_textOff = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_android_textOff;
+			global::RadarIO.Resource.Styleable.SwitchCompat_android_textOn = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_android_textOn;
+			global::RadarIO.Resource.Styleable.SwitchCompat_android_thumb = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_android_thumb;
+			global::RadarIO.Resource.Styleable.SwitchCompat_showText = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_showText;
+			global::RadarIO.Resource.Styleable.SwitchCompat_splitTrack = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_splitTrack;
+			global::RadarIO.Resource.Styleable.SwitchCompat_switchMinWidth = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::RadarIO.Resource.Styleable.SwitchCompat_switchPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_switchPadding;
+			global::RadarIO.Resource.Styleable.SwitchCompat_switchTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::RadarIO.Resource.Styleable.SwitchCompat_thumbTextPadding = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::RadarIO.Resource.Styleable.SwitchCompat_thumbTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_thumbTint;
+			global::RadarIO.Resource.Styleable.SwitchCompat_thumbTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::RadarIO.Resource.Styleable.SwitchCompat_track = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_track;
+			global::RadarIO.Resource.Styleable.SwitchCompat_trackTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_trackTint;
+			global::RadarIO.Resource.Styleable.SwitchCompat_trackTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::RadarIO.Resource.Styleable.TextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_fontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_shadowColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_shadowDx = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_shadowDy = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_shadowRadius = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textColor;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textColorHint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textColorLink = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textFontWeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textFontWeight;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textSize = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textSize;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_textStyle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_textStyle;
+			global::RadarIO.Resource.Styleable.TextAppearance_android_typeface = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_android_typeface;
+			global::RadarIO.Resource.Styleable.TextAppearance_fontFamily = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_fontFamily;
+			global::RadarIO.Resource.Styleable.TextAppearance_fontVariationSettings = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_fontVariationSettings;
+			global::RadarIO.Resource.Styleable.TextAppearance_textAllCaps = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_textAllCaps;
+			global::RadarIO.Resource.Styleable.TextAppearance_textLocale = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.TextAppearance_textLocale;
+			global::RadarIO.Resource.Styleable.Toolbar = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar;
+			global::RadarIO.Resource.Styleable.Toolbar_android_gravity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_android_gravity;
+			global::RadarIO.Resource.Styleable.Toolbar_android_minHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_android_minHeight;
+			global::RadarIO.Resource.Styleable.Toolbar_buttonGravity = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_buttonGravity;
+			global::RadarIO.Resource.Styleable.Toolbar_collapseContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::RadarIO.Resource.Styleable.Toolbar_collapseIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_collapseIcon;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetLeft = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetRight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetRight;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetStart;
+			global::RadarIO.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::RadarIO.Resource.Styleable.Toolbar_logo = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_logo;
+			global::RadarIO.Resource.Styleable.Toolbar_logoDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_logoDescription;
+			global::RadarIO.Resource.Styleable.Toolbar_maxButtonHeight = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::RadarIO.Resource.Styleable.Toolbar_menu = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_menu;
+			global::RadarIO.Resource.Styleable.Toolbar_navigationContentDescription = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::RadarIO.Resource.Styleable.Toolbar_navigationIcon = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_navigationIcon;
+			global::RadarIO.Resource.Styleable.Toolbar_popupTheme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_popupTheme;
+			global::RadarIO.Resource.Styleable.Toolbar_subtitle = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_subtitle;
+			global::RadarIO.Resource.Styleable.Toolbar_subtitleTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::RadarIO.Resource.Styleable.Toolbar_subtitleTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::RadarIO.Resource.Styleable.Toolbar_title = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_title;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMargin = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMargin;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMarginBottom = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMarginEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMargins = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMargins;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMarginStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMarginStart;
+			global::RadarIO.Resource.Styleable.Toolbar_titleMarginTop = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleMarginTop;
+			global::RadarIO.Resource.Styleable.Toolbar_titleTextAppearance = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::RadarIO.Resource.Styleable.Toolbar_titleTextColor = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.Toolbar_titleTextColor;
+			global::RadarIO.Resource.Styleable.View = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View;
+			global::RadarIO.Resource.Styleable.ViewBackgroundHelper = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewBackgroundHelper;
+			global::RadarIO.Resource.Styleable.ViewBackgroundHelper_android_background = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::RadarIO.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::RadarIO.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::RadarIO.Resource.Styleable.ViewStubCompat = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewStubCompat;
+			global::RadarIO.Resource.Styleable.ViewStubCompat_android_id = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewStubCompat_android_id;
+			global::RadarIO.Resource.Styleable.ViewStubCompat_android_inflatedId = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::RadarIO.Resource.Styleable.ViewStubCompat_android_layout = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.ViewStubCompat_android_layout;
+			global::RadarIO.Resource.Styleable.View_android_focusable = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_android_focusable;
+			global::RadarIO.Resource.Styleable.View_android_theme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_android_theme;
+			global::RadarIO.Resource.Styleable.View_paddingEnd = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_paddingEnd;
+			global::RadarIO.Resource.Styleable.View_paddingStart = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_paddingStart;
+			global::RadarIO.Resource.Styleable.View_theme = global::RadarIO.Xamarin.Android.Sample.Resource.Styleable.View_theme;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::RadarIO.Xamarin.Android.Sample.Resource.Attribute.fontProviderAuthority;
@@ -8836,25 +10659,28 @@ namespace RadarIO.Xamarin.Android.Sample
 			public const int notification_icon_background = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int notification_template_icon_bg = 2131165424;
+			public const int notification_oversize_large_icon_bg = 2131165424;
 			
 			// aapt resource value: 0x7F0700F1
-			public const int notification_template_icon_low_bg = 2131165425;
+			public const int notification_template_icon_bg = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int notification_tile_bg = 2131165426;
+			public const int notification_template_icon_low_bg = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int notify_panel_notification_icon_bg = 2131165427;
+			public const int notification_tile_bg = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int test_level_drawable = 2131165428;
+			public const int notify_panel_notification_icon_bg = 2131165428;
 			
 			// aapt resource value: 0x7F0700F5
-			public const int tooltip_frame_dark = 2131165429;
+			public const int test_level_drawable = 2131165429;
 			
 			// aapt resource value: 0x7F0700F6
-			public const int tooltip_frame_light = 2131165430;
+			public const int tooltip_frame_dark = 2131165430;
+			
+			// aapt resource value: 0x7F0700F7
+			public const int tooltip_frame_light = 2131165431;
 			
 			static Drawable()
 			{
@@ -9380,697 +11206,703 @@ namespace RadarIO.Xamarin.Android.Sample
 			public const int edit_query = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int elastic = 2131230900;
+			public const int edit_text_id = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int embed = 2131230901;
+			public const int elastic = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int end = 2131230902;
+			public const int embed = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int endToStart = 2131230903;
+			public const int end = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int enterAlways = 2131230904;
+			public const int endToStart = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int enterAlwaysCollapsed = 2131230905;
+			public const int enterAlways = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int exitUntilCollapsed = 2131230906;
-			
-			// aapt resource value: 0x7F0800BC
-			public const int expanded_menu = 2131230908;
+			public const int enterAlwaysCollapsed = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int expand_activities_button = 2131230907;
+			public const int exitUntilCollapsed = 2131230907;
 			
 			// aapt resource value: 0x7F0800BD
-			public const int fab = 2131230909;
+			public const int expanded_menu = 2131230909;
+			
+			// aapt resource value: 0x7F0800BC
+			public const int expand_activities_button = 2131230908;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int fade = 2131230910;
+			public const int fab = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int fill = 2131230911;
-			
-			// aapt resource value: 0x7F0800C2
-			public const int filled = 2131230914;
+			public const int fade = 2131230911;
 			
 			// aapt resource value: 0x7F0800C0
-			public const int fill_horizontal = 2131230912;
-			
-			// aapt resource value: 0x7F0800C1
-			public const int fill_vertical = 2131230913;
+			public const int fill = 2131230912;
 			
 			// aapt resource value: 0x7F0800C3
-			public const int fitCenter = 2131230915;
+			public const int filled = 2131230915;
+			
+			// aapt resource value: 0x7F0800C1
+			public const int fill_horizontal = 2131230913;
+			
+			// aapt resource value: 0x7F0800C2
+			public const int fill_vertical = 2131230914;
 			
 			// aapt resource value: 0x7F0800C4
-			public const int fitEnd = 2131230916;
+			public const int fitCenter = 2131230916;
 			
 			// aapt resource value: 0x7F0800C5
-			public const int fitStart = 2131230917;
+			public const int fitEnd = 2131230917;
 			
 			// aapt resource value: 0x7F0800C6
-			public const int fitToContents = 2131230918;
+			public const int fitStart = 2131230918;
 			
 			// aapt resource value: 0x7F0800C7
-			public const int fitXY = 2131230919;
+			public const int fitToContents = 2131230919;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int @fixed = 2131230920;
+			public const int fitXY = 2131230920;
 			
 			// aapt resource value: 0x7F0800C9
-			public const int flip = 2131230921;
+			public const int @fixed = 2131230921;
 			
 			// aapt resource value: 0x7F0800CA
-			public const int floating = 2131230922;
+			public const int flip = 2131230922;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int forever = 2131230923;
+			public const int floating = 2131230923;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int fragment_container_view_tag = 2131230924;
+			public const int forever = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int frost = 2131230925;
+			public const int fragment_container_view_tag = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int fullscreen_header = 2131230926;
+			public const int frost = 2131230926;
+			
+			// aapt resource value: 0x7F0800CF
+			public const int fullscreen_header = 2131230927;
 			
 			// aapt resource value: 0x7F080004
 			public const int FUNCTION = 2131230724;
 			
-			// aapt resource value: 0x7F0800CF
-			public const int ghost_view = 2131230927;
-			
 			// aapt resource value: 0x7F0800D0
-			public const int ghost_view_holder = 2131230928;
+			public const int ghost_view = 2131230928;
 			
 			// aapt resource value: 0x7F0800D1
-			public const int gone = 2131230929;
+			public const int ghost_view_holder = 2131230929;
 			
 			// aapt resource value: 0x7F0800D2
-			public const int graph = 2131230930;
+			public const int gone = 2131230930;
 			
 			// aapt resource value: 0x7F0800D3
-			public const int graph_wrap = 2131230931;
-			
-			// aapt resource value: 0x7F0800D5
-			public const int grouping = 2131230933;
-			
-			// aapt resource value: 0x7F0800D6
-			public const int groups = 2131230934;
+			public const int graph = 2131230931;
 			
 			// aapt resource value: 0x7F0800D4
-			public const int group_divider = 2131230932;
+			public const int graph_wrap = 2131230932;
+			
+			// aapt resource value: 0x7F0800D6
+			public const int grouping = 2131230934;
 			
 			// aapt resource value: 0x7F0800D7
-			public const int header_title = 2131230935;
+			public const int groups = 2131230935;
+			
+			// aapt resource value: 0x7F0800D5
+			public const int group_divider = 2131230933;
 			
 			// aapt resource value: 0x7F0800D8
-			public const int hideable = 2131230936;
-			
-			// aapt resource value: 0x7F0800D9
-			public const int home = 2131230937;
+			public const int header_title = 2131230936;
 			
 			// aapt resource value: 0x7F0800DA
-			public const int homeAsUp = 2131230938;
+			public const int hideable = 2131230938;
+			
+			// aapt resource value: 0x7F0800D9
+			public const int hide_ime_id = 2131230937;
 			
 			// aapt resource value: 0x7F0800DB
-			public const int honorRequest = 2131230939;
+			public const int home = 2131230939;
 			
 			// aapt resource value: 0x7F0800DC
-			public const int horizontal_only = 2131230940;
+			public const int homeAsUp = 2131230940;
 			
 			// aapt resource value: 0x7F0800DD
-			public const int icon = 2131230941;
+			public const int honorRequest = 2131230941;
 			
 			// aapt resource value: 0x7F0800DE
-			public const int icon_group = 2131230942;
+			public const int horizontal_only = 2131230942;
 			
 			// aapt resource value: 0x7F0800DF
-			public const int icon_only = 2131230943;
+			public const int icon = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int ifRoom = 2131230944;
+			public const int icon_group = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int ignore = 2131230945;
+			public const int icon_only = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int ignoreRequest = 2131230946;
+			public const int ifRoom = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int image = 2131230947;
+			public const int ignore = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int immediateStop = 2131230948;
+			public const int ignoreRequest = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int included = 2131230949;
+			public const int image = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int indeterminate = 2131230950;
+			public const int immediateStop = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int info = 2131230951;
+			public const int included = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int invisible = 2131230952;
+			public const int indeterminate = 2131230952;
 			
 			// aapt resource value: 0x7F0800E9
-			public const int inward = 2131230953;
+			public const int info = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int is_pooling_container_tag = 2131230954;
+			public const int invisible = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int italic = 2131230955;
+			public const int inward = 2131230955;
 			
 			// aapt resource value: 0x7F0800EC
-			public const int item_touch_helper_previous_elevation = 2131230956;
+			public const int is_pooling_container_tag = 2131230956;
 			
 			// aapt resource value: 0x7F0800ED
-			public const int jumpToEnd = 2131230957;
+			public const int italic = 2131230957;
 			
 			// aapt resource value: 0x7F0800EE
-			public const int jumpToStart = 2131230958;
+			public const int item_touch_helper_previous_elevation = 2131230958;
 			
 			// aapt resource value: 0x7F0800EF
-			public const int labeled = 2131230959;
+			public const int jumpToEnd = 2131230959;
 			
 			// aapt resource value: 0x7F0800F0
-			public const int layout = 2131230960;
+			public const int jumpToStart = 2131230960;
 			
 			// aapt resource value: 0x7F0800F1
-			public const int left = 2131230961;
+			public const int labeled = 2131230961;
 			
 			// aapt resource value: 0x7F0800F2
-			public const int leftToRight = 2131230962;
+			public const int layout = 2131230962;
 			
 			// aapt resource value: 0x7F0800F3
-			public const int legacy = 2131230963;
+			public const int left = 2131230963;
 			
 			// aapt resource value: 0x7F0800F4
-			public const int light = 2131230964;
+			public const int leftToRight = 2131230964;
 			
 			// aapt resource value: 0x7F0800F5
-			public const int line1 = 2131230965;
+			public const int legacy = 2131230965;
 			
 			// aapt resource value: 0x7F0800F6
-			public const int line3 = 2131230966;
+			public const int light = 2131230966;
 			
 			// aapt resource value: 0x7F0800F7
-			public const int linear = 2131230967;
+			public const int line1 = 2131230967;
 			
 			// aapt resource value: 0x7F0800F8
-			public const int listMode = 2131230968;
+			public const int line3 = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
-			public const int list_item = 2131230969;
+			public const int linear = 2131230969;
 			
 			// aapt resource value: 0x7F0800FA
-			public const int m3_side_sheet = 2131230970;
+			public const int listMode = 2131230970;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int marquee = 2131230971;
+			public const int list_item = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int masked = 2131230972;
+			public const int m3_side_sheet = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int match_constraint = 2131230973;
+			public const int marquee = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int match_parent = 2131230974;
+			public const int masked = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int material_clock_display = 2131230975;
+			public const int match_constraint = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int material_clock_display_and_toggle = 2131230976;
+			public const int match_parent = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int material_clock_face = 2131230977;
+			public const int material_clock_display = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int material_clock_hand = 2131230978;
+			public const int material_clock_display_and_toggle = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int material_clock_level = 2131230979;
+			public const int material_clock_face = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int material_clock_period_am_button = 2131230980;
+			public const int material_clock_hand = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int material_clock_period_pm_button = 2131230981;
+			public const int material_clock_level = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int material_clock_period_toggle = 2131230982;
+			public const int material_clock_period_am_button = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int material_hour_text_input = 2131230983;
+			public const int material_clock_period_pm_button = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int material_hour_tv = 2131230984;
+			public const int material_clock_period_toggle = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int material_label = 2131230985;
+			public const int material_hour_text_input = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int material_minute_text_input = 2131230986;
+			public const int material_hour_tv = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int material_minute_tv = 2131230987;
+			public const int material_label = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int material_textinput_timepicker = 2131230988;
+			public const int material_minute_text_input = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int material_timepicker_cancel_button = 2131230989;
+			public const int material_minute_tv = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int material_timepicker_container = 2131230990;
+			public const int material_textinput_timepicker = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int material_timepicker_mode_button = 2131230991;
+			public const int material_timepicker_cancel_button = 2131230991;
 			
 			// aapt resource value: 0x7F080110
-			public const int material_timepicker_ok_button = 2131230992;
+			public const int material_timepicker_container = 2131230992;
 			
 			// aapt resource value: 0x7F080111
-			public const int material_timepicker_view = 2131230993;
+			public const int material_timepicker_mode_button = 2131230993;
 			
 			// aapt resource value: 0x7F080112
-			public const int material_value_index = 2131230994;
+			public const int material_timepicker_ok_button = 2131230994;
 			
 			// aapt resource value: 0x7F080113
-			public const int matrix = 2131230995;
+			public const int material_timepicker_view = 2131230995;
 			
 			// aapt resource value: 0x7F080114
-			public const int message = 2131230996;
+			public const int material_value_index = 2131230996;
+			
+			// aapt resource value: 0x7F080115
+			public const int matrix = 2131230997;
+			
+			// aapt resource value: 0x7F080116
+			public const int message = 2131230998;
 			
 			// aapt resource value: 0x7F080005
 			public const int META = 2131230725;
 			
-			// aapt resource value: 0x7F080115
-			public const int middle = 2131230997;
-			
-			// aapt resource value: 0x7F080116
-			public const int mini = 2131230998;
-			
 			// aapt resource value: 0x7F080117
-			public const int month_grid = 2131230999;
+			public const int middle = 2131230999;
 			
 			// aapt resource value: 0x7F080118
-			public const int month_navigation_bar = 2131231000;
+			public const int mini = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int month_navigation_fragment_toggle = 2131231001;
+			public const int month_grid = 2131231001;
 			
 			// aapt resource value: 0x7F08011A
-			public const int month_navigation_next = 2131231002;
+			public const int month_navigation_bar = 2131231002;
 			
 			// aapt resource value: 0x7F08011B
-			public const int month_navigation_previous = 2131231003;
+			public const int month_navigation_fragment_toggle = 2131231003;
 			
 			// aapt resource value: 0x7F08011C
-			public const int month_title = 2131231004;
+			public const int month_navigation_next = 2131231004;
 			
 			// aapt resource value: 0x7F08011D
-			public const int motion_base = 2131231005;
+			public const int month_navigation_previous = 2131231005;
 			
 			// aapt resource value: 0x7F08011E
-			public const int mtrl_anchor_parent = 2131231006;
-			
-			// aapt resource value: 0x7F080120
-			public const int mtrl_calendar_days_of_week = 2131231008;
+			public const int month_title = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int mtrl_calendar_day_selector_frame = 2131231007;
+			public const int motion_base = 2131231007;
 			
-			// aapt resource value: 0x7F080121
-			public const int mtrl_calendar_frame = 2131231009;
+			// aapt resource value: 0x7F080120
+			public const int mtrl_anchor_parent = 2131231008;
 			
 			// aapt resource value: 0x7F080122
-			public const int mtrl_calendar_main_pane = 2131231010;
+			public const int mtrl_calendar_days_of_week = 2131231010;
+			
+			// aapt resource value: 0x7F080121
+			public const int mtrl_calendar_day_selector_frame = 2131231009;
 			
 			// aapt resource value: 0x7F080123
-			public const int mtrl_calendar_months = 2131231011;
+			public const int mtrl_calendar_frame = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int mtrl_calendar_selection_frame = 2131231012;
+			public const int mtrl_calendar_main_pane = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int mtrl_calendar_text_input_frame = 2131231013;
+			public const int mtrl_calendar_months = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int mtrl_calendar_year_selector_frame = 2131231014;
+			public const int mtrl_calendar_selection_frame = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int mtrl_card_checked_layer_id = 2131231015;
+			public const int mtrl_calendar_text_input_frame = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int mtrl_child_content_container = 2131231016;
+			public const int mtrl_calendar_year_selector_frame = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int mtrl_internal_children_alpha_tag = 2131231017;
+			public const int mtrl_card_checked_layer_id = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int mtrl_motion_snapshot_view = 2131231018;
+			public const int mtrl_child_content_container = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int mtrl_picker_fullscreen = 2131231019;
+			public const int mtrl_internal_children_alpha_tag = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int mtrl_picker_header = 2131231020;
+			public const int mtrl_motion_snapshot_view = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int mtrl_picker_header_selection_text = 2131231021;
+			public const int mtrl_picker_fullscreen = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int mtrl_picker_header_title_and_selection = 2131231022;
+			public const int mtrl_picker_header = 2131231022;
 			
 			// aapt resource value: 0x7F08012F
-			public const int mtrl_picker_header_toggle = 2131231023;
+			public const int mtrl_picker_header_selection_text = 2131231023;
 			
 			// aapt resource value: 0x7F080130
-			public const int mtrl_picker_text_input_date = 2131231024;
+			public const int mtrl_picker_header_title_and_selection = 2131231024;
 			
 			// aapt resource value: 0x7F080131
-			public const int mtrl_picker_text_input_range_end = 2131231025;
+			public const int mtrl_picker_header_toggle = 2131231025;
 			
 			// aapt resource value: 0x7F080132
-			public const int mtrl_picker_text_input_range_start = 2131231026;
+			public const int mtrl_picker_text_input_date = 2131231026;
 			
 			// aapt resource value: 0x7F080133
-			public const int mtrl_picker_title_text = 2131231027;
+			public const int mtrl_picker_text_input_range_end = 2131231027;
 			
 			// aapt resource value: 0x7F080134
-			public const int mtrl_view_tag_bottom_padding = 2131231028;
+			public const int mtrl_picker_text_input_range_start = 2131231028;
 			
 			// aapt resource value: 0x7F080135
-			public const int multiply = 2131231029;
+			public const int mtrl_picker_title_text = 2131231029;
 			
 			// aapt resource value: 0x7F080136
-			public const int navigation_bar_item_active_indicator_view = 2131231030;
+			public const int mtrl_view_tag_bottom_padding = 2131231030;
 			
 			// aapt resource value: 0x7F080137
-			public const int navigation_bar_item_icon_container = 2131231031;
+			public const int multiply = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int navigation_bar_item_icon_view = 2131231032;
+			public const int navigation_bar_item_active_indicator_view = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int navigation_bar_item_labels_group = 2131231033;
+			public const int navigation_bar_item_icon_container = 2131231033;
 			
 			// aapt resource value: 0x7F08013A
-			public const int navigation_bar_item_large_label_view = 2131231034;
+			public const int navigation_bar_item_icon_view = 2131231034;
 			
 			// aapt resource value: 0x7F08013B
-			public const int navigation_bar_item_small_label_view = 2131231035;
+			public const int navigation_bar_item_labels_group = 2131231035;
 			
 			// aapt resource value: 0x7F08013C
-			public const int navigation_header_container = 2131231036;
+			public const int navigation_bar_item_large_label_view = 2131231036;
 			
 			// aapt resource value: 0x7F08013D
-			public const int never = 2131231037;
+			public const int navigation_bar_item_small_label_view = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int neverCompleteToEnd = 2131231038;
+			public const int navigation_header_container = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int neverCompleteToStart = 2131231039;
-			
-			// aapt resource value: 0x7F080142
-			public const int none = 2131231042;
-			
-			// aapt resource value: 0x7F080143
-			public const int normal = 2131231043;
-			
-			// aapt resource value: 0x7F080144
-			public const int north = 2131231044;
+			public const int never = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int noScroll = 2131231040;
+			public const int neverCompleteToEnd = 2131231040;
 			
 			// aapt resource value: 0x7F080141
-			public const int noState = 2131231041;
+			public const int neverCompleteToStart = 2131231041;
+			
+			// aapt resource value: 0x7F080144
+			public const int none = 2131231044;
 			
 			// aapt resource value: 0x7F080145
-			public const int notification_background = 2131231045;
+			public const int normal = 2131231045;
 			
 			// aapt resource value: 0x7F080146
-			public const int notification_main_column = 2131231046;
+			public const int north = 2131231046;
+			
+			// aapt resource value: 0x7F080142
+			public const int noScroll = 2131231042;
+			
+			// aapt resource value: 0x7F080143
+			public const int noState = 2131231043;
 			
 			// aapt resource value: 0x7F080147
-			public const int notification_main_column_container = 2131231047;
+			public const int notification_background = 2131231047;
+			
+			// aapt resource value: 0x7F080148
+			public const int notification_main_column = 2131231048;
+			
+			// aapt resource value: 0x7F080149
+			public const int notification_main_column_container = 2131231049;
 			
 			// aapt resource value: 0x7F080006
 			public const int NO_DEBUG = 2131230726;
 			
-			// aapt resource value: 0x7F080148
-			public const int off = 2131231048;
-			
-			// aapt resource value: 0x7F080149
-			public const int on = 2131231049;
-			
 			// aapt resource value: 0x7F08014A
-			public const int onInterceptTouchReturnSwipe = 2131231050;
+			public const int off = 2131231050;
 			
 			// aapt resource value: 0x7F08014B
-			public const int outline = 2131231051;
+			public const int on = 2131231051;
 			
 			// aapt resource value: 0x7F08014C
-			public const int outward = 2131231052;
+			public const int onInterceptTouchReturnSwipe = 2131231052;
 			
 			// aapt resource value: 0x7F08014D
-			public const int overshoot = 2131231053;
+			public const int outline = 2131231053;
 			
 			// aapt resource value: 0x7F08014E
-			public const int packed = 2131231054;
+			public const int outward = 2131231054;
 			
 			// aapt resource value: 0x7F08014F
-			public const int parallax = 2131231055;
+			public const int overshoot = 2131231055;
 			
 			// aapt resource value: 0x7F080150
-			public const int parent = 2131231056;
+			public const int packed = 2131231056;
 			
 			// aapt resource value: 0x7F080151
-			public const int parentPanel = 2131231057;
+			public const int parallax = 2131231057;
 			
 			// aapt resource value: 0x7F080152
-			public const int parentRelative = 2131231058;
+			public const int parent = 2131231058;
 			
 			// aapt resource value: 0x7F080153
-			public const int parent_matrix = 2131231059;
+			public const int parentPanel = 2131231059;
 			
 			// aapt resource value: 0x7F080154
-			public const int password_toggle = 2131231060;
+			public const int parentRelative = 2131231060;
 			
 			// aapt resource value: 0x7F080155
-			public const int path = 2131231061;
+			public const int parent_matrix = 2131231061;
 			
 			// aapt resource value: 0x7F080156
-			public const int pathRelative = 2131231062;
+			public const int password_toggle = 2131231062;
 			
 			// aapt resource value: 0x7F080157
-			public const int peekHeight = 2131231063;
+			public const int path = 2131231063;
 			
 			// aapt resource value: 0x7F080158
-			public const int percent = 2131231064;
+			public const int pathRelative = 2131231064;
 			
 			// aapt resource value: 0x7F080159
-			public const int pin = 2131231065;
+			public const int peekHeight = 2131231065;
 			
 			// aapt resource value: 0x7F08015A
-			public const int pooling_container_listener_holder_tag = 2131231066;
+			public const int percent = 2131231066;
 			
 			// aapt resource value: 0x7F08015B
-			public const int position = 2131231067;
+			public const int pin = 2131231067;
 			
 			// aapt resource value: 0x7F08015C
-			public const int postLayout = 2131231068;
+			public const int pooling_container_listener_holder_tag = 2131231068;
 			
 			// aapt resource value: 0x7F08015D
-			public const int pressed = 2131231069;
+			public const int position = 2131231069;
 			
 			// aapt resource value: 0x7F08015E
-			public const int progress_circular = 2131231070;
+			public const int postLayout = 2131231070;
 			
 			// aapt resource value: 0x7F08015F
-			public const int progress_horizontal = 2131231071;
+			public const int pressed = 2131231071;
 			
 			// aapt resource value: 0x7F080160
-			public const int radio = 2131231072;
+			public const int progress_circular = 2131231072;
 			
 			// aapt resource value: 0x7F080161
-			public const int ratio = 2131231073;
+			public const int progress_horizontal = 2131231073;
 			
 			// aapt resource value: 0x7F080162
-			public const int rectangles = 2131231074;
+			public const int radio = 2131231074;
 			
 			// aapt resource value: 0x7F080163
-			public const int report_drawn = 2131231075;
+			public const int ratio = 2131231075;
 			
 			// aapt resource value: 0x7F080164
-			public const int result_view = 2131231076;
+			public const int rectangles = 2131231076;
 			
 			// aapt resource value: 0x7F080165
-			public const int reverseSawtooth = 2131231077;
+			public const int report_drawn = 2131231077;
 			
 			// aapt resource value: 0x7F080166
-			public const int right = 2131231078;
+			public const int result_view = 2131231078;
 			
 			// aapt resource value: 0x7F080167
-			public const int rightToLeft = 2131231079;
+			public const int reverseSawtooth = 2131231079;
 			
 			// aapt resource value: 0x7F080168
-			public const int right_icon = 2131231080;
+			public const int right = 2131231080;
 			
 			// aapt resource value: 0x7F080169
-			public const int right_side = 2131231081;
+			public const int rightToLeft = 2131231081;
 			
 			// aapt resource value: 0x7F08016A
-			public const int rounded = 2131231082;
+			public const int right_icon = 2131231082;
 			
 			// aapt resource value: 0x7F08016B
-			public const int row_index_key = 2131231083;
+			public const int right_side = 2131231083;
 			
 			// aapt resource value: 0x7F08016C
-			public const int save_non_transition_alpha = 2131231084;
+			public const int rounded = 2131231084;
 			
 			// aapt resource value: 0x7F08016D
-			public const int save_overlay_view = 2131231085;
+			public const int row_index_key = 2131231085;
 			
 			// aapt resource value: 0x7F08016E
-			public const int sawtooth = 2131231086;
+			public const int save_non_transition_alpha = 2131231086;
 			
 			// aapt resource value: 0x7F08016F
-			public const int scale = 2131231087;
+			public const int save_overlay_view = 2131231087;
 			
 			// aapt resource value: 0x7F080170
-			public const int screen = 2131231088;
+			public const int sawtooth = 2131231088;
 			
 			// aapt resource value: 0x7F080171
-			public const int scroll = 2131231089;
-			
-			// aapt resource value: 0x7F080175
-			public const int scrollable = 2131231093;
+			public const int scale = 2131231089;
 			
 			// aapt resource value: 0x7F080172
-			public const int scrollIndicatorDown = 2131231090;
+			public const int screen = 2131231090;
 			
 			// aapt resource value: 0x7F080173
-			public const int scrollIndicatorUp = 2131231091;
-			
-			// aapt resource value: 0x7F080174
-			public const int scrollView = 2131231092;
-			
-			// aapt resource value: 0x7F080176
-			public const int search_badge = 2131231094;
+			public const int scroll = 2131231091;
 			
 			// aapt resource value: 0x7F080177
-			public const int search_bar = 2131231095;
+			public const int scrollable = 2131231095;
+			
+			// aapt resource value: 0x7F080174
+			public const int scrollIndicatorDown = 2131231092;
+			
+			// aapt resource value: 0x7F080175
+			public const int scrollIndicatorUp = 2131231093;
+			
+			// aapt resource value: 0x7F080176
+			public const int scrollView = 2131231094;
 			
 			// aapt resource value: 0x7F080178
-			public const int search_bar_text_view = 2131231096;
+			public const int search_badge = 2131231096;
 			
 			// aapt resource value: 0x7F080179
-			public const int search_button = 2131231097;
+			public const int search_bar = 2131231097;
 			
 			// aapt resource value: 0x7F08017A
-			public const int search_close_btn = 2131231098;
+			public const int search_bar_text_view = 2131231098;
 			
 			// aapt resource value: 0x7F08017B
-			public const int search_edit_frame = 2131231099;
+			public const int search_button = 2131231099;
 			
 			// aapt resource value: 0x7F08017C
-			public const int search_go_btn = 2131231100;
+			public const int search_close_btn = 2131231100;
 			
 			// aapt resource value: 0x7F08017D
-			public const int search_mag_icon = 2131231101;
+			public const int search_edit_frame = 2131231101;
 			
 			// aapt resource value: 0x7F08017E
-			public const int search_plate = 2131231102;
+			public const int search_go_btn = 2131231102;
 			
 			// aapt resource value: 0x7F08017F
-			public const int search_src_text = 2131231103;
+			public const int search_mag_icon = 2131231103;
 			
 			// aapt resource value: 0x7F080180
-			public const int search_view_background = 2131231104;
+			public const int search_plate = 2131231104;
 			
 			// aapt resource value: 0x7F080181
-			public const int search_view_clear_button = 2131231105;
+			public const int search_src_text = 2131231105;
 			
 			// aapt resource value: 0x7F080182
-			public const int search_view_content_container = 2131231106;
+			public const int search_view_background = 2131231106;
 			
 			// aapt resource value: 0x7F080183
-			public const int search_view_divider = 2131231107;
+			public const int search_view_clear_button = 2131231107;
 			
 			// aapt resource value: 0x7F080184
-			public const int search_view_dummy_toolbar = 2131231108;
+			public const int search_view_content_container = 2131231108;
 			
 			// aapt resource value: 0x7F080185
-			public const int search_view_edit_text = 2131231109;
+			public const int search_view_divider = 2131231109;
 			
 			// aapt resource value: 0x7F080186
-			public const int search_view_header_container = 2131231110;
+			public const int search_view_dummy_toolbar = 2131231110;
 			
 			// aapt resource value: 0x7F080187
-			public const int search_view_root = 2131231111;
+			public const int search_view_edit_text = 2131231111;
 			
 			// aapt resource value: 0x7F080188
-			public const int search_view_scrim = 2131231112;
+			public const int search_view_header_container = 2131231112;
 			
 			// aapt resource value: 0x7F080189
-			public const int search_view_search_prefix = 2131231113;
+			public const int search_view_root = 2131231113;
 			
 			// aapt resource value: 0x7F08018A
-			public const int search_view_status_bar_spacer = 2131231114;
+			public const int search_view_scrim = 2131231114;
 			
 			// aapt resource value: 0x7F08018B
-			public const int search_view_toolbar = 2131231115;
+			public const int search_view_search_prefix = 2131231115;
 			
 			// aapt resource value: 0x7F08018C
-			public const int search_view_toolbar_container = 2131231116;
+			public const int search_view_status_bar_spacer = 2131231116;
 			
 			// aapt resource value: 0x7F08018D
-			public const int search_voice_btn = 2131231117;
-			
-			// aapt resource value: 0x7F08018F
-			public const int selected = 2131231119;
-			
-			// aapt resource value: 0x7F080190
-			public const int selection_type = 2131231120;
+			public const int search_view_toolbar = 2131231117;
 			
 			// aapt resource value: 0x7F08018E
-			public const int select_dialog_listview = 2131231118;
+			public const int search_view_toolbar_container = 2131231118;
+			
+			// aapt resource value: 0x7F08018F
+			public const int search_voice_btn = 2131231119;
 			
 			// aapt resource value: 0x7F080191
-			public const int sharedValueSet = 2131231121;
+			public const int selected = 2131231121;
 			
 			// aapt resource value: 0x7F080192
-			public const int sharedValueUnset = 2131231122;
+			public const int selection_type = 2131231122;
+			
+			// aapt resource value: 0x7F080190
+			public const int select_dialog_listview = 2131231120;
+			
+			// aapt resource value: 0x7F080193
+			public const int sharedValueSet = 2131231123;
+			
+			// aapt resource value: 0x7F080194
+			public const int sharedValueUnset = 2131231124;
 			
 			// aapt resource value: 0x7F080007
 			public const int SHIFT = 2131230727;
 			
-			// aapt resource value: 0x7F080193
-			public const int shortcut = 2131231123;
-			
-			// aapt resource value: 0x7F080194
-			public const int showCustom = 2131231124;
-			
 			// aapt resource value: 0x7F080195
-			public const int showHome = 2131231125;
+			public const int shortcut = 2131231125;
 			
 			// aapt resource value: 0x7F080196
-			public const int showTitle = 2131231126;
+			public const int showCustom = 2131231126;
+			
+			// aapt resource value: 0x7F080197
+			public const int showHome = 2131231127;
+			
+			// aapt resource value: 0x7F080198
+			public const int showTitle = 2131231128;
 			
 			// aapt resource value: 0x7F080008
 			public const int SHOW_ALL = 2131230728;
@@ -10081,218 +11913,218 @@ namespace RadarIO.Xamarin.Android.Sample
 			// aapt resource value: 0x7F08000A
 			public const int SHOW_PROGRESS = 2131230730;
 			
-			// aapt resource value: 0x7F080197
-			public const int sin = 2131231127;
-			
-			// aapt resource value: 0x7F080198
-			public const int skipCollapsed = 2131231128;
-			
 			// aapt resource value: 0x7F080199
-			public const int skipped = 2131231129;
+			public const int sin = 2131231129;
 			
 			// aapt resource value: 0x7F08019A
-			public const int slide = 2131231130;
+			public const int skipCollapsed = 2131231130;
 			
 			// aapt resource value: 0x7F08019B
-			public const int snackbar_action = 2131231131;
+			public const int skipped = 2131231131;
 			
 			// aapt resource value: 0x7F08019C
-			public const int snackbar_text = 2131231132;
+			public const int slide = 2131231132;
 			
 			// aapt resource value: 0x7F08019D
-			public const int snap = 2131231133;
+			public const int snackbar_action = 2131231133;
 			
 			// aapt resource value: 0x7F08019E
-			public const int snapMargins = 2131231134;
+			public const int snackbar_text = 2131231134;
 			
 			// aapt resource value: 0x7F08019F
-			public const int south = 2131231135;
+			public const int snap = 2131231135;
 			
 			// aapt resource value: 0x7F0801A0
-			public const int spacer = 2131231136;
+			public const int snapMargins = 2131231136;
 			
 			// aapt resource value: 0x7F0801A1
-			public const int special_effects_controller_view_tag = 2131231137;
+			public const int south = 2131231137;
 			
 			// aapt resource value: 0x7F0801A2
-			public const int spline = 2131231138;
+			public const int spacer = 2131231138;
 			
 			// aapt resource value: 0x7F0801A3
-			public const int split_action_bar = 2131231139;
+			public const int special_effects_controller_view_tag = 2131231139;
 			
 			// aapt resource value: 0x7F0801A4
-			public const int spread = 2131231140;
+			public const int spline = 2131231140;
 			
 			// aapt resource value: 0x7F0801A5
-			public const int spread_inside = 2131231141;
+			public const int split_action_bar = 2131231141;
 			
 			// aapt resource value: 0x7F0801A6
-			public const int spring = 2131231142;
+			public const int spread = 2131231142;
 			
 			// aapt resource value: 0x7F0801A7
-			public const int square = 2131231143;
+			public const int spread_inside = 2131231143;
 			
 			// aapt resource value: 0x7F0801A8
-			public const int src_atop = 2131231144;
+			public const int spring = 2131231144;
 			
 			// aapt resource value: 0x7F0801A9
-			public const int src_in = 2131231145;
+			public const int square = 2131231145;
 			
 			// aapt resource value: 0x7F0801AA
-			public const int src_over = 2131231146;
+			public const int src_atop = 2131231146;
 			
 			// aapt resource value: 0x7F0801AB
-			public const int standard = 2131231147;
+			public const int src_in = 2131231147;
 			
 			// aapt resource value: 0x7F0801AC
-			public const int start = 2131231148;
+			public const int src_over = 2131231148;
 			
 			// aapt resource value: 0x7F0801AD
-			public const int startHorizontal = 2131231149;
+			public const int standard = 2131231149;
 			
 			// aapt resource value: 0x7F0801AE
-			public const int startToEnd = 2131231150;
+			public const int start = 2131231150;
 			
 			// aapt resource value: 0x7F0801AF
-			public const int startVertical = 2131231151;
+			public const int startHorizontal = 2131231151;
 			
 			// aapt resource value: 0x7F0801B0
-			public const int staticLayout = 2131231152;
+			public const int startToEnd = 2131231152;
 			
 			// aapt resource value: 0x7F0801B1
-			public const int staticPostLayout = 2131231153;
+			public const int startVertical = 2131231153;
 			
 			// aapt resource value: 0x7F0801B2
-			public const int stop = 2131231154;
+			public const int staticLayout = 2131231154;
 			
 			// aapt resource value: 0x7F0801B3
-			public const int stretch = 2131231155;
+			public const int staticPostLayout = 2131231155;
 			
 			// aapt resource value: 0x7F0801B4
-			public const int submenuarrow = 2131231156;
+			public const int stop = 2131231156;
 			
 			// aapt resource value: 0x7F0801B5
-			public const int submit_area = 2131231157;
+			public const int stretch = 2131231157;
 			
 			// aapt resource value: 0x7F0801B6
-			public const int supportScrollUp = 2131231158;
+			public const int submenuarrow = 2131231158;
+			
+			// aapt resource value: 0x7F0801B7
+			public const int submit_area = 2131231159;
+			
+			// aapt resource value: 0x7F0801B8
+			public const int supportScrollUp = 2131231160;
 			
 			// aapt resource value: 0x7F08000B
 			public const int SYM = 2131230731;
 			
-			// aapt resource value: 0x7F0801B7
-			public const int tabMode = 2131231159;
-			
-			// aapt resource value: 0x7F0801B8
-			public const int tag_accessibility_actions = 2131231160;
-			
 			// aapt resource value: 0x7F0801B9
-			public const int tag_accessibility_clickable_spans = 2131231161;
+			public const int tabMode = 2131231161;
 			
 			// aapt resource value: 0x7F0801BA
-			public const int tag_accessibility_heading = 2131231162;
+			public const int tag_accessibility_actions = 2131231162;
 			
 			// aapt resource value: 0x7F0801BB
-			public const int tag_accessibility_pane_title = 2131231163;
+			public const int tag_accessibility_clickable_spans = 2131231163;
 			
 			// aapt resource value: 0x7F0801BC
-			public const int tag_on_apply_window_listener = 2131231164;
+			public const int tag_accessibility_heading = 2131231164;
 			
 			// aapt resource value: 0x7F0801BD
-			public const int tag_on_receive_content_listener = 2131231165;
+			public const int tag_accessibility_pane_title = 2131231165;
 			
 			// aapt resource value: 0x7F0801BE
-			public const int tag_on_receive_content_mime_types = 2131231166;
+			public const int tag_on_apply_window_listener = 2131231166;
 			
 			// aapt resource value: 0x7F0801BF
-			public const int tag_screen_reader_focusable = 2131231167;
+			public const int tag_on_receive_content_listener = 2131231167;
 			
 			// aapt resource value: 0x7F0801C0
-			public const int tag_state_description = 2131231168;
+			public const int tag_on_receive_content_mime_types = 2131231168;
 			
 			// aapt resource value: 0x7F0801C1
-			public const int tag_transition_group = 2131231169;
+			public const int tag_screen_reader_focusable = 2131231169;
 			
 			// aapt resource value: 0x7F0801C2
-			public const int tag_unhandled_key_event_manager = 2131231170;
+			public const int tag_state_description = 2131231170;
 			
 			// aapt resource value: 0x7F0801C3
-			public const int tag_unhandled_key_listeners = 2131231171;
+			public const int tag_transition_group = 2131231171;
 			
 			// aapt resource value: 0x7F0801C4
-			public const int tag_window_insets_animation_callback = 2131231172;
+			public const int tag_unhandled_key_event_manager = 2131231172;
 			
 			// aapt resource value: 0x7F0801C5
-			public const int text = 2131231173;
+			public const int tag_unhandled_key_listeners = 2131231173;
 			
 			// aapt resource value: 0x7F0801C6
-			public const int text2 = 2131231174;
+			public const int tag_window_insets_animation_callback = 2131231174;
 			
 			// aapt resource value: 0x7F0801C7
-			public const int textEnd = 2131231175;
-			
-			// aapt resource value: 0x7F0801CF
-			public const int textinput_counter = 2131231183;
-			
-			// aapt resource value: 0x7F0801D0
-			public const int textinput_error = 2131231184;
-			
-			// aapt resource value: 0x7F0801D1
-			public const int textinput_helper_text = 2131231185;
-			
-			// aapt resource value: 0x7F0801D2
-			public const int textinput_placeholder = 2131231186;
-			
-			// aapt resource value: 0x7F0801D3
-			public const int textinput_prefix_text = 2131231187;
-			
-			// aapt resource value: 0x7F0801D4
-			public const int textinput_suffix_text = 2131231188;
+			public const int text = 2131231175;
 			
 			// aapt resource value: 0x7F0801C8
-			public const int textSpacerNoButtons = 2131231176;
+			public const int text2 = 2131231176;
 			
 			// aapt resource value: 0x7F0801C9
-			public const int textSpacerNoTitle = 2131231177;
+			public const int textEnd = 2131231177;
 			
-			// aapt resource value: 0x7F0801CA
-			public const int textStart = 2131231178;
+			// aapt resource value: 0x7F0801D1
+			public const int textinput_counter = 2131231185;
 			
-			// aapt resource value: 0x7F0801CB
-			public const int textTop = 2131231179;
+			// aapt resource value: 0x7F0801D2
+			public const int textinput_error = 2131231186;
 			
-			// aapt resource value: 0x7F0801CC
-			public const int text_input_end_icon = 2131231180;
+			// aapt resource value: 0x7F0801D3
+			public const int textinput_helper_text = 2131231187;
 			
-			// aapt resource value: 0x7F0801CD
-			public const int text_input_error_icon = 2131231181;
-			
-			// aapt resource value: 0x7F0801CE
-			public const int text_input_start_icon = 2131231182;
+			// aapt resource value: 0x7F0801D4
+			public const int textinput_placeholder = 2131231188;
 			
 			// aapt resource value: 0x7F0801D5
-			public const int time = 2131231189;
+			public const int textinput_prefix_text = 2131231189;
 			
 			// aapt resource value: 0x7F0801D6
-			public const int title = 2131231190;
+			public const int textinput_suffix_text = 2131231190;
+			
+			// aapt resource value: 0x7F0801CA
+			public const int textSpacerNoButtons = 2131231178;
+			
+			// aapt resource value: 0x7F0801CB
+			public const int textSpacerNoTitle = 2131231179;
+			
+			// aapt resource value: 0x7F0801CC
+			public const int textStart = 2131231180;
+			
+			// aapt resource value: 0x7F0801CD
+			public const int textTop = 2131231181;
+			
+			// aapt resource value: 0x7F0801CE
+			public const int text_input_end_icon = 2131231182;
+			
+			// aapt resource value: 0x7F0801CF
+			public const int text_input_error_icon = 2131231183;
+			
+			// aapt resource value: 0x7F0801D0
+			public const int text_input_start_icon = 2131231184;
 			
 			// aapt resource value: 0x7F0801D7
-			public const int titleDividerNoCustom = 2131231191;
+			public const int time = 2131231191;
 			
 			// aapt resource value: 0x7F0801D8
-			public const int title_template = 2131231192;
+			public const int title = 2131231192;
 			
 			// aapt resource value: 0x7F0801D9
-			public const int toggle = 2131231193;
+			public const int titleDividerNoCustom = 2131231193;
 			
 			// aapt resource value: 0x7F0801DA
-			public const int toolbar = 2131231194;
+			public const int title_template = 2131231194;
 			
 			// aapt resource value: 0x7F0801DB
-			public const int top = 2131231195;
+			public const int toggle = 2131231195;
 			
 			// aapt resource value: 0x7F0801DC
-			public const int topPanel = 2131231196;
+			public const int toolbar = 2131231196;
+			
+			// aapt resource value: 0x7F0801DD
+			public const int top = 2131231197;
+			
+			// aapt resource value: 0x7F0801DE
+			public const int topPanel = 2131231198;
 			
 			// aapt resource value: 0x7F08000C
 			public const int TOP_END = 2131230732;
@@ -10300,104 +12132,104 @@ namespace RadarIO.Xamarin.Android.Sample
 			// aapt resource value: 0x7F08000D
 			public const int TOP_START = 2131230733;
 			
-			// aapt resource value: 0x7F0801DD
-			public const int touch_outside = 2131231197;
-			
-			// aapt resource value: 0x7F0801DE
-			public const int transitionToEnd = 2131231198;
-			
 			// aapt resource value: 0x7F0801DF
-			public const int transitionToStart = 2131231199;
+			public const int touch_outside = 2131231199;
 			
 			// aapt resource value: 0x7F0801E0
-			public const int transition_current_scene = 2131231200;
+			public const int transitionToEnd = 2131231200;
 			
 			// aapt resource value: 0x7F0801E1
-			public const int transition_layout_save = 2131231201;
+			public const int transitionToStart = 2131231201;
 			
 			// aapt resource value: 0x7F0801E2
-			public const int transition_position = 2131231202;
+			public const int transition_current_scene = 2131231202;
 			
 			// aapt resource value: 0x7F0801E3
-			public const int transition_scene_layoutid_cache = 2131231203;
+			public const int transition_layout_save = 2131231203;
 			
 			// aapt resource value: 0x7F0801E4
-			public const int transition_transform = 2131231204;
+			public const int transition_position = 2131231204;
 			
 			// aapt resource value: 0x7F0801E5
-			public const int triangle = 2131231205;
+			public const int transition_scene_layoutid_cache = 2131231205;
 			
 			// aapt resource value: 0x7F0801E6
-			public const int @unchecked = 2131231206;
+			public const int transition_transform = 2131231206;
 			
 			// aapt resource value: 0x7F0801E7
-			public const int uniform = 2131231207;
+			public const int triangle = 2131231207;
 			
 			// aapt resource value: 0x7F0801E8
-			public const int unlabeled = 2131231208;
+			public const int @unchecked = 2131231208;
 			
 			// aapt resource value: 0x7F0801E9
-			public const int up = 2131231209;
+			public const int uniform = 2131231209;
 			
 			// aapt resource value: 0x7F0801EA
-			public const int useLogo = 2131231210;
+			public const int unlabeled = 2131231210;
 			
 			// aapt resource value: 0x7F0801EB
-			public const int vertical_only = 2131231211;
+			public const int up = 2131231211;
 			
 			// aapt resource value: 0x7F0801EC
-			public const int view_offset_helper = 2131231212;
+			public const int useLogo = 2131231212;
 			
 			// aapt resource value: 0x7F0801ED
-			public const int view_transition = 2131231213;
+			public const int vertical_only = 2131231213;
 			
 			// aapt resource value: 0x7F0801EE
-			public const int view_tree_lifecycle_owner = 2131231214;
+			public const int view_offset_helper = 2131231214;
 			
 			// aapt resource value: 0x7F0801EF
-			public const int view_tree_on_back_pressed_dispatcher_owner = 2131231215;
+			public const int view_transition = 2131231215;
 			
 			// aapt resource value: 0x7F0801F0
-			public const int view_tree_saved_state_registry_owner = 2131231216;
+			public const int view_tree_lifecycle_owner = 2131231216;
 			
 			// aapt resource value: 0x7F0801F1
-			public const int view_tree_view_model_store_owner = 2131231217;
+			public const int view_tree_on_back_pressed_dispatcher_owner = 2131231217;
 			
 			// aapt resource value: 0x7F0801F2
-			public const int visible = 2131231218;
+			public const int view_tree_saved_state_registry_owner = 2131231218;
 			
 			// aapt resource value: 0x7F0801F3
-			public const int visible_removing_fragment_view_tag = 2131231219;
+			public const int view_tree_view_model_store_owner = 2131231219;
 			
 			// aapt resource value: 0x7F0801F4
-			public const int west = 2131231220;
+			public const int visible = 2131231220;
 			
 			// aapt resource value: 0x7F0801F5
-			public const int wide = 2131231221;
-			
-			// aapt resource value: 0x7F0801F8
-			public const int withinBounds = 2131231224;
+			public const int visible_removing_fragment_view_tag = 2131231221;
 			
 			// aapt resource value: 0x7F0801F6
-			public const int withText = 2131231222;
+			public const int west = 2131231222;
 			
 			// aapt resource value: 0x7F0801F7
-			public const int with_icon = 2131231223;
-			
-			// aapt resource value: 0x7F0801F9
-			public const int wrap = 2131231225;
+			public const int wide = 2131231223;
 			
 			// aapt resource value: 0x7F0801FA
-			public const int wrap_content = 2131231226;
+			public const int withinBounds = 2131231226;
+			
+			// aapt resource value: 0x7F0801F8
+			public const int withText = 2131231224;
+			
+			// aapt resource value: 0x7F0801F9
+			public const int with_icon = 2131231225;
 			
 			// aapt resource value: 0x7F0801FB
-			public const int wrap_content_constrained = 2131231227;
+			public const int wrap = 2131231227;
 			
 			// aapt resource value: 0x7F0801FC
-			public const int x_left = 2131231228;
+			public const int wrap_content = 2131231228;
 			
 			// aapt resource value: 0x7F0801FD
-			public const int x_right = 2131231229;
+			public const int wrap_content_constrained = 2131231229;
+			
+			// aapt resource value: 0x7F0801FE
+			public const int x_left = 2131231230;
+			
+			// aapt resource value: 0x7F0801FF
+			public const int x_right = 2131231231;
 			
 			static Id()
 			{
@@ -10820,187 +12652,193 @@ namespace RadarIO.Xamarin.Android.Sample
 			public const int design_text_input_start_icon = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int m3_alert_dialog = 2131427376;
+			public const int ime_base_split_test_activity = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int m3_alert_dialog_actions = 2131427377;
+			public const int ime_secondary_split_test_activity = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int m3_alert_dialog_title = 2131427378;
+			public const int m3_alert_dialog = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int m3_auto_complete_simple_item = 2131427379;
+			public const int m3_alert_dialog_actions = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int m3_side_sheet_dialog = 2131427380;
+			public const int m3_alert_dialog_title = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int material_chip_input_combo = 2131427381;
-			
-			// aapt resource value: 0x7F0B003A
-			public const int material_clockface_textview = 2131427386;
-			
-			// aapt resource value: 0x7F0B003B
-			public const int material_clockface_view = 2131427387;
+			public const int m3_auto_complete_simple_item = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int material_clock_display = 2131427382;
+			public const int m3_side_sheet_dialog = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int material_clock_display_divider = 2131427383;
-			
-			// aapt resource value: 0x7F0B0038
-			public const int material_clock_period_toggle = 2131427384;
-			
-			// aapt resource value: 0x7F0B0039
-			public const int material_clock_period_toggle_land = 2131427385;
+			public const int material_chip_input_combo = 2131427383;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int material_radial_view_group = 2131427388;
+			public const int material_clockface_textview = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int material_textinput_timepicker = 2131427389;
+			public const int material_clockface_view = 2131427389;
 			
-			// aapt resource value: 0x7F0B0040
-			public const int material_timepicker = 2131427392;
+			// aapt resource value: 0x7F0B0038
+			public const int material_clock_display = 2131427384;
 			
-			// aapt resource value: 0x7F0B0041
-			public const int material_timepicker_dialog = 2131427393;
+			// aapt resource value: 0x7F0B0039
+			public const int material_clock_display_divider = 2131427385;
 			
-			// aapt resource value: 0x7F0B0042
-			public const int material_timepicker_textinput_display = 2131427394;
+			// aapt resource value: 0x7F0B003A
+			public const int material_clock_period_toggle = 2131427386;
+			
+			// aapt resource value: 0x7F0B003B
+			public const int material_clock_period_toggle_land = 2131427387;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int material_time_chip = 2131427390;
+			public const int material_radial_view_group = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int material_time_input = 2131427391;
+			public const int material_textinput_timepicker = 2131427391;
+			
+			// aapt resource value: 0x7F0B0042
+			public const int material_timepicker = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int mtrl_alert_dialog = 2131427395;
+			public const int material_timepicker_dialog = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int mtrl_alert_dialog_actions = 2131427396;
+			public const int material_timepicker_textinput_display = 2131427396;
+			
+			// aapt resource value: 0x7F0B0040
+			public const int material_time_chip = 2131427392;
+			
+			// aapt resource value: 0x7F0B0041
+			public const int material_time_input = 2131427393;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int mtrl_alert_dialog_title = 2131427397;
+			public const int mtrl_alert_dialog = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int mtrl_alert_select_dialog_item = 2131427398;
+			public const int mtrl_alert_dialog_actions = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int mtrl_alert_select_dialog_multichoice = 2131427399;
+			public const int mtrl_alert_dialog_title = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int mtrl_alert_select_dialog_singlechoice = 2131427400;
+			public const int mtrl_alert_select_dialog_item = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int mtrl_auto_complete_simple_item = 2131427401;
+			public const int mtrl_alert_select_dialog_multichoice = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int mtrl_calendar_day = 2131427402;
-			
-			// aapt resource value: 0x7F0B004C
-			public const int mtrl_calendar_days_of_week = 2131427404;
+			public const int mtrl_alert_select_dialog_singlechoice = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int mtrl_calendar_day_of_week = 2131427403;
+			public const int mtrl_auto_complete_simple_item = 2131427403;
 			
-			// aapt resource value: 0x7F0B004D
-			public const int mtrl_calendar_horizontal = 2131427405;
+			// aapt resource value: 0x7F0B004C
+			public const int mtrl_calendar_day = 2131427404;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int mtrl_calendar_month = 2131427406;
+			public const int mtrl_calendar_days_of_week = 2131427406;
 			
-			// aapt resource value: 0x7F0B0051
-			public const int mtrl_calendar_months = 2131427409;
+			// aapt resource value: 0x7F0B004D
+			public const int mtrl_calendar_day_of_week = 2131427405;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int mtrl_calendar_month_labeled = 2131427407;
+			public const int mtrl_calendar_horizontal = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int mtrl_calendar_month_navigation = 2131427408;
-			
-			// aapt resource value: 0x7F0B0052
-			public const int mtrl_calendar_vertical = 2131427410;
+			public const int mtrl_calendar_month = 2131427408;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int mtrl_calendar_year = 2131427411;
+			public const int mtrl_calendar_months = 2131427411;
+			
+			// aapt resource value: 0x7F0B0051
+			public const int mtrl_calendar_month_labeled = 2131427409;
+			
+			// aapt resource value: 0x7F0B0052
+			public const int mtrl_calendar_month_navigation = 2131427410;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int mtrl_layout_snackbar = 2131427412;
+			public const int mtrl_calendar_vertical = 2131427412;
 			
 			// aapt resource value: 0x7F0B0055
-			public const int mtrl_layout_snackbar_include = 2131427413;
+			public const int mtrl_calendar_year = 2131427413;
 			
 			// aapt resource value: 0x7F0B0056
-			public const int mtrl_navigation_rail_item = 2131427414;
+			public const int mtrl_layout_snackbar = 2131427414;
 			
 			// aapt resource value: 0x7F0B0057
-			public const int mtrl_picker_actions = 2131427415;
+			public const int mtrl_layout_snackbar_include = 2131427415;
 			
 			// aapt resource value: 0x7F0B0058
-			public const int mtrl_picker_dialog = 2131427416;
+			public const int mtrl_navigation_rail_item = 2131427416;
 			
 			// aapt resource value: 0x7F0B0059
-			public const int mtrl_picker_fullscreen = 2131427417;
+			public const int mtrl_picker_actions = 2131427417;
 			
 			// aapt resource value: 0x7F0B005A
-			public const int mtrl_picker_header_dialog = 2131427418;
+			public const int mtrl_picker_dialog = 2131427418;
 			
 			// aapt resource value: 0x7F0B005B
-			public const int mtrl_picker_header_fullscreen = 2131427419;
+			public const int mtrl_picker_fullscreen = 2131427419;
 			
 			// aapt resource value: 0x7F0B005C
-			public const int mtrl_picker_header_selection_text = 2131427420;
+			public const int mtrl_picker_header_dialog = 2131427420;
 			
 			// aapt resource value: 0x7F0B005D
-			public const int mtrl_picker_header_title_text = 2131427421;
+			public const int mtrl_picker_header_fullscreen = 2131427421;
 			
 			// aapt resource value: 0x7F0B005E
-			public const int mtrl_picker_header_toggle = 2131427422;
+			public const int mtrl_picker_header_selection_text = 2131427422;
 			
 			// aapt resource value: 0x7F0B005F
-			public const int mtrl_picker_text_input_date = 2131427423;
+			public const int mtrl_picker_header_title_text = 2131427423;
 			
 			// aapt resource value: 0x7F0B0060
-			public const int mtrl_picker_text_input_date_range = 2131427424;
+			public const int mtrl_picker_header_toggle = 2131427424;
 			
 			// aapt resource value: 0x7F0B0061
-			public const int mtrl_search_bar = 2131427425;
+			public const int mtrl_picker_text_input_date = 2131427425;
 			
 			// aapt resource value: 0x7F0B0062
-			public const int mtrl_search_view = 2131427426;
+			public const int mtrl_picker_text_input_date_range = 2131427426;
 			
 			// aapt resource value: 0x7F0B0063
-			public const int notification_action = 2131427427;
+			public const int mtrl_search_bar = 2131427427;
 			
 			// aapt resource value: 0x7F0B0064
-			public const int notification_action_tombstone = 2131427428;
+			public const int mtrl_search_view = 2131427428;
 			
 			// aapt resource value: 0x7F0B0065
-			public const int notification_template_custom_big = 2131427429;
+			public const int notification_action = 2131427429;
 			
 			// aapt resource value: 0x7F0B0066
-			public const int notification_template_icon_group = 2131427430;
+			public const int notification_action_tombstone = 2131427430;
 			
 			// aapt resource value: 0x7F0B0067
-			public const int notification_template_part_chronometer = 2131427431;
+			public const int notification_template_custom_big = 2131427431;
 			
 			// aapt resource value: 0x7F0B0068
-			public const int notification_template_part_time = 2131427432;
+			public const int notification_template_icon_group = 2131427432;
 			
 			// aapt resource value: 0x7F0B0069
-			public const int select_dialog_item_material = 2131427433;
+			public const int notification_template_part_chronometer = 2131427433;
 			
 			// aapt resource value: 0x7F0B006A
-			public const int select_dialog_multichoice_material = 2131427434;
+			public const int notification_template_part_time = 2131427434;
 			
 			// aapt resource value: 0x7F0B006B
-			public const int select_dialog_singlechoice_material = 2131427435;
+			public const int select_dialog_item_material = 2131427435;
 			
 			// aapt resource value: 0x7F0B006C
-			public const int support_simple_spinner_dropdown_item = 2131427436;
+			public const int select_dialog_multichoice_material = 2131427436;
+			
+			// aapt resource value: 0x7F0B006D
+			public const int select_dialog_singlechoice_material = 2131427437;
+			
+			// aapt resource value: 0x7F0B006E
+			public const int support_simple_spinner_dropdown_item = 2131427438;
 			
 			static Layout()
 			{
@@ -11295,334 +13133,337 @@ namespace RadarIO.Xamarin.Android.Sample
 			public const int fallback_menu_item_share_link = 2131755082;
 			
 			// aapt resource value: 0x7F10004B
-			public const int hide_bottom_view_on_scroll_behavior = 2131755083;
+			public const int hello = 2131755083;
 			
 			// aapt resource value: 0x7F10004C
-			public const int icon_content_description = 2131755084;
+			public const int hide_bottom_view_on_scroll_behavior = 2131755084;
 			
 			// aapt resource value: 0x7F10004D
-			public const int item_view_role_description = 2131755085;
+			public const int icon_content_description = 2131755085;
 			
 			// aapt resource value: 0x7F10004E
-			public const int m3_sys_motion_easing_emphasized = 2131755086;
+			public const int item_view_role_description = 2131755086;
 			
 			// aapt resource value: 0x7F10004F
-			public const int m3_sys_motion_easing_emphasized_accelerate = 2131755087;
+			public const int m3_sys_motion_easing_emphasized = 2131755087;
 			
 			// aapt resource value: 0x7F100050
-			public const int m3_sys_motion_easing_emphasized_decelerate = 2131755088;
+			public const int m3_sys_motion_easing_emphasized_accelerate = 2131755088;
 			
 			// aapt resource value: 0x7F100051
-			public const int m3_sys_motion_easing_emphasized_path_data = 2131755089;
+			public const int m3_sys_motion_easing_emphasized_decelerate = 2131755089;
 			
 			// aapt resource value: 0x7F100052
-			public const int m3_sys_motion_easing_legacy = 2131755090;
+			public const int m3_sys_motion_easing_emphasized_path_data = 2131755090;
 			
 			// aapt resource value: 0x7F100053
-			public const int m3_sys_motion_easing_legacy_accelerate = 2131755091;
+			public const int m3_sys_motion_easing_legacy = 2131755091;
 			
 			// aapt resource value: 0x7F100054
-			public const int m3_sys_motion_easing_legacy_decelerate = 2131755092;
+			public const int m3_sys_motion_easing_legacy_accelerate = 2131755092;
 			
 			// aapt resource value: 0x7F100055
-			public const int m3_sys_motion_easing_linear = 2131755093;
+			public const int m3_sys_motion_easing_legacy_decelerate = 2131755093;
 			
 			// aapt resource value: 0x7F100056
-			public const int m3_sys_motion_easing_standard = 2131755094;
+			public const int m3_sys_motion_easing_linear = 2131755094;
 			
 			// aapt resource value: 0x7F100057
-			public const int m3_sys_motion_easing_standard_accelerate = 2131755095;
+			public const int m3_sys_motion_easing_standard = 2131755095;
 			
 			// aapt resource value: 0x7F100058
-			public const int m3_sys_motion_easing_standard_decelerate = 2131755096;
+			public const int m3_sys_motion_easing_standard_accelerate = 2131755096;
 			
 			// aapt resource value: 0x7F100059
-			public const int material_clock_display_divider = 2131755097;
+			public const int m3_sys_motion_easing_standard_decelerate = 2131755097;
 			
 			// aapt resource value: 0x7F10005A
-			public const int material_clock_toggle_content_description = 2131755098;
+			public const int material_clock_display_divider = 2131755098;
 			
 			// aapt resource value: 0x7F10005B
-			public const int material_hour_24h_suffix = 2131755099;
+			public const int material_clock_toggle_content_description = 2131755099;
 			
 			// aapt resource value: 0x7F10005C
-			public const int material_hour_selection = 2131755100;
+			public const int material_hour_24h_suffix = 2131755100;
 			
 			// aapt resource value: 0x7F10005D
-			public const int material_hour_suffix = 2131755101;
+			public const int material_hour_selection = 2131755101;
 			
 			// aapt resource value: 0x7F10005E
-			public const int material_minute_selection = 2131755102;
+			public const int material_hour_suffix = 2131755102;
 			
 			// aapt resource value: 0x7F10005F
-			public const int material_minute_suffix = 2131755103;
+			public const int material_minute_selection = 2131755103;
 			
 			// aapt resource value: 0x7F100060
-			public const int material_motion_easing_accelerated = 2131755104;
+			public const int material_minute_suffix = 2131755104;
 			
 			// aapt resource value: 0x7F100061
-			public const int material_motion_easing_decelerated = 2131755105;
+			public const int material_motion_easing_accelerated = 2131755105;
 			
 			// aapt resource value: 0x7F100062
-			public const int material_motion_easing_emphasized = 2131755106;
+			public const int material_motion_easing_decelerated = 2131755106;
 			
 			// aapt resource value: 0x7F100063
-			public const int material_motion_easing_linear = 2131755107;
+			public const int material_motion_easing_emphasized = 2131755107;
 			
 			// aapt resource value: 0x7F100064
-			public const int material_motion_easing_standard = 2131755108;
+			public const int material_motion_easing_linear = 2131755108;
 			
 			// aapt resource value: 0x7F100065
-			public const int material_slider_range_end = 2131755109;
+			public const int material_motion_easing_standard = 2131755109;
 			
 			// aapt resource value: 0x7F100066
-			public const int material_slider_range_start = 2131755110;
+			public const int material_slider_range_end = 2131755110;
 			
 			// aapt resource value: 0x7F100067
-			public const int material_slider_value = 2131755111;
+			public const int material_slider_range_start = 2131755111;
 			
 			// aapt resource value: 0x7F100068
-			public const int material_timepicker_am = 2131755112;
+			public const int material_slider_value = 2131755112;
 			
 			// aapt resource value: 0x7F100069
-			public const int material_timepicker_clock_mode_description = 2131755113;
+			public const int material_timepicker_am = 2131755113;
 			
 			// aapt resource value: 0x7F10006A
-			public const int material_timepicker_hour = 2131755114;
+			public const int material_timepicker_clock_mode_description = 2131755114;
 			
 			// aapt resource value: 0x7F10006B
-			public const int material_timepicker_minute = 2131755115;
+			public const int material_timepicker_hour = 2131755115;
 			
 			// aapt resource value: 0x7F10006C
-			public const int material_timepicker_pm = 2131755116;
+			public const int material_timepicker_minute = 2131755116;
 			
 			// aapt resource value: 0x7F10006D
-			public const int material_timepicker_select_time = 2131755117;
+			public const int material_timepicker_pm = 2131755117;
 			
 			// aapt resource value: 0x7F10006E
-			public const int material_timepicker_text_input_mode_description = 2131755118;
+			public const int material_timepicker_select_time = 2131755118;
 			
 			// aapt resource value: 0x7F10006F
-			public const int mtrl_badge_numberless_content_description = 2131755119;
+			public const int material_timepicker_text_input_mode_description = 2131755119;
 			
 			// aapt resource value: 0x7F100070
-			public const int mtrl_checkbox_button_icon_path_checked = 2131755120;
+			public const int mtrl_badge_numberless_content_description = 2131755120;
 			
 			// aapt resource value: 0x7F100071
-			public const int mtrl_checkbox_button_icon_path_group_name = 2131755121;
+			public const int mtrl_checkbox_button_icon_path_checked = 2131755121;
 			
 			// aapt resource value: 0x7F100072
-			public const int mtrl_checkbox_button_icon_path_indeterminate = 2131755122;
+			public const int mtrl_checkbox_button_icon_path_group_name = 2131755122;
 			
 			// aapt resource value: 0x7F100073
-			public const int mtrl_checkbox_button_icon_path_name = 2131755123;
+			public const int mtrl_checkbox_button_icon_path_indeterminate = 2131755123;
 			
 			// aapt resource value: 0x7F100074
-			public const int mtrl_checkbox_button_path_checked = 2131755124;
+			public const int mtrl_checkbox_button_icon_path_name = 2131755124;
 			
 			// aapt resource value: 0x7F100075
-			public const int mtrl_checkbox_button_path_group_name = 2131755125;
+			public const int mtrl_checkbox_button_path_checked = 2131755125;
 			
 			// aapt resource value: 0x7F100076
-			public const int mtrl_checkbox_button_path_name = 2131755126;
+			public const int mtrl_checkbox_button_path_group_name = 2131755126;
 			
 			// aapt resource value: 0x7F100077
-			public const int mtrl_checkbox_button_path_unchecked = 2131755127;
+			public const int mtrl_checkbox_button_path_name = 2131755127;
 			
 			// aapt resource value: 0x7F100078
-			public const int mtrl_checkbox_state_description_checked = 2131755128;
+			public const int mtrl_checkbox_button_path_unchecked = 2131755128;
 			
 			// aapt resource value: 0x7F100079
-			public const int mtrl_checkbox_state_description_indeterminate = 2131755129;
+			public const int mtrl_checkbox_state_description_checked = 2131755129;
 			
 			// aapt resource value: 0x7F10007A
-			public const int mtrl_checkbox_state_description_unchecked = 2131755130;
+			public const int mtrl_checkbox_state_description_indeterminate = 2131755130;
 			
 			// aapt resource value: 0x7F10007B
-			public const int mtrl_chip_close_icon_content_description = 2131755131;
+			public const int mtrl_checkbox_state_description_unchecked = 2131755131;
 			
 			// aapt resource value: 0x7F10007C
-			public const int mtrl_exceed_max_badge_number_content_description = 2131755132;
+			public const int mtrl_chip_close_icon_content_description = 2131755132;
 			
 			// aapt resource value: 0x7F10007D
-			public const int mtrl_exceed_max_badge_number_suffix = 2131755133;
+			public const int mtrl_exceed_max_badge_number_content_description = 2131755133;
 			
 			// aapt resource value: 0x7F10007E
-			public const int mtrl_picker_a11y_next_month = 2131755134;
+			public const int mtrl_exceed_max_badge_number_suffix = 2131755134;
 			
 			// aapt resource value: 0x7F10007F
-			public const int mtrl_picker_a11y_prev_month = 2131755135;
+			public const int mtrl_picker_a11y_next_month = 2131755135;
 			
 			// aapt resource value: 0x7F100080
-			public const int mtrl_picker_announce_current_range_selection = 2131755136;
+			public const int mtrl_picker_a11y_prev_month = 2131755136;
 			
 			// aapt resource value: 0x7F100081
-			public const int mtrl_picker_announce_current_selection = 2131755137;
+			public const int mtrl_picker_announce_current_range_selection = 2131755137;
 			
 			// aapt resource value: 0x7F100082
-			public const int mtrl_picker_announce_current_selection_none = 2131755138;
+			public const int mtrl_picker_announce_current_selection = 2131755138;
 			
 			// aapt resource value: 0x7F100083
-			public const int mtrl_picker_cancel = 2131755139;
+			public const int mtrl_picker_announce_current_selection_none = 2131755139;
 			
 			// aapt resource value: 0x7F100084
-			public const int mtrl_picker_confirm = 2131755140;
+			public const int mtrl_picker_cancel = 2131755140;
 			
 			// aapt resource value: 0x7F100085
-			public const int mtrl_picker_date_header_selected = 2131755141;
+			public const int mtrl_picker_confirm = 2131755141;
 			
 			// aapt resource value: 0x7F100086
-			public const int mtrl_picker_date_header_title = 2131755142;
+			public const int mtrl_picker_date_header_selected = 2131755142;
 			
 			// aapt resource value: 0x7F100087
-			public const int mtrl_picker_date_header_unselected = 2131755143;
+			public const int mtrl_picker_date_header_title = 2131755143;
 			
 			// aapt resource value: 0x7F100088
-			public const int mtrl_picker_day_of_week_column_header = 2131755144;
+			public const int mtrl_picker_date_header_unselected = 2131755144;
 			
 			// aapt resource value: 0x7F100089
-			public const int mtrl_picker_end_date_description = 2131755145;
+			public const int mtrl_picker_day_of_week_column_header = 2131755145;
 			
 			// aapt resource value: 0x7F10008A
-			public const int mtrl_picker_invalid_format = 2131755146;
+			public const int mtrl_picker_end_date_description = 2131755146;
 			
 			// aapt resource value: 0x7F10008B
-			public const int mtrl_picker_invalid_format_example = 2131755147;
+			public const int mtrl_picker_invalid_format = 2131755147;
 			
 			// aapt resource value: 0x7F10008C
-			public const int mtrl_picker_invalid_format_use = 2131755148;
+			public const int mtrl_picker_invalid_format_example = 2131755148;
 			
 			// aapt resource value: 0x7F10008D
-			public const int mtrl_picker_invalid_range = 2131755149;
+			public const int mtrl_picker_invalid_format_use = 2131755149;
 			
 			// aapt resource value: 0x7F10008E
-			public const int mtrl_picker_navigate_to_current_year_description = 2131755150;
+			public const int mtrl_picker_invalid_range = 2131755150;
 			
 			// aapt resource value: 0x7F10008F
-			public const int mtrl_picker_navigate_to_year_description = 2131755151;
+			public const int mtrl_picker_navigate_to_current_year_description = 2131755151;
 			
 			// aapt resource value: 0x7F100090
-			public const int mtrl_picker_out_of_range = 2131755152;
+			public const int mtrl_picker_navigate_to_year_description = 2131755152;
 			
 			// aapt resource value: 0x7F100091
-			public const int mtrl_picker_range_header_only_end_selected = 2131755153;
+			public const int mtrl_picker_out_of_range = 2131755153;
 			
 			// aapt resource value: 0x7F100092
-			public const int mtrl_picker_range_header_only_start_selected = 2131755154;
+			public const int mtrl_picker_range_header_only_end_selected = 2131755154;
 			
 			// aapt resource value: 0x7F100093
-			public const int mtrl_picker_range_header_selected = 2131755155;
+			public const int mtrl_picker_range_header_only_start_selected = 2131755155;
 			
 			// aapt resource value: 0x7F100094
-			public const int mtrl_picker_range_header_title = 2131755156;
+			public const int mtrl_picker_range_header_selected = 2131755156;
 			
 			// aapt resource value: 0x7F100095
-			public const int mtrl_picker_range_header_unselected = 2131755157;
+			public const int mtrl_picker_range_header_title = 2131755157;
 			
 			// aapt resource value: 0x7F100096
-			public const int mtrl_picker_save = 2131755158;
+			public const int mtrl_picker_range_header_unselected = 2131755158;
 			
 			// aapt resource value: 0x7F100097
-			public const int mtrl_picker_start_date_description = 2131755159;
+			public const int mtrl_picker_save = 2131755159;
 			
 			// aapt resource value: 0x7F100098
-			public const int mtrl_picker_text_input_date_hint = 2131755160;
+			public const int mtrl_picker_start_date_description = 2131755160;
 			
 			// aapt resource value: 0x7F100099
-			public const int mtrl_picker_text_input_date_range_end_hint = 2131755161;
+			public const int mtrl_picker_text_input_date_hint = 2131755161;
 			
 			// aapt resource value: 0x7F10009A
-			public const int mtrl_picker_text_input_date_range_start_hint = 2131755162;
+			public const int mtrl_picker_text_input_date_range_end_hint = 2131755162;
 			
 			// aapt resource value: 0x7F10009B
-			public const int mtrl_picker_text_input_day_abbr = 2131755163;
+			public const int mtrl_picker_text_input_date_range_start_hint = 2131755163;
 			
 			// aapt resource value: 0x7F10009C
-			public const int mtrl_picker_text_input_month_abbr = 2131755164;
+			public const int mtrl_picker_text_input_day_abbr = 2131755164;
 			
 			// aapt resource value: 0x7F10009D
-			public const int mtrl_picker_text_input_year_abbr = 2131755165;
+			public const int mtrl_picker_text_input_month_abbr = 2131755165;
 			
 			// aapt resource value: 0x7F10009E
-			public const int mtrl_picker_today_description = 2131755166;
+			public const int mtrl_picker_text_input_year_abbr = 2131755166;
 			
 			// aapt resource value: 0x7F10009F
-			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131755167;
+			public const int mtrl_picker_today_description = 2131755167;
 			
 			// aapt resource value: 0x7F1000A0
-			public const int mtrl_picker_toggle_to_day_selection = 2131755168;
+			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131755168;
 			
 			// aapt resource value: 0x7F1000A1
-			public const int mtrl_picker_toggle_to_text_input_mode = 2131755169;
+			public const int mtrl_picker_toggle_to_day_selection = 2131755169;
 			
 			// aapt resource value: 0x7F1000A2
-			public const int mtrl_picker_toggle_to_year_selection = 2131755170;
+			public const int mtrl_picker_toggle_to_text_input_mode = 2131755170;
 			
 			// aapt resource value: 0x7F1000A3
-			public const int mtrl_switch_thumb_group_name = 2131755171;
+			public const int mtrl_picker_toggle_to_year_selection = 2131755171;
 			
 			// aapt resource value: 0x7F1000A4
-			public const int mtrl_switch_thumb_path_checked = 2131755172;
+			public const int mtrl_switch_thumb_group_name = 2131755172;
 			
 			// aapt resource value: 0x7F1000A5
-			public const int mtrl_switch_thumb_path_morphing = 2131755173;
+			public const int mtrl_switch_thumb_path_checked = 2131755173;
 			
 			// aapt resource value: 0x7F1000A6
-			public const int mtrl_switch_thumb_path_name = 2131755174;
+			public const int mtrl_switch_thumb_path_morphing = 2131755174;
 			
 			// aapt resource value: 0x7F1000A7
-			public const int mtrl_switch_thumb_path_pressed = 2131755175;
+			public const int mtrl_switch_thumb_path_name = 2131755175;
 			
 			// aapt resource value: 0x7F1000A8
-			public const int mtrl_switch_thumb_path_unchecked = 2131755176;
+			public const int mtrl_switch_thumb_path_pressed = 2131755176;
 			
 			// aapt resource value: 0x7F1000A9
-			public const int mtrl_switch_track_decoration_path = 2131755177;
+			public const int mtrl_switch_thumb_path_unchecked = 2131755177;
 			
 			// aapt resource value: 0x7F1000AA
-			public const int mtrl_switch_track_path = 2131755178;
+			public const int mtrl_switch_track_decoration_path = 2131755178;
 			
 			// aapt resource value: 0x7F1000AB
-			public const int mtrl_timepicker_cancel = 2131755179;
+			public const int mtrl_switch_track_path = 2131755179;
 			
 			// aapt resource value: 0x7F1000AC
-			public const int mtrl_timepicker_confirm = 2131755180;
+			public const int mtrl_timepicker_cancel = 2131755180;
 			
 			// aapt resource value: 0x7F1000AD
-			public const int password_toggle_content_description = 2131755181;
+			public const int mtrl_timepicker_confirm = 2131755181;
 			
 			// aapt resource value: 0x7F1000AE
-			public const int path_password_eye = 2131755182;
+			public const int password_toggle_content_description = 2131755182;
 			
 			// aapt resource value: 0x7F1000AF
-			public const int path_password_eye_mask_strike_through = 2131755183;
+			public const int path_password_eye = 2131755183;
 			
 			// aapt resource value: 0x7F1000B0
-			public const int path_password_eye_mask_visible = 2131755184;
+			public const int path_password_eye_mask_strike_through = 2131755184;
 			
 			// aapt resource value: 0x7F1000B1
-			public const int path_password_strike_through = 2131755185;
-			
-			// aapt resource value: 0x7F1000B3
-			public const int searchbar_scrolling_view_behavior = 2131755187;
-			
-			// aapt resource value: 0x7F1000B4
-			public const int searchview_clear_text_content_description = 2131755188;
-			
-			// aapt resource value: 0x7F1000B5
-			public const int searchview_navigation_content_description = 2131755189;
+			public const int path_password_eye_mask_visible = 2131755185;
 			
 			// aapt resource value: 0x7F1000B2
-			public const int search_menu_title = 2131755186;
+			public const int path_password_strike_through = 2131755186;
+			
+			// aapt resource value: 0x7F1000B4
+			public const int searchbar_scrolling_view_behavior = 2131755188;
+			
+			// aapt resource value: 0x7F1000B5
+			public const int searchview_clear_text_content_description = 2131755189;
 			
 			// aapt resource value: 0x7F1000B6
-			public const int side_sheet_accessibility_pane_title = 2131755190;
+			public const int searchview_navigation_content_description = 2131755190;
+			
+			// aapt resource value: 0x7F1000B3
+			public const int search_menu_title = 2131755187;
 			
 			// aapt resource value: 0x7F1000B7
-			public const int side_sheet_behavior = 2131755191;
+			public const int side_sheet_accessibility_pane_title = 2131755191;
 			
 			// aapt resource value: 0x7F1000B8
-			public const int status_bar_notification_info_overflow = 2131755192;
+			public const int side_sheet_behavior = 2131755192;
+			
+			// aapt resource value: 0x7F1000B9
+			public const int status_bar_notification_info_overflow = 2131755193;
 			
 			static String()
 			{
@@ -13173,338 +15014,338 @@ namespace RadarIO.Xamarin.Android.Sample
 			// aapt resource value: 0x7F1101FF
 			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131821055;
 			
-			// aapt resource value: 0x7F110266
-			public const int ThemeOverlay_AppCompat = 2131821158;
-			
 			// aapt resource value: 0x7F110267
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131821159;
+			public const int ThemeOverlay_AppCompat = 2131821159;
 			
 			// aapt resource value: 0x7F110268
-			public const int ThemeOverlay_AppCompat_Dark = 2131821160;
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131821160;
 			
 			// aapt resource value: 0x7F110269
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131821161;
+			public const int ThemeOverlay_AppCompat_Dark = 2131821161;
 			
 			// aapt resource value: 0x7F11026A
-			public const int ThemeOverlay_AppCompat_DayNight = 2131821162;
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131821162;
 			
 			// aapt resource value: 0x7F11026B
-			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131821163;
+			public const int ThemeOverlay_AppCompat_DayNight = 2131821163;
 			
 			// aapt resource value: 0x7F11026C
-			public const int ThemeOverlay_AppCompat_Dialog = 2131821164;
+			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131821164;
 			
 			// aapt resource value: 0x7F11026D
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131821165;
+			public const int ThemeOverlay_AppCompat_Dialog = 2131821165;
 			
 			// aapt resource value: 0x7F11026E
-			public const int ThemeOverlay_AppCompat_Light = 2131821166;
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131821166;
 			
 			// aapt resource value: 0x7F11026F
-			public const int ThemeOverlay_Design_TextInputEditText = 2131821167;
+			public const int ThemeOverlay_AppCompat_Light = 2131821167;
 			
 			// aapt resource value: 0x7F110270
-			public const int ThemeOverlay_Material3 = 2131821168;
+			public const int ThemeOverlay_Design_TextInputEditText = 2131821168;
 			
 			// aapt resource value: 0x7F110271
-			public const int ThemeOverlay_Material3_ActionBar = 2131821169;
+			public const int ThemeOverlay_Material3 = 2131821169;
 			
 			// aapt resource value: 0x7F110272
-			public const int ThemeOverlay_Material3_AutoCompleteTextView = 2131821170;
+			public const int ThemeOverlay_Material3_ActionBar = 2131821170;
 			
 			// aapt resource value: 0x7F110273
-			public const int ThemeOverlay_Material3_AutoCompleteTextView_FilledBox = 2131821171;
+			public const int ThemeOverlay_Material3_AutoCompleteTextView = 2131821171;
 			
 			// aapt resource value: 0x7F110274
-			public const int ThemeOverlay_Material3_AutoCompleteTextView_FilledBox_Dense = 2131821172;
+			public const int ThemeOverlay_Material3_AutoCompleteTextView_FilledBox = 2131821172;
 			
 			// aapt resource value: 0x7F110275
-			public const int ThemeOverlay_Material3_AutoCompleteTextView_OutlinedBox = 2131821173;
+			public const int ThemeOverlay_Material3_AutoCompleteTextView_FilledBox_Dense = 2131821173;
 			
 			// aapt resource value: 0x7F110276
-			public const int ThemeOverlay_Material3_AutoCompleteTextView_OutlinedBox_Dense = 2131821174;
+			public const int ThemeOverlay_Material3_AutoCompleteTextView_OutlinedBox = 2131821174;
 			
 			// aapt resource value: 0x7F110277
-			public const int ThemeOverlay_Material3_BottomAppBar = 2131821175;
+			public const int ThemeOverlay_Material3_AutoCompleteTextView_OutlinedBox_Dense = 2131821175;
 			
 			// aapt resource value: 0x7F110278
-			public const int ThemeOverlay_Material3_BottomAppBar_Legacy = 2131821176;
+			public const int ThemeOverlay_Material3_BottomAppBar = 2131821176;
 			
 			// aapt resource value: 0x7F110279
-			public const int ThemeOverlay_Material3_BottomSheetDialog = 2131821177;
+			public const int ThemeOverlay_Material3_BottomAppBar_Legacy = 2131821177;
 			
 			// aapt resource value: 0x7F11027A
-			public const int ThemeOverlay_Material3_Button = 2131821178;
+			public const int ThemeOverlay_Material3_BottomSheetDialog = 2131821178;
 			
 			// aapt resource value: 0x7F11027B
-			public const int ThemeOverlay_Material3_Button_ElevatedButton = 2131821179;
+			public const int ThemeOverlay_Material3_Button = 2131821179;
 			
 			// aapt resource value: 0x7F11027C
-			public const int ThemeOverlay_Material3_Button_IconButton = 2131821180;
+			public const int ThemeOverlay_Material3_Button_ElevatedButton = 2131821180;
 			
 			// aapt resource value: 0x7F11027D
-			public const int ThemeOverlay_Material3_Button_IconButton_Filled = 2131821181;
+			public const int ThemeOverlay_Material3_Button_IconButton = 2131821181;
 			
 			// aapt resource value: 0x7F11027E
-			public const int ThemeOverlay_Material3_Button_IconButton_Filled_Tonal = 2131821182;
+			public const int ThemeOverlay_Material3_Button_IconButton_Filled = 2131821182;
 			
 			// aapt resource value: 0x7F11027F
-			public const int ThemeOverlay_Material3_Button_TextButton = 2131821183;
+			public const int ThemeOverlay_Material3_Button_IconButton_Filled_Tonal = 2131821183;
 			
 			// aapt resource value: 0x7F110280
-			public const int ThemeOverlay_Material3_Button_TextButton_Snackbar = 2131821184;
+			public const int ThemeOverlay_Material3_Button_TextButton = 2131821184;
 			
 			// aapt resource value: 0x7F110281
-			public const int ThemeOverlay_Material3_Button_TonalButton = 2131821185;
+			public const int ThemeOverlay_Material3_Button_TextButton_Snackbar = 2131821185;
 			
 			// aapt resource value: 0x7F110282
-			public const int ThemeOverlay_Material3_Chip = 2131821186;
+			public const int ThemeOverlay_Material3_Button_TonalButton = 2131821186;
 			
 			// aapt resource value: 0x7F110283
-			public const int ThemeOverlay_Material3_Chip_Assist = 2131821187;
+			public const int ThemeOverlay_Material3_Chip = 2131821187;
 			
 			// aapt resource value: 0x7F110284
-			public const int ThemeOverlay_Material3_Dark = 2131821188;
+			public const int ThemeOverlay_Material3_Chip_Assist = 2131821188;
 			
 			// aapt resource value: 0x7F110285
-			public const int ThemeOverlay_Material3_Dark_ActionBar = 2131821189;
+			public const int ThemeOverlay_Material3_Dark = 2131821189;
 			
 			// aapt resource value: 0x7F110286
-			public const int ThemeOverlay_Material3_DayNight_BottomSheetDialog = 2131821190;
+			public const int ThemeOverlay_Material3_Dark_ActionBar = 2131821190;
 			
 			// aapt resource value: 0x7F110287
-			public const int ThemeOverlay_Material3_DayNight_SideSheetDialog = 2131821191;
+			public const int ThemeOverlay_Material3_DayNight_BottomSheetDialog = 2131821191;
 			
 			// aapt resource value: 0x7F110288
-			public const int ThemeOverlay_Material3_Dialog = 2131821192;
+			public const int ThemeOverlay_Material3_DayNight_SideSheetDialog = 2131821192;
 			
 			// aapt resource value: 0x7F110289
-			public const int ThemeOverlay_Material3_Dialog_Alert = 2131821193;
+			public const int ThemeOverlay_Material3_Dialog = 2131821193;
 			
 			// aapt resource value: 0x7F11028A
-			public const int ThemeOverlay_Material3_Dialog_Alert_Framework = 2131821194;
+			public const int ThemeOverlay_Material3_Dialog_Alert = 2131821194;
 			
 			// aapt resource value: 0x7F11028B
-			public const int ThemeOverlay_Material3_DynamicColors_Dark = 2131821195;
+			public const int ThemeOverlay_Material3_Dialog_Alert_Framework = 2131821195;
 			
 			// aapt resource value: 0x7F11028C
-			public const int ThemeOverlay_Material3_DynamicColors_DayNight = 2131821196;
+			public const int ThemeOverlay_Material3_DynamicColors_Dark = 2131821196;
 			
 			// aapt resource value: 0x7F11028D
-			public const int ThemeOverlay_Material3_DynamicColors_Light = 2131821197;
+			public const int ThemeOverlay_Material3_DynamicColors_DayNight = 2131821197;
 			
 			// aapt resource value: 0x7F11028E
-			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Primary = 2131821198;
+			public const int ThemeOverlay_Material3_DynamicColors_Light = 2131821198;
 			
 			// aapt resource value: 0x7F11028F
-			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Secondary = 2131821199;
+			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Primary = 2131821199;
 			
 			// aapt resource value: 0x7F110290
-			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Surface = 2131821200;
+			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Secondary = 2131821200;
 			
 			// aapt resource value: 0x7F110291
-			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Tertiary = 2131821201;
+			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Surface = 2131821201;
 			
 			// aapt resource value: 0x7F110292
-			public const int ThemeOverlay_Material3_FloatingActionButton_Primary = 2131821202;
+			public const int ThemeOverlay_Material3_ExtendedFloatingActionButton_Tertiary = 2131821202;
 			
 			// aapt resource value: 0x7F110293
-			public const int ThemeOverlay_Material3_FloatingActionButton_Secondary = 2131821203;
+			public const int ThemeOverlay_Material3_FloatingActionButton_Primary = 2131821203;
 			
 			// aapt resource value: 0x7F110294
-			public const int ThemeOverlay_Material3_FloatingActionButton_Surface = 2131821204;
+			public const int ThemeOverlay_Material3_FloatingActionButton_Secondary = 2131821204;
 			
 			// aapt resource value: 0x7F110295
-			public const int ThemeOverlay_Material3_FloatingActionButton_Tertiary = 2131821205;
+			public const int ThemeOverlay_Material3_FloatingActionButton_Surface = 2131821205;
 			
 			// aapt resource value: 0x7F110296
-			public const int ThemeOverlay_Material3_HarmonizedColors = 2131821206;
+			public const int ThemeOverlay_Material3_FloatingActionButton_Tertiary = 2131821206;
 			
 			// aapt resource value: 0x7F110297
-			public const int ThemeOverlay_Material3_HarmonizedColors_Empty = 2131821207;
+			public const int ThemeOverlay_Material3_HarmonizedColors = 2131821207;
 			
 			// aapt resource value: 0x7F110298
-			public const int ThemeOverlay_Material3_Light = 2131821208;
+			public const int ThemeOverlay_Material3_HarmonizedColors_Empty = 2131821208;
 			
 			// aapt resource value: 0x7F110299
-			public const int ThemeOverlay_Material3_Light_Dialog_Alert_Framework = 2131821209;
+			public const int ThemeOverlay_Material3_Light = 2131821209;
 			
 			// aapt resource value: 0x7F11029A
-			public const int ThemeOverlay_Material3_MaterialAlertDialog = 2131821210;
+			public const int ThemeOverlay_Material3_Light_Dialog_Alert_Framework = 2131821210;
 			
 			// aapt resource value: 0x7F11029B
-			public const int ThemeOverlay_Material3_MaterialAlertDialog_Centered = 2131821211;
+			public const int ThemeOverlay_Material3_MaterialAlertDialog = 2131821211;
 			
 			// aapt resource value: 0x7F11029C
-			public const int ThemeOverlay_Material3_MaterialCalendar = 2131821212;
+			public const int ThemeOverlay_Material3_MaterialAlertDialog_Centered = 2131821212;
 			
 			// aapt resource value: 0x7F11029D
-			public const int ThemeOverlay_Material3_MaterialCalendar_Fullscreen = 2131821213;
+			public const int ThemeOverlay_Material3_MaterialCalendar = 2131821213;
 			
 			// aapt resource value: 0x7F11029E
-			public const int ThemeOverlay_Material3_MaterialCalendar_HeaderCancelButton = 2131821214;
+			public const int ThemeOverlay_Material3_MaterialCalendar_Fullscreen = 2131821214;
 			
 			// aapt resource value: 0x7F11029F
-			public const int ThemeOverlay_Material3_MaterialTimePicker = 2131821215;
+			public const int ThemeOverlay_Material3_MaterialCalendar_HeaderCancelButton = 2131821215;
 			
 			// aapt resource value: 0x7F1102A0
-			public const int ThemeOverlay_Material3_MaterialTimePicker_Display_TextInputEditText = 2131821216;
+			public const int ThemeOverlay_Material3_MaterialTimePicker = 2131821216;
 			
 			// aapt resource value: 0x7F1102A1
-			public const int ThemeOverlay_Material3_NavigationView = 2131821217;
+			public const int ThemeOverlay_Material3_MaterialTimePicker_Display_TextInputEditText = 2131821217;
 			
 			// aapt resource value: 0x7F1102A2
-			public const int ThemeOverlay_Material3_PersonalizedColors = 2131821218;
+			public const int ThemeOverlay_Material3_NavigationView = 2131821218;
 			
 			// aapt resource value: 0x7F1102A3
-			public const int ThemeOverlay_Material3_Search = 2131821219;
+			public const int ThemeOverlay_Material3_PersonalizedColors = 2131821219;
 			
 			// aapt resource value: 0x7F1102A4
-			public const int ThemeOverlay_Material3_SideSheetDialog = 2131821220;
+			public const int ThemeOverlay_Material3_Search = 2131821220;
 			
 			// aapt resource value: 0x7F1102A5
-			public const int ThemeOverlay_Material3_Snackbar = 2131821221;
+			public const int ThemeOverlay_Material3_SideSheetDialog = 2131821221;
 			
 			// aapt resource value: 0x7F1102A6
-			public const int ThemeOverlay_Material3_TextInputEditText = 2131821222;
+			public const int ThemeOverlay_Material3_Snackbar = 2131821222;
 			
 			// aapt resource value: 0x7F1102A7
-			public const int ThemeOverlay_Material3_TextInputEditText_FilledBox = 2131821223;
+			public const int ThemeOverlay_Material3_TextInputEditText = 2131821223;
 			
 			// aapt resource value: 0x7F1102A8
-			public const int ThemeOverlay_Material3_TextInputEditText_FilledBox_Dense = 2131821224;
+			public const int ThemeOverlay_Material3_TextInputEditText_FilledBox = 2131821224;
 			
 			// aapt resource value: 0x7F1102A9
-			public const int ThemeOverlay_Material3_TextInputEditText_OutlinedBox = 2131821225;
+			public const int ThemeOverlay_Material3_TextInputEditText_FilledBox_Dense = 2131821225;
 			
 			// aapt resource value: 0x7F1102AA
-			public const int ThemeOverlay_Material3_TextInputEditText_OutlinedBox_Dense = 2131821226;
+			public const int ThemeOverlay_Material3_TextInputEditText_OutlinedBox = 2131821226;
 			
 			// aapt resource value: 0x7F1102AB
-			public const int ThemeOverlay_Material3_Toolbar_Surface = 2131821227;
+			public const int ThemeOverlay_Material3_TextInputEditText_OutlinedBox_Dense = 2131821227;
 			
 			// aapt resource value: 0x7F1102AC
-			public const int ThemeOverlay_MaterialAlertDialog_Material3_Title_Icon = 2131821228;
+			public const int ThemeOverlay_Material3_Toolbar_Surface = 2131821228;
 			
 			// aapt resource value: 0x7F1102AD
-			public const int ThemeOverlay_MaterialComponents = 2131821229;
+			public const int ThemeOverlay_MaterialAlertDialog_Material3_Title_Icon = 2131821229;
 			
 			// aapt resource value: 0x7F1102AE
-			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131821230;
+			public const int ThemeOverlay_MaterialComponents = 2131821230;
 			
 			// aapt resource value: 0x7F1102AF
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131821231;
+			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131821231;
 			
 			// aapt resource value: 0x7F1102B0
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131821232;
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131821232;
 			
 			// aapt resource value: 0x7F1102B1
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131821233;
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131821233;
 			
 			// aapt resource value: 0x7F1102B2
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131821234;
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131821234;
 			
 			// aapt resource value: 0x7F1102B3
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131821235;
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131821235;
 			
 			// aapt resource value: 0x7F1102B4
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131821236;
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131821236;
 			
 			// aapt resource value: 0x7F1102B5
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131821237;
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131821237;
 			
 			// aapt resource value: 0x7F1102B6
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131821238;
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131821238;
 			
 			// aapt resource value: 0x7F1102B7
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131821239;
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131821239;
 			
 			// aapt resource value: 0x7F1102B8
-			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131821240;
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131821240;
 			
 			// aapt resource value: 0x7F1102B9
-			public const int ThemeOverlay_MaterialComponents_Dark = 2131821241;
+			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131821241;
 			
 			// aapt resource value: 0x7F1102BA
-			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131821242;
+			public const int ThemeOverlay_MaterialComponents_Dark = 2131821242;
 			
 			// aapt resource value: 0x7F1102BB
-			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131821243;
+			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131821243;
 			
 			// aapt resource value: 0x7F1102BC
-			public const int ThemeOverlay_MaterialComponents_Dialog = 2131821244;
+			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131821244;
 			
 			// aapt resource value: 0x7F1102BD
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131821245;
+			public const int ThemeOverlay_MaterialComponents_Dialog = 2131821245;
 			
 			// aapt resource value: 0x7F1102BE
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131821246;
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131821246;
 			
 			// aapt resource value: 0x7F1102BF
-			public const int ThemeOverlay_MaterialComponents_Light = 2131821247;
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131821247;
 			
 			// aapt resource value: 0x7F1102C0
-			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131821248;
+			public const int ThemeOverlay_MaterialComponents_Light = 2131821248;
 			
 			// aapt resource value: 0x7F1102C1
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131821249;
+			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131821249;
 			
 			// aapt resource value: 0x7F1102C2
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131821250;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131821250;
 			
 			// aapt resource value: 0x7F1102C3
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131821251;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131821251;
 			
 			// aapt resource value: 0x7F1102C4
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131821252;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131821252;
 			
 			// aapt resource value: 0x7F1102C5
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131821253;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131821253;
 			
 			// aapt resource value: 0x7F1102C6
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131821254;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131821254;
 			
 			// aapt resource value: 0x7F1102C7
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131821255;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131821255;
 			
 			// aapt resource value: 0x7F1102C8
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131821256;
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131821256;
 			
 			// aapt resource value: 0x7F1102C9
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131821257;
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131821257;
 			
 			// aapt resource value: 0x7F1102CA
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131821258;
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131821258;
 			
 			// aapt resource value: 0x7F1102CB
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131821259;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131821259;
 			
 			// aapt resource value: 0x7F1102CC
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131821260;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131821260;
 			
 			// aapt resource value: 0x7F1102CD
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131821261;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131821261;
 			
 			// aapt resource value: 0x7F1102CE
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131821262;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131821262;
 			
 			// aapt resource value: 0x7F1102CF
-			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131821263;
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131821263;
 			
 			// aapt resource value: 0x7F1102D0
-			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131821264;
+			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131821264;
 			
 			// aapt resource value: 0x7F1102D1
-			public const int ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText = 2131821265;
+			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131821265;
 			
 			// aapt resource value: 0x7F1102D2
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary = 2131821266;
+			public const int ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText = 2131821266;
 			
 			// aapt resource value: 0x7F1102D3
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131821267;
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary = 2131821267;
 			
 			// aapt resource value: 0x7F1102D4
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131821268;
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131821268;
+			
+			// aapt resource value: 0x7F1102D5
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131821269;
 			
 			// aapt resource value: 0x7F110200
 			public const int Theme_AppCompat = 2131821056;
@@ -13812,1121 +15653,1124 @@ namespace RadarIO.Xamarin.Android.Sample
 			// aapt resource value: 0x7F110265
 			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131821157;
 			
-			// aapt resource value: 0x7F1102D5
-			public const int Widget_AppCompat_ActionBar = 2131821269;
+			// aapt resource value: 0x7F110266
+			public const int Theme_PlayCore_Transparent = 2131821158;
 			
 			// aapt resource value: 0x7F1102D6
-			public const int Widget_AppCompat_ActionBar_Solid = 2131821270;
+			public const int Widget_AppCompat_ActionBar = 2131821270;
 			
 			// aapt resource value: 0x7F1102D7
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131821271;
+			public const int Widget_AppCompat_ActionBar_Solid = 2131821271;
 			
 			// aapt resource value: 0x7F1102D8
-			public const int Widget_AppCompat_ActionBar_TabText = 2131821272;
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131821272;
 			
 			// aapt resource value: 0x7F1102D9
-			public const int Widget_AppCompat_ActionBar_TabView = 2131821273;
+			public const int Widget_AppCompat_ActionBar_TabText = 2131821273;
 			
 			// aapt resource value: 0x7F1102DA
-			public const int Widget_AppCompat_ActionButton = 2131821274;
+			public const int Widget_AppCompat_ActionBar_TabView = 2131821274;
 			
 			// aapt resource value: 0x7F1102DB
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131821275;
+			public const int Widget_AppCompat_ActionButton = 2131821275;
 			
 			// aapt resource value: 0x7F1102DC
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131821276;
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131821276;
 			
 			// aapt resource value: 0x7F1102DD
-			public const int Widget_AppCompat_ActionMode = 2131821277;
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131821277;
 			
 			// aapt resource value: 0x7F1102DE
-			public const int Widget_AppCompat_ActivityChooserView = 2131821278;
+			public const int Widget_AppCompat_ActionMode = 2131821278;
 			
 			// aapt resource value: 0x7F1102DF
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131821279;
+			public const int Widget_AppCompat_ActivityChooserView = 2131821279;
 			
 			// aapt resource value: 0x7F1102E0
-			public const int Widget_AppCompat_Button = 2131821280;
-			
-			// aapt resource value: 0x7F1102E6
-			public const int Widget_AppCompat_ButtonBar = 2131821286;
-			
-			// aapt resource value: 0x7F1102E7
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131821287;
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131821280;
 			
 			// aapt resource value: 0x7F1102E1
-			public const int Widget_AppCompat_Button_Borderless = 2131821281;
+			public const int Widget_AppCompat_Button = 2131821281;
 			
-			// aapt resource value: 0x7F1102E2
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131821282;
-			
-			// aapt resource value: 0x7F1102E3
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131821283;
-			
-			// aapt resource value: 0x7F1102E4
-			public const int Widget_AppCompat_Button_Colored = 2131821284;
-			
-			// aapt resource value: 0x7F1102E5
-			public const int Widget_AppCompat_Button_Small = 2131821285;
+			// aapt resource value: 0x7F1102E7
+			public const int Widget_AppCompat_ButtonBar = 2131821287;
 			
 			// aapt resource value: 0x7F1102E8
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131821288;
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131821288;
+			
+			// aapt resource value: 0x7F1102E2
+			public const int Widget_AppCompat_Button_Borderless = 2131821282;
+			
+			// aapt resource value: 0x7F1102E3
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131821283;
+			
+			// aapt resource value: 0x7F1102E4
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131821284;
+			
+			// aapt resource value: 0x7F1102E5
+			public const int Widget_AppCompat_Button_Colored = 2131821285;
+			
+			// aapt resource value: 0x7F1102E6
+			public const int Widget_AppCompat_Button_Small = 2131821286;
 			
 			// aapt resource value: 0x7F1102E9
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131821289;
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131821289;
 			
 			// aapt resource value: 0x7F1102EA
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131821290;
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131821290;
 			
 			// aapt resource value: 0x7F1102EB
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131821291;
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131821291;
 			
 			// aapt resource value: 0x7F1102EC
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131821292;
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131821292;
 			
 			// aapt resource value: 0x7F1102ED
-			public const int Widget_AppCompat_EditText = 2131821293;
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131821293;
 			
 			// aapt resource value: 0x7F1102EE
-			public const int Widget_AppCompat_ImageButton = 2131821294;
+			public const int Widget_AppCompat_EditText = 2131821294;
 			
 			// aapt resource value: 0x7F1102EF
-			public const int Widget_AppCompat_Light_ActionBar = 2131821295;
+			public const int Widget_AppCompat_ImageButton = 2131821295;
 			
 			// aapt resource value: 0x7F1102F0
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131821296;
+			public const int Widget_AppCompat_Light_ActionBar = 2131821296;
 			
 			// aapt resource value: 0x7F1102F1
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131821297;
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131821297;
 			
 			// aapt resource value: 0x7F1102F2
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131821298;
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131821298;
 			
 			// aapt resource value: 0x7F1102F3
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131821299;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131821299;
 			
 			// aapt resource value: 0x7F1102F4
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131821300;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131821300;
 			
 			// aapt resource value: 0x7F1102F5
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131821301;
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131821301;
 			
 			// aapt resource value: 0x7F1102F6
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131821302;
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131821302;
 			
 			// aapt resource value: 0x7F1102F7
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131821303;
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131821303;
 			
 			// aapt resource value: 0x7F1102F8
-			public const int Widget_AppCompat_Light_ActionButton = 2131821304;
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131821304;
 			
 			// aapt resource value: 0x7F1102F9
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131821305;
+			public const int Widget_AppCompat_Light_ActionButton = 2131821305;
 			
 			// aapt resource value: 0x7F1102FA
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131821306;
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131821306;
 			
 			// aapt resource value: 0x7F1102FB
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131821307;
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131821307;
 			
 			// aapt resource value: 0x7F1102FC
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131821308;
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131821308;
 			
 			// aapt resource value: 0x7F1102FD
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131821309;
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131821309;
 			
 			// aapt resource value: 0x7F1102FE
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131821310;
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131821310;
 			
 			// aapt resource value: 0x7F1102FF
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131821311;
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131821311;
 			
 			// aapt resource value: 0x7F110300
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131821312;
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131821312;
 			
 			// aapt resource value: 0x7F110301
-			public const int Widget_AppCompat_Light_PopupMenu = 2131821313;
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131821313;
 			
 			// aapt resource value: 0x7F110302
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131821314;
+			public const int Widget_AppCompat_Light_PopupMenu = 2131821314;
 			
 			// aapt resource value: 0x7F110303
-			public const int Widget_AppCompat_Light_SearchView = 2131821315;
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131821315;
 			
 			// aapt resource value: 0x7F110304
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131821316;
+			public const int Widget_AppCompat_Light_SearchView = 2131821316;
 			
 			// aapt resource value: 0x7F110305
-			public const int Widget_AppCompat_ListMenuView = 2131821317;
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131821317;
 			
 			// aapt resource value: 0x7F110306
-			public const int Widget_AppCompat_ListPopupWindow = 2131821318;
+			public const int Widget_AppCompat_ListMenuView = 2131821318;
 			
 			// aapt resource value: 0x7F110307
-			public const int Widget_AppCompat_ListView = 2131821319;
+			public const int Widget_AppCompat_ListPopupWindow = 2131821319;
 			
 			// aapt resource value: 0x7F110308
-			public const int Widget_AppCompat_ListView_DropDown = 2131821320;
+			public const int Widget_AppCompat_ListView = 2131821320;
 			
 			// aapt resource value: 0x7F110309
-			public const int Widget_AppCompat_ListView_Menu = 2131821321;
+			public const int Widget_AppCompat_ListView_DropDown = 2131821321;
 			
 			// aapt resource value: 0x7F11030A
-			public const int Widget_AppCompat_PopupMenu = 2131821322;
+			public const int Widget_AppCompat_ListView_Menu = 2131821322;
 			
 			// aapt resource value: 0x7F11030B
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131821323;
+			public const int Widget_AppCompat_PopupMenu = 2131821323;
 			
 			// aapt resource value: 0x7F11030C
-			public const int Widget_AppCompat_PopupWindow = 2131821324;
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131821324;
 			
 			// aapt resource value: 0x7F11030D
-			public const int Widget_AppCompat_ProgressBar = 2131821325;
+			public const int Widget_AppCompat_PopupWindow = 2131821325;
 			
 			// aapt resource value: 0x7F11030E
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131821326;
+			public const int Widget_AppCompat_ProgressBar = 2131821326;
 			
 			// aapt resource value: 0x7F11030F
-			public const int Widget_AppCompat_RatingBar = 2131821327;
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131821327;
 			
 			// aapt resource value: 0x7F110310
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131821328;
+			public const int Widget_AppCompat_RatingBar = 2131821328;
 			
 			// aapt resource value: 0x7F110311
-			public const int Widget_AppCompat_RatingBar_Small = 2131821329;
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131821329;
 			
 			// aapt resource value: 0x7F110312
-			public const int Widget_AppCompat_SearchView = 2131821330;
+			public const int Widget_AppCompat_RatingBar_Small = 2131821330;
 			
 			// aapt resource value: 0x7F110313
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131821331;
+			public const int Widget_AppCompat_SearchView = 2131821331;
 			
 			// aapt resource value: 0x7F110314
-			public const int Widget_AppCompat_SeekBar = 2131821332;
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131821332;
 			
 			// aapt resource value: 0x7F110315
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131821333;
+			public const int Widget_AppCompat_SeekBar = 2131821333;
 			
 			// aapt resource value: 0x7F110316
-			public const int Widget_AppCompat_Spinner = 2131821334;
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131821334;
 			
 			// aapt resource value: 0x7F110317
-			public const int Widget_AppCompat_Spinner_DropDown = 2131821335;
+			public const int Widget_AppCompat_Spinner = 2131821335;
 			
 			// aapt resource value: 0x7F110318
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131821336;
+			public const int Widget_AppCompat_Spinner_DropDown = 2131821336;
 			
 			// aapt resource value: 0x7F110319
-			public const int Widget_AppCompat_Spinner_Underlined = 2131821337;
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131821337;
 			
 			// aapt resource value: 0x7F11031A
-			public const int Widget_AppCompat_TextView = 2131821338;
+			public const int Widget_AppCompat_Spinner_Underlined = 2131821338;
 			
 			// aapt resource value: 0x7F11031B
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131821339;
+			public const int Widget_AppCompat_TextView = 2131821339;
 			
 			// aapt resource value: 0x7F11031C
-			public const int Widget_AppCompat_Toolbar = 2131821340;
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131821340;
 			
 			// aapt resource value: 0x7F11031D
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131821341;
+			public const int Widget_AppCompat_Toolbar = 2131821341;
 			
 			// aapt resource value: 0x7F11031E
-			public const int Widget_Compat_NotificationActionContainer = 2131821342;
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131821342;
 			
 			// aapt resource value: 0x7F11031F
-			public const int Widget_Compat_NotificationActionText = 2131821343;
+			public const int Widget_Compat_NotificationActionContainer = 2131821343;
 			
 			// aapt resource value: 0x7F110320
-			public const int Widget_Design_AppBarLayout = 2131821344;
+			public const int Widget_Compat_NotificationActionText = 2131821344;
 			
 			// aapt resource value: 0x7F110321
-			public const int Widget_Design_BottomNavigationView = 2131821345;
+			public const int Widget_Design_AppBarLayout = 2131821345;
 			
 			// aapt resource value: 0x7F110322
-			public const int Widget_Design_BottomSheet_Modal = 2131821346;
+			public const int Widget_Design_BottomNavigationView = 2131821346;
 			
 			// aapt resource value: 0x7F110323
-			public const int Widget_Design_CollapsingToolbar = 2131821347;
+			public const int Widget_Design_BottomSheet_Modal = 2131821347;
 			
 			// aapt resource value: 0x7F110324
-			public const int Widget_Design_FloatingActionButton = 2131821348;
+			public const int Widget_Design_CollapsingToolbar = 2131821348;
 			
 			// aapt resource value: 0x7F110325
-			public const int Widget_Design_NavigationView = 2131821349;
+			public const int Widget_Design_FloatingActionButton = 2131821349;
 			
 			// aapt resource value: 0x7F110326
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131821350;
+			public const int Widget_Design_NavigationView = 2131821350;
 			
 			// aapt resource value: 0x7F110327
-			public const int Widget_Design_Snackbar = 2131821351;
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131821351;
 			
 			// aapt resource value: 0x7F110328
-			public const int Widget_Design_TabLayout = 2131821352;
+			public const int Widget_Design_Snackbar = 2131821352;
 			
 			// aapt resource value: 0x7F110329
-			public const int Widget_Design_TextInputEditText = 2131821353;
+			public const int Widget_Design_TabLayout = 2131821353;
 			
 			// aapt resource value: 0x7F11032A
-			public const int Widget_Design_TextInputLayout = 2131821354;
+			public const int Widget_Design_TextInputEditText = 2131821354;
 			
 			// aapt resource value: 0x7F11032B
-			public const int Widget_Material3_ActionBar_Solid = 2131821355;
+			public const int Widget_Design_TextInputLayout = 2131821355;
 			
 			// aapt resource value: 0x7F11032C
-			public const int Widget_Material3_ActionMode = 2131821356;
+			public const int Widget_Material3_ActionBar_Solid = 2131821356;
 			
 			// aapt resource value: 0x7F11032D
-			public const int Widget_Material3_AppBarLayout = 2131821357;
+			public const int Widget_Material3_ActionMode = 2131821357;
 			
 			// aapt resource value: 0x7F11032E
-			public const int Widget_Material3_AutoCompleteTextView_FilledBox = 2131821358;
+			public const int Widget_Material3_AppBarLayout = 2131821358;
 			
 			// aapt resource value: 0x7F11032F
-			public const int Widget_Material3_AutoCompleteTextView_FilledBox_Dense = 2131821359;
+			public const int Widget_Material3_AutoCompleteTextView_FilledBox = 2131821359;
 			
 			// aapt resource value: 0x7F110330
-			public const int Widget_Material3_AutoCompleteTextView_OutlinedBox = 2131821360;
+			public const int Widget_Material3_AutoCompleteTextView_FilledBox_Dense = 2131821360;
 			
 			// aapt resource value: 0x7F110331
-			public const int Widget_Material3_AutoCompleteTextView_OutlinedBox_Dense = 2131821361;
+			public const int Widget_Material3_AutoCompleteTextView_OutlinedBox = 2131821361;
 			
 			// aapt resource value: 0x7F110332
-			public const int Widget_Material3_Badge = 2131821362;
+			public const int Widget_Material3_AutoCompleteTextView_OutlinedBox_Dense = 2131821362;
 			
 			// aapt resource value: 0x7F110333
-			public const int Widget_Material3_BottomAppBar = 2131821363;
+			public const int Widget_Material3_Badge = 2131821363;
 			
 			// aapt resource value: 0x7F110334
-			public const int Widget_Material3_BottomAppBar_Button_Navigation = 2131821364;
+			public const int Widget_Material3_BottomAppBar = 2131821364;
 			
 			// aapt resource value: 0x7F110335
-			public const int Widget_Material3_BottomAppBar_Legacy = 2131821365;
+			public const int Widget_Material3_BottomAppBar_Button_Navigation = 2131821365;
 			
 			// aapt resource value: 0x7F110336
-			public const int Widget_Material3_BottomNavigationView = 2131821366;
+			public const int Widget_Material3_BottomAppBar_Legacy = 2131821366;
 			
 			// aapt resource value: 0x7F110337
-			public const int Widget_Material3_BottomNavigationView_ActiveIndicator = 2131821367;
+			public const int Widget_Material3_BottomNavigationView = 2131821367;
 			
 			// aapt resource value: 0x7F110338
-			public const int Widget_Material3_BottomSheet = 2131821368;
+			public const int Widget_Material3_BottomNavigationView_ActiveIndicator = 2131821368;
 			
 			// aapt resource value: 0x7F110339
-			public const int Widget_Material3_BottomSheet_DragHandle = 2131821369;
+			public const int Widget_Material3_BottomSheet = 2131821369;
 			
 			// aapt resource value: 0x7F11033A
-			public const int Widget_Material3_BottomSheet_Modal = 2131821370;
+			public const int Widget_Material3_BottomSheet_DragHandle = 2131821370;
 			
 			// aapt resource value: 0x7F11033B
-			public const int Widget_Material3_Button = 2131821371;
+			public const int Widget_Material3_BottomSheet_Modal = 2131821371;
 			
 			// aapt resource value: 0x7F11033C
-			public const int Widget_Material3_Button_ElevatedButton = 2131821372;
+			public const int Widget_Material3_Button = 2131821372;
 			
 			// aapt resource value: 0x7F11033D
-			public const int Widget_Material3_Button_ElevatedButton_Icon = 2131821373;
+			public const int Widget_Material3_Button_ElevatedButton = 2131821373;
 			
 			// aapt resource value: 0x7F11033E
-			public const int Widget_Material3_Button_Icon = 2131821374;
+			public const int Widget_Material3_Button_ElevatedButton_Icon = 2131821374;
 			
 			// aapt resource value: 0x7F11033F
-			public const int Widget_Material3_Button_IconButton = 2131821375;
+			public const int Widget_Material3_Button_Icon = 2131821375;
 			
 			// aapt resource value: 0x7F110340
-			public const int Widget_Material3_Button_IconButton_Filled = 2131821376;
+			public const int Widget_Material3_Button_IconButton = 2131821376;
 			
 			// aapt resource value: 0x7F110341
-			public const int Widget_Material3_Button_IconButton_Filled_Tonal = 2131821377;
+			public const int Widget_Material3_Button_IconButton_Filled = 2131821377;
 			
 			// aapt resource value: 0x7F110342
-			public const int Widget_Material3_Button_IconButton_Outlined = 2131821378;
+			public const int Widget_Material3_Button_IconButton_Filled_Tonal = 2131821378;
 			
 			// aapt resource value: 0x7F110343
-			public const int Widget_Material3_Button_OutlinedButton = 2131821379;
+			public const int Widget_Material3_Button_IconButton_Outlined = 2131821379;
 			
 			// aapt resource value: 0x7F110344
-			public const int Widget_Material3_Button_OutlinedButton_Icon = 2131821380;
+			public const int Widget_Material3_Button_OutlinedButton = 2131821380;
 			
 			// aapt resource value: 0x7F110345
-			public const int Widget_Material3_Button_TextButton = 2131821381;
+			public const int Widget_Material3_Button_OutlinedButton_Icon = 2131821381;
 			
 			// aapt resource value: 0x7F110346
-			public const int Widget_Material3_Button_TextButton_Dialog = 2131821382;
+			public const int Widget_Material3_Button_TextButton = 2131821382;
 			
 			// aapt resource value: 0x7F110347
-			public const int Widget_Material3_Button_TextButton_Dialog_Flush = 2131821383;
+			public const int Widget_Material3_Button_TextButton_Dialog = 2131821383;
 			
 			// aapt resource value: 0x7F110348
-			public const int Widget_Material3_Button_TextButton_Dialog_Icon = 2131821384;
+			public const int Widget_Material3_Button_TextButton_Dialog_Flush = 2131821384;
 			
 			// aapt resource value: 0x7F110349
-			public const int Widget_Material3_Button_TextButton_Icon = 2131821385;
+			public const int Widget_Material3_Button_TextButton_Dialog_Icon = 2131821385;
 			
 			// aapt resource value: 0x7F11034A
-			public const int Widget_Material3_Button_TextButton_Snackbar = 2131821386;
+			public const int Widget_Material3_Button_TextButton_Icon = 2131821386;
 			
 			// aapt resource value: 0x7F11034B
-			public const int Widget_Material3_Button_TonalButton = 2131821387;
+			public const int Widget_Material3_Button_TextButton_Snackbar = 2131821387;
 			
 			// aapt resource value: 0x7F11034C
-			public const int Widget_Material3_Button_TonalButton_Icon = 2131821388;
+			public const int Widget_Material3_Button_TonalButton = 2131821388;
 			
 			// aapt resource value: 0x7F11034D
-			public const int Widget_Material3_Button_UnelevatedButton = 2131821389;
+			public const int Widget_Material3_Button_TonalButton_Icon = 2131821389;
 			
 			// aapt resource value: 0x7F11034E
-			public const int Widget_Material3_CardView_Elevated = 2131821390;
+			public const int Widget_Material3_Button_UnelevatedButton = 2131821390;
 			
 			// aapt resource value: 0x7F11034F
-			public const int Widget_Material3_CardView_Filled = 2131821391;
+			public const int Widget_Material3_CardView_Elevated = 2131821391;
 			
 			// aapt resource value: 0x7F110350
-			public const int Widget_Material3_CardView_Outlined = 2131821392;
+			public const int Widget_Material3_CardView_Filled = 2131821392;
 			
 			// aapt resource value: 0x7F110351
-			public const int Widget_Material3_CheckedTextView = 2131821393;
-			
-			// aapt resource value: 0x7F11035C
-			public const int Widget_Material3_ChipGroup = 2131821404;
+			public const int Widget_Material3_CardView_Outlined = 2131821393;
 			
 			// aapt resource value: 0x7F110352
-			public const int Widget_Material3_Chip_Assist = 2131821394;
-			
-			// aapt resource value: 0x7F110353
-			public const int Widget_Material3_Chip_Assist_Elevated = 2131821395;
-			
-			// aapt resource value: 0x7F110354
-			public const int Widget_Material3_Chip_Filter = 2131821396;
-			
-			// aapt resource value: 0x7F110355
-			public const int Widget_Material3_Chip_Filter_Elevated = 2131821397;
-			
-			// aapt resource value: 0x7F110356
-			public const int Widget_Material3_Chip_Input = 2131821398;
-			
-			// aapt resource value: 0x7F110357
-			public const int Widget_Material3_Chip_Input_Elevated = 2131821399;
-			
-			// aapt resource value: 0x7F110358
-			public const int Widget_Material3_Chip_Input_Icon = 2131821400;
-			
-			// aapt resource value: 0x7F110359
-			public const int Widget_Material3_Chip_Input_Icon_Elevated = 2131821401;
-			
-			// aapt resource value: 0x7F11035A
-			public const int Widget_Material3_Chip_Suggestion = 2131821402;
-			
-			// aapt resource value: 0x7F11035B
-			public const int Widget_Material3_Chip_Suggestion_Elevated = 2131821403;
+			public const int Widget_Material3_CheckedTextView = 2131821394;
 			
 			// aapt resource value: 0x7F11035D
-			public const int Widget_Material3_CircularProgressIndicator = 2131821405;
+			public const int Widget_Material3_ChipGroup = 2131821405;
+			
+			// aapt resource value: 0x7F110353
+			public const int Widget_Material3_Chip_Assist = 2131821395;
+			
+			// aapt resource value: 0x7F110354
+			public const int Widget_Material3_Chip_Assist_Elevated = 2131821396;
+			
+			// aapt resource value: 0x7F110355
+			public const int Widget_Material3_Chip_Filter = 2131821397;
+			
+			// aapt resource value: 0x7F110356
+			public const int Widget_Material3_Chip_Filter_Elevated = 2131821398;
+			
+			// aapt resource value: 0x7F110357
+			public const int Widget_Material3_Chip_Input = 2131821399;
+			
+			// aapt resource value: 0x7F110358
+			public const int Widget_Material3_Chip_Input_Elevated = 2131821400;
+			
+			// aapt resource value: 0x7F110359
+			public const int Widget_Material3_Chip_Input_Icon = 2131821401;
+			
+			// aapt resource value: 0x7F11035A
+			public const int Widget_Material3_Chip_Input_Icon_Elevated = 2131821402;
+			
+			// aapt resource value: 0x7F11035B
+			public const int Widget_Material3_Chip_Suggestion = 2131821403;
+			
+			// aapt resource value: 0x7F11035C
+			public const int Widget_Material3_Chip_Suggestion_Elevated = 2131821404;
 			
 			// aapt resource value: 0x7F11035E
-			public const int Widget_Material3_CircularProgressIndicator_ExtraSmall = 2131821406;
+			public const int Widget_Material3_CircularProgressIndicator = 2131821406;
 			
 			// aapt resource value: 0x7F11035F
-			public const int Widget_Material3_CircularProgressIndicator_Medium = 2131821407;
+			public const int Widget_Material3_CircularProgressIndicator_ExtraSmall = 2131821407;
 			
 			// aapt resource value: 0x7F110360
-			public const int Widget_Material3_CircularProgressIndicator_Small = 2131821408;
+			public const int Widget_Material3_CircularProgressIndicator_Medium = 2131821408;
 			
 			// aapt resource value: 0x7F110361
-			public const int Widget_Material3_CollapsingToolbar = 2131821409;
+			public const int Widget_Material3_CircularProgressIndicator_Small = 2131821409;
 			
 			// aapt resource value: 0x7F110362
-			public const int Widget_Material3_CollapsingToolbar_Large = 2131821410;
+			public const int Widget_Material3_CollapsingToolbar = 2131821410;
 			
 			// aapt resource value: 0x7F110363
-			public const int Widget_Material3_CollapsingToolbar_Medium = 2131821411;
+			public const int Widget_Material3_CollapsingToolbar_Large = 2131821411;
 			
 			// aapt resource value: 0x7F110364
-			public const int Widget_Material3_CompoundButton_CheckBox = 2131821412;
+			public const int Widget_Material3_CollapsingToolbar_Medium = 2131821412;
 			
 			// aapt resource value: 0x7F110365
-			public const int Widget_Material3_CompoundButton_MaterialSwitch = 2131821413;
+			public const int Widget_Material3_CompoundButton_CheckBox = 2131821413;
 			
 			// aapt resource value: 0x7F110366
-			public const int Widget_Material3_CompoundButton_RadioButton = 2131821414;
+			public const int Widget_Material3_CompoundButton_MaterialSwitch = 2131821414;
 			
 			// aapt resource value: 0x7F110367
-			public const int Widget_Material3_CompoundButton_Switch = 2131821415;
+			public const int Widget_Material3_CompoundButton_RadioButton = 2131821415;
 			
 			// aapt resource value: 0x7F110368
-			public const int Widget_Material3_DrawerLayout = 2131821416;
+			public const int Widget_Material3_CompoundButton_Switch = 2131821416;
 			
 			// aapt resource value: 0x7F110369
-			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Primary = 2131821417;
+			public const int Widget_Material3_DrawerLayout = 2131821417;
 			
 			// aapt resource value: 0x7F11036A
-			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Secondary = 2131821418;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Primary = 2131821418;
 			
 			// aapt resource value: 0x7F11036B
-			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Surface = 2131821419;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Secondary = 2131821419;
 			
 			// aapt resource value: 0x7F11036C
-			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Tertiary = 2131821420;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Surface = 2131821420;
 			
 			// aapt resource value: 0x7F11036D
-			public const int Widget_Material3_ExtendedFloatingActionButton_Primary = 2131821421;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Icon_Tertiary = 2131821421;
 			
 			// aapt resource value: 0x7F11036E
-			public const int Widget_Material3_ExtendedFloatingActionButton_Secondary = 2131821422;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Primary = 2131821422;
 			
 			// aapt resource value: 0x7F11036F
-			public const int Widget_Material3_ExtendedFloatingActionButton_Surface = 2131821423;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Secondary = 2131821423;
 			
 			// aapt resource value: 0x7F110370
-			public const int Widget_Material3_ExtendedFloatingActionButton_Tertiary = 2131821424;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Surface = 2131821424;
 			
 			// aapt resource value: 0x7F110371
-			public const int Widget_Material3_FloatingActionButton_Large_Primary = 2131821425;
+			public const int Widget_Material3_ExtendedFloatingActionButton_Tertiary = 2131821425;
 			
 			// aapt resource value: 0x7F110372
-			public const int Widget_Material3_FloatingActionButton_Large_Secondary = 2131821426;
+			public const int Widget_Material3_FloatingActionButton_Large_Primary = 2131821426;
 			
 			// aapt resource value: 0x7F110373
-			public const int Widget_Material3_FloatingActionButton_Large_Surface = 2131821427;
+			public const int Widget_Material3_FloatingActionButton_Large_Secondary = 2131821427;
 			
 			// aapt resource value: 0x7F110374
-			public const int Widget_Material3_FloatingActionButton_Large_Tertiary = 2131821428;
+			public const int Widget_Material3_FloatingActionButton_Large_Surface = 2131821428;
 			
 			// aapt resource value: 0x7F110375
-			public const int Widget_Material3_FloatingActionButton_Primary = 2131821429;
+			public const int Widget_Material3_FloatingActionButton_Large_Tertiary = 2131821429;
 			
 			// aapt resource value: 0x7F110376
-			public const int Widget_Material3_FloatingActionButton_Secondary = 2131821430;
+			public const int Widget_Material3_FloatingActionButton_Primary = 2131821430;
 			
 			// aapt resource value: 0x7F110377
-			public const int Widget_Material3_FloatingActionButton_Small_Primary = 2131821431;
+			public const int Widget_Material3_FloatingActionButton_Secondary = 2131821431;
 			
 			// aapt resource value: 0x7F110378
-			public const int Widget_Material3_FloatingActionButton_Small_Secondary = 2131821432;
+			public const int Widget_Material3_FloatingActionButton_Small_Primary = 2131821432;
 			
 			// aapt resource value: 0x7F110379
-			public const int Widget_Material3_FloatingActionButton_Small_Surface = 2131821433;
+			public const int Widget_Material3_FloatingActionButton_Small_Secondary = 2131821433;
 			
 			// aapt resource value: 0x7F11037A
-			public const int Widget_Material3_FloatingActionButton_Small_Tertiary = 2131821434;
+			public const int Widget_Material3_FloatingActionButton_Small_Surface = 2131821434;
 			
 			// aapt resource value: 0x7F11037B
-			public const int Widget_Material3_FloatingActionButton_Surface = 2131821435;
+			public const int Widget_Material3_FloatingActionButton_Small_Tertiary = 2131821435;
 			
 			// aapt resource value: 0x7F11037C
-			public const int Widget_Material3_FloatingActionButton_Tertiary = 2131821436;
+			public const int Widget_Material3_FloatingActionButton_Surface = 2131821436;
 			
 			// aapt resource value: 0x7F11037D
-			public const int Widget_Material3_Light_ActionBar_Solid = 2131821437;
+			public const int Widget_Material3_FloatingActionButton_Tertiary = 2131821437;
 			
 			// aapt resource value: 0x7F11037E
-			public const int Widget_Material3_LinearProgressIndicator = 2131821438;
+			public const int Widget_Material3_Light_ActionBar_Solid = 2131821438;
 			
 			// aapt resource value: 0x7F11037F
-			public const int Widget_Material3_MaterialButtonToggleGroup = 2131821439;
+			public const int Widget_Material3_LinearProgressIndicator = 2131821439;
 			
 			// aapt resource value: 0x7F110380
-			public const int Widget_Material3_MaterialCalendar = 2131821440;
+			public const int Widget_Material3_MaterialButtonToggleGroup = 2131821440;
 			
 			// aapt resource value: 0x7F110381
-			public const int Widget_Material3_MaterialCalendar_Day = 2131821441;
-			
-			// aapt resource value: 0x7F110385
-			public const int Widget_Material3_MaterialCalendar_DayOfWeekLabel = 2131821445;
-			
-			// aapt resource value: 0x7F110386
-			public const int Widget_Material3_MaterialCalendar_DayTextView = 2131821446;
+			public const int Widget_Material3_MaterialCalendar = 2131821441;
 			
 			// aapt resource value: 0x7F110382
-			public const int Widget_Material3_MaterialCalendar_Day_Invalid = 2131821442;
+			public const int Widget_Material3_MaterialCalendar_Day = 2131821442;
 			
-			// aapt resource value: 0x7F110383
-			public const int Widget_Material3_MaterialCalendar_Day_Selected = 2131821443;
-			
-			// aapt resource value: 0x7F110384
-			public const int Widget_Material3_MaterialCalendar_Day_Today = 2131821444;
+			// aapt resource value: 0x7F110386
+			public const int Widget_Material3_MaterialCalendar_DayOfWeekLabel = 2131821446;
 			
 			// aapt resource value: 0x7F110387
-			public const int Widget_Material3_MaterialCalendar_Fullscreen = 2131821447;
+			public const int Widget_Material3_MaterialCalendar_DayTextView = 2131821447;
+			
+			// aapt resource value: 0x7F110383
+			public const int Widget_Material3_MaterialCalendar_Day_Invalid = 2131821443;
+			
+			// aapt resource value: 0x7F110384
+			public const int Widget_Material3_MaterialCalendar_Day_Selected = 2131821444;
+			
+			// aapt resource value: 0x7F110385
+			public const int Widget_Material3_MaterialCalendar_Day_Today = 2131821445;
 			
 			// aapt resource value: 0x7F110388
-			public const int Widget_Material3_MaterialCalendar_HeaderCancelButton = 2131821448;
+			public const int Widget_Material3_MaterialCalendar_Fullscreen = 2131821448;
 			
 			// aapt resource value: 0x7F110389
-			public const int Widget_Material3_MaterialCalendar_HeaderDivider = 2131821449;
+			public const int Widget_Material3_MaterialCalendar_HeaderCancelButton = 2131821449;
 			
 			// aapt resource value: 0x7F11038A
-			public const int Widget_Material3_MaterialCalendar_HeaderLayout = 2131821450;
+			public const int Widget_Material3_MaterialCalendar_HeaderDivider = 2131821450;
 			
 			// aapt resource value: 0x7F11038B
-			public const int Widget_Material3_MaterialCalendar_HeaderLayout_Fullscreen = 2131821451;
+			public const int Widget_Material3_MaterialCalendar_HeaderLayout = 2131821451;
 			
 			// aapt resource value: 0x7F11038C
-			public const int Widget_Material3_MaterialCalendar_HeaderSelection = 2131821452;
+			public const int Widget_Material3_MaterialCalendar_HeaderLayout_Fullscreen = 2131821452;
 			
 			// aapt resource value: 0x7F11038D
-			public const int Widget_Material3_MaterialCalendar_HeaderSelection_Fullscreen = 2131821453;
+			public const int Widget_Material3_MaterialCalendar_HeaderSelection = 2131821453;
 			
 			// aapt resource value: 0x7F11038E
-			public const int Widget_Material3_MaterialCalendar_HeaderTitle = 2131821454;
+			public const int Widget_Material3_MaterialCalendar_HeaderSelection_Fullscreen = 2131821454;
 			
 			// aapt resource value: 0x7F11038F
-			public const int Widget_Material3_MaterialCalendar_HeaderToggleButton = 2131821455;
+			public const int Widget_Material3_MaterialCalendar_HeaderTitle = 2131821455;
 			
 			// aapt resource value: 0x7F110390
-			public const int Widget_Material3_MaterialCalendar_Item = 2131821456;
+			public const int Widget_Material3_MaterialCalendar_HeaderToggleButton = 2131821456;
 			
 			// aapt resource value: 0x7F110391
-			public const int Widget_Material3_MaterialCalendar_MonthNavigationButton = 2131821457;
+			public const int Widget_Material3_MaterialCalendar_Item = 2131821457;
 			
 			// aapt resource value: 0x7F110392
-			public const int Widget_Material3_MaterialCalendar_MonthTextView = 2131821458;
+			public const int Widget_Material3_MaterialCalendar_MonthNavigationButton = 2131821458;
 			
 			// aapt resource value: 0x7F110393
-			public const int Widget_Material3_MaterialCalendar_Year = 2131821459;
-			
-			// aapt resource value: 0x7F110396
-			public const int Widget_Material3_MaterialCalendar_YearNavigationButton = 2131821462;
+			public const int Widget_Material3_MaterialCalendar_MonthTextView = 2131821459;
 			
 			// aapt resource value: 0x7F110394
-			public const int Widget_Material3_MaterialCalendar_Year_Selected = 2131821460;
-			
-			// aapt resource value: 0x7F110395
-			public const int Widget_Material3_MaterialCalendar_Year_Today = 2131821461;
+			public const int Widget_Material3_MaterialCalendar_Year = 2131821460;
 			
 			// aapt resource value: 0x7F110397
-			public const int Widget_Material3_MaterialDivider = 2131821463;
+			public const int Widget_Material3_MaterialCalendar_YearNavigationButton = 2131821463;
+			
+			// aapt resource value: 0x7F110395
+			public const int Widget_Material3_MaterialCalendar_Year_Selected = 2131821461;
+			
+			// aapt resource value: 0x7F110396
+			public const int Widget_Material3_MaterialCalendar_Year_Today = 2131821462;
 			
 			// aapt resource value: 0x7F110398
-			public const int Widget_Material3_MaterialDivider_Heavy = 2131821464;
+			public const int Widget_Material3_MaterialDivider = 2131821464;
 			
 			// aapt resource value: 0x7F110399
-			public const int Widget_Material3_MaterialTimePicker = 2131821465;
+			public const int Widget_Material3_MaterialDivider_Heavy = 2131821465;
 			
 			// aapt resource value: 0x7F11039A
-			public const int Widget_Material3_MaterialTimePicker_Button = 2131821466;
+			public const int Widget_Material3_MaterialTimePicker = 2131821466;
 			
 			// aapt resource value: 0x7F11039B
-			public const int Widget_Material3_MaterialTimePicker_Clock = 2131821467;
+			public const int Widget_Material3_MaterialTimePicker_Button = 2131821467;
 			
 			// aapt resource value: 0x7F11039C
-			public const int Widget_Material3_MaterialTimePicker_Display = 2131821468;
+			public const int Widget_Material3_MaterialTimePicker_Clock = 2131821468;
 			
 			// aapt resource value: 0x7F11039D
-			public const int Widget_Material3_MaterialTimePicker_Display_Divider = 2131821469;
+			public const int Widget_Material3_MaterialTimePicker_Display = 2131821469;
 			
 			// aapt resource value: 0x7F11039E
-			public const int Widget_Material3_MaterialTimePicker_Display_HelperText = 2131821470;
+			public const int Widget_Material3_MaterialTimePicker_Display_Divider = 2131821470;
 			
 			// aapt resource value: 0x7F11039F
-			public const int Widget_Material3_MaterialTimePicker_Display_TextInputEditText = 2131821471;
+			public const int Widget_Material3_MaterialTimePicker_Display_HelperText = 2131821471;
 			
 			// aapt resource value: 0x7F1103A0
-			public const int Widget_Material3_MaterialTimePicker_Display_TextInputLayout = 2131821472;
+			public const int Widget_Material3_MaterialTimePicker_Display_TextInputEditText = 2131821472;
 			
 			// aapt resource value: 0x7F1103A1
-			public const int Widget_Material3_MaterialTimePicker_ImageButton = 2131821473;
+			public const int Widget_Material3_MaterialTimePicker_Display_TextInputLayout = 2131821473;
 			
 			// aapt resource value: 0x7F1103A2
-			public const int Widget_Material3_NavigationRailView = 2131821474;
+			public const int Widget_Material3_MaterialTimePicker_ImageButton = 2131821474;
 			
 			// aapt resource value: 0x7F1103A3
-			public const int Widget_Material3_NavigationRailView_ActiveIndicator = 2131821475;
+			public const int Widget_Material3_NavigationRailView = 2131821475;
 			
 			// aapt resource value: 0x7F1103A4
-			public const int Widget_Material3_NavigationView = 2131821476;
+			public const int Widget_Material3_NavigationRailView_ActiveIndicator = 2131821476;
 			
 			// aapt resource value: 0x7F1103A5
-			public const int Widget_Material3_PopupMenu = 2131821477;
+			public const int Widget_Material3_NavigationView = 2131821477;
 			
 			// aapt resource value: 0x7F1103A6
-			public const int Widget_Material3_PopupMenu_ContextMenu = 2131821478;
+			public const int Widget_Material3_PopupMenu = 2131821478;
 			
 			// aapt resource value: 0x7F1103A7
-			public const int Widget_Material3_PopupMenu_ListPopupWindow = 2131821479;
+			public const int Widget_Material3_PopupMenu_ContextMenu = 2131821479;
 			
 			// aapt resource value: 0x7F1103A8
-			public const int Widget_Material3_PopupMenu_Overflow = 2131821480;
-			
-			// aapt resource value: 0x7F1103AB
-			public const int Widget_Material3_SearchBar = 2131821483;
-			
-			// aapt resource value: 0x7F1103AC
-			public const int Widget_Material3_SearchBar_Outlined = 2131821484;
-			
-			// aapt resource value: 0x7F1103AD
-			public const int Widget_Material3_SearchView = 2131821485;
-			
-			// aapt resource value: 0x7F1103AE
-			public const int Widget_Material3_SearchView_Prefix = 2131821486;
-			
-			// aapt resource value: 0x7F1103AF
-			public const int Widget_Material3_SearchView_Toolbar = 2131821487;
+			public const int Widget_Material3_PopupMenu_ListPopupWindow = 2131821480;
 			
 			// aapt resource value: 0x7F1103A9
-			public const int Widget_Material3_Search_ActionButton_Overflow = 2131821481;
+			public const int Widget_Material3_PopupMenu_Overflow = 2131821481;
 			
-			// aapt resource value: 0x7F1103AA
-			public const int Widget_Material3_Search_Toolbar_Button_Navigation = 2131821482;
+			// aapt resource value: 0x7F1103AC
+			public const int Widget_Material3_SearchBar = 2131821484;
+			
+			// aapt resource value: 0x7F1103AD
+			public const int Widget_Material3_SearchBar_Outlined = 2131821485;
+			
+			// aapt resource value: 0x7F1103AE
+			public const int Widget_Material3_SearchView = 2131821486;
+			
+			// aapt resource value: 0x7F1103AF
+			public const int Widget_Material3_SearchView_Prefix = 2131821487;
 			
 			// aapt resource value: 0x7F1103B0
-			public const int Widget_Material3_SideSheet = 2131821488;
+			public const int Widget_Material3_SearchView_Toolbar = 2131821488;
+			
+			// aapt resource value: 0x7F1103AA
+			public const int Widget_Material3_Search_ActionButton_Overflow = 2131821482;
+			
+			// aapt resource value: 0x7F1103AB
+			public const int Widget_Material3_Search_Toolbar_Button_Navigation = 2131821483;
 			
 			// aapt resource value: 0x7F1103B1
-			public const int Widget_Material3_SideSheet_Modal = 2131821489;
+			public const int Widget_Material3_SideSheet = 2131821489;
 			
 			// aapt resource value: 0x7F1103B2
-			public const int Widget_Material3_Slider = 2131821490;
+			public const int Widget_Material3_SideSheet_Modal = 2131821490;
 			
 			// aapt resource value: 0x7F1103B3
-			public const int Widget_Material3_Slider_Label = 2131821491;
+			public const int Widget_Material3_Slider = 2131821491;
 			
 			// aapt resource value: 0x7F1103B4
-			public const int Widget_Material3_Snackbar = 2131821492;
+			public const int Widget_Material3_Slider_Label = 2131821492;
 			
 			// aapt resource value: 0x7F1103B5
-			public const int Widget_Material3_Snackbar_FullWidth = 2131821493;
+			public const int Widget_Material3_Snackbar = 2131821493;
 			
 			// aapt resource value: 0x7F1103B6
-			public const int Widget_Material3_Snackbar_TextView = 2131821494;
+			public const int Widget_Material3_Snackbar_FullWidth = 2131821494;
 			
 			// aapt resource value: 0x7F1103B7
-			public const int Widget_Material3_TabLayout = 2131821495;
+			public const int Widget_Material3_Snackbar_TextView = 2131821495;
 			
 			// aapt resource value: 0x7F1103B8
-			public const int Widget_Material3_TabLayout_OnSurface = 2131821496;
+			public const int Widget_Material3_TabLayout = 2131821496;
 			
 			// aapt resource value: 0x7F1103B9
-			public const int Widget_Material3_TabLayout_Secondary = 2131821497;
+			public const int Widget_Material3_TabLayout_OnSurface = 2131821497;
 			
 			// aapt resource value: 0x7F1103BA
-			public const int Widget_Material3_TextInputEditText_FilledBox = 2131821498;
+			public const int Widget_Material3_TabLayout_Secondary = 2131821498;
 			
 			// aapt resource value: 0x7F1103BB
-			public const int Widget_Material3_TextInputEditText_FilledBox_Dense = 2131821499;
+			public const int Widget_Material3_TextInputEditText_FilledBox = 2131821499;
 			
 			// aapt resource value: 0x7F1103BC
-			public const int Widget_Material3_TextInputEditText_OutlinedBox = 2131821500;
+			public const int Widget_Material3_TextInputEditText_FilledBox_Dense = 2131821500;
 			
 			// aapt resource value: 0x7F1103BD
-			public const int Widget_Material3_TextInputEditText_OutlinedBox_Dense = 2131821501;
+			public const int Widget_Material3_TextInputEditText_OutlinedBox = 2131821501;
 			
 			// aapt resource value: 0x7F1103BE
-			public const int Widget_Material3_TextInputLayout_FilledBox = 2131821502;
+			public const int Widget_Material3_TextInputEditText_OutlinedBox_Dense = 2131821502;
 			
 			// aapt resource value: 0x7F1103BF
-			public const int Widget_Material3_TextInputLayout_FilledBox_Dense = 2131821503;
+			public const int Widget_Material3_TextInputLayout_FilledBox = 2131821503;
 			
 			// aapt resource value: 0x7F1103C0
-			public const int Widget_Material3_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131821504;
+			public const int Widget_Material3_TextInputLayout_FilledBox_Dense = 2131821504;
 			
 			// aapt resource value: 0x7F1103C1
-			public const int Widget_Material3_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131821505;
+			public const int Widget_Material3_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131821505;
 			
 			// aapt resource value: 0x7F1103C2
-			public const int Widget_Material3_TextInputLayout_OutlinedBox = 2131821506;
+			public const int Widget_Material3_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131821506;
 			
 			// aapt resource value: 0x7F1103C3
-			public const int Widget_Material3_TextInputLayout_OutlinedBox_Dense = 2131821507;
+			public const int Widget_Material3_TextInputLayout_OutlinedBox = 2131821507;
 			
 			// aapt resource value: 0x7F1103C4
-			public const int Widget_Material3_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131821508;
+			public const int Widget_Material3_TextInputLayout_OutlinedBox_Dense = 2131821508;
 			
 			// aapt resource value: 0x7F1103C5
-			public const int Widget_Material3_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131821509;
+			public const int Widget_Material3_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131821509;
 			
 			// aapt resource value: 0x7F1103C6
-			public const int Widget_Material3_Toolbar = 2131821510;
+			public const int Widget_Material3_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131821510;
 			
 			// aapt resource value: 0x7F1103C7
-			public const int Widget_Material3_Toolbar_OnSurface = 2131821511;
+			public const int Widget_Material3_Toolbar = 2131821511;
 			
 			// aapt resource value: 0x7F1103C8
-			public const int Widget_Material3_Toolbar_Surface = 2131821512;
+			public const int Widget_Material3_Toolbar_OnSurface = 2131821512;
 			
 			// aapt resource value: 0x7F1103C9
-			public const int Widget_Material3_Tooltip = 2131821513;
+			public const int Widget_Material3_Toolbar_Surface = 2131821513;
 			
 			// aapt resource value: 0x7F1103CA
-			public const int Widget_MaterialComponents_ActionBar_Primary = 2131821514;
+			public const int Widget_Material3_Tooltip = 2131821514;
 			
 			// aapt resource value: 0x7F1103CB
-			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131821515;
+			public const int Widget_MaterialComponents_ActionBar_Primary = 2131821515;
 			
 			// aapt resource value: 0x7F1103CC
-			public const int Widget_MaterialComponents_ActionBar_Solid = 2131821516;
+			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131821516;
 			
 			// aapt resource value: 0x7F1103CD
-			public const int Widget_MaterialComponents_ActionBar_Surface = 2131821517;
+			public const int Widget_MaterialComponents_ActionBar_Solid = 2131821517;
 			
 			// aapt resource value: 0x7F1103CE
-			public const int Widget_MaterialComponents_ActionMode = 2131821518;
+			public const int Widget_MaterialComponents_ActionBar_Surface = 2131821518;
 			
 			// aapt resource value: 0x7F1103CF
-			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131821519;
+			public const int Widget_MaterialComponents_ActionMode = 2131821519;
 			
 			// aapt resource value: 0x7F1103D0
-			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131821520;
+			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131821520;
 			
 			// aapt resource value: 0x7F1103D1
-			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131821521;
+			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131821521;
 			
 			// aapt resource value: 0x7F1103D2
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131821522;
+			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131821522;
 			
 			// aapt resource value: 0x7F1103D3
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131821523;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131821523;
 			
 			// aapt resource value: 0x7F1103D4
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131821524;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131821524;
 			
 			// aapt resource value: 0x7F1103D5
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131821525;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131821525;
 			
 			// aapt resource value: 0x7F1103D6
-			public const int Widget_MaterialComponents_Badge = 2131821526;
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131821526;
 			
 			// aapt resource value: 0x7F1103D7
-			public const int Widget_MaterialComponents_BottomAppBar = 2131821527;
+			public const int Widget_MaterialComponents_Badge = 2131821527;
 			
 			// aapt resource value: 0x7F1103D8
-			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131821528;
+			public const int Widget_MaterialComponents_BottomAppBar = 2131821528;
 			
 			// aapt resource value: 0x7F1103D9
-			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131821529;
+			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131821529;
 			
 			// aapt resource value: 0x7F1103DA
-			public const int Widget_MaterialComponents_BottomNavigationView = 2131821530;
+			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131821530;
 			
 			// aapt resource value: 0x7F1103DB
-			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131821531;
+			public const int Widget_MaterialComponents_BottomNavigationView = 2131821531;
 			
 			// aapt resource value: 0x7F1103DC
-			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131821532;
+			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131821532;
 			
 			// aapt resource value: 0x7F1103DD
-			public const int Widget_MaterialComponents_BottomSheet = 2131821533;
+			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131821533;
 			
 			// aapt resource value: 0x7F1103DE
-			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131821534;
+			public const int Widget_MaterialComponents_BottomSheet = 2131821534;
 			
 			// aapt resource value: 0x7F1103DF
-			public const int Widget_MaterialComponents_Button = 2131821535;
+			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131821535;
 			
 			// aapt resource value: 0x7F1103E0
-			public const int Widget_MaterialComponents_Button_Icon = 2131821536;
+			public const int Widget_MaterialComponents_Button = 2131821536;
 			
 			// aapt resource value: 0x7F1103E1
-			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131821537;
+			public const int Widget_MaterialComponents_Button_Icon = 2131821537;
 			
 			// aapt resource value: 0x7F1103E2
-			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131821538;
+			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131821538;
 			
 			// aapt resource value: 0x7F1103E3
-			public const int Widget_MaterialComponents_Button_TextButton = 2131821539;
+			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131821539;
 			
 			// aapt resource value: 0x7F1103E4
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131821540;
+			public const int Widget_MaterialComponents_Button_TextButton = 2131821540;
 			
 			// aapt resource value: 0x7F1103E5
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131821541;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131821541;
 			
 			// aapt resource value: 0x7F1103E6
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131821542;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131821542;
 			
 			// aapt resource value: 0x7F1103E7
-			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131821543;
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131821543;
 			
 			// aapt resource value: 0x7F1103E8
-			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131821544;
+			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131821544;
 			
 			// aapt resource value: 0x7F1103E9
-			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131821545;
+			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131821545;
 			
 			// aapt resource value: 0x7F1103EA
-			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131821546;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131821546;
 			
 			// aapt resource value: 0x7F1103EB
-			public const int Widget_MaterialComponents_CardView = 2131821547;
+			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131821547;
 			
 			// aapt resource value: 0x7F1103EC
-			public const int Widget_MaterialComponents_CheckedTextView = 2131821548;
-			
-			// aapt resource value: 0x7F1103F1
-			public const int Widget_MaterialComponents_ChipGroup = 2131821553;
+			public const int Widget_MaterialComponents_CardView = 2131821548;
 			
 			// aapt resource value: 0x7F1103ED
-			public const int Widget_MaterialComponents_Chip_Action = 2131821549;
-			
-			// aapt resource value: 0x7F1103EE
-			public const int Widget_MaterialComponents_Chip_Choice = 2131821550;
-			
-			// aapt resource value: 0x7F1103EF
-			public const int Widget_MaterialComponents_Chip_Entry = 2131821551;
-			
-			// aapt resource value: 0x7F1103F0
-			public const int Widget_MaterialComponents_Chip_Filter = 2131821552;
+			public const int Widget_MaterialComponents_CheckedTextView = 2131821549;
 			
 			// aapt resource value: 0x7F1103F2
-			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131821554;
+			public const int Widget_MaterialComponents_ChipGroup = 2131821554;
+			
+			// aapt resource value: 0x7F1103EE
+			public const int Widget_MaterialComponents_Chip_Action = 2131821550;
+			
+			// aapt resource value: 0x7F1103EF
+			public const int Widget_MaterialComponents_Chip_Choice = 2131821551;
+			
+			// aapt resource value: 0x7F1103F0
+			public const int Widget_MaterialComponents_Chip_Entry = 2131821552;
+			
+			// aapt resource value: 0x7F1103F1
+			public const int Widget_MaterialComponents_Chip_Filter = 2131821553;
 			
 			// aapt resource value: 0x7F1103F3
-			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131821555;
+			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131821555;
 			
 			// aapt resource value: 0x7F1103F4
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131821556;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131821556;
 			
 			// aapt resource value: 0x7F1103F5
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131821557;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131821557;
 			
 			// aapt resource value: 0x7F1103F6
-			public const int Widget_MaterialComponents_CollapsingToolbar = 2131821558;
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131821558;
 			
 			// aapt resource value: 0x7F1103F7
-			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131821559;
+			public const int Widget_MaterialComponents_CollapsingToolbar = 2131821559;
 			
 			// aapt resource value: 0x7F1103F8
-			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131821560;
+			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131821560;
 			
 			// aapt resource value: 0x7F1103F9
-			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131821561;
+			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131821561;
 			
 			// aapt resource value: 0x7F1103FA
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131821562;
+			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131821562;
 			
 			// aapt resource value: 0x7F1103FB
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131821563;
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131821563;
 			
 			// aapt resource value: 0x7F1103FC
-			public const int Widget_MaterialComponents_FloatingActionButton = 2131821564;
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131821564;
 			
 			// aapt resource value: 0x7F1103FD
-			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131821565;
+			public const int Widget_MaterialComponents_FloatingActionButton = 2131821565;
 			
 			// aapt resource value: 0x7F1103FE
-			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131821566;
+			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131821566;
 			
 			// aapt resource value: 0x7F1103FF
-			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131821567;
+			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131821567;
 			
 			// aapt resource value: 0x7F110400
-			public const int Widget_MaterialComponents_MaterialCalendar = 2131821568;
+			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131821568;
 			
 			// aapt resource value: 0x7F110401
-			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131821569;
-			
-			// aapt resource value: 0x7F110405
-			public const int Widget_MaterialComponents_MaterialCalendar_DayOfWeekLabel = 2131821573;
-			
-			// aapt resource value: 0x7F110406
-			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131821574;
+			public const int Widget_MaterialComponents_MaterialCalendar = 2131821569;
 			
 			// aapt resource value: 0x7F110402
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131821570;
+			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131821570;
 			
-			// aapt resource value: 0x7F110403
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131821571;
-			
-			// aapt resource value: 0x7F110404
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131821572;
+			// aapt resource value: 0x7F110406
+			public const int Widget_MaterialComponents_MaterialCalendar_DayOfWeekLabel = 2131821574;
 			
 			// aapt resource value: 0x7F110407
-			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131821575;
+			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131821575;
+			
+			// aapt resource value: 0x7F110403
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131821571;
+			
+			// aapt resource value: 0x7F110404
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131821572;
+			
+			// aapt resource value: 0x7F110405
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131821573;
 			
 			// aapt resource value: 0x7F110408
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131821576;
+			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131821576;
 			
 			// aapt resource value: 0x7F110409
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131821577;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131821577;
 			
 			// aapt resource value: 0x7F11040A
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131821578;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131821578;
 			
 			// aapt resource value: 0x7F11040B
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131821579;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131821579;
 			
 			// aapt resource value: 0x7F11040C
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout_Fullscreen = 2131821580;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131821580;
 			
 			// aapt resource value: 0x7F11040D
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131821581;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout_Fullscreen = 2131821581;
 			
 			// aapt resource value: 0x7F11040E
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131821582;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131821582;
 			
 			// aapt resource value: 0x7F11040F
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131821583;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131821583;
 			
 			// aapt resource value: 0x7F110410
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131821584;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131821584;
 			
 			// aapt resource value: 0x7F110411
-			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131821585;
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131821585;
 			
 			// aapt resource value: 0x7F110412
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131821586;
+			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131821586;
 			
 			// aapt resource value: 0x7F110413
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131821587;
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131821587;
 			
 			// aapt resource value: 0x7F110414
-			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131821588;
-			
-			// aapt resource value: 0x7F110417
-			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131821591;
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131821588;
 			
 			// aapt resource value: 0x7F110415
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131821589;
-			
-			// aapt resource value: 0x7F110416
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131821590;
+			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131821589;
 			
 			// aapt resource value: 0x7F110418
-			public const int Widget_MaterialComponents_MaterialDivider = 2131821592;
+			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131821592;
+			
+			// aapt resource value: 0x7F110416
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131821590;
+			
+			// aapt resource value: 0x7F110417
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131821591;
 			
 			// aapt resource value: 0x7F110419
-			public const int Widget_MaterialComponents_NavigationRailView = 2131821593;
+			public const int Widget_MaterialComponents_MaterialDivider = 2131821593;
 			
 			// aapt resource value: 0x7F11041A
-			public const int Widget_MaterialComponents_NavigationRailView_Colored = 2131821594;
+			public const int Widget_MaterialComponents_NavigationRailView = 2131821594;
 			
 			// aapt resource value: 0x7F11041B
-			public const int Widget_MaterialComponents_NavigationRailView_Colored_Compact = 2131821595;
+			public const int Widget_MaterialComponents_NavigationRailView_Colored = 2131821595;
 			
 			// aapt resource value: 0x7F11041C
-			public const int Widget_MaterialComponents_NavigationRailView_Compact = 2131821596;
+			public const int Widget_MaterialComponents_NavigationRailView_Colored_Compact = 2131821596;
 			
 			// aapt resource value: 0x7F11041D
-			public const int Widget_MaterialComponents_NavigationRailView_PrimarySurface = 2131821597;
+			public const int Widget_MaterialComponents_NavigationRailView_Compact = 2131821597;
 			
 			// aapt resource value: 0x7F11041E
-			public const int Widget_MaterialComponents_NavigationView = 2131821598;
+			public const int Widget_MaterialComponents_NavigationRailView_PrimarySurface = 2131821598;
 			
 			// aapt resource value: 0x7F11041F
-			public const int Widget_MaterialComponents_PopupMenu = 2131821599;
+			public const int Widget_MaterialComponents_NavigationView = 2131821599;
 			
 			// aapt resource value: 0x7F110420
-			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131821600;
+			public const int Widget_MaterialComponents_PopupMenu = 2131821600;
 			
 			// aapt resource value: 0x7F110421
-			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131821601;
+			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131821601;
 			
 			// aapt resource value: 0x7F110422
-			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131821602;
+			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131821602;
 			
 			// aapt resource value: 0x7F110423
-			public const int Widget_MaterialComponents_ProgressIndicator = 2131821603;
+			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131821603;
 			
 			// aapt resource value: 0x7F110424
-			public const int Widget_MaterialComponents_ShapeableImageView = 2131821604;
+			public const int Widget_MaterialComponents_ProgressIndicator = 2131821604;
 			
 			// aapt resource value: 0x7F110425
-			public const int Widget_MaterialComponents_Slider = 2131821605;
+			public const int Widget_MaterialComponents_ShapeableImageView = 2131821605;
 			
 			// aapt resource value: 0x7F110426
-			public const int Widget_MaterialComponents_Snackbar = 2131821606;
+			public const int Widget_MaterialComponents_Slider = 2131821606;
 			
 			// aapt resource value: 0x7F110427
-			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131821607;
+			public const int Widget_MaterialComponents_Snackbar = 2131821607;
 			
 			// aapt resource value: 0x7F110428
-			public const int Widget_MaterialComponents_Snackbar_TextView = 2131821608;
+			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131821608;
 			
 			// aapt resource value: 0x7F110429
-			public const int Widget_MaterialComponents_TabLayout = 2131821609;
+			public const int Widget_MaterialComponents_Snackbar_TextView = 2131821609;
 			
 			// aapt resource value: 0x7F11042A
-			public const int Widget_MaterialComponents_TabLayout_Colored = 2131821610;
+			public const int Widget_MaterialComponents_TabLayout = 2131821610;
 			
 			// aapt resource value: 0x7F11042B
-			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131821611;
+			public const int Widget_MaterialComponents_TabLayout_Colored = 2131821611;
 			
 			// aapt resource value: 0x7F11042C
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131821612;
+			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131821612;
 			
 			// aapt resource value: 0x7F11042D
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131821613;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131821613;
 			
 			// aapt resource value: 0x7F11042E
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131821614;
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131821614;
 			
 			// aapt resource value: 0x7F11042F
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131821615;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131821615;
 			
 			// aapt resource value: 0x7F110430
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131821616;
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131821616;
 			
 			// aapt resource value: 0x7F110431
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131821617;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131821617;
 			
 			// aapt resource value: 0x7F110432
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131821618;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131821618;
 			
 			// aapt resource value: 0x7F110433
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131821619;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131821619;
 			
 			// aapt resource value: 0x7F110434
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131821620;
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131821620;
 			
 			// aapt resource value: 0x7F110435
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131821621;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131821621;
 			
 			// aapt resource value: 0x7F110436
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131821622;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131821622;
 			
 			// aapt resource value: 0x7F110437
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131821623;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131821623;
 			
 			// aapt resource value: 0x7F110438
-			public const int Widget_MaterialComponents_TextView = 2131821624;
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131821624;
 			
 			// aapt resource value: 0x7F110439
-			public const int Widget_MaterialComponents_TimePicker = 2131821625;
+			public const int Widget_MaterialComponents_TextView = 2131821625;
 			
 			// aapt resource value: 0x7F11043A
-			public const int Widget_MaterialComponents_TimePicker_Button = 2131821626;
+			public const int Widget_MaterialComponents_TimePicker = 2131821626;
 			
 			// aapt resource value: 0x7F11043B
-			public const int Widget_MaterialComponents_TimePicker_Clock = 2131821627;
+			public const int Widget_MaterialComponents_TimePicker_Button = 2131821627;
 			
 			// aapt resource value: 0x7F11043C
-			public const int Widget_MaterialComponents_TimePicker_Display = 2131821628;
+			public const int Widget_MaterialComponents_TimePicker_Clock = 2131821628;
 			
 			// aapt resource value: 0x7F11043D
-			public const int Widget_MaterialComponents_TimePicker_Display_Divider = 2131821629;
+			public const int Widget_MaterialComponents_TimePicker_Display = 2131821629;
 			
 			// aapt resource value: 0x7F11043E
-			public const int Widget_MaterialComponents_TimePicker_Display_HelperText = 2131821630;
+			public const int Widget_MaterialComponents_TimePicker_Display_Divider = 2131821630;
 			
 			// aapt resource value: 0x7F11043F
-			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131821631;
+			public const int Widget_MaterialComponents_TimePicker_Display_HelperText = 2131821631;
 			
 			// aapt resource value: 0x7F110440
-			public const int Widget_MaterialComponents_TimePicker_Display_TextInputLayout = 2131821632;
+			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131821632;
 			
 			// aapt resource value: 0x7F110441
-			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131821633;
+			public const int Widget_MaterialComponents_TimePicker_Display_TextInputLayout = 2131821633;
 			
 			// aapt resource value: 0x7F110442
-			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131821634;
+			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131821634;
 			
 			// aapt resource value: 0x7F110443
-			public const int Widget_MaterialComponents_Toolbar = 2131821635;
+			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131821635;
 			
 			// aapt resource value: 0x7F110444
-			public const int Widget_MaterialComponents_Toolbar_Primary = 2131821636;
+			public const int Widget_MaterialComponents_Toolbar = 2131821636;
 			
 			// aapt resource value: 0x7F110445
-			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131821637;
+			public const int Widget_MaterialComponents_Toolbar_Primary = 2131821637;
 			
 			// aapt resource value: 0x7F110446
-			public const int Widget_MaterialComponents_Toolbar_Surface = 2131821638;
+			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131821638;
 			
 			// aapt resource value: 0x7F110447
-			public const int Widget_MaterialComponents_Tooltip = 2131821639;
+			public const int Widget_MaterialComponents_Toolbar_Surface = 2131821639;
 			
 			// aapt resource value: 0x7F110448
-			public const int Widget_Support_CoordinatorLayout = 2131821640;
+			public const int Widget_MaterialComponents_Tooltip = 2131821640;
+			
+			// aapt resource value: 0x7F110449
+			public const int Widget_Support_CoordinatorLayout = 2131821641;
 			
 			static Style()
 			{

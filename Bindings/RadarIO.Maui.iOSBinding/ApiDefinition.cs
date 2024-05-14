@@ -6,15 +6,6 @@ using UserNotifications;
 
 namespace iOSBinding
 {
-    [Static]
-    
-    partial interface Constants
-    {
-        // extern double RadarSDKVersionNumber;
-        [Field("RadarSDKVersionNumber", "__Internal")]
-        double RadarSDKVersionNumber { get; }
-    }
-
     // @interface RadarCoordinate : NSObject
     [BaseType(typeof(NSObject))]
     interface RadarCoordinate
@@ -1414,6 +1405,7 @@ namespace iOSBinding
 
     // @protocol RadarDelegate <NSObject>
     [BaseType(typeof(NSObject))]
+    [Protocol, Model]
     interface RadarDelegate
     {
         // @required -(void)didReceiveEvents:(NSArray<RadarEvent *> * _Nonnull)events user:(RadarUser * _Nullable)user __attribute__((swift_name("didReceiveEvents(_:user:)")));
@@ -1505,6 +1497,7 @@ namespace iOSBinding
 
     // @protocol RadarVerifiedDelegate <NSObject>
     [BaseType(typeof(NSObject))]
+    [Protocol, Model]
     interface RadarVerifiedDelegate
     {
         // @required -(void)didUpdateToken:(NSString * _Nonnull)token __attribute__((swift_name("didUpdateToken(_:)")));

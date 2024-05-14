@@ -1,4 +1,5 @@
 ﻿using CoreLocation;
+using Foundation;
 
 namespace RadarIO;
 
@@ -17,7 +18,7 @@ public class RadarSDKImpl : RadarSDK
     {
         private readonly RadarSDKImpl Radar;
 
-        public RadarDelegate(RadarSDKImpl radar)
+        public RadarDelegate(RadarSDKImpl radar) : base()
         {
             Radar = radar;
         }
@@ -207,7 +208,7 @@ public class RadarSDKImpl : RadarSDK
         return src.Task;
     }
 
-    public Task<TrackData> TrackVerified(bool beacons)
+    public Task<TrackData> TrackVerified(bool beacons = false)
     {
         var src = new TaskCompletionSource<TrackData>();
         iOSBinding.Radar.TrackVerifiedWithBeacons(beacons, (status, _location, ev, user) =>
@@ -224,7 +225,7 @@ public class RadarSDKImpl : RadarSDK
         return src.Task;
     }
 
-    public Task<TokenData> TrackVerifiedToken(bool beacons)
+    public Task<TokenData> TrackVerifiedToken(bool beacons = false)
     {
         var src = new TaskCompletionSource<TokenData>();
         iOSBinding.Radar.TrackVerifiedTokenWithBeacons(beacons, (status, token) =>
@@ -244,7 +245,7 @@ public class RadarSDKImpl : RadarSDK
     public void StartTracking(RadarTrackingOptions options)
         => iOSBinding.Radar.StartTrackingWithOptions(options.ToBinding());
 
-    public void StartTrackingVerified(bool token, int interval, bool beacons)
+    public void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false)
         => iOSBinding.Radar.StartTrackingVerified(token, interval, beacons);
 
     public void StopTracking()
@@ -361,10 +362,10 @@ public class RadarSDKImpl : RadarSDK
         return src.Task;
     }
 
-    public Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
+    public Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false)
     {
         var src = new TaskCompletionSource<AddressesData>();
-        iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), limit, (status, addresses) =>
+        iOSBinding.Radar.AutocompleteQuery(query, near?.ToBinding(), layers?.ToArray(), limit, country, expandUnits, (status, addresses) =>
         {
             try
             {

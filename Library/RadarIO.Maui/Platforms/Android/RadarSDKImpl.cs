@@ -21,7 +21,7 @@ public class RadarSDKImpl : RadarSDK
 
     public void Initialize(string publishableKey, bool fraud = false)
     {
-        var prefs = Android.App.Application.Context.GetSharedPreferences("RadarSDK", FileCreationMode.WorldWriteable);
+        var prefs = Android.App.Application.Context.GetSharedPreferences("RadarSDK", FileCreationMode.Private);
         var edit = prefs.Edit();
 #if NET
         edit.PutString("x_platform_sdk_type", "Maui");
@@ -97,16 +97,16 @@ public class RadarSDKImpl : RadarSDK
     public Task<TrackData> TrackOnce(RadarLocation location)
         => UseHandler<TrackCallbackHandler, TrackData>(handler => AndroidBinding.Radar.TrackOnce(location?.ToBinding(), handler));
 
-    public Task<TrackData> TrackVerified(bool beacons)
+    public Task<TrackData> TrackVerified(bool beacons = false)
         => UseHandler<TrackCallbackHandler, TrackData>(handler => AndroidBinding.Radar.TrackVerified(beacons, handler));
 
-    public Task<TokenData> TrackVerifiedToken(bool beacons)
+    public Task<TokenData> TrackVerifiedToken(bool beacons = false)
         => UseHandler<TrackTokenCallbackHandler, TokenData>(handler => AndroidBinding.Radar.TrackVerifiedToken(beacons, handler));
 
     public void StartTracking(RadarTrackingOptions options)
         => AndroidBinding.Radar.StartTracking(options.ToBinding());
 
-    public void StartTrackingVerified(bool token, int interval, bool beacons)
+    public void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false)
         => AndroidBinding.Radar.StartTrackingVerified(token, interval, beacons);
 
     public void StopTracking()
@@ -166,10 +166,10 @@ public class RadarSDKImpl : RadarSDK
         return handler.Task;
     }
 
-    public Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null)
+    public Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false)
     {
         var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), layers?.ToArray(), new Java.Lang.Integer(limit), country, handler);
+        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), layers?.ToArray(), new Java.Lang.Integer(limit), country, new Java.Lang.Boolean(expandUnits), new Java.Lang.Boolean(mailable), handler);
         return handler.Task;
     }
 

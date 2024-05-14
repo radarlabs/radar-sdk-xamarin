@@ -25,6 +25,18 @@
                 HorizontalOptions="Center" />
 
             <Button
+                x:Name="TrackVerifiedBtn"
+                Text="Track Verified"
+                Clicked="OnTrackVerifiedClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="TrackVerifiedTokenBtn"
+                Text="Track Verified Token"
+                Clicked="OnTrackVerifiedTokenClicked"
+                HorizontalOptions="Center" />
+
+            <Button
                 x:Name="TrackingResponsiveBtn"
                 Text="Start Tracking Responsive"
                 Clicked="OnTrackingResponsiveClicked"

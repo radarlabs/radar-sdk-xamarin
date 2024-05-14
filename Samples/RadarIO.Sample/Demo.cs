@@ -78,6 +78,12 @@ namespace RadarIO.Sample
         public static async Task<TrackData> TrackOnce()
             => await Radar.TrackOnce();
 
+        public static async Task<TrackData> TrackVerified()
+            => await Radar.TrackVerified();
+
+        public static async Task<TokenData> TrackVerifiedToken()
+            => await Radar.TrackVerifiedToken();
+
 
         public static void StartTrackingResponsive()
             => Radar.StartTracking(Radar.TrackingOptionsResponsive);
