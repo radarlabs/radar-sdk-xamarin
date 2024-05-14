@@ -352,10 +352,6 @@ namespace RadarIO
         public RadarLocationSource Source;
         public RadarTrip Trip;
         public RadarFraud Fraud;
-
-        /// <summary>
-        /// Android-only
-        /// </summary>
         public bool Debug;
     }
 
@@ -510,6 +506,8 @@ namespace RadarIO
         public float Duration;
         public RadarLocation Location;
         public JSONObject Metadata;
+        public RadarFraud Fraud;
+        public bool Replayed;
     }
 
     public class RadarFraud
@@ -521,6 +519,7 @@ namespace RadarIO
         public bool Mocked;
         public bool Compromised;
         public bool Jumped;
+        public bool Inaccurate;
 
         /// <summary>
         /// Android-only

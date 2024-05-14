@@ -110,7 +110,9 @@ internal static class Conversion
             Confidence = (RadarEventConfidence)ev.Confidence.Ordinal(),
             Duration = ev.Duration,
             Location = ev.Location?.ToSDK(),
-            Metadata = ev.Metadata?.ToSDK()
+            Metadata = ev.Metadata?.ToSDK(),
+            Fraud = ev.Fraud?.ToSDK(),
+            Replayed = ev.Replayed
         };
 
     internal static RadarUser ToSDK(this AndroidBinding.RadarUser user)
@@ -170,7 +172,11 @@ internal static class Conversion
             Code = region.Code,
             Type = region.Type,
             Flag = region.Flag,
-            Allowed = region.Allowed
+            Allowed = region.Allowed,
+            Passed = region.Passed,
+            InExclusionZone = region.InExclusionZone,
+            InBufferZone = region.InBufferZone,
+            DistanceToBorder = region.DistanceToBorder,
         };
 
     internal static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
@@ -324,6 +330,7 @@ internal static class Conversion
             Mocked = fraud.Mocked,
             Compromised = fraud.Compromised,
             Jumped = fraud.Jumped,
+            Inaccurate = fraud.Inaccurate,
             Sharing = fraud.Sharing
         };
 
