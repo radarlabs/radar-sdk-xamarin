@@ -428,6 +428,10 @@ namespace RadarIO
         public string Type;
         public string Flag;
         public bool Allowed;
+        public object Passed;
+        public object InExclusionZone;
+        public object InBufferZone;
+        public object DistanceToBorder;
     }
 
     public class RadarBeacon
