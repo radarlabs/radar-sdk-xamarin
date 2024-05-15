@@ -6,7 +6,7 @@ on:
 jobs:
       
   Build-Solution:
-    runs-on: macos-latest
+    runs-on: windows-2022
     steps:
 
     - name: Setup .NET Core SDK 8.0.x
