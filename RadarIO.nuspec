@@ -2,7 +2,7 @@
 <package>
 	<metadata>
 		<id>RadarIO.Xamarin</id>
-		<version>3.7.8</version>
+		<version>3.9.3</version>
 		<title>Radar Xamarin SDK</title>
 		<authors>Radar Labs, Inc.</authors>
 		<owners>Radar Labs, Inc.</owners>
@@ -44,9 +44,9 @@
 		<!--Xamarin.iOS-->
 		<file src="Library/RadarIO.Xamarin.iOS/bin/Release/*" target="lib/xamarinios10" />
 		<!--Maui.Android-->
-		<file src="Library/RadarIO.Maui/bin/Release/net7.0-android/*" target="lib/net7.0-android21.0" />
+		<file src="Library/RadarIO.Maui/bin/Release/net8.0-android/*" target="lib/net8.0-android21.0" />
 		<!--Maui.iOS-->
-		<file src="Library/RadarIO.Maui/bin/Release/net7.0-ios/**/*" target="lib/net7.0-ios14.2" />
+		<file src="Library/RadarIO.Maui/bin/Release/net8.0-ios/**/*" target="lib/net8.0-ios14.2" />
 		<!--Package Icon-->
 		<file src="radar-nuget-icon.png" target="" />
 	</files>
