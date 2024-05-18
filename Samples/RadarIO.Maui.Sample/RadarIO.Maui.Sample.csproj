@@ -75,6 +75,6 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)' == 'nuget'">
-	  <PackageReference Include="RadarIO.Xamarin" Version="3.7.8-beta.1" />
+	  <PackageReference Include="RadarIO.Xamarin" Version="3.9.3-beta.1" />
 	</ItemGroup>
 </Project>
