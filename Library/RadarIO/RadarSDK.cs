@@ -10,46 +10,51 @@ namespace RadarIO
         RadarTrackingOptions TrackingOptionsContinuous { get; }
         RadarTrackingOptions TrackingOptionsEfficient { get; }
 
-        event RadarEventHandler<(IEnumerable<RadarEvent>, RadarUser)> EventsReceived;
-        event RadarEventHandler<(RadarLocation, RadarUser)> LocationUpdated;
-        event RadarEventHandler<(RadarLocation, bool, RadarLocationSource)> ClientLocationUpdated;
+        event RadarEventHandler<EventsData> EventsReceived;
+        event RadarEventHandler<LocationUpdatedData> LocationUpdated;
+        event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
+        event RadarEventHandler<string> TokenUpdated;
 
-        Task<(RadarStatus, RadarEvent)> LogConversion(string name, JSONObject metadata);
-        Task<(RadarStatus, RadarEvent)> LogConversion(string name, double revenue, JSONObject metadata);
+        Task<EventData> LogConversion(string name, JSONObject metadata);
+        Task<EventData> LogConversion(string name, double revenue, JSONObject metadata);
 
-        // Initialization
-        void Initialize(string publishableKey);
+        void Initialize(string publishableKey, bool fraud = false);
+        void SetLogLevel(RadarLogLevel level);
         /// <summary>
         /// Android-only
         /// </summary>
-        void Initialize(string publishableKey, RadarLocationServicesProvider locationServicesProvider, bool fraud);
-
+        void SetNotificationOptions(RadarNotificationOptions options);
         /// <summary>
         /// Android-only
         /// </summary>
         void SetForegroundServiceOptions(RadarTrackingOptionsForegroundService options);
 
-        // Properties
+        // todo: request permissions
+
         string UserId { get; set; }
         string Description { get; set; }
+        string SdkVersion { get; }
         JSONObject Metadata { get; set; }
         bool AnonymousTrackingEnabled { set; }
+        // todo: permission status
 
-        // Get Location
-        Task<(RadarStatus, RadarLocation, bool)> GetLocation();
-        Task<(RadarStatus, RadarLocation, bool)> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy);
+        Task<LocationData> GetLocation();
+        Task<LocationData> GetLocation(RadarTrackingOptionsDesiredAccuracy desiredAccuracy);
 
-        // Tracking
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce();
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> TrackOnce(RadarLocation location);
+        Task<TrackData> TrackOnce();
+        Task<TrackData> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
+        Task<TrackData> TrackOnce(RadarLocation location);
+        Task<TrackData> TrackVerified(bool beacons = false);
+        Task<TokenData> TrackVerifiedToken(bool beacons = false);
         void StartTracking(RadarTrackingOptions options);
-        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback);
+        void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false);
+        void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<TrackData> callback);
         void StopTracking();
         bool IsTracking { get; }
         RadarTrackingOptions TrackingOptions { get; }
+        bool IsUsingRemoteTrackingOptions { get; }
 
         // Event IDs
         void AcceptEventId(string eventId, string verifiedPlaceId = null);
@@ -57,37 +62,34 @@ namespace RadarIO
 
         // Trips
         RadarTripOptions TripOptions { get; }
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options);
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions);
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown);
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CompleteTrip();
-        Task<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)> CancelTrip();
+        Task<TripData> StartTrip(RadarTripOptions options);
+        Task<TripData> StartTrip(RadarTripOptions options, RadarTrackingOptions trackingOptions);
+        Task<TripData> UpdateTrip(RadarTripOptions options, RadarTripStatus status = RadarTripStatus.Unknown);
+        Task<TripData> CompleteTrip();
+        Task<TripData> CancelTrip();
 
         // Device Context
-        Task<(RadarStatus, RadarLocation, RadarContext)> GetContext();
-        Task<(RadarStatus, RadarLocation, RadarContext)> GetContext(RadarLocation location);
+        Task<ContextData> GetContext();
+        Task<ContextData> GetContext(RadarLocation location);
 
         // Search
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near = null, int limit = 100);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null);
+        Task<PlacesData> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
+        Task<PlacesData> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
+        Task<GeofencesData> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<GeofencesData> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
+        Task<AddressesData> Autocomplete(string query, RadarLocation near = null, int limit = 100);
+        Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false);
 
         // Geocoding
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> Geocode(string query);
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode();
-        Task<(RadarStatus, IEnumerable<RadarAddress>)> ReverseGeocode(RadarLocation location);
-        Task<(RadarStatus, RadarAddress, bool)> IpGeocode();
+        Task<AddressesData> Geocode(string query);
+        Task<AddressesData> ReverseGeocode();
+        Task<AddressesData> ReverseGeocode(RadarLocation location);
+        Task<AddressData> IpGeocode();
 
         // Distances
-        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
-        Task<(RadarStatus, RadarRoutes)> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
-        Task<(RadarStatus, RadarRouteMatrix)> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units);
-
-        // Logging
-        void SetLogLevel(RadarLogLevel level);
+        Task<RoutesData> GetDistance(RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+        Task<RoutesData> GetDistance(RadarLocation source, RadarLocation destination, IEnumerable<RadarRouteMode> modes, RadarRouteUnits units);
+        Task<RouteMatrixData> GetMatrix(IEnumerable<RadarLocation> origins, IEnumerable<RadarLocation> destinations, RadarRouteMode mode, RadarRouteUnits units);
 
         // Utilities
         string StringForStatus(RadarStatus status);
@@ -350,10 +352,6 @@ namespace RadarIO
         public RadarLocationSource Source;
         public RadarTrip Trip;
         public RadarFraud Fraud;
-
-        /// <summary>
-        /// Android-only
-        /// </summary>
         public bool Debug;
     }
 
@@ -430,6 +428,10 @@ namespace RadarIO
         public string Type;
         public string Flag;
         public bool Allowed;
+        public object Passed;
+        public object InExclusionZone;
+        public object InBufferZone;
+        public object DistanceToBorder;
     }
 
     public class RadarBeacon
@@ -508,6 +510,8 @@ namespace RadarIO
         public float Duration;
         public RadarLocation Location;
         public JSONObject Metadata;
+        public RadarFraud Fraud;
+        public bool Replayed;
     }
 
     public class RadarFraud
@@ -519,9 +523,10 @@ namespace RadarIO
         public bool Mocked;
         public bool Compromised;
         public bool Jumped;
+        public bool Inaccurate;
 
         /// <summary>
-        /// Android-onlyZ
+        /// Android-only
         /// </summary>
         public bool Sharing;
     }
@@ -529,6 +534,21 @@ namespace RadarIO
     public class RadarMeta
     {
         public RadarTrackingOptions TrackingOptions;
+    }
+
+    public class RadarNotificationOptions
+    {
+        public string IconString;
+        public string IconColor;
+        public string ForegroundServiceIconString;
+        public string ForegroundServiceIconColor;
+        public string EventIconString;
+        public string EventIconColor;
+
+        public string ForegroundServiceIcon => ForegroundServiceIconString ?? IconString;
+        public string ForegroundServiceColor => ForegroundServiceIconColor ?? IconColor;
+        public string EventIcon => EventIconString ?? IconString;
+        public string EventColor => EventIconColor ?? IconColor;
     }
 
     public enum RadarEventConfidence
@@ -602,4 +622,138 @@ namespace RadarIO
 
     public class JSONObject : Dictionary<string, object> { }
 
+    public record struct TrackData(RadarStatus Status, RadarLocation Location, IEnumerable<RadarEvent> Events, RadarUser User)
+    {
+        public static implicit operator (RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)(TrackData value)
+            => (value.Status, value.Location, value.Events, value.User);
+
+        public static implicit operator TrackData((RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser) value)
+            => new(value.Item1, value.Item2, value.Item3, value.Item4);
+    }
+
+    public record struct TokenData(RadarStatus Status, string Token)
+    {
+        public static implicit operator (RadarStatus, string)(TokenData value)
+            => (value.Status, value.Token);
+
+        public static implicit operator TokenData((RadarStatus, string) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct TripData(RadarStatus Status, RadarTrip Trip, IEnumerable<RadarEvent> Events)
+    {
+        public static implicit operator (RadarStatus, RadarTrip, IEnumerable<RadarEvent>)(TripData value)
+            => (value.Status, value.Trip, value.Events);
+
+        public static implicit operator TripData((RadarStatus, RadarTrip, IEnumerable<RadarEvent>) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct ContextData(RadarStatus Status, RadarLocation Location, RadarContext Context)
+    {
+        public static implicit operator (RadarStatus, RadarLocation, RadarContext)(ContextData value)
+            => (value.Status, value.Location, value.Context);
+
+        public static implicit operator ContextData((RadarStatus, RadarLocation, RadarContext) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct PlacesData(RadarStatus Status, RadarLocation Location, IEnumerable<RadarPlace> Places)
+    {
+        public static implicit operator (RadarStatus, RadarLocation, IEnumerable<RadarPlace>)(PlacesData value)
+            => (value.Status, value.Location, value.Places);
+
+        public static implicit operator PlacesData((RadarStatus, RadarLocation, IEnumerable<RadarPlace>) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct GeofencesData(RadarStatus Status, RadarLocation Location, IEnumerable<RadarGeofence> Geofences)
+    {
+        public static implicit operator (RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)(GeofencesData value)
+            => (value.Status, value.Location, value.Geofences);
+
+        public static implicit operator GeofencesData((RadarStatus, RadarLocation, IEnumerable<RadarGeofence>) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct AddressesData(RadarStatus Status, IEnumerable<RadarAddress> Addresses)
+    {
+        public static implicit operator (RadarStatus, IEnumerable<RadarAddress>)(AddressesData value)
+            => (value.Status, value.Addresses);
+
+        public static implicit operator AddressesData((RadarStatus, IEnumerable<RadarAddress>) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct AddressData(RadarStatus Status, RadarAddress Address, bool Proxy)
+    {
+        public static implicit operator (RadarStatus, RadarAddress, bool)(AddressData value)
+            => (value.Status, value.Address, value.Proxy);
+
+        public static implicit operator AddressData((RadarStatus, RadarAddress, bool) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct RoutesData(RadarStatus Status, RadarRoutes Routes)
+    {
+        public static implicit operator (RadarStatus, RadarRoutes)(RoutesData value)
+            => (value.Status, value.Routes);
+
+        public static implicit operator RoutesData((RadarStatus, RadarRoutes) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct RouteMatrixData(RadarStatus Status, RadarRouteMatrix RouteMatrix)
+    {
+        public static implicit operator (RadarStatus, RadarRouteMatrix)(RouteMatrixData value)
+            => (value.Status, value.RouteMatrix);
+
+        public static implicit operator RouteMatrixData((RadarStatus, RadarRouteMatrix) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct EventData(RadarStatus Status, RadarEvent Event)
+    {
+        public static implicit operator (RadarStatus, RadarEvent)(EventData value)
+            => (value.Status, value.Event);
+
+        public static implicit operator EventData((RadarStatus, RadarEvent) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct ClientLocationUpdatedData(RadarLocation Location, bool Stopped, RadarLocationSource Source)
+    {
+        public static implicit operator (RadarLocation, bool, RadarLocationSource)(ClientLocationUpdatedData value)
+            => (value.Location, value.Stopped, value.Source);
+
+        public static implicit operator ClientLocationUpdatedData((RadarLocation, bool, RadarLocationSource) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public record struct LocationUpdatedData(RadarLocation Location, RadarUser User)
+    {
+        public static implicit operator (RadarLocation, RadarUser)(LocationUpdatedData value)
+            => (value.Location, value.User);
+
+        public static implicit operator LocationUpdatedData((RadarLocation, RadarUser) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct EventsData(IEnumerable<RadarEvent> Events, RadarUser User)
+    {
+        public static implicit operator (IEnumerable<RadarEvent>, RadarUser)(EventsData value)
+            => (value.Events, value.User);
+
+        public static implicit operator EventsData((IEnumerable<RadarEvent>, RadarUser) value)
+            => new(value.Item1, value.Item2);
+    }
+
+    public record struct LocationData(RadarStatus Status, RadarLocation Location, bool Stopped)
+    {
+        public static implicit operator (RadarStatus, RadarLocation, bool)(LocationData value)
+            => (value.Status, value.Location, value.Stopped);
+
+        public static implicit operator LocationData((RadarStatus, RadarLocation, bool) value)
+            => new(value.Item1, value.Item2, value.Item3);
+    }
 }

@@ -149,7 +149,9 @@ internal static class Conversion
             Confidence = (RadarEventConfidence)ev.Confidence,
             Duration = ev.Duration,
             Location = ev.Location?.ToSDK(),
-            Metadata = ev.Metadata?.ToSDK()
+            Metadata = ev.Metadata?.ToSDK(),
+            Fraud = ev.Fraud?.ToSDK(),
+            Replayed = ev.Replayed
         };
 
     internal static RadarUser ToSDK(this iOSBinding.RadarUser user)
@@ -176,6 +178,7 @@ internal static class Conversion
             Source = (RadarLocationSource)user.Source,
             Trip = user.Trip?.ToSDK(),
             Fraud = user.Fraud?.ToSDK(),
+            Debug = user.Debug
         };
 
     internal static RadarSegment ToSDK(this iOSBinding.RadarSegment segment)
@@ -208,7 +211,11 @@ internal static class Conversion
             Code = region.Code,
             Type = region.Type,
             Flag = region.Flag,
-            Allowed = region.Allowed
+            Allowed = region.Allowed,
+            Passed = region.Passed,
+            InExclusionZone = region.InExclusionZone,
+            InBufferZone = region.InBufferZone,
+            DistanceToBorder = region.DistanceToBorder,
         };
 
     internal static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
@@ -315,7 +322,8 @@ internal static class Conversion
             Mocked = fraud.Mocked,
             Compromised = fraud.Compromised,
             Jumped = fraud.Jumped,
-            //Sharing = fraud.Sharing
+            //Sharing = fraud.Sharing,
+            Inaccurate = fraud.Inaccurate
         };
 
     internal static object ToSDK(this Foundation.NSObject obj)
@@ -460,4 +468,5 @@ internal static class Conversion
 
     internal static T InvertEnum<T>(int val)
         => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
+
 }

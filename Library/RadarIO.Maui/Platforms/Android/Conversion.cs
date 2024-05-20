@@ -110,7 +110,9 @@ internal static class Conversion
             Confidence = (RadarEventConfidence)ev.Confidence.Ordinal(),
             Duration = ev.Duration,
             Location = ev.Location?.ToSDK(),
-            Metadata = ev.Metadata?.ToSDK()
+            Metadata = ev.Metadata?.ToSDK(),
+            Fraud = ev.Fraud?.ToSDK(),
+            Replayed = ev.Replayed
         };
 
     internal static RadarUser ToSDK(this AndroidBinding.RadarUser user)
@@ -170,7 +172,11 @@ internal static class Conversion
             Code = region.Code,
             Type = region.Type,
             Flag = region.Flag,
-            Allowed = region.Allowed
+            Allowed = region.Allowed,
+            Passed = region.Passed,
+            InExclusionZone = region.InExclusionZone,
+            InBufferZone = region.InBufferZone,
+            DistanceToBorder = region.DistanceToBorder,
         };
 
     internal static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
@@ -324,6 +330,7 @@ internal static class Conversion
             Mocked = fraud.Mocked,
             Compromised = fraud.Compromised,
             Jumped = fraud.Jumped,
+            Inaccurate = fraud.Inaccurate,
             Sharing = fraud.Sharing
         };
 
@@ -361,6 +368,15 @@ internal static class Conversion
              options.ForegroundServiceEnabled,
              options.Beacons
             );
+
+    internal static AndroidBinding.RadarNotificationOptions ToBinding(this RadarNotificationOptions options)
+        => options == null ? null : new AndroidBinding.RadarNotificationOptions(
+            options.IconString,
+            options.IconColor,
+            options.ForegroundServiceIconString,
+            options.ForegroundServiceIconColor,
+            options.EventIconString,
+            options.EventIconColor);
 
     internal static DateTime ToSDK(this Java.Util.Date date)
         => date == null ? DateTime.MinValue : date.Time.ToDateTime();
@@ -418,7 +434,8 @@ internal static class Conversion
                 service.Activity,
                 new Java.Lang.Integer(service.Importance),
                 new Java.Lang.Integer(service.Id),
-                service.ChannelName
+                service.ChannelName,
+                "todo", "todo"
             );
 
     internal static Android.Locations.Location ToBinding(this RadarLocation location)

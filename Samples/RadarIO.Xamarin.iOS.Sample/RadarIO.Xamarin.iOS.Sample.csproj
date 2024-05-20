@@ -61,6 +61,26 @@
         <CodesignKey>iPhone Developer</CodesignKey>
         <MtouchLink>SdkOnly</MtouchLink>
     </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'nuget|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\nuget</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchLink>None</MtouchLink>
+        <MtouchArch>x86_64</MtouchArch>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'nuget|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\nuget</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchLink>SdkOnly</MtouchLink>
+    </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
         <Reference Include="System.Xml" />
@@ -136,13 +156,12 @@
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
-    <ItemGroup>
+      <ItemGroup Condition="'$(Configuration)' == 'nuget'">
+	    <PackageReference Include="RadarIO.Xamarin" Version="3.9.3-beta.1" />
+      </ItemGroup>
+      <ItemGroup Condition="'$(Configuration)' != 'nuget'">
       <ProjectReference Include="..\..\Library\RadarIO.Xamarin.iOS\RadarIO.Xamarin.iOS.csproj">
         <Name>RadarIO.Xamarin.iOS</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\RadarIO.Sample\RadarIO.Sample.csproj">
-        <Project>{CF16D540-65AC-4BBF-AE29-73249827EBD0}</Project>
-        <Name>RadarIO.Sample</Name>
       </ProjectReference>
       <ProjectReference Include="..\..\Library\RadarIO\RadarIO.csproj">
         <Project>{4A3FA97A-7D49-4D33-AA67-1148555EEAC9}</Project>
@@ -150,6 +169,12 @@
       </ProjectReference>
       <ProjectReference Include="..\..\Bindings\RadarIO.Xamarin.iOS.Binding\RadarIO.Xamarin.iOSBinding.csproj">
         <Name>RadarIO.Xamarin.iOSBinding</Name>
+      </ProjectReference>
+      </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\RadarIO.Sample\RadarIO.Sample.csproj">
+        <Project>{CF16D540-65AC-4BBF-AE29-73249827EBD0}</Project>
+        <Name>RadarIO.Sample</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
