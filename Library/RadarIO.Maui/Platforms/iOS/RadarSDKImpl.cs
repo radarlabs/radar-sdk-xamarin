@@ -75,14 +75,15 @@ public class RadarSDKImpl : RadarSDK
 
     public void Initialize(string publishableKey, bool fraud = false)
     {
-        var defaults = new Foundation.NSUserDefaults("RadarSDK");
 #if NET
-        defaults.SetString("x_platform_sdk_type","Maui");
+        Preferences.Default.Set("radar-xPlatformSDKType", "Maui");
+        Preferences.Default.Set("radar-xPlatformSDKVersion", "3.9.3");
 #else
-        defaults.SetString("x_platform_sdk_type", "Xamarin");
-#endif
-        defaults.SetString("x_platform_sdk_version", "3.9.3");
+        var defaults = new Foundation.NSUserDefaults("RadarSDK");
+        defaults.SetString("radar-xPlatformSDKType", "Xamarin");
+        defaults.SetString("radar-xPlatformSDKVersion", "3.9.3");
         defaults.Synchronize();
+#endif
 
         iOSBinding.Radar.InitializeWithPublishableKey(publishableKey);
         iOSBinding.Radar.SetDelegate(new RadarDelegate(this));
