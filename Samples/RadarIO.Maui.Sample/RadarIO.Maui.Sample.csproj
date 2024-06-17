@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>RadarIO.Maui.Sample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -19,7 +19,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<Configurations>Debug;Release;nuget</Configurations>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(TargetFramework)|$(Platform)'=='net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(TargetFramework)|$(Platform)'=='net8.0-ios|AnyCPU'">
 		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,7 +39,7 @@
 	  <DocumentationFile>bin\nuget\RadarIO.Maui.Sample.xml</DocumentationFile>
 	  <NoWarn>1701;1702;IL2121;CS1573;CS1591</NoWarn>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='nuget|net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='nuget|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
@@ -61,7 +61,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\RadarIO.Sample\RadarIO.Sample.csproj" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android' and '$(Configuration)' != 'nuget'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android' and '$(Configuration)' != 'nuget'">
+	    <PackageReference Include="Xamarin.Google.Android.Play.Integrity" Version="1.3.0.1" />
 		<PackageReference Include="Xamarin.GooglePlayServices.Location" Version="121.0.1.4" />
 		<PackageReference Include="Xamarin.GooglePlayServices.Ads.Identifier" Version="118.0.1.8" />
 		<PackageReference Include="Xamarin.AndroidX.Collection" Version="1.3.0.2" />
@@ -70,9 +71,10 @@
 		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.8.1.1" />
 	</ItemGroup>
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
 	  <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)' == 'nuget'">
-	  <PackageReference Include="RadarIO.Xamarin" Version="3.7.8" />
+	  <PackageReference Include="RadarIO.Xamarin" Version="3.9.3-beta.1" />
 	</ItemGroup>
 </Project>

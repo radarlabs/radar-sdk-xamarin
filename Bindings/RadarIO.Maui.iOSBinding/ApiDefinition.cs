@@ -6,16 +6,6 @@ using UserNotifications;
 
 namespace iOSBinding
 {
-
-    [Static]
-
-    partial interface Constants
-    {
-        // extern double RadarSDKVersionNumber;
-        [Field("RadarSDKVersionNumber", "__Internal")]
-        double RadarSDKVersionNumber { get; }
-    }
-
     // @interface RadarCoordinate : NSObject
     [BaseType(typeof(NSObject))]
     interface RadarCoordinate
@@ -26,7 +16,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -140,7 +130,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -186,7 +176,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -218,7 +208,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -270,7 +260,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -302,9 +292,25 @@ namespace iOSBinding
         [Export("allowed")]
         bool Allowed { get; }
 
+        // @property (readonly, assign, nonatomic) BOOL passed;
+        [Export("passed")]
+        bool Passed { get; }
+
+        // @property (readonly, assign, nonatomic) BOOL inExclusionZone;
+        [Export("inExclusionZone")]
+        bool InExclusionZone { get; }
+
+        // @property (readonly, assign, nonatomic) BOOL inBufferZone;
+        [Export("inBufferZone")]
+        bool InBufferZone { get; }
+
+        // @property (readonly, assign, nonatomic) double distanceToBorder;
+        [Export("distanceToBorder")]
+        double DistanceToBorder { get; }
+
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -338,7 +344,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -394,7 +400,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -430,9 +436,13 @@ namespace iOSBinding
         [Export("jumped")]
         bool Jumped { get; }
 
+        // @property (readonly, assign, nonatomic) _Bool inaccurate;
+        [Export("inaccurate")]
+        bool Inaccurate { get; }
+
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -456,7 +466,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -506,7 +516,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -588,7 +598,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
 
         // @property (readonly, assign, nonatomic) RadarLocationSource source;
@@ -598,6 +608,10 @@ namespace iOSBinding
         // @property (readonly, nonatomic, strong) RadarTrip * _Nullable trip;
         [NullAllowed, Export("trip", ArgumentSemantic.Strong)]
         RadarTrip Trip { get; }
+
+        // @property (readonly, assign, nonatomic) BOOL debug;
+        [Export("debug")]
+        bool Debug { get; }
 
         // @property (readonly, copy, nonatomic) RadarFraud * _Nullable fraud;
         [NullAllowed, Export("fraud", ArgumentSemantic.Copy)]
@@ -652,6 +666,10 @@ namespace iOSBinding
         [NullAllowed, Export("trip", ArgumentSemantic.Strong)]
         RadarTrip Trip { get; }
 
+        // @property (readonly, nonatomic, strong) RadarFraud * _Nullable fraud;
+        [NullAllowed, Export("fraud", ArgumentSemantic.Strong)]
+        RadarFraud Fraud { get; }
+
         // @property (readonly, nonatomic, strong) NSArray<RadarPlace *> * _Nullable alternatePlaces;
         [NullAllowed, Export("alternatePlaces", ArgumentSemantic.Strong)]
         RadarPlace[] AlternatePlaces { get; }
@@ -676,6 +694,10 @@ namespace iOSBinding
         [Export("location", ArgumentSemantic.Strong)]
         CLLocation Location { get; }
 
+        // @property (readonly, assign, nonatomic) BOOL replayed;
+        [Export("replayed")]
+        bool Replayed { get; }
+
         // @property (readonly, copy, nonatomic) NSDictionary * _Nonnull metadata;
         [Export("metadata", ArgumentSemantic.Copy)]
         NSDictionary Metadata { get; }
@@ -694,7 +716,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -712,7 +734,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -730,7 +752,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -744,7 +766,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -766,7 +788,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -781,7 +803,7 @@ namespace iOSBinding
 
         // -(NSArray<NSArray<NSDictionary *> *> * _Nonnull)arrayValue;
         [Export("arrayValue")]
-
+        
         NSArray<NSDictionary>[] ArrayValue { get; }
     }
 
@@ -815,7 +837,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -952,7 +974,7 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
@@ -964,6 +986,12 @@ namespace iOSBinding
 
     // typedef void (^ _Nullable)(RadarStatus, CLLocation * _Nullable, NSArray<RadarEvent *> * _Nullable, RadarUser * _Nullable) RadarTrackCompletionHandler;
     delegate void RadarTrackCompletionHandler(RadarStatus arg0, [NullAllowed] CLLocation arg1, [NullAllowed] RadarEvent[] arg2, [NullAllowed] RadarUser arg3);
+
+    // typedef void (^ _Nullable)(RadarStatus, NSDictionary * _Nullable) RadarFlushReplaysCompletionHandler;
+    delegate void RadarFlushReplaysCompletionHandler(RadarStatus arg0, [NullAllowed] NSDictionary arg1);
+
+    // typedef void (^ _Nullable)(RadarStatus, NSString * _Nullable) RadarTrackTokenCompletionHandler;
+    delegate void RadarTrackTokenCompletionHandler(RadarStatus arg0, [NullAllowed] string arg1);
 
     // typedef void (^ _Nullable)(RadarStatus, RadarTrip * _Nullable, NSArray<RadarEvent *> * _Nullable) RadarTripCompletionHandler;
     delegate void RadarTripCompletionHandler(RadarStatus arg0, [NullAllowed] RadarTrip arg1, [NullAllowed] RadarEvent[] arg2);
@@ -1017,7 +1045,7 @@ namespace iOSBinding
         // +(NSString * _Nullable)getUserId;
         [Static]
         [NullAllowed, Export("getUserId")]
-
+        
         string UserId { get; }
 
         // +(void)setDescription:(NSString * _Nullable)description;
@@ -1028,7 +1056,7 @@ namespace iOSBinding
         // +(NSString * _Nullable)getDescription;
         [Static]
         [NullAllowed, Export("getDescription")]
-
+        
         string Description { get; }
 
         // +(void)setMetadata:(NSDictionary * _Nullable)metadata;
@@ -1039,7 +1067,7 @@ namespace iOSBinding
         // +(NSDictionary * _Nullable)getMetadata;
         [Static]
         [NullAllowed, Export("getMetadata")]
-
+        
         NSDictionary Metadata { get; }
 
         // +(void)setAnonymousTrackingEnabled:(BOOL)enabled;
@@ -1077,6 +1105,26 @@ namespace iOSBinding
         [Export("trackVerifiedWithCompletionHandler:")]
         void TrackVerifiedWithCompletionHandler([NullAllowed] RadarTrackCompletionHandler completionHandler);
 
+        // +(void)trackVerifiedWithBeacons:(BOOL)beacons completionHandler:(RadarTrackCompletionHandler _Nullable)completionHandler __attribute__((swift_name("trackVerified(beacons:completionHandler:)")));
+        [Static]
+        [Export("trackVerifiedWithBeacons:completionHandler:")]
+        void TrackVerifiedWithBeacons(bool beacons, [NullAllowed] RadarTrackCompletionHandler completionHandler);
+
+        // +(void)trackVerifiedTokenWithCompletionHandler:(RadarTrackTokenCompletionHandler _Nullable)completionHandler __attribute__((swift_name("trackVerifiedToken(completionHandler:)")));
+        [Static]
+        [Export("trackVerifiedTokenWithCompletionHandler:")]
+        void TrackVerifiedTokenWithCompletionHandler([NullAllowed] RadarTrackTokenCompletionHandler completionHandler);
+
+        // +(void)trackVerifiedTokenWithBeacons:(BOOL)beacons completionHandler:(RadarTrackTokenCompletionHandler _Nullable)completionHandler __attribute__((swift_name("trackVerifiedToken(beacons:completionHandler:)")));
+        [Static]
+        [Export("trackVerifiedTokenWithBeacons:completionHandler:")]
+        void TrackVerifiedTokenWithBeacons(bool beacons, [NullAllowed] RadarTrackTokenCompletionHandler completionHandler);
+
+        // +(void)startTrackingVerified:(BOOL)token interval:(NSTimeInterval)interval beacons:(BOOL)beacons __attribute__((swift_name("startTrackingVerified(token:interval:beacons:)")));
+        [Static]
+        [Export("startTrackingVerified:interval:beacons:")]
+        void StartTrackingVerified(bool token, double interval, bool beacons);
+
         // +(void)startTrackingWithOptions:(RadarTrackingOptions * _Nonnull)options __attribute__((swift_name("startTracking(trackingOptions:)")));
         [Static]
         [Export("startTrackingWithOptions:")]
@@ -1095,19 +1143,30 @@ namespace iOSBinding
         // +(BOOL)isTracking;
         [Static]
         [Export("isTracking")]
-
+        
         bool IsTracking { get; }
 
         // +(RadarTrackingOptions * _Nonnull)getTrackingOptions;
         [Static]
         [Export("getTrackingOptions")]
-
+        
         RadarTrackingOptions TrackingOptions { get; }
+
+        // +(BOOL)isUsingRemoteTrackingOptions;
+        [Static]
+        [Export("isUsingRemoteTrackingOptions")]
+        
+        bool IsUsingRemoteTrackingOptions { get; }
 
         // +(void)setDelegate:(id<RadarDelegate> _Nullable)delegate;
         [Static]
         [Export("setDelegate:")]
         void SetDelegate([NullAllowed] RadarDelegate @delegate);
+
+        // +(void)setVerifiedDelegate:(id<RadarVerifiedDelegate> _Nullable)verifiedDelegate;
+        [Static]
+        [Export("setVerifiedDelegate:")]
+        void SetVerifiedDelegate([NullAllowed] RadarVerifiedDelegate verifiedDelegate);
 
         // +(void)acceptEventId:(NSString * _Nonnull)eventId verifiedPlaceId:(NSString * _Nullable)verifiedPlaceId __attribute__((swift_name("acceptEventId(_:verifiedPlaceId:)")));
         [Static]
@@ -1137,7 +1196,7 @@ namespace iOSBinding
         // +(RadarTripOptions * _Nullable)getTripOptions;
         [Static]
         [NullAllowed, Export("getTripOptions")]
-
+        
         RadarTripOptions TripOptions { get; }
 
         // +(void)startTripWithOptions:(RadarTripOptions * _Nonnull)options __attribute__((swift_name("startTrip(options:)")));
@@ -1220,10 +1279,15 @@ namespace iOSBinding
         [Export("searchGeofencesNear:radius:tags:metadata:limit:completionHandler:")]
         void SearchGeofencesNear(CLLocation near, int radius, [NullAllowed] string[] tags, [NullAllowed] NSDictionary metadata, int limit, RadarSearchGeofencesCompletionHandler completionHandler);
 
-        // +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country expandUnits:(BOOL)expandUnits completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:expandUnits:completionHandler:)")));
+        // +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country expandUnits:(BOOL)expandUnits completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:expandUnits:completionHandler:)"))) __attribute__((deprecated("")));
         [Static]
         [Export("autocompleteQuery:near:layers:limit:country:expandUnits:completionHandler:")]
         void AutocompleteQuery(string query, [NullAllowed] CLLocation near, [NullAllowed] string[] layers, int limit, [NullAllowed] string country, bool expandUnits, RadarGeocodeCompletionHandler completionHandler);
+
+        //// +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country mailable:(BOOL)mailable completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:mailable:completionHandler:)")));
+        //[Static]
+        //[Export("autocompleteQuery:near:layers:limit:country:mailable:completionHandler:")]
+        //void AutocompleteQuery(string query, [NullAllowed] CLLocation near, [NullAllowed] string[] layers, int limit, [NullAllowed] string country, bool mailable, RadarGeocodeCompletionHandler completionHandler);
 
         // +(void)autocompleteQuery:(NSString * _Nonnull)query near:(CLLocation * _Nullable)near layers:(NSArray<NSString *> * _Nullable)layers limit:(int)limit country:(NSString * _Nullable)country completionHandler:(RadarGeocodeCompletionHandler)completionHandler __attribute__((swift_name("autocomplete(query:near:layers:limit:country:completionHandler:)")));
         [Static]
@@ -1280,6 +1344,21 @@ namespace iOSBinding
         [Export("setLogLevel:")]
         void SetLogLevel(RadarLogLevel level);
 
+        // +(void)logTermination;
+        [Static]
+        [Export("logTermination")]
+        void LogTermination();
+
+        // +(void)logBackgrounding;
+        [Static]
+        [Export("logBackgrounding")]
+        void LogBackgrounding();
+
+        // +(void)logResigningActive;
+        [Static]
+        [Export("logResigningActive")]
+        void LogResigningActive();
+
         // +(NSString * _Nonnull)stringForStatus:(RadarStatus)status __attribute__((swift_name("stringForStatus(_:)")));
         [Static]
         [Export("stringForStatus:")]
@@ -1325,9 +1404,8 @@ namespace iOSBinding
     }
 
     // @protocol RadarDelegate <NSObject>
-    [Protocol]
-    [Model]
     [BaseType(typeof(NSObject))]
+    [Protocol, Model]
     interface RadarDelegate
     {
         // @required -(void)didReceiveEvents:(NSArray<RadarEvent *> * _Nonnull)events user:(RadarUser * _Nullable)user __attribute__((swift_name("didReceiveEvents(_:user:)")));
@@ -1413,8 +1491,18 @@ namespace iOSBinding
 
         // -(NSDictionary * _Nonnull)dictionaryValue;
         [Export("dictionaryValue")]
-
+        
         NSDictionary DictionaryValue { get; }
     }
 
+    // @protocol RadarVerifiedDelegate <NSObject>
+    [BaseType(typeof(NSObject))]
+    [Protocol, Model]
+    interface RadarVerifiedDelegate
+    {
+        // @required -(void)didUpdateToken:(NSString * _Nonnull)token __attribute__((swift_name("didUpdateToken(_:)")));
+        [Abstract]
+        [Export("didUpdateToken:")]
+        void DidUpdateToken(string token);
+    }
 }

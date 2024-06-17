@@ -18,7 +18,7 @@ public abstract class RepeatingCallbackHandler<T> : Java.Lang.Object
 }
 
 public class TrackCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
+    : TaskCallbackHandler<TrackData>
     , AndroidBinding.Radar.IRadarTrackCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
@@ -34,8 +34,25 @@ public class TrackCallbackHandler
     }
 }
 
+public class TrackTokenCallbackHandler
+    : TaskCallbackHandler<TokenData>
+    , AndroidBinding.Radar.IRadarTrackTokenCallback
+{
+    public void OnComplete(AndroidBinding.Radar.RadarStatus status, string token)
+    {
+        try
+        {
+            taskSource.SetResult((status.ToSDK(), token));
+        }
+        catch (Exception ex)
+        {
+            taskSource.SetException(ex);
+        }
+    }
+}
+
 public class TripCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarTrip, IEnumerable<RadarEvent>)>
+    : TaskCallbackHandler<TripData>
     , AndroidBinding.Radar.IRadarTripCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarTrip trip, AndroidBinding.RadarEvent[] events)
@@ -52,7 +69,7 @@ public class TripCallbackHandler
 }
 
 public class GeocodeCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, IEnumerable<RadarAddress>)>
+    : TaskCallbackHandler<AddressesData>
     , AndroidBinding.Radar.IRadarGeocodeCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress[] addresses)
@@ -69,7 +86,7 @@ public class GeocodeCallbackHandler
 }
 
 public class SearchGeofencesCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarGeofence>)>
+    : TaskCallbackHandler<GeofencesData>
     , AndroidBinding.Radar.IRadarSearchGeofencesCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarGeofence[] geofences)
@@ -86,7 +103,7 @@ public class SearchGeofencesCallbackHandler
 }
 
 public class SearchPlacesCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarPlace>)>
+    : TaskCallbackHandler<PlacesData>
     , AndroidBinding.Radar.IRadarSearchPlacesCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarPlace[] places)
@@ -103,7 +120,7 @@ public class SearchPlacesCallbackHandler
 }
 
 public class RouteCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarRoutes)>
+    : TaskCallbackHandler<RoutesData>
     , AndroidBinding.Radar.IRadarRouteCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarRoutes routes)
@@ -120,7 +137,7 @@ public class RouteCallbackHandler
 }
 
 public class MatrixCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarRouteMatrix)>
+    : TaskCallbackHandler<RouteMatrixData>
     , AndroidBinding.Radar.IRadarMatrixCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarRouteMatrix matrix)
@@ -137,7 +154,7 @@ public class MatrixCallbackHandler
 }
 
 public class IpGeocodeCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarAddress, bool)>
+    : TaskCallbackHandler<AddressData>
     , AndroidBinding.Radar.IRadarIpGeocodeCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarAddress address, bool proxy)
@@ -154,10 +171,10 @@ public class IpGeocodeCallbackHandler
 }
 
 public class RepeatingTrackCallbackHandler
-    : RepeatingCallbackHandler<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)>
+    : RepeatingCallbackHandler<TrackData>
     , AndroidBinding.Radar.IRadarTrackCallback
 {
-    public RepeatingTrackCallbackHandler(Action<(RadarStatus, RadarLocation, IEnumerable<RadarEvent>, RadarUser)> callback)
+    public RepeatingTrackCallbackHandler(Action<TrackData> callback)
         : base(callback) { }
 
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarEvent[] events, AndroidBinding.RadarUser user)
@@ -167,7 +184,7 @@ public class RepeatingTrackCallbackHandler
 }
 
 public class LocationCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarLocation, bool)>
+    : TaskCallbackHandler<LocationData>
     , AndroidBinding.Radar.IRadarLocationCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, bool stopped)
@@ -184,7 +201,7 @@ public class LocationCallbackHandler
 }
 
 public class ContextCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarLocation, RadarContext)>
+    : TaskCallbackHandler<ContextData>
     , AndroidBinding.Radar.IRadarContextCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, Android.Locations.Location location, AndroidBinding.RadarContext context)
@@ -201,7 +218,7 @@ public class ContextCallbackHandler
 }
 
 public class LogConversionCallbackHandler
-    : TaskCallbackHandler<(RadarStatus, RadarEvent)>
+    : TaskCallbackHandler<EventData>
     , AndroidBinding.Radar.IRadarLogConversionCallback
 {
     public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarEvent events)
