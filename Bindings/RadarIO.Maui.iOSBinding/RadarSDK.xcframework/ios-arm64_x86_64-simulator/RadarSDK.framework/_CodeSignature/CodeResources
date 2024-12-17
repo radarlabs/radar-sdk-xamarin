@@ -38,11 +38,11 @@
 		</data>
 		<key>Headers/RadarEvent.h</key>
 		<data>
-		U2HARDyrcyUEXlV+/6rRm7vZims=
+		rnXtKmVSQXA7io5hd7x7y2m5TUU=
 		</data>
 		<key>Headers/RadarFraud.h</key>
 		<data>
-		tKRl3vi5AHM1nmDwRZ8LBgV4RnI=
+		vAfLLsgRajncedLqgmZRHjXUD0k=
 		</data>
 		<key>Headers/RadarGeofence.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/RadarRegion.h</key>
 		<data>
-		LJoz6znfe3/373FSSwGVrLvR7bQ=
+		1wGMGkA9favg/9M9mpyKuk8YLBw=
 		</data>
 		<key>Headers/RadarRoute.h</key>
 		<data>
@@ -122,11 +122,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LPPxe5RFHsI6Hw1sT3DCY4SA93s=
+		Yz8Kw7q7k13ETn2Hl+zu/YAkpFo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		dm+HrjpJGQIieG3WToD9f4aAP44=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		6PyG/Sn5jh81qqGDYJ701GSxHBw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -223,22 +227,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U2HARDyrcyUEXlV+/6rRm7vZims=
+			rnXtKmVSQXA7io5hd7x7y2m5TUU=
 			</data>
 			<key>hash2</key>
 			<data>
-			lhqsJPw7ofKvJLCkk8RD7W7A7ddJNnFrf9a4bNBY74Y=
+			fy+K16TcYivrsmJlN+NYgDgg42nifVrKIDTZQA/5a4E=
 			</data>
 		</dict>
 		<key>Headers/RadarFraud.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tKRl3vi5AHM1nmDwRZ8LBgV4RnI=
+			vAfLLsgRajncedLqgmZRHjXUD0k=
 			</data>
 			<key>hash2</key>
 			<data>
-			EdMnZLSeLo9K61FO2zcdEMKBvJdMx3EFx5kC3e3sGHw=
+			yvjk5HSeZp7bx6JPdDglIwkFPysdk5ZYlDHOmsrJY1s=
 			</data>
 		</dict>
 		<key>Headers/RadarGeofence.h</key>
@@ -289,11 +293,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LJoz6znfe3/373FSSwGVrLvR7bQ=
+			1wGMGkA9favg/9M9mpyKuk8YLBw=
 			</data>
 			<key>hash2</key>
 			<data>
-			TtBDB811JwFKPsgCbaVqJ5YNRkPopJp+aac1FnobsgU=
+			APnBFNRui8aB6rv1sTExAzBmEvBwEy1mQ6fun9iizyE=
 			</data>
 		</dict>
 		<key>Headers/RadarRoute.h</key>
@@ -459,6 +463,17 @@
 			<key>hash2</key>
 			<data>
 			GEqDCn6Ymw6IRrkoUGSGSq4hkNfbWMa0U1CEzIwKNB8=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6PyG/Sn5jh81qqGDYJ701GSxHBw=
+			</data>
+			<key>hash2</key>
+			<data>
+			3I1+H5p9p/M4HzB0a1kgbuYs4iW2n+O8u2YjT4RZvjU=
 			</data>
 		</dict>
 	</dict>
