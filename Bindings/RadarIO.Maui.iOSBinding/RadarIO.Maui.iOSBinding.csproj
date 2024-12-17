@@ -11,8 +11,8 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="RadarSDK.framework">
-      <Kind>Framework</Kind>
+    <NativeReference Include="RadarSDK.xcframework">
+      <Kind>Dynamic</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
