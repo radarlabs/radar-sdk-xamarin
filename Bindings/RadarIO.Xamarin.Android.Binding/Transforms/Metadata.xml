@@ -1,6 +1,0 @@
-﻿<metadata>
-    <attr path="/api/package[@name='io.radar.sdk']/class[@name='Radar']/method[@name='setReceiver']" name="visibility">public</attr>
-    <attr path="/api/package[@name='io.radar.sdk']/class[@name='Radar']/method[@name='setVerifiedReceiver']" name="visibility">public</attr>
-    <attr path="/api/package[@name='io.radar.sdk']" name="managedName">RadarIO.AndroidBinding</attr>
-    <attr path="/api/package[@name='io.radar.sdk.model']" name="managedName">RadarIO.AndroidBinding</attr>
-</metadata>
