@@ -4,19 +4,17 @@ on:
   push:
 
 jobs:
-      
   Build-Solution:
     runs-on: macos-latest
     steps:
+      - name: Setup .NET Core SDK 9.0.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "9.0.x"
 
-    - name: Setup .NET Core SDK 8.0.x
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0.x'
+      - name: Install MAUI Workloads
+        run: dotnet workload install android ios maui-android maui-ios maui --ignore-failed-sources
 
-    - name: Install MAUI Workloads
-      run: dotnet workload install android ios maui-android maui-ios --ignore-failed-sources
-
-    - uses: actions/checkout@v1
-    - name: build
-      run: ./build.sh
+      - uses: actions/checkout@v1
+      - name: build
+        run: ./build.sh
