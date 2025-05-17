@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net9.0-android;net9.0-ios</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>RadarIO.Maui.Sample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -74,6 +74,6 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)' == 'nuget'">
-	  <PackageReference Include="RadarIO.Xamarin" Version="3.9.3-beta.3" />
+	  <PackageReference Include="RadarIO.Xamarin" Version="3.9.3-beta.4" />
 	</ItemGroup>
 </Project>
