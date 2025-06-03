@@ -15,12 +15,18 @@ namespace RadarIO
         event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
         event RadarEventHandler<RadarStatus> Error;
         event RadarEventHandler<string> Log;
-        event RadarEventHandler<string> TokenUpdated;
+        event RadarEventHandler<RadarVerifiedLocationToken> TokenUpdated;
 
         Task<EventData> LogConversion(string name, JSONObject metadata);
         Task<EventData> LogConversion(string name, double revenue, JSONObject metadata);
 
-        void Initialize(string publishableKey, bool fraud = false);
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="publishableKey"></param>
+        /// <param name="fraud"></param>
+        /// <param name="options">iOS-only</param>
+        void Initialize(string publishableKey, bool fraud = false, RadarInitializeOptions options = null);
         void SetLogLevel(RadarLogLevel level);
         /// <summary>
         /// Android-only
@@ -37,6 +43,7 @@ namespace RadarIO
         string Description { get; set; }
         string SdkVersion { get; }
         JSONObject Metadata { get; set; }
+        string Product { get; set; }
         bool AnonymousTrackingEnabled { set; }
         // todo: permission status
 
@@ -46,15 +53,19 @@ namespace RadarIO
         Task<TrackData> TrackOnce();
         Task<TrackData> TrackOnce(RadarTrackingOptionsDesiredAccuracy desiredAccuracy, bool beacons);
         Task<TrackData> TrackOnce(RadarLocation location);
-        Task<TrackData> TrackVerified(bool beacons = false);
-        Task<TokenData> TrackVerifiedToken(bool beacons = false);
+        Task<TokenData> TrackVerified(bool beacons = false, RadarTrackingOptionsDesiredAccuracy desiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium, string reason = null, string transactionId = null);
         void StartTracking(RadarTrackingOptions options);
-        void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false);
+        void StartTrackingVerified(int interval = 1, bool beacons = false);
         void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<TrackData> callback);
         void StopTracking();
+        void StopTrackingVerified();
         bool IsTracking { get; }
+        bool IsTrackingVerified { get; }
+        Task<TokenData> GetVerifiedLocationToken(bool beacons = false, RadarTrackingOptionsDesiredAccuracy desiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium);
+        void ClearVerifiedLocationToken();
         RadarTrackingOptions TrackingOptions { get; }
         bool IsUsingRemoteTrackingOptions { get; }
+        void SetExpectedJurisdiction(string countryCode = null, string stateCode = null);
 
         // Event IDs
         void AcceptEventId(string eventId, string verifiedPlaceId = null);
@@ -73,17 +84,13 @@ namespace RadarIO
         Task<ContextData> GetContext(RadarLocation location);
 
         // Search
-        Task<PlacesData> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
-        Task<PlacesData> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
-        Task<GeofencesData> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<GeofencesData> SearchGeofences(int radius, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100);
-        Task<AddressesData> Autocomplete(string query, RadarLocation near = null, int limit = 100);
+        Task<PlacesData> SearchPlaces(int radius, RadarLocation near = null, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, IEnumerable<string> countryCodes = null, int limit = 100, IDictionary<string, string> chainMetadata = null);
+        Task<GeofencesData> SearchGeofences(int radius = -1, RadarLocation near = null, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100, bool includeGeometry = false);
         Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false);
 
         // Geocoding
-        Task<AddressesData> Geocode(string query);
-        Task<AddressesData> ReverseGeocode();
-        Task<AddressesData> ReverseGeocode(RadarLocation location);
+        Task<AddressesData> Geocode(string query, IEnumerable<string> layers = null, IEnumerable<string> countries = null);
+        Task<AddressesData> ReverseGeocode(RadarLocation location = null, IEnumerable<string> layers = null);
         Task<AddressData> IpGeocode();
 
         // Distances
@@ -93,10 +100,16 @@ namespace RadarIO
 
         // Utilities
         string StringForStatus(RadarStatus status);
+        string StringForVerificationStatus(RadarAddressVerificationStatus verificationStatus);
+        string StringForActivityType(RadarActivityType type);
         string StringForLocationSource(RadarLocationSource source);
         string StringForMode(RadarRouteMode mode);
         string StringForTripStatus(RadarTripStatus status);
         JSONObject DictionaryForLocation(RadarLocation location);
+        /// <summary>
+        /// iOS-only
+        /// </summary>
+        void NativeSetup(RadarInitializeOptions options);
     }
 
     public enum RadarLogLevel
@@ -145,6 +158,15 @@ namespace RadarIO
     {
         Imperial,
         Metric
+    }
+
+    public enum RadarAddressVerificationStatus
+    {
+        None,
+        Verified,
+        PartiallyVerified,
+        Ambiguous,
+        Unverified
     }
 
     public class RadarRoutes
@@ -201,18 +223,16 @@ namespace RadarIO
         public string County;
         public string Neighborhood;
         public string Number;
+        public string Street;
         public string AddressLabel;
         public string PlaceLabel;
-        public RadarAddressConfidence Confidence;
-
-        /// <summary>
-        /// Android-only
-        /// </summary>
-        public string Street;
         public string Unit;
         public string Plus4;
+        public double? Distance;
         public string Layer;
         public JSONObject Metadata;
+        public RadarAddressConfidence Confidence;
+        public RadarTimeZone TimeZone;
     }
 
     public enum RadarAddressConfidence
@@ -232,6 +252,7 @@ namespace RadarIO
         public JSONObject Metadata;
         public DateTime? ScheduledArrivalAt;
         public int ApproachingThreshold;
+        public bool StartTracking;
     }
 
     public class RadarTrackingOptions
@@ -303,6 +324,9 @@ namespace RadarIO
         public int Importance;
         public int Id;
         public string ChannelName;
+        public string IconString;
+        public string IconColor;
+        public string DeepLink;
     }
 
     public enum RadarTrackingOptionsSync
@@ -337,6 +361,7 @@ namespace RadarIO
         public string Description;
         public JSONObject Metadata;
         public RadarLocation Location;
+        public RadarActivityType ActivityType;
         public IEnumerable<RadarGeofence> Geofences;
         public RadarPlace Place;
         public IEnumerable<RadarBeacon> Beacons;
@@ -428,10 +453,11 @@ namespace RadarIO
         public string Type;
         public string Flag;
         public bool Allowed;
-        public object Passed;
-        public object InExclusionZone;
-        public object InBufferZone;
-        public object DistanceToBorder;
+        public bool Passed;
+        public bool InExclusionZone;
+        public bool InBufferZone;
+        public double DistanceToBorder;
+        public bool Expected;
     }
 
     public class RadarBeacon
@@ -457,6 +483,7 @@ namespace RadarIO
         public RadarCoordinate Location;
         public string Group;
         public JSONObject Metadata;
+        public RadarAddress Address;
     }
 
     public class RadarGeofence
@@ -466,6 +493,7 @@ namespace RadarIO
         public string Tag;
         public string ExternalId;
         public JSONObject Metadata;
+        public RadarOperatingHours OperatingHours;
         public RadarGeofenceGeometry Geometry;
     }
 
@@ -524,11 +552,8 @@ namespace RadarIO
         public bool Compromised;
         public bool Jumped;
         public bool Inaccurate;
-
-        /// <summary>
-        /// Android-only
-        /// </summary>
         public bool Sharing;
+        public bool Blocked;
     }
 
     public class RadarMeta
@@ -544,11 +569,38 @@ namespace RadarIO
         public string ForegroundServiceIconColor;
         public string EventIconString;
         public string EventIconColor;
+        public string DeepLink;
 
         public string ForegroundServiceIcon => ForegroundServiceIconString ?? IconString;
         public string ForegroundServiceColor => ForegroundServiceIconColor ?? IconColor;
         public string EventIcon => EventIconString ?? IconString;
         public string EventColor => EventIconColor ?? IconColor;
+    }
+
+    public class RadarTimeZone
+    {
+        public string Name;
+        public string Code;
+        public DateTime? CurrentTime;
+        public int UtcOffset;
+        public int DstOffset;
+    }
+
+    public class RadarVerifiedLocationToken
+    {
+        public RadarUser User;
+        public IEnumerable<RadarEvent> Events;
+        public string Token;
+        public DateTime? ExpiresAt;
+        public double ExpiresIn;
+        public bool Passed;
+        public IEnumerable<string> FailureReasons;
+    }
+
+    public class RadarInitializeOptions
+    {
+        public bool AutoLogNotificationConversions;
+        public bool AutoHandleNotificationDeepLinks;
     }
 
     public enum RadarEventConfidence
@@ -620,6 +672,16 @@ namespace RadarIO
         Huawei
     }
 
+    public enum RadarActivityType
+    {
+        Unknown = 0,
+        Stationary = 1,
+        Foot = 2,
+        Run = 3,
+        Bike = 4,
+        Car = 5
+    }
+
     public class JSONObject : Dictionary<string, object> { }
 
     public record struct TrackData(RadarStatus Status, RadarLocation Location, IEnumerable<RadarEvent> Events, RadarUser User)
@@ -631,12 +693,12 @@ namespace RadarIO
             => new(value.Item1, value.Item2, value.Item3, value.Item4);
     }
 
-    public record struct TokenData(RadarStatus Status, string Token)
+    public record struct TokenData(RadarStatus Status, RadarVerifiedLocationToken Token)
     {
-        public static implicit operator (RadarStatus, string)(TokenData value)
+        public static implicit operator (RadarStatus, RadarVerifiedLocationToken)(TokenData value)
             => (value.Status, value.Token);
 
-        public static implicit operator TokenData((RadarStatus, string) value)
+        public static implicit operator TokenData((RadarStatus, RadarVerifiedLocationToken) value)
             => new(value.Item1, value.Item2);
     }
 
@@ -755,5 +817,10 @@ namespace RadarIO
 
         public static implicit operator LocationData((RadarStatus, RadarLocation, bool) value)
             => new(value.Item1, value.Item2, value.Item3);
+    }
+
+    public class RadarOperatingHours
+    {
+        public Dictionary<string, List<List<string>>> Hours { get; set; }
     }
 }

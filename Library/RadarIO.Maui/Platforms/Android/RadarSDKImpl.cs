@@ -17,9 +17,9 @@ public class RadarSDKImpl : RadarSDK
     public event RadarEventHandler<ClientLocationUpdatedData> ClientLocationUpdated;
     public event RadarEventHandler<RadarStatus> Error;
     public event RadarEventHandler<string> Log;
-    public event RadarEventHandler<string> TokenUpdated;
+    public event RadarEventHandler<RadarVerifiedLocationToken> TokenUpdated;
 
-    public void Initialize(string publishableKey, bool fraud = false)
+    public void Initialize(string publishableKey, bool fraud = false, RadarInitializeOptions options = null)
     {
         var prefs = Android.App.Application.Context.GetSharedPreferences("RadarSDK", FileCreationMode.Private);
         var edit = prefs.Edit();
@@ -67,9 +67,17 @@ public class RadarSDKImpl : RadarSDK
         set => AndroidBinding.Radar.Metadata = value?.ToBinding();
     }
 
+    public string Product
+    {
+        get => AndroidBinding.Radar.Product;
+        set => AndroidBinding.Radar.Product = value;
+    }
+
     public bool AnonymousTrackingEnabled { set => AndroidBinding.Radar.SetAnonymousTrackingEnabled(value); }
 
     public bool IsTracking => AndroidBinding.Radar.IsTracking;
+
+    public bool IsTrackingVerified => AndroidBinding.Radar.IsTrackingVerified;
 
     public RadarTrackingOptions TrackingOptions => AndroidBinding.Radar.TrackingOptions?.ToSDK();
 
@@ -97,20 +105,26 @@ public class RadarSDKImpl : RadarSDK
     public Task<TrackData> TrackOnce(RadarLocation location)
         => UseHandler<TrackCallbackHandler, TrackData>(handler => AndroidBinding.Radar.TrackOnce(location?.ToBinding(), handler));
 
-    public Task<TrackData> TrackVerified(bool beacons = false)
-        => UseHandler<TrackCallbackHandler, TrackData>(handler => AndroidBinding.Radar.TrackVerified(beacons, handler));
-
-    public Task<TokenData> TrackVerifiedToken(bool beacons = false)
-        => UseHandler<TrackTokenCallbackHandler, TokenData>(handler => AndroidBinding.Radar.TrackVerifiedToken(beacons, handler));
+    public Task<TokenData> TrackVerified(bool beacons = false, RadarTrackingOptionsDesiredAccuracy desiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium, string reason = null, string transactionId = null)
+        => UseHandler<TrackTokenCallbackHandler, TokenData>(handler => AndroidBinding.Radar.TrackVerified(beacons, desiredAccuracy.ToBinding(), reason, transactionId, handler));
 
     public void StartTracking(RadarTrackingOptions options)
         => AndroidBinding.Radar.StartTracking(options.ToBinding());
 
-    public void StartTrackingVerified(bool token = false, int interval = 1, bool beacons = false)
-        => AndroidBinding.Radar.StartTrackingVerified(token, interval, beacons);
+    public void StartTrackingVerified(int interval = 1, bool beacons = false)
+        => AndroidBinding.Radar.StartTrackingVerified(interval, beacons);
 
     public void StopTracking()
         => AndroidBinding.Radar.StopTracking();
+
+    public void StopTrackingVerified()
+        => AndroidBinding.Radar.StopTrackingVerified();
+
+    public Task<TokenData> GetVerifiedLocationToken(bool beacons = false, RadarTrackingOptionsDesiredAccuracy desiredAccuracy = RadarTrackingOptionsDesiredAccuracy.Medium)
+        => UseHandler<TrackTokenCallbackHandler, TokenData>(handler => AndroidBinding.Radar.GetVerifiedLocationToken(beacons, desiredAccuracy.ToBinding(), handler));
+
+    public void ClearVerifiedLocationToken()
+        => AndroidBinding.Radar.ClearVerifiedLocationToken();
 
     public void MockTracking(RadarLocation origin, RadarLocation destination, RadarRouteMode mode, int steps, int interval, Action<TrackData> callback)
     {
@@ -123,6 +137,9 @@ public class RadarSDKImpl : RadarSDK
             interval,
             handler);
     }
+
+    public void SetExpectedJurisdiction(string countryCode = null, string stateCode = null)
+        => AndroidBinding.Radar.SetExpectedJurisdiction(countryCode, stateCode);
 
     public Task<TripData> StartTrip(RadarTripOptions options)
     {
@@ -173,52 +190,40 @@ public class RadarSDKImpl : RadarSDK
         return handler.Task;
     }
 
-    public Task<AddressesData> Geocode(string query)
+    public Task<AddressesData> Geocode(string query, IEnumerable<string> layers = null, IEnumerable<string> countries = null)
     {
         var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.Geocode(query, handler);
+        AndroidBinding.Radar.Geocode(query, layers?.ToArray(), countries?.ToArray(), handler);
         return handler.Task;
     }
 
-    public Task<AddressesData> ReverseGeocode()
+    public Task<AddressesData> ReverseGeocode(RadarLocation location = null, IEnumerable<string> layers = null)
     {
         var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.ReverseGeocode(handler);
+        if (location == null)
+            AndroidBinding.Radar.ReverseGeocode(layers?.ToArray(), handler);
+        else
+            AndroidBinding.Radar.ReverseGeocode(location?.ToBinding(), layers?.ToArray(), handler);
         return handler.Task;
     }
 
-    public Task<AddressesData> ReverseGeocode(RadarLocation location)
-    {
-        var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.ReverseGeocode(location?.ToBinding(), handler);
-        return handler.Task;
-    }
-
-    public Task<GeofencesData> SearchGeofences(RadarLocation near, int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
+    public Task<GeofencesData> SearchGeofences(int radius = -1, RadarLocation near = null, IEnumerable<string> tags = null, JSONObject metadata = null, int limit = 100, bool includeGeometry = false)
     {
         var handler = new SearchGeofencesCallbackHandler();
-        AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+        if (near == null)
+            AndroidBinding.Radar.SearchGeofences(radius < 0 ? null : new Java.Lang.Integer(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), new Java.Lang.Boolean(includeGeometry), handler);
+        else
+            AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius < 0 ? null : new Java.Lang.Integer(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), new Java.Lang.Boolean(includeGeometry), handler);
         return handler.Task;
     }
 
-    public Task<GeofencesData> SearchGeofences(int radius, IEnumerable<string> tags, JSONObject metadata, int limit)
-    {
-        var handler = new SearchGeofencesCallbackHandler();
-        AndroidBinding.Radar.SearchGeofences(radius, tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
-        return handler.Task;
-    }
-
-    public Task<PlacesData> SearchPlaces(RadarLocation near, int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
+    public Task<PlacesData> SearchPlaces(int radius, RadarLocation near = null, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, IEnumerable<string> countryCodes = null, int limit = 100, IDictionary<string, string> chainMetadata = null)
     {
         var handler = new SearchPlacesCallbackHandler();
-        AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
-        return handler.Task;
-    }
-
-    public Task<PlacesData> SearchPlaces(int radius, IEnumerable<string> chains = null, IEnumerable<string> categories = null, IEnumerable<string> groups = null, int limit = 0, IDictionary<string, string> chainMetadata = null)
-    {
-        var handler = new SearchPlacesCallbackHandler();
-        AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+        if (near == null)
+            AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+        else
+            AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
         return handler.Task;
     }
 
@@ -305,6 +310,12 @@ public class RadarSDKImpl : RadarSDK
     public string StringForStatus(RadarStatus status)
         => status.ToString();
 
+    public string StringForVerificationStatus(RadarAddressVerificationStatus status)
+        => AndroidBinding.Radar.StringForVerificationStatus(status.ToBinding());
+
+    public string StringForActivityType(RadarActivityType type)
+        => type.ToString()?.ToLower();
+
     public string StringForLocationSource(RadarLocationSource source)
         => AndroidBinding.Radar.StringForSource(source.ToBinding());
 
@@ -319,6 +330,8 @@ public class RadarSDKImpl : RadarSDK
 
     public void SetNotificationOptions(RadarNotificationOptions options)
         => AndroidBinding.Radar.SetNotificationOptions(options?.ToBinding());
+
+    public void NativeSetup(RadarInitializeOptions options) { }
 
     [BroadcastReceiver(Enabled = true, Exported = true)]
     [IntentFilter(new[] { "io.radar.sdk.RECEIVED" })]
@@ -383,9 +396,9 @@ public class RadarSDKImpl : RadarSDK
             Radar = radar;
         }
 
-        public override void OnTokenUpdated(Context context, string token)
+        public override void OnTokenUpdated(Context context, AndroidBinding.RadarVerifiedLocationToken token)
         {
-            Radar.TokenUpdated?.Invoke(token);
+            Radar.TokenUpdated?.Invoke(token?.ToSDK());
         }
     }
 }

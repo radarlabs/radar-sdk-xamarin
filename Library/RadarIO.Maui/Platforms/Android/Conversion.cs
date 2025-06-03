@@ -73,9 +73,11 @@ internal static class Conversion
             PlaceLabel = address.PlaceLabel,
             Unit = address.Unit,
             Plus4 = address.Plus4,
+            Distance = address.Distance?.DoubleValue() ?? 0,
             Layer = address.Layer,
             Metadata = address.Metadata?.ToSDK(),
-            Confidence = (RadarAddressConfidence)address.Confidence.Ordinal()
+            Confidence = (RadarAddressConfidence)address.Confidence.Ordinal(),
+            TimeZone = address.TimeZone?.ToSDK(),
         };
 
     internal static RadarLocation ToSDK(this Android.Locations.Location location)
@@ -124,6 +126,7 @@ internal static class Conversion
             Description = user.Description,
             Metadata = user.Metadata?.ToSDK(),
             Location = user.Location?.ToSDK(),
+            ActivityType = (RadarActivityType)user.ActivityType.Ordinal(),
             Geofences = user.GetGeofences()?.Select(ToSDK),
             Place = user.Place?.ToSDK(),
             Beacons = user.GetBeacons()?.Select(ToSDK),
@@ -177,6 +180,7 @@ internal static class Conversion
             InExclusionZone = region.InExclusionZone,
             InBufferZone = region.InBufferZone,
             DistanceToBorder = region.DistanceToBorder,
+            Expected = region.Expected,
         };
 
     internal static RadarBeacon ToSDK(this AndroidBinding.RadarBeacon beacon)
@@ -202,6 +206,7 @@ internal static class Conversion
             Tag = geofence.Tag,
             ExternalId = geofence.ExternalId,
             Metadata = geofence.Metadata?.ToSDK(),
+            OperatingHours = geofence.OperatingHours?.ToSDK(),
             Geometry = geofence.Geometry?.ToSDK()
         };
 
@@ -251,6 +256,7 @@ internal static class Conversion
             Location = place.Location?.ToSDK(),
             Group = place.Group,
             Metadata = place.Metadata?.ToSDK(),
+            Address = place.Address?.ToSDK(),
         };
 
     internal static RadarChain ToSDK(this AndroidBinding.RadarChain chain)
@@ -269,7 +275,10 @@ internal static class Conversion
             DestinationGeofenceTag = options.DestinationGeofenceTag,
             DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
             Mode = (RadarRouteMode)options.Mode.Ordinal(),
-            Metadata = options.Metadata?.ToSDK()
+            Metadata = options.Metadata?.ToSDK(),
+            ScheduledArrivalAt = options.ScheduledArrivalAt?.ToSDK(),
+            ApproachingThreshold = options.ApproachingThreshold,
+            StartTracking = options.StartTracking,
         };
 
     internal static RadarTrackingOptions ToSDK(this AndroidBinding.RadarTrackingOptions options)
@@ -331,8 +340,63 @@ internal static class Conversion
             Compromised = fraud.Compromised,
             Jumped = fraud.Jumped,
             Inaccurate = fraud.Inaccurate,
-            Sharing = fraud.Sharing
+            Sharing = fraud.Sharing,
+            Blocked = fraud.Blocked,
         };
+
+    internal static RadarTimeZone ToSDK(this AndroidBinding.RadarTimeZone timeZone)
+        => timeZone == null ? null : new RadarTimeZone
+        {
+            Name = timeZone.Name,
+            Code = timeZone.Code,
+            CurrentTime = timeZone.CurrentTime?.ToSDK(),
+            UtcOffset = timeZone.UtcOffset,
+            DstOffset = timeZone.DstOffset
+        };
+
+    internal static RadarVerifiedLocationToken ToSDK(this AndroidBinding.RadarVerifiedLocationToken token)
+        => token == null ? null : new RadarVerifiedLocationToken
+        {
+            User = token.User?.ToSDK(),
+            Events = token.GetEvents()?.Select(ToSDK),
+            Token = token.Token,
+            ExpiresAt = token.ExpiresAt?.ToSDK(),
+            ExpiresIn = token.ExpiresIn,
+            Passed = token.Passed,
+            FailureReasons = token.GetFailureReasons()
+        };
+
+    internal static RadarOperatingHours ToSDK(this AndroidBinding.RadarOperatingHours hours)
+    {
+        if (hours == null)
+            return null;
+
+        Org.Json.JSONObject obj = hours.ToJson();
+        var res = new Dictionary<string, List<List<string>>>();
+        var keysItr = obj.Keys();
+        while (keysItr.HasNext)
+        {
+            var key = keysItr.Next().ToString();
+            var value = obj.GetJSONArray(key);
+            var times = new List<List<string>>();
+            for (int i = 0; i < value.Length(); i++)
+            {
+                var timeSlot = value.GetJSONArray(i);
+                var timeList = new List<string>();
+                for (int j = 0; j < timeSlot.Length(); j++)
+                {
+                    timeList.Add(timeSlot.GetString(j));
+                }
+                times.Add(timeList);
+            }
+            res.Add(key, times);
+        }
+
+        return new RadarOperatingHours
+        {
+            Hours = res
+        };
+    }
 
     internal static AndroidBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
         => options == null ? null : new AndroidBinding.RadarTripOptions(
@@ -342,7 +406,8 @@ internal static class Conversion
             options.DestinationGeofenceExternalId,
             AndroidBinding.Radar.RadarRouteMode.Values()[(int)options.Mode],
             options.ScheduledArrivalAt?.ToBinding(),
-            options.ApproachingThreshold
+            options.ApproachingThreshold,
+            options.StartTracking
         );
 
     internal static AndroidBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
@@ -376,7 +441,8 @@ internal static class Conversion
             options.ForegroundServiceIconString,
             options.ForegroundServiceIconColor,
             options.EventIconString,
-            options.EventIconColor);
+            options.EventIconColor,
+            options.DeepLink);
 
     internal static DateTime ToSDK(this Java.Util.Date date)
         => date == null ? DateTime.MinValue : date.Time.ToDateTime();
@@ -419,6 +485,12 @@ internal static class Conversion
     internal static AndroidBinding.Radar.RadarRouteMode ToBinding(this RadarRouteMode mode)
         => AndroidBinding.Radar.RadarRouteMode.Values().ElementAt((int)mode);
 
+    internal static AndroidBinding.Radar.RadarAddressVerificationStatus ToBinding(this RadarAddressVerificationStatus status)
+        => AndroidBinding.Radar.RadarAddressVerificationStatus.Values().ElementAt((int)status);
+
+    internal static AndroidBinding.Radar.RadarActivityType ToBinding(this RadarActivityType activityType)
+        => AndroidBinding.Radar.RadarActivityType.Values().ElementAt((int)activityType);
+
     internal static AndroidBinding.Radar.RadarLocationServicesProvider ToBinding(this RadarLocationServicesProvider locationServicesProvider)
         => AndroidBinding.Radar.RadarLocationServicesProvider.Values().ElementAt((int)locationServicesProvider);
 
@@ -435,7 +507,9 @@ internal static class Conversion
                 new Java.Lang.Integer(service.Importance),
                 new Java.Lang.Integer(service.Id),
                 service.ChannelName,
-                "todo", "todo"
+                service.IconString,
+                service.IconColor,
+                service.DeepLink
             );
 
     internal static Android.Locations.Location ToBinding(this RadarLocation location)

@@ -18,10 +18,10 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios' or '$(TargetFramework)' == 'net9.0-ios'">
+	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'ios'">
 	  <ProjectReference Include="..\..\Bindings\RadarIO.Maui.iOSBinding\RadarIO.Maui.iOSBinding.csproj" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android' or '$(TargetFramework)' == 'net9.0-android'">
+	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'android'">
 	  <ProjectReference Include="..\..\Bindings\RadarIO.Maui.AndroidBinding\RadarIO.Maui.AndroidBinding.csproj" />
 	</ItemGroup>
 	<ItemGroup>

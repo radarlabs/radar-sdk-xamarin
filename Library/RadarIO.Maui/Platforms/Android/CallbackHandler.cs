@@ -36,13 +36,13 @@ public class TrackCallbackHandler
 
 public class TrackTokenCallbackHandler
     : TaskCallbackHandler<TokenData>
-    , AndroidBinding.Radar.IRadarTrackTokenCallback
+    , AndroidBinding.Radar.IRadarTrackVerifiedCallback
 {
-    public void OnComplete(AndroidBinding.Radar.RadarStatus status, string token)
+    public void OnComplete(AndroidBinding.Radar.RadarStatus status, AndroidBinding.RadarVerifiedLocationToken token)
     {
         try
         {
-            taskSource.SetResult((status.ToSDK(), token));
+            taskSource.SetResult((status.ToSDK(), token?.ToSDK()));
         }
         catch (Exception ex)
         {
@@ -93,6 +93,10 @@ public class SearchGeofencesCallbackHandler
     {
         try
         {
+            foreach (var geofence in geofences)
+            {
+                var x = geofence?.ToSDK();
+            }
             taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
         }
         catch (Exception ex)

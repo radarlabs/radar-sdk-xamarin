@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using static RadarIO.RadarSingleton;
 
@@ -6,7 +7,7 @@ namespace RadarIO.Sample
 {
     public static class Demo
     {
-        private const string RADAR_KEY = "prj_test_pk_8d7149cfe4a0fa5e5bb6a440a47a978995447ffc";
+        private const string RADAR_KEY = null;
 
         public static void Initialize(RadarSDK sdk, string radarKey = null)
         {
@@ -23,13 +24,33 @@ namespace RadarIO.Sample
                 { "bool", true }
             };
 
+
+            // Radar.ClientLocationUpdated += (result) =>
+            // {
+            //     // do something with result.location, result.stopped, result.source
+            // };
+
+            // Radar.LocationUpdated += (result) =>
+            // {
+            //     // do something with result.location, result.user
+            // };
+
+            // Radar.EventsReceived += (result) =>
+            // {
+            //     // do something with result.events, result.user
+            // };
+
+            // Radar.Error += (err) => {
+            //     // do something with err
+            // };
+
             Radar.Log += msg =>
             {
 
             };
         }
 
-        public static async Task<TrackData> Test()
+        public static async Task Test()
         {
             //var trackingOptions = new RadarTrackingOptions
             //{
@@ -46,44 +67,33 @@ namespace RadarIO.Sample
             //Radar.StartTracking(trackingOptions);
             //return (RadarStatus.Success, null, null, null);
 
-            var ret = await Radar.TrackOnce();
-            //var (_, loc, _, _) = ret;
-            //var (_, addresses) = await Radar.Autocomplete("grocery store", loc, 5);
-            ////(_, addresses) = await Radar.ReverseGeocode(loc);
-            ////(_, addresses) = await Radar.Geocode("Kung Fu Tea Pinellas Park");
-            ////var (_, _, geofences) = await Radar.SearchGeofences(10, new[] { "tag" });
-            ////(_, _, geofences) = await Radar.SearchGeofences(loc, 10, new[] { "tag" });
-            //var (_, _, places) = await Radar.SearchPlaces(1000, categories: new[] { "food-beverage" });
-            //(_, _, places) = await Radar.SearchPlaces(loc, 1000, categories: new[] { "food-beverage" });
+            var (_, loc, _, user) = await Radar.TrackOnce();
+            var (_, addresses) = await Radar.Autocomplete("brooklyn", loc);
+            var (_, rgeo) = await Radar.ReverseGeocode(loc);
+            var (_, geo) = await Radar.Geocode("Whole Foods Market, 1000 3rd St, San Francisco, CA 94158, USA");
+            var (_, _, geofences) = await Radar.SearchGeofences();
+            var (_, _, places) = await Radar.SearchPlaces(1000, loc, categories: ["food-beverage"]);
 
-            //var address = addresses.Select(a => new Location { Latitude = a.Coordinate.Latitude, Longitude = a.Coordinate.Longitude }).First();
-            //var (_, routes) = await Radar.GetDistance(address, new[] { RadarRouteMode.Bike, RadarRouteMode.Car }, RadarRouteUnits.Metric);
-            //var (_, matrix) = await Radar.GetMatrix(new[] { loc }, new[] { address }, RadarRouteMode.Car, RadarRouteUnits.Imperial);
-            //var matrixTest = matrix.RouteBetween(0, 0);
-            //var (_, ipGeocode, isProxy) = await Radar.IpGeocode();
+            RadarLocation origin = new() { Latitude = 40.78382, Longitude = -73.97536 };
+            RadarLocation destination = new() { Latitude = 40.70390, Longitude = -73.98670 };
+            var (_, routes) = await Radar.GetDistance(origin, destination, [RadarRouteMode.Bike, RadarRouteMode.Car], RadarRouteUnits.Metric);
+            var (_, matrix) = await Radar.GetMatrix([origin], [destination], RadarRouteMode.Car, RadarRouteUnits.Imperial);
+            var matrixTest = matrix.RouteBetween(0, 0);
+            var (_, ipGeocode, isProxy) = await Radar.IpGeocode();
 
-            //var (status, loc2, places) = await Radar.SearchPlaces(10, chainMetadata: new Dictionary<string, string> { { "asd", "qwe" } });
-            RadarTrackingOptions trackingOptions = Radar.TrackingOptionsContinuous;
-            trackingOptions.DesiredStoppedUpdateInterval = 180;
-            trackingOptions.DesiredStoppedUpdateInterval = 60;
-            trackingOptions.DesiredSyncInterval = 50;
-            trackingOptions.DesiredAccuracy = RadarTrackingOptionsDesiredAccuracy.High;
-            trackingOptions.StopDuration = 140;
-            trackingOptions.StopDistance = 70;
-            trackingOptions.Sync = RadarTrackingOptionsSync.All;
-            trackingOptions.Replay = RadarTrackingOptionsReplay.None;
-            return ret;
+            Radar.TokenUpdated += token =>
+            {
+                // send token to server
+            };
+
+            Radar.StartTrackingVerified(1200, false);
         }
 
         public static async Task<TrackData> TrackOnce()
             => await Radar.TrackOnce();
 
-        public static async Task<TrackData> TrackVerified()
+        public static async Task<TokenData> TrackVerified()
             => await Radar.TrackVerified();
-
-        public static async Task<TokenData> TrackVerifiedToken()
-            => await Radar.TrackVerifiedToken();
-
 
         public static void StartTrackingResponsive()
             => Radar.StartTracking(Radar.TrackingOptionsResponsive);
@@ -111,5 +121,8 @@ namespace RadarIO.Sample
 
         public static async Task StopTrip()
             => await Radar.CompleteTrip();
+
+        public static async Task<GeofencesData> SearchGeofences()
+            => await Radar.SearchGeofences();
     }
 }

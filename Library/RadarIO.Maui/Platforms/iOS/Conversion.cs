@@ -18,7 +18,7 @@ internal static class Conversion
             {
                 var route = new RadarRoute()
                 {
-                    Distance =  new RadarRouteDistance
+                    Distance = new RadarRouteDistance
                     {
                         Text = dict["distance"].ValueForKey(new Foundation.NSString("text")).ToString(),
                         Value = ((Foundation.NSNumber)dict["distance"].ValueForKey(new Foundation.NSString("value"))).DoubleValue
@@ -101,13 +101,16 @@ internal static class Conversion
             County = address.County,
             Neighborhood = address.Neighborhood,
             Number = address.Number,
+            Street = address.Street,
             AddressLabel = address.AddressLabel,
             PlaceLabel = address.PlaceLabel,
             Unit = address.Unit,
             Plus4 = address.Plus4,
+            Distance = (double)address.Distance,
             Layer = address.Layer,
             Metadata = address.Metadata?.ToSDK(),
-            Confidence = (RadarAddressConfidence)address.Confidence
+            Confidence = (RadarAddressConfidence)address.Confidence,
+            TimeZone = address.TimeZone?.ToSDK(),
         };
 
     internal static RadarCoordinate ToSDK(this CLLocationCoordinate2D coordinate)
@@ -163,6 +166,7 @@ internal static class Conversion
             Description = user.Description,
             Metadata = user.Metadata?.ToSDK(),
             Location = user.Location?.ToSDK(),
+            ActivityType = (RadarActivityType)user.ActivityType,
             Geofences = user.Geofences?.Select(ToSDK),
             Place = user.Place?.ToSDK(),
             Beacons = user.Beacons?.Select(ToSDK),
@@ -216,6 +220,7 @@ internal static class Conversion
             InExclusionZone = region.InExclusionZone,
             InBufferZone = region.InBufferZone,
             DistanceToBorder = region.DistanceToBorder,
+            Expected = region.Expected,
         };
 
     internal static RadarBeacon ToSDK(this iOSBinding.RadarBeacon beacon)
@@ -241,6 +246,7 @@ internal static class Conversion
             Tag = geofence.Tag,
             ExternalId = geofence.ExternalId,
             Metadata = geofence.Metadata?.ToSDK(),
+            OperatingHours = geofence.OperatingHours?.ToSDK(),
             Geometry = geofence.Geometry?.ToSDK()
         };
 
@@ -290,6 +296,7 @@ internal static class Conversion
             Location = place.Location?.ToSDK(),
             Group = place.Group,
             Metadata = place.Metadata?.ToSDK(),
+            Address = place.Address?.ToSDK(),
         };
 
     internal static RadarChain ToSDK(this iOSBinding.RadarChain chain)
@@ -322,8 +329,9 @@ internal static class Conversion
             Mocked = fraud.Mocked,
             Compromised = fraud.Compromised,
             Jumped = fraud.Jumped,
-            //Sharing = fraud.Sharing,
-            Inaccurate = fraud.Inaccurate
+            Sharing = fraud.Sharing,
+            Inaccurate = fraud.Inaccurate,
+            Blocked = fraud.Blocked,
         };
 
     internal static object ToSDK(this Foundation.NSObject obj)
@@ -350,7 +358,8 @@ internal static class Conversion
             Mode = (RadarRouteMode)options.Mode,
             Metadata = options.Metadata?.ToSDK(),
             ScheduledArrivalAt = (DateTime?)options.ScheduledArrivalAt,
-            ApproachingThreshold = options.ApproachingThreshold
+            ApproachingThreshold = options.ApproachingThreshold,
+            StartTracking = options.StartTracking,
         };
 
     internal static RadarTrackingOptions ToSDK(this iOSBinding.RadarTrackingOptions options)
@@ -388,6 +397,50 @@ internal static class Conversion
             State = context.State?.ToSDK()
         };
 
+    internal static RadarTimeZone ToSDK(this iOSBinding.RadarTimeZone timeZone)
+        => timeZone == null ? null : new RadarTimeZone
+        {
+            Name = timeZone.Name,
+            Code = timeZone.Code,
+            CurrentTime = (DateTime?)timeZone.CurrentTime,
+            UtcOffset = timeZone.UtcOffset,
+            DstOffset = timeZone.DstOffset
+        };
+
+    internal static RadarVerifiedLocationToken ToSDK(this iOSBinding.RadarVerifiedLocationToken token)
+        => token == null ? null : new RadarVerifiedLocationToken
+        {
+            User = token.User?.ToSDK(),
+            Events = token.Events?.Select(ToSDK),
+            Token = token.Token,
+            ExpiresAt = (DateTime?)token.ExpiresAt,
+            ExpiresIn = token.ExpiresIn,
+            Passed = token.Passed,
+            FailureReasons = token.FailureReasons
+        };
+
+    internal static RadarOperatingHours ToSDK(this iOSBinding.RadarOperatingHours hours)
+    {
+        if (hours == null)
+            return null;
+
+        var res = new Dictionary<string, List<List<string>>>();
+        foreach (var day in hours.Hours)
+        {
+            var slots = new List<List<string>>();
+            foreach (var slot in (Foundation.NSArray)day.Value)
+            {
+                slots.Add(new List<string>());
+                foreach (var time in (Foundation.NSArray)slot)
+                {
+                    slots.Last().Add(time?.ToString());
+                }
+            }
+            res.Add(day.Key.ToString(), slots);
+        }
+        return new RadarOperatingHours { Hours = res };
+    }
+
     internal static iOSBinding.RadarTripOptions ToBinding(this RadarTripOptions options)
         => new iOSBinding.RadarTripOptions
         {
@@ -395,7 +448,8 @@ internal static class Conversion
             DestinationGeofenceTag = options.DestinationGeofenceTag,
             DestinationGeofenceExternalId = options.DestinationGeofenceExternalId,
             Mode = (iOSBinding.RadarRouteMode)Math.Pow(2, (double)options.Mode),
-            Metadata = options.Metadata?.ToBinding()
+            Metadata = options.Metadata?.ToBinding(),
+            StartTracking = options.StartTracking,
         };
 
     internal static iOSBinding.RadarStatus ToBinding(this RadarStatus status)
@@ -409,6 +463,12 @@ internal static class Conversion
 
     internal static iOSBinding.RadarRouteMode ToBinding(this RadarRouteMode mode)
         => (iOSBinding.RadarRouteMode)mode;
+
+    internal static iOSBinding.RadarAddressVerificationStatus ToBinding(this RadarAddressVerificationStatus status)
+        => (iOSBinding.RadarAddressVerificationStatus)status;
+
+    internal static iOSBinding.RadarActivityType ToBinding(this RadarActivityType activityType)
+        => (iOSBinding.RadarActivityType)activityType;
 
     internal static iOSBinding.RadarTrackingOptions ToBinding(this RadarTrackingOptions options)
         => new iOSBinding.RadarTrackingOptions
@@ -465,6 +525,13 @@ internal static class Conversion
             metadata.Values.ToArray(),
             metadata.Keys.ToArray(),
             metadata.Count);
+
+    internal static iOSBinding.RadarInitializeOptions ToBinding(this RadarInitializeOptions options)
+        => options == null ? null : new iOSBinding.RadarInitializeOptions
+        {
+            AutoLogNotificationConversions = options.AutoLogNotificationConversions,
+            AutoHandleNotificationDeepLinks = options.AutoHandleNotificationDeepLinks
+        };
 
     internal static T InvertEnum<T>(int val)
         => Enum.GetValues(typeof(T)).Cast<T>().Reverse().ElementAt(val);
