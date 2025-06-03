@@ -179,14 +179,14 @@ public class RadarSDKImpl : RadarSDK
     public Task<AddressesData> Autocomplete(string query, RadarLocation near, int limit)
     {
         var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), new Java.Lang.Integer(limit), handler);
+        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), Java.Lang.Integer.ValueOf(limit), handler);
         return handler.Task;
     }
 
     public Task<AddressesData> Autocomplete(string query, RadarLocation near = null, IEnumerable<string> layers = null, int limit = 100, string country = null, bool expandUnits = false, bool mailable = false)
     {
         var handler = new GeocodeCallbackHandler();
-        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), layers?.ToArray(), new Java.Lang.Integer(limit), country, new Java.Lang.Boolean(expandUnits), new Java.Lang.Boolean(mailable), handler);
+        AndroidBinding.Radar.Autocomplete(query, near?.ToBinding(), layers?.ToArray(), Java.Lang.Integer.ValueOf(limit), country, Java.Lang.Boolean.ValueOf(expandUnits), Java.Lang.Boolean.ValueOf(mailable), handler);
         return handler.Task;
     }
 
@@ -211,9 +211,9 @@ public class RadarSDKImpl : RadarSDK
     {
         var handler = new SearchGeofencesCallbackHandler();
         if (near == null)
-            AndroidBinding.Radar.SearchGeofences(radius < 0 ? null : new Java.Lang.Integer(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), new Java.Lang.Boolean(includeGeometry), handler);
+            AndroidBinding.Radar.SearchGeofences(radius < 0 ? null : Java.Lang.Integer.ValueOf(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : Java.Lang.Integer.ValueOf(limit), Java.Lang.Boolean.ValueOf(includeGeometry), handler);
         else
-            AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius < 0 ? null : new Java.Lang.Integer(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : new Java.Lang.Integer(limit), new Java.Lang.Boolean(includeGeometry), handler);
+            AndroidBinding.Radar.SearchGeofences(near?.ToBinding(), radius < 0 ? null : Java.Lang.Integer.ValueOf(radius), tags?.ToArray(), metadata?.ToBinding(), limit == 0 ? null : Java.Lang.Integer.ValueOf(limit), Java.Lang.Boolean.ValueOf(includeGeometry), handler);
         return handler.Task;
     }
 
@@ -221,9 +221,9 @@ public class RadarSDKImpl : RadarSDK
     {
         var handler = new SearchPlacesCallbackHandler();
         if (near == null)
-            AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            AndroidBinding.Radar.SearchPlaces(radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : Java.Lang.Integer.ValueOf(limit), handler);
         else
-            AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : new Java.Lang.Integer(limit), handler);
+            AndroidBinding.Radar.SearchPlaces(near?.ToBinding(), radius, chains?.ToArray(), chainMetadata, categories?.ToArray(), groups?.ToArray(), countryCodes?.ToArray(), limit == 0 ? null : Java.Lang.Integer.ValueOf(limit), handler);
         return handler.Task;
     }
 
