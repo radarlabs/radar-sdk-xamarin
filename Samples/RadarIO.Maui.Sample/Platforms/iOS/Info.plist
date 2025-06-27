@@ -7,9 +7,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.radar.maui-ios-sample</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5</string>
+	<string>1.11</string>
 	<key>CFBundleVersion</key>
-	<string>1.5</string>
+	<string>1.11</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIDeviceFamily</key>
