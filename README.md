@@ -10,7 +10,7 @@ The Radar SDK abstracts away cross-platform differences between location service
 
 See the Radar overview documentation [here](https://radar.io/documentation).
 
-Then, see the Radar Xamarin package documentation [here](https://radar.io/documentation/sdk/xamarin).
+Then, see the Radar MAUI package documentation [here](https://radar.io/documentation/sdk/maui).
 
 ## Examples
 
