@@ -93,10 +93,6 @@ public class SearchGeofencesCallbackHandler
     {
         try
         {
-            foreach (var geofence in geofences)
-            {
-                var x = geofence?.ToSDK();
-            }
             taskSource.SetResult(((RadarStatus)status.Ordinal(), location.ToSDK(), geofences?.Select(Conversion.ToSDK)));
         }
         catch (Exception ex)
