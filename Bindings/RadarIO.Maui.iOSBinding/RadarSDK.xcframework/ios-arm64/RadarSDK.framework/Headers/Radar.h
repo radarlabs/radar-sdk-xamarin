@@ -18,12 +18,16 @@
 #import "RadarRouteMode.h"
 #import "RadarRoutes.h"
 #import "RadarTrackingOptions.h"
+#import "RadarVerifiedLocationToken.h"
 #import "RadarUser.h"
+#import "RadarInitializeOptions.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol RadarDelegate;
 @protocol RadarVerifiedDelegate;
+@protocol RadarMotionProtocol;
+
 @class RadarTripOptions;
 
 #pragma mark - Enums
@@ -156,6 +160,20 @@ typedef NS_ENUM(NSInteger, RadarAddressVerificationStatus) {
     RadarAddressVerificationStatusUnverified NS_SWIFT_NAME(unverified) = 4
 };
 
+ typedef NS_ENUM(NSInteger, RadarActivityType) {
+     /// Unknown
+     RadarActivityTypeUnknown NS_SWIFT_NAME(unknown) = 0,
+     /// Stationary
+     RadarActivityTypeStationary NS_SWIFT_NAME(stationary) = 1,
+     /// Walking
+     RadarActivityTypeFoot NS_SWIFT_NAME(foot) = 2,
+     /// Running
+     RadarActivityTypeRun NS_SWIFT_NAME(run) = 3,
+     /// Biking
+     RadarActivityTypeBike NS_SWIFT_NAME(bike) = 4,
+     /// Driving
+     RadarActivityTypeCar NS_SWIFT_NAME(car) = 5,
+ };
 
 #pragma mark - Callbacks
 
@@ -189,13 +207,13 @@ typedef void (^_Nullable RadarTrackCompletionHandler)(RadarStatus status, CLLoca
 typedef void (^_Nullable RadarFlushReplaysCompletionHandler)(RadarStatus status, NSDictionary *_Nullable res);
 
 /**
- Called when an track request with token callback succeeds, fails, or times out.
+ Called when a track verified request succeeds, fails, or times out.
 
- Receives the request status and, if successful, a JSON Web Token (JWT) containing an array of the events generated and the user. Verify the JWT server-side using your secret key.
+ Receives the request status and, if successful, the user's verified location. Verify the token server-side using your secret key.
 
  @see https://radar.com/documentation/sdk/fraud
  */
-typedef void (^_Nullable RadarTrackTokenCompletionHandler)(RadarStatus status, NSString *_Nullable token);
+typedef void (^_Nullable RadarTrackVerifiedCompletionHandler)(RadarStatus status, RadarVerifiedLocationToken *_Nullable token);
 
 /**
  Called when a trip update succeeds, fails, or times out.
@@ -285,7 +303,7 @@ typedef void (^_Nonnull RadarRouteMatrixCompletionHandler)(RadarStatus status, R
 
  @see https://radar.com/documentation/api#send-a-custom-event
  */
-typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status, RadarEvent *_Nullable event);
+typedef void (^_Nullable RadarLogConversionCompletionHandler)(RadarStatus status, RadarEvent *_Nullable event);
 
 /**
  The main class used to interact with the Radar SDK.
@@ -307,6 +325,18 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
  */
 + (void)initializeWithPublishableKey:(NSString *_Nonnull)publishableKey NS_SWIFT_NAME(initialize(publishableKey:));
 
+/**
+ Initializes the Radar SDK.
+
+ @warning Call this method from the main thread in your `AppDelegate` class before calling any other Radar methods.
+
+ @param publishableKey Your publishable API key.
+ @param options Radar SDK initialization options.
+
+ @see https://radar.com/documentation/sdk/ios#initialize-sdk
+ */
+
++ (void)initializeWithPublishableKey:(NSString *_Nonnull)publishableKey options:(RadarInitializeOptions *_Nullable)options NS_SWIFT_NAME(initialize(publishableKey:options:));
 #pragma mark - Properties
 
 /**
@@ -370,6 +400,20 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
  @see https://radar.com/documentation/sdk/ios#identify-user
  */
 + (NSDictionary *_Nullable)getMetadata;
+
+/**
+ Sets an optional product name, displayed in the dashboard and reports.
+
+ @param product A product name. If `nil`, the previous `product` will be cleared.
+ */
++ (void)setProduct:(NSString *_Nullable)product;
+
+/**
+ Returns the current `product`.
+
+ @return The current `product`.
+ */
++ (NSString *_Nullable)getProduct;
 
 /**
  Enables anonymous tracking for privacy reasons. Avoids creating user records on the server and avoids sending any stable device IDs, user IDs, and user metadata
@@ -451,7 +495,7 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
 
  @see https://radar.com/documentation/fraud
  */
-+ (void)trackVerifiedWithCompletionHandler:(RadarTrackCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerified(completionHandler:));
++ (void)trackVerifiedWithCompletionHandler:(RadarTrackVerifiedCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerified(completionHandler:));
 
 /**
  Tracks the user's location with device integrity information for location verification use cases.
@@ -459,45 +503,94 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
  @warning Note that you must configure SSL pinning before calling this method.
 
  @param beacons A boolean indicating whether to range beacons.
+ @param desiredAccuracy The desired accuracy.
  @param completionHandler An optional completion handler.
 
  @see https://radar.com/documentation/fraud
  */
-+ (void)trackVerifiedWithBeacons:(BOOL)beacons completionHandler:(RadarTrackCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerified(beacons:completionHandler:));
++ (void)trackVerifiedWithBeacons:(BOOL)beacons desiredAccuracy:(RadarTrackingOptionsDesiredAccuracy)desiredAccuracy completionHandler:(RadarTrackVerifiedCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerified(beacons:desiredAccuracy:completionHandler:));
 
 /**
- Tracks the user's location with device integrity information for location verification use cases. Returns a JSON Web Token (JWT). Verify the JWT server-side using your secret key.
-
- @warning Note that you must configure SSL pinning before calling this method.
-
- @param completionHandler An optional completion handler.
-
- @see https://radar.com/documentation/fraud
- */
-+ (void)trackVerifiedTokenWithCompletionHandler:(RadarTrackTokenCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerifiedToken(completionHandler:));
-
-/**
- Tracks the user's location with device integrity information for location verification use cases. Returns a JSON Web Token (JWT). Verify the JWT server-side using your secret key.
+ Tracks the user's location with device integrity information for location verification use cases.
 
  @warning Note that you must configure SSL pinning before calling this method.
 
  @param beacons A boolean indicating whether to range beacons.
+ @param desiredAccuracy The desired accuracy.
+ @param reason An optional reason, displayed in the dashboard and reports.
+ @param transactionId An optional transaction ID, displayed in the dashboard and reports.
  @param completionHandler An optional completion handler.
 
  @see https://radar.com/documentation/fraud
  */
-+ (void)trackVerifiedTokenWithBeacons:(BOOL)beacons completionHandler:(RadarTrackTokenCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerifiedToken(beacons:completionHandler:));
++ (void)trackVerifiedWithBeacons:(BOOL)beacons desiredAccuracy:(RadarTrackingOptionsDesiredAccuracy)desiredAccuracy reason:(NSString *_Nullable)reason transactionId:(NSString *_Nullable)transactionId completionHandler:(RadarTrackVerifiedCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(trackVerified(beacons:desiredAccuracy:reason:transactionId:completionHandler:));
 
 /**
  Starts tracking the user's location with device integrity information for location verification use cases.
  
- @param token A boolean indicating whether to return a JSON Web Token (JWT). If `true`, tokens are delivered to your `RadarVerifiedDelegate`. If `false`, location updates are delivered to your `RadarDelegate`.
+ @param interval The default interval in seconds between each location update.
  @param beacons A boolean indicating whether to range beacons.
- @param interval The interval in seconds between each location update. A number between 1 and 60.
- 
+
  @warning Note that you must configure SSL pinning before calling this method.
+ 
+ @see https://radar.com/documentation/fraud
  */
-+ (void)startTrackingVerified:(BOOL)token interval:(NSTimeInterval)interval beacons:(BOOL)beacons NS_SWIFT_NAME(startTrackingVerified(token:interval:beacons:));
++ (void)startTrackingVerifiedWithInterval:(NSTimeInterval)interval beacons:(BOOL)beacons NS_SWIFT_NAME(startTrackingVerified(interval:beacons:));
+
+/**
+ Stops tracking the user's location with device integrity information for location verification use cases.
+ 
+ @see https://radar.com/documentation/fraud
+ */
++ (void)stopTrackingVerified NS_SWIFT_NAME(stopTrackingVerified());
+
+/**
+ Returns a boolean indicating whether verified tracking has been started.
+
+ @return A boolean indicating whether verified tracking has been started.
+
+ @see https://radar.com/documentation/sdk/fraud
+ */
++ (BOOL)isTrackingVerified;
+
+/**
+ Returns the user's last verified location token if still valid, or requests a fresh token if not.
+
+ @warning Note that you must configure SSL pinning before calling this method.
+
+ @param completionHandler An optional completion handler.
+
+ @see https://radar.com/documentation/fraud
+ */
++ (void)getVerifiedLocationToken:(RadarTrackVerifiedCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(getVerifiedLocationToken(completionHandler:));
+
+/**
+ Returns the user's last verified location token if still valid, or requests a fresh token if not.
+
+ @warning Note that you must configure SSL pinning before calling this method.
+ 
+ @param beacons A boolean indicating whether to range beacons.
+ @param desiredAccuracy The desired accuracy.
+ @param completionHandler An optional completion handler.
+
+ @see https://radar.com/documentation/fraud
+ */
++ (void)getVerifiedLocationTokenWithBeacons:(BOOL)beacons desiredAccuracy:(RadarTrackingOptionsDesiredAccuracy)desiredAccuracy completionHandler:(RadarTrackVerifiedCompletionHandler _Nullable)completionHandler NS_SWIFT_NAME(getVerifiedLocationToken(beacons:desiredAccuracy:completionHandler:));
+
+/**
+ Clears the user's last verified location token.
+
+ @see https://radar.com/documentation/fraud
+ */
++ (void)clearVerifiedLocationToken;
+
+/**
+ Optionally sets the user's expected country and state for jurisdiction checks.
+ 
+ @param countryCode The user's expected two-letter country code.
+ @param stateCode The user's expected two-letter state code.
+ */
++ (void)setExpectedJurisdictionWithCountryCode:(NSString *_Nullable)countryCode stateCode:(NSString *_Nullable)stateCode NS_SWIFT_NAME(setExpectedJurisdiction(countryCode:stateCode:));
 
 /**
  Starts tracking the user's location in the background with configurable tracking options.
@@ -617,7 +710,7 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
             completionHandler:(RadarLogConversionCompletionHandler)completionHandler NS_SWIFT_NAME(logConversion(name:metadata:completionHandler:));
 
 /**
- Logs a conversion with revenue
+ Logs a conversion with revenue.
 
  @param name The name of the conversion.
  @param revenue The revenue generated by the conversion.
@@ -632,12 +725,21 @@ typedef void (^_Nonnull RadarLogConversionCompletionHandler)(RadarStatus status,
             completionHandler:(RadarLogConversionCompletionHandler)completionHandler NS_SWIFT_NAME(logConversion(name:revenue:metadata:completionHandler:));
 
 /**
-logConversionWithNotification
+ Logs a conversion with a notification.
  @param request The request associated with the notification
 
  @see https://radar.com/documentation/api#send-a-custom-event
  */
 + (void)logConversionWithNotification:(UNNotificationRequest *_Nullable)request NS_SWIFT_NAME(logConversion(request:));
+
+/**
+ Logs a conversion with a notification. This should only be used to manually setup logging of notification conversions.
+ @param response The response associated with user interaction with the notification. 
+
+ @see https://radar.com/documentation/api#send-a-custom-event
+ */
+
++ (void)logConversionWithNotificationResponse:(UNNotificationResponse *)response NS_SWIFT_NAME(logConversion(response:));
 
 #pragma mark - Trips
 
@@ -762,6 +864,7 @@ logConversionWithNotification
  @param categories An array of categories to filter. See https://radar.com/documentation/places/categories
  @param groups An array of groups to filter. See https://radar.com/documentation/places/groups
  @param limit The max number of places to return. A number between 1 and 100.
+ @param countryCodes An array of country codes to filter. See https://radar.com/documentation/regions/countries
  @param completionHandler A completion handler.
 
  @see https://radar.com/documentation/api#search-places
@@ -770,8 +873,9 @@ logConversionWithNotification
                         chains:(NSArray<NSString *> *_Nullable)chains
                     categories:(NSArray<NSString *> *_Nullable)categories
                         groups:(NSArray<NSString *> *_Nullable)groups
+                 countryCodes:(NSArray<NSString *> *_Nullable)countryCodes
                          limit:(int)limit
-             completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(radius:chains:categories:groups:limit:completionHandler:));
+             completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(radius:chains:categories:groups:countryCodes:limit:completionHandler:));
 
 /**
  Gets the device's current location, then searches for places near that location, sorted by distance.
@@ -783,6 +887,7 @@ logConversionWithNotification
  @param chainMetadata Optional chain metadata filters. Keys and values must be strings. See https://radar.com/documentation/places#metadata.
  @param categories An array of categories to filter. See https://radar.com/documentation/places/categories
  @param groups An array of groups to filter. See https://radar.com/documentation/places/groups
+ @param countryCodes An array of country codes to filter. See https://radar.com/documentation/regions/countries
  @param limit The max number of places to return. A number between 1 and 100.
  @param completionHandler A completion handler.
 
@@ -793,8 +898,9 @@ logConversionWithNotification
                  chainMetadata:(NSDictionary<NSString *, NSString *> *_Nullable)chainMetadata
                     categories:(NSArray<NSString *> *_Nullable)categories
                         groups:(NSArray<NSString *> *_Nullable)groups
+                  countryCodes:(NSArray<NSString *> *_Nullable)countryCodes
                          limit:(int)limit
-             completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(radius:chains:chainMetadata:categories:groups:limit:completionHandler:));
+             completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(radius:chains:chainMetadata:categories:groups:countryCodes:limit:completionHandler:));
 
 /**
  Searches for places near a location, sorted by distance.
@@ -806,6 +912,7 @@ logConversionWithNotification
  @param chains An array of chain slugs to filter. See https://radar.com/documentation/places/chains
  @param categories An array of categories to filter. See https://radar.com/documentation/places/categories
  @param groups An array of groups to filter. See https://radar.com/documentation/places/groups
+ @param countryCodes An array of country codes to filter. See https://radar.com/documentation/regions/countries
  @param limit The max number of places to return. A number between 1 and 100.
  @param completionHandler A completion handler.
 
@@ -816,8 +923,9 @@ logConversionWithNotification
                   chains:(NSArray<NSString *> *_Nullable)chains
               categories:(NSArray<NSString *> *_Nullable)categories
                   groups:(NSArray<NSString *> *_Nullable)groups
+             countryCodes:(NSArray<NSString *> *_Nullable)countryCodes
                    limit:(int)limit
-       completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(near:radius:chains:categories:groups:limit:completionHandler:));
+       completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(near:radius:chains:categories:groups:countryCodes:limit:completionHandler:));
 
 /**
  Searches for places near a location, sorted by distance.
@@ -830,6 +938,7 @@ logConversionWithNotification
  @param chainMetadata Optional chain metadata filters. Keys and values must be strings. See https://radar.com/documentation/places#metadata.
  @param categories An array of categories to filter. See https://radar.com/documentation/places/categories
  @param groups An array of groups to filter. See https://radar.com/documentation/places/groups
+ @param countryCodes An array of country codes to filter. See https://radar.com/documentation/regions/countries
  @param limit The max number of places to return. A number between 1 and 100.
  @param completionHandler A completion handler.
 
@@ -841,44 +950,39 @@ logConversionWithNotification
            chainMetadata:(NSDictionary<NSString *, NSString *> *_Nullable)chainMetadata
               categories:(NSArray<NSString *> *_Nullable)categories
                   groups:(NSArray<NSString *> *_Nullable)groups
+            countryCodes:(NSArray<NSString *> *_Nullable)countryCodes
                    limit:(int)limit
-       completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(near:radius:chains:chainMetadata:categories:groups:limit:completionHandler:));
+       completionHandler:(RadarSearchPlacesCompletionHandler)completionHandler NS_SWIFT_NAME(searchPlaces(near:radius:chains:chainMetadata:categories:groups:countryCodes:limit:completionHandler:));
 
 /**
  Gets the device's current location, then searches for geofences near that location, sorted by distance.
-
- @param radius The radius to search, in meters. A number between 100 and 10000.
- @param tags An array of tags to filter. See https://radar.com/documentation/geofences
- @param metadata A dictionary of metadata to filter. See https://radar.com/documentation/geofences
- @param limit The max number of geofences to return. A number between 1 and 100.
+ 
  @param completionHandler A completion handler.
 
  @see https://radar.com/documentation/api#search-geofences
  */
-+ (void)searchGeofencesWithRadius:(int)radius
-                             tags:(NSArray<NSString *> *_Nullable)tags
-                         metadata:(NSDictionary *_Nullable)metadata
-                            limit:(int)limit
-                completionHandler:(RadarSearchGeofencesCompletionHandler)completionHandler NS_SWIFT_NAME(searchGeofences(radius:tags:metadata:limit:completionHandler:));
++ (void)searchGeofences:(RadarSearchGeofencesCompletionHandler)completionHandler NS_SWIFT_NAME(searchGeofences(completionHandler:));
 
 /**
  Searches for geofences near a location, sorted by distance.
 
- @param near The location to search.
- @param radius The radius to search, in meters. A number between 100 and 10000.
+ @param near The location to search. Use null to search near the device's current location.
+ @param radius The radius to search, in meters. A number between 100 and 10000. If -1 is entered, the server defaults to using unlimited radius.
  @param tags An array of tags to filter. See https://radar.com/documentation/geofences
  @param metadata A dictionary of metadata to filter. See https://radar.com/documentation/geofences
- @param limit The max number of geofences to return. A number between 1 and 100.
+ @param limit The max number of geofences to return. A number between 1 and 1000. Defaults to 100.
+ @param includeGeometry Include geofence geometries in the response. Recommended to be set to false in less you specifically need the geometries. To retrieve more than 100 results, `includeGeometry` must be set to `false`.
  @param completionHandler A completion handler.
 
  @see https://radar.com/documentation/api#search-geofences
  */
-+ (void)searchGeofencesNear:(CLLocation *)near
-                     radius:(int)radius
-                       tags:(NSArray<NSString *> *_Nullable)tags
-                   metadata:(NSDictionary *_Nullable)metadata
-                      limit:(int)limit
-          completionHandler:(RadarSearchGeofencesCompletionHandler)completionHandler NS_SWIFT_NAME(searchGeofences(near:radius:tags:metadata:limit:completionHandler:));
+ + (void)searchGeofencesNear:(CLLocation *_Nullable)near
+                      radius:(int)radius
+                        tags:(NSArray<NSString *> *_Nullable)tags
+                    metadata:(NSDictionary *_Nullable)metadata
+                       limit:(int)limit
+             includeGeometry:(BOOL)includeGeometry
+           completionHandler:(RadarSearchGeofencesCompletionHandler)completionHandler NS_SWIFT_NAME(searchGeofences(near:radius:tags:metadata:limit:includeGeometry:completionHandler:));
 
 /**
  @deprecated Autocompletes partial addresses and place names, sorted by relevance.
@@ -969,6 +1073,21 @@ logConversionWithNotification
 + (void)geocodeAddress:(NSString *_Nonnull)query completionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(geocode(address:completionHandler:));
 
 /**
+ Geocodes an address, converting address to coordinates.
+
+ @param query The address to geocode.
+ @param layers Optional layer filters.
+ @param countries Optional country filters. A string array of unique 2-letter country codes.
+ @param completionHandler A completion handler.
+
+ @see https://radar.com/documentation/api#forward-geocode
+ */
++ (void)geocodeAddress:(NSString *)query 
+                layers:(NSArray<NSString *> *_Nullable)layers
+             countries:(NSArray<NSString *> *_Nullable)countries
+     completionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(geocode(address:layers:countries:completionHandler:));
+
+/**
  Gets the device's current location, then reverse geocodes that location, converting coordinates to address.
 
  @param completionHandler A completion handler.
@@ -976,6 +1095,17 @@ logConversionWithNotification
  @see https://radar.com/documentation/api#reverse-geocode
  */
 + (void)reverseGeocodeWithCompletionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(reverseGeocode(completionHandler:));
+
+/**
+ Gets the device's current location, then reverse geocodes that location, converting coordinates to address.
+
+ @param completionHandler A completion handler.
+ @param layers Optional layer filters.
+
+ @see https://radar.com/documentation/api#reverse-geocode
+ */
++ (void)reverseGeocodeWithLayers:(NSArray<NSString *> *_Nullable)layers
+               completionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(reverseGeocode(layers:completionHandler:));
 
 /**
  Reverse geocodes a location, converting coordinates to address.
@@ -987,6 +1117,19 @@ logConversionWithNotification
  */
 + (void)reverseGeocodeLocation:(CLLocation *_Nonnull)location
              completionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(reverseGeocode(location:completionHandler:));
+
+/**
+ Reverse geocodes a location, converting coordinates to address.
+
+ @param location The location to reverse geocode.
+ @param layers Optional layer filters.
+ @param completionHandler A completion handler.
+
+ @see https://radar.com/documentation/api#reverse-geocode
+*/
++ (void)reverseGeocodeLocation:(CLLocation *)location
+                        layers:(NSArray<NSString *> *_Nullable)layers
+             completionHandler:(RadarGeocodeCompletionHandler)completionHandler NS_SWIFT_NAME(reverseGeocode(location:layers:completionHandler:));
 
 /**
  Geocodes the device's current IP address, converting IP address to partial address.
@@ -1063,7 +1206,7 @@ logConversionWithNotification
 #pragma mark - Logging
 
 /**
- Sets the log level for debug logs.
+ Sets the preferred log level for debug logs. This can be overridden by the remote SDK configuration set in the dashboard.
 
  @param level The log level.
  */
@@ -1107,6 +1250,15 @@ logConversionWithNotification
 */
 + (NSString *)stringForVerificationStatus:(RadarAddressVerificationStatus)verificationStatus NS_SWIFT_NAME(stringForVerificationStatus(_:));
 
+/**
+ Returns a display string for an activity type value.
+
+    @param type An activity type value.
+
+    @return A display string for the activity type value.
+    */
++ (NSString *)stringForActivityType:(RadarActivityType)type NS_SWIFT_NAME(stringForActivityType(_:));
+
 
 /**
  Returns a display string for a location source value.
@@ -1119,9 +1271,7 @@ logConversionWithNotification
 
 /**
  Returns a display string for a travel mode value.
-
  @param mode A travel mode value.
-
  @return A display string for the travel mode value.
  */
 + (NSString *)stringForMode:(RadarRouteMode)mode NS_SWIFT_NAME(stringForMode(_:));
@@ -1143,6 +1293,15 @@ logConversionWithNotification
  @return A dictionary for the location.
  */
 + (NSDictionary *)dictionaryForLocation:(CLLocation *)location NS_SWIFT_NAME(dictionaryForLocation(_:));
+
+
+/**
+ Performs optional setup for Radar SDK within the AppDelegate. This method only needs to be called if Radar is initalized in cross-platform code.
+
+ */
++ (void)nativeSetup:(RadarInitializeOptions *)options NS_SWIFT_NAME(nativeSetup(_:));
+
++ (void)openURLFromNotification:(UNNotification *)notification NS_SWIFT_NAME(openURLFromNotification(_:));
 
 @end
 

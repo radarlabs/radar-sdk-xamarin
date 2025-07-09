@@ -2,25 +2,23 @@ name: Deploy Release to NuGet
 
 on:
   release:
-    types: [ published ]
+    types: [published]
 
 jobs:
-      
   Publish-NuGet-Package:
     runs-on: macos-latest
     steps:
+      - name: Setup .NET Core SDK 9.0.x
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "9.0.x"
 
-    - name: Setup .NET Core SDK 8.0.x
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0.x'
+      - name: Install MAUI Workloads
+        run: dotnet workload install android ios maui-android maui-ios maui --ignore-failed-sources
 
-    - name: Install MAUI Workloads
-      run: dotnet workload install android ios maui-android maui-ios --ignore-failed-sources
-
-    - uses: actions/checkout@v1
-    - name: Build and Publish
-      run: |
-        ./build.sh
-        nuget pack
-        nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+      - uses: actions/checkout@v1
+      - name: Build and Publish
+        run: |
+          ./build.sh
+          nuget pack
+          nuget push *.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json

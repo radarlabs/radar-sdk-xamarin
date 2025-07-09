@@ -12,59 +12,53 @@
             <Label
                 Text="Radar Maui Sample App"
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Entry x:Name="RadarKeyEntry"
-               Placeholder="Enter radar key"
-               Completed="OnEntryCompleted" />
+                   Placeholder="Enter radar key"
+                   Completed="OnEntryCompleted"/>
 
             <Button
                 x:Name="TrackOnceBtn"
                 Text="Track Once"
                 Clicked="OnTrackOnceClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Button
                 x:Name="TrackVerifiedBtn"
                 Text="Track Verified"
                 Clicked="OnTrackVerifiedClicked"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="TrackVerifiedTokenBtn"
-                Text="Track Verified Token"
-                Clicked="OnTrackVerifiedTokenClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Button
                 x:Name="TrackingResponsiveBtn"
                 Text="Start Tracking Responsive"
                 Clicked="OnTrackingResponsiveClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Button
                 x:Name="TrackingContinuousBtn"
                 Text="Start Tracking Continuous"
                 Clicked="OnTrackingContinuousClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
             <Button
                 x:Name="TripBtn"
                 Text="Start Trip"
                 Clicked="OnTripClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
 
             <HorizontalStackLayout
                 Spacing="15"
                 Padding="10,0"
                 HorizontalOptions="Center">
-                
+
                 <Entry x:Name="GeofenceIdEntry"
-                   Placeholder="Geofence Id" />
+                       Placeholder="Geofence Id"/>
 
                 <Entry x:Name="GeofenceTagEntry"
-                   Placeholder="Geofence Tag" />
+                       Placeholder="Geofence Tag"/>
 
             </HorizontalStackLayout>
 
@@ -72,4 +66,3 @@
     </ScrollView>
 
 </ContentPage>
-

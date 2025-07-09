@@ -14,7 +14,6 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         TrackOnceBtn.IsVisible = false;
         TrackVerifiedBtn.IsVisible = false;
-        TrackVerifiedTokenBtn.IsVisible = false;
         TrackingResponsiveBtn.IsVisible = false;
         TrackingContinuousBtn.IsVisible = false;
         TripBtn.IsVisible = false;
@@ -28,7 +27,6 @@ public partial class MainPage : ContentPage
         RadarKeyEntry.IsVisible = false;
         TrackOnceBtn.IsVisible = true;
         TrackVerifiedBtn.IsVisible = true;
-        TrackVerifiedTokenBtn.IsVisible = true;
         TrackingResponsiveBtn.IsVisible = true;
         TrackingContinuousBtn.IsVisible = true;
         TripBtn.IsVisible = true;
@@ -45,6 +43,7 @@ public partial class MainPage : ContentPage
 
             await Permissions.RequestAsync<Permissions.LocationAlways>();
 
+            // await Test();
             var (status, loc, _, _) = await TrackOnce();
             TrackOnceBtn.Text = status == RadarStatus.Success
                 ? $"TrackOnce Success! {loc.Latitude:#0.0000} {loc.Longitude:#0.0000}"
@@ -67,37 +66,15 @@ public partial class MainPage : ContentPage
 
             await Permissions.RequestAsync<Permissions.LocationAlways>();
 
-            var (status, loc, _, _) = await TrackVerified();
+            var (status, token) = await TrackVerified();
             TrackVerifiedBtn.Text = status == RadarStatus.Success
-                ? $"TrackVerified Success! {loc.Latitude:#0.0000} {loc.Longitude:#0.0000}"
+                ? $"TrackVerified Success! {token}"
                 : $"TrackVerified Failed! {status}";
             TrackVerifiedBtn.IsEnabled = true;
         }
         catch (Exception ex)
         {
             TrackVerifiedBtn.Text = $"TrackVerified Failed!";
-            await ToastError(ex);
-        }
-    }
-
-    private async void OnTrackVerifiedTokenClicked(object sender, EventArgs e)
-    {
-        try
-        {
-            TrackVerifiedTokenBtn.Text = "Testing TrackVerifiedToken...";
-            TrackVerifiedTokenBtn.IsEnabled = false;
-
-            await Permissions.RequestAsync<Permissions.LocationAlways>();
-
-            var (status, token) = await TrackVerifiedToken();
-            TrackVerifiedTokenBtn.Text = status == RadarStatus.Success
-                ? $"TrackVerifiedToken Success! {token}"
-                : $"TrackVerifiedToken Failed! {status}";
-            TrackVerifiedTokenBtn.IsEnabled = true;
-        }
-        catch (Exception ex)
-        {
-            TrackVerifiedTokenBtn.Text = $"TrackVerifiedToken Failed!";
             await ToastError(ex);
         }
     }
@@ -254,5 +231,3 @@ public partial class MainPage : ContentPage
         await toast.Show(cancellationTokenSource.Token);
     }
 }
-
-
